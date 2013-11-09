@@ -1,3 +1,7 @@
+function setupJavaScript() {
+    $('#welcome-content').css('position', 'fixed');
+}
+
 function moveToSection(id, speed) {
     speed = (typeof speed === "undefined") ? 1000 : speed;
     var offset = 20;
