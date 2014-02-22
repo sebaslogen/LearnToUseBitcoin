@@ -1,0 +1,86 @@
+<% content_for :title do %>Learn To Use Bitcoin (Home)<% end %>
+<div align="center">
+  
+  <div class="navigation-menu visible-desktop" id="widthHeightOpacity" align="left">
+    <%= image_tag "index-icon.png", id: "navigation-menu-icon", alt: "Menu" %>
+    <div class="navigation-content hidden" >
+      <ul class="navigation-content-list">
+        <li>
+          <a class="navigation-link" href="#welcome"><i class="icon-home icon-white"></i> Welcome</a><br />
+        </li>
+        <li>
+          <a class="navigation-link" href="#what"><i class="icon-question-sign icon-white"></i> What is Bitcoin?</a><br />
+        </li>
+        <li>
+          <a class="navigation-link" href="#start"><i class="icon-play icon-white"></i> Start using Bitcoin</a><br />
+        </li>
+        <li>
+          <a class="navigation-link" href="#use"><i class="icon-shopping-cart icon-white"></i> Use my Bitcoins</a><br />
+        </li>
+        <li>
+          <a class="navigation-link" href="#myths"><i class="icon-globe icon-white"></i> Myths about Bitcoin</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="section sWelcome" id="welcome">
+    <div id="welcome-content">
+      <div class="language lang-typo1" id="welcome_sp">Bienvenido</div>
+      <div class="language lang-typo1" id="welcome_et">Tere tulemast</div>
+      <div class="language lang-typo2" id="welcome_fr">Bienvenue</div>
+      <div class="language lang-typo3" id="welcome_nl">Welkom</div>
+      <div class="language lang-typo2" id="welcome_de">Willkommen</div>
+      <div class="language lang-typo3" id="welcome_pt">Bem-vindo</div>
+      <div class="language lang-typo2" id="welcome_it">Benvenuto</div>
+      <h1 class="extruded" id="welcome_en" style="position: relative; z-index: 100;">Welcome</h1>
+      <h2 class="extruded-subtitle" style="position: relative; z-index: 100;">to the amazing revolution of money</h2>
+      <%= image_tag "BC_Logotype.png", style: "position: relative; z-index: 100;", alt: "Bitcoin" %>
+      <br />
+      <br />
+      <div id='scroll-message'>
+        <h3 style="position: relative; z-index: 100;">SCROLL</h3>
+        <%= image_tag "scroll.png", id: "scroll-arrow", style: "position: relative; z-index: 100;" %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section sWhat" id="what">
+    <h1>What is Bitcoin?</h1>
+    <div align="center" style="width:70%">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Um63OQz3bjo?rel=0&cc_load_policy=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="visible-desktop" id="footsteps" align="right">
+      <%= image_tag "footsteps.png", id: "footsteps-image", width: "174", height: "444" %>
+    </div>
+  </div>
+  
+  <div class="section sStart" id="start">
+    <h1>Start using Bitcoin</h1>
+    <p>Redeem code to get your first Bitcoins or request an invitation here.<br>
+      After redeem finishes show the "share your love" dialog</p>
+    <form>
+      <fieldset>
+        <legend>Redeem code to get your first Bitcoins</legend>
+        <label>or request an invitation code <a href="#start">here</a></label>
+        <input type="text" placeholder="Type your code here...">
+        <span class="help-block">You are almost there...</span>
+        <button type="submit" class="btn btn-primary">Get Bitcoins <i class="icon-bitcoin"></i></button>
+        <!-- <button type="submit" class="btn btn-primary">Get Bitcoins</button> -->
+      </fieldset>
+    </form>
+  </div>
+  
+  <div class="section sUse" id="use">
+    <h1 id="fourth">What can I do with Bitcoin?</h1>
+    <p>Today it's possible to pay almost everything you can pay with old currencies with Bitcoin like: ...</p>
+  </div>
+  
+  <div class="section sMyths" id="myths">
+    <h1>Myths about Bitcoin</h1>
+    <p>- Who is backing a decentralized currency?</p>
+  </div>
+
+</div>

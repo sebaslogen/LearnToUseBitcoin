@@ -1,4 +1,6 @@
 LearnToUseBitcoin::Application.routes.draw do
+  root :module=> :high_voltage, :controller => :pages, :action => :show, :id => 'home'
+  #root to: 'high_voltage/pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
