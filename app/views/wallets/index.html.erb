@@ -1,0 +1,29 @@
+<h1>Listing wallets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Private key</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wallets.each do |wallet| %>
+      <tr>
+        <td><%= wallet.address %></td>
+        <td><%= wallet.private_key %></td>
+        <td><%= link_to 'Show', wallet %></td>
+        <td><%= link_to 'Edit', edit_wallet_path(wallet) %></td>
+        <td><%= link_to 'Destroy', wallet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wallet', new_wallet_path %>
