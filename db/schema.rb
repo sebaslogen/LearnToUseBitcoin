@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301175943) do
+ActiveRecord::Schema.define(version: 20140302181902) do
+
+  create_table "visitors", force: true do |t|
+    t.string   "ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "wallets", force: true do |t|
     t.string   "address"
     t.string   "private_key"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "visitor_id"
   end
+
+  add_index "wallets", ["visitor_id"], name: "index_wallets_on_visitor_id"
 
 end

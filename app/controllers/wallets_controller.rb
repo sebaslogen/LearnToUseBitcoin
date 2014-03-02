@@ -1,17 +1,10 @@
 class WalletsController < ApplicationController
+  
   before_action :set_wallet, only: [:show, :edit, :update, :destroy]
-
-  def check_captcha # TODO: Refactor into visitor's Controller
-    session_secret = params['session_secret'] # in this case, using Rails
-    ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY'])
-    ayah_passed = ayah.score_result(session_secret, request.remote_ip)
-    Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: IP is: #{request.remote_ip}"
-    Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Test is: #{ayah_passed}"
-    return ayah_passed
-  end
   
   def testadd ######################################################## TODO: Test code
-    @wallet = Wallet.new( address: params[:address], private_key: params[:private_key] )
+    ##### @wallet = Wallet.new( address: params[:address], private_key: params[:private_key] )
+    @wallet = Wallet.new( wallet_params )
     #@wallet = Wallet.create( address: params[:address], private_key: params[:private_key] )
     @wallet.save
     Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Error inserting in DB #{@wallet.errors.messages}"

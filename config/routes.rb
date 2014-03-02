@@ -1,4 +1,5 @@
 LearnToUseBitcoin::Application.routes.draw do
+  get "visitors/show"
   resources :wallets
   get '/testadd' => 'wallets#testadd'######################################################## TODO: Test code
   get '/testshow' => 'wallets#testshow'######################################################## TODO: Test code
