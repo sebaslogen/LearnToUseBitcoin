@@ -1,5 +1,8 @@
 function setupJavaScript() {
-  $('#welcome-content').css('position', 'fixed');
+  $('#welcome-content').css({
+    'position': 'fixed',
+    'margin': '0 0 0 -37.5%'
+  });
 }
 
 function moveToSection(id, speed) {
