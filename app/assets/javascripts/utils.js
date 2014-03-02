@@ -44,12 +44,21 @@ function setupNavigationMenu() {
     moveToSection(id);
     event.preventDefault();
   });
-  // Automatically move to start section after a few seconds if user hasn't seen it yet
-  setTimeout(function() {
-    if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
-      moveToSection('#what', 3000);  // Move automaticaly but slowly
-    }
-  }, 4000); // Wait 4 seconds to automatically move
+}
+
+function setupAutoScroll() {
+  if ($('div.alert-box').size() == 0) { // Only whe there is no flash message shown at page top
+    // Automatically move to start section after a few seconds if user hasn't seen it yet
+    setTimeout(function() {
+      if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
+        moveToSection('#what', 3000);  // Move automaticaly but slowly
+      }
+    }, 4000); // Wait 4 seconds to automatically move
+  }
+}
+
+function setupScrollHintAnimation() {
+  // Show arrow animation
   if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
     $('#scroll-arrow').animate({top:'+=40'}, 4000, 'easeInOutQuart');
   }
@@ -114,6 +123,8 @@ $(document).ready(function() {
   setupJavaScript();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
   setupNavigationMenu();
+  setupAutoScroll();
+  setupScrollHintAnimation();
   setupScrollFadingAndResize();
   resizeWindow();
 });
