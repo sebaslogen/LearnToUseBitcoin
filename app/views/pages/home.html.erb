@@ -63,7 +63,7 @@
       <br>
       <% ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY']) %>
       <%= raw( ayah.get_publisher_html ) %>
-      <button type="submit" class="btn btn-primary">Get Bitcoins <i class="fi-bitcoin"></i></button>
+      <button type="submit" class="btn btn-primary">Get Bitcoins <i class="fi-bitcoin bitcoin-button"></i></button>
       <!-- <button type="submit" class="btn btn-primary">Get Bitcoins</button> -->
     </fieldset>
   </form>

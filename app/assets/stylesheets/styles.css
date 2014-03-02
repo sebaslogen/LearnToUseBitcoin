@@ -18,6 +18,10 @@ h3 {
   color: #3F3F3F;
 }
 
+.bitcoin-button {
+  font-size: 40px;
+  vertical-align: middle;
+}
 /* Button links
 a:link, a:visited {
     display:block;
