@@ -55,14 +55,14 @@
 
 <div class="section sStart" id="start">
   <h1>Start using Bitcoin</h1>
-  <p>Redeem code to get your first Bitcoins or request an invitation here.<br>
+  <p>Get your first Bitcoins here.<br>
     After redeem finishes show the "share your love" dialog</p>
-  <form>
+  <form name="input_test" action="testshow" method="get">
     <fieldset>
-      <legend>Redeem code to get your first Bitcoins</legend>
-      <label>or request an invitation code <a href="#start">here</a></label>
-      <input type="text" placeholder="Type your code here...">
-      <span class="help-block">You are almost there...</span>
+      <label>You are almost there...</label>
+      <br>
+      <% ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY']) %>
+      <%= raw( ayah.get_publisher_html ) %>
       <button type="submit" class="btn btn-primary">Get Bitcoins <i class="fi-bitcoin"></i></button>
       <!-- <button type="submit" class="btn btn-primary">Get Bitcoins</button> -->
     </fieldset>
