@@ -9,7 +9,7 @@ class VisitorsController < ApplicationController
     Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: IP is: #{request.remote_ip}"
     Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Test is: #{ayah_passed}"
     if not ayah_passed
-      flash[:error] = "Our super moneys detected that you already received a wallet with some Bitcoins before" # TODO improve messaging and UX flow
+      flash[:error] = "Our monkeys detected that you didn't pass the Human test. Don't worry our monkeys fail too, just try again and have fun"
       redirect_to root_path # halts request cycle
     end
   end
@@ -28,18 +28,18 @@ class VisitorsController < ApplicationController
           render action: 'show', :layout => false
         else
           Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error linking wallet to visitor in DB" ######################################################## TODO: Test code
-          flash[:error] = "You must be logged in to access this section"
+          flash[:error] = "Our monkeys made a mess again and created a magic error linking wallet to visitor in DB"
           redirect_to root_path # halts request cycle
         end
       else
         Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error saving new visitor to DB with IP:#{request.remote_ip}" ######################################################## TODO: Test code
-        flash[:error] = "You must be logged in to access this section"
+        flash[:error] = "Our monkeys made a mess again and created a magic error saving new visitor to DB with IP:#{request.remote_ip}"
         redirect_to root_path # halts request cycle
       end
     else # Do not show wallet
       # TODO: proper render of message or page
       Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Not showing again wallet of existing visitor" ######################################################## TODO: Test code
-      flash[:error] = "You must be logged in to access this section"
+      flash[:error] = "Our super moneys detected that you already received a wallet with some Bitcoins before" # TODO improve messaging and UX flow
       redirect_to root_path # halts request cycle
     end
   end 

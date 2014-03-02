@@ -3,33 +3,16 @@ class WalletsController < ApplicationController
   before_action :set_wallet, only: [:show, :edit, :update, :destroy]
   
   def testadd ######################################################## TODO: Test code
-    ##### @wallet = Wallet.new( address: params[:address], private_key: params[:private_key] )
     @wallet = Wallet.new( wallet_params )
-    #@wallet = Wallet.create( address: params[:address], private_key: params[:private_key] )
-    @wallet.save
-    Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Error inserting in DB #{@wallet.errors.messages}"
-    #end
-    render action: 'testadd', :layout => false
-  end
-  
-  def testshow ######################################################## TODO: Test code
-    if check_captcha
-      myarray = Wallet.where(address: 'sebas')
-      #myarray = Wallet.find(1)
-      if myarray.size == 0
-        Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: nothing found in DB"
-      else
-        Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Size:#{myarray.size}"
-      end
-      @wallet = myarray.first      
-      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Found in DB #{@wallet.address}"
-      
-      render action: '_testshow', :layout => false
+    if not @wallet.save
+      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Error inserting in DB #{@wallet.errors.messages}"
+      flash[:error] = "Our monkeys made a mess again and created a magic error inserting wallet into DB"
+      redirect_to root_path # halts request cycle
     else
-      render :nothing => true
+      render action: 'testadd', :layout => false
     end
   end
-  
+=begin
   # GET /wallets
   # GET /wallets.json
   def index
@@ -89,13 +72,14 @@ class WalletsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+=end
   private
+=begin
     # Use callbacks to share common setup or constraints between actions.
     def set_wallet
       @wallet = Wallet.find(params[:id])
     end
-
+=end
     # Never trust parameters from the scary internet, only allow the white list through.
     def wallet_params
       params.require(:wallet).permit(:address, :private_key)
