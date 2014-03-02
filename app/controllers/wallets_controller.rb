@@ -1,27 +1,40 @@
 class WalletsController < ApplicationController
   before_action :set_wallet, only: [:show, :edit, :update, :destroy]
 
+  def check_captcha # TODO: Refactor into visitor's Controller
+    session_secret = params['session_secret'] # in this case, using Rails
+    ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY'])
+    ayah_passed = ayah.score_result(session_secret, request.remote_ip)
+    Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: IP is: #{request.remote_ip}"
+    Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Test is: #{ayah_passed}"
+    return ayah_passed
+  end
+  
   def testadd ######################################################## TODO: Test code
     @wallet = Wallet.new( address: params[:address], private_key: params[:private_key] )
     #@wallet = Wallet.create( address: params[:address], private_key: params[:private_key] )
     @wallet.save
-    Rails.logger.debug "\033[1;34;40m[DEBUG]\033[0m: Error inserting in DB #{@wallet.errors.messages}"
+    Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Error inserting in DB #{@wallet.errors.messages}"
     #end
     render action: 'testadd', :layout => false
   end
   
   def testshow ######################################################## TODO: Test code
-    myarray = Wallet.where(address: 'sebas')
-    #myarray = Wallet.find(1)
-    if myarray.size == 0
-      Rails.logger.debug "\033[1;34;40m[DEBUG]\033[0m: nothing found in DB"
+    if check_captcha
+      myarray = Wallet.where(address: 'sebas')
+      #myarray = Wallet.find(1)
+      if myarray.size == 0
+        Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: nothing found in DB"
+      else
+        Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Size:#{myarray.size}"
+      end
+      @wallet = myarray.first      
+      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Found in DB #{@wallet.address}"
+      
+      render action: '_testshow', :layout => false
     else
-      Rails.logger.debug "\033[1;34;40m[DEBUG]\033[0m: Size:#{myarray.size}"
+      render :nothing => true
     end
-    @wallet = myarray.first      
-    Rails.logger.debug "\033[1;34;40m[DEBUG]\033[0m: Found in DB #{@wallet.address}"
-    
-    render action: '_testshow', :layout => false
   end
   
   # GET /wallets
