@@ -1,3 +1,5 @@
+require 'exceptions'
+
 class Wallet < ActiveRecord::Base
   
   belongs_to :visitor
@@ -18,21 +20,16 @@ class Wallet < ActiveRecord::Base
     search = Wallet.where(visitor_id: nil)
     if not search.empty?
       wallet = search.first
-      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: found in DB #{wallet.address}"
+      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: found in DB #{wallet.address}" ######################################################## TODO: Test code
       wallet.update(visitor_id: id) # Mark the wallet as used by associating it to its new owner
-      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Wallet updated in DB"
+      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Wallet updated in DB" ######################################################## TODO: Test code
       wallet.save # To add a new entry to the DB: it will return true OR false
       if search.size < 50
         # TODO: call create_new_wallets
       end
       return wallet
-    else
-      # Error
-      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Error, no available wallets in DB"
-      flash[:error] = "Our monkeys discovered there are no more wallets in the DB, \
-wait until the master monkey refills it and come back or \
-contact him directly at invitations@leartousebitcoin.com" # TODO: Improve message and UX flow
-      redirect_to root_path # halts request cycle
+    else # Error
+      raise Exceptions::NoFreeWalletsAvailable
     end
   end
   
