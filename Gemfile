@@ -56,6 +56,9 @@ gem 'simple_form' # forms made easy
 gem 'compass-rails'#, '~> 2.0.alpha.0' # support for Zurb Foundation
 #gem 'zurb-foundation' # 4.x version
 gem 'foundation-rails' # 5.x version
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
 group :development do
   gem 'better_errors' # helps when things go wrong
   gem 'quiet_assets' # suppresses distracting messages in the log
