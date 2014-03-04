@@ -41,7 +41,7 @@ describe Wallet do
       expect( search.size ).to eq( 0 )
     end
 
-    it "new wallets are stored without visitor by default" do
+    it "stores new wallets without visitor by default" do
       address = 'sebas'
       private_key = '12345'
       Wallet.create(address: address, private_key: private_key)
@@ -53,7 +53,7 @@ describe Wallet do
 end
 
 describe Wallet, '.associate_with_visitor' do
-  it "associate the first available wallet to the visitor" do
+  it "associates the first available wallet to the visitor" do
     ip = '127.0.0.1'
     v = Visitor.create(ip: ip)
     address = 'sebas'
@@ -62,7 +62,7 @@ describe Wallet, '.associate_with_visitor' do
     expect( Wallet.associate_with_visitor( v.id ) ).to be_truthy # passes if actual is truthy (not nil or false)
   end
   
-  it "association to the visitor fails when there are no wallets available" do
+  it "fails to associate the wallet with the visitor when there are no wallets available" do
     ip = '127.0.0.1'
     v = Visitor.create(ip: ip)
     expect { Wallet.associate_with_visitor( v.id ) }.to raise_error(Exceptions::NoFreeWalletsAvailable) # passes if actual is truthy (not nil or false)
