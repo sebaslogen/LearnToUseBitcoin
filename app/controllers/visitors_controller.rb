@@ -27,7 +27,7 @@ class VisitorsController < ApplicationController
         if @wallet
           if @visitor.save
             # TODO: Register event for statistics
-            Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: It worked!" ######################################################## TODO: Test code
+            Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Visitor with new wallet savedin DB" ######################################################## TODO: Test code
             render action: 'show', :layout => false
           else
             # TODO: Revert wallet association as the visitor is not recorded and the wallet is not delivered to visitor

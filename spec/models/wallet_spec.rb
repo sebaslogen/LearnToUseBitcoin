@@ -23,7 +23,7 @@ describe Wallet do
       expect( search.first.private_key ).to eq( private_key )
     end
     
-    it "stores does not valid Bitcoin addresses" do
+    it "does not store invalid Bitcoin address" do
       address = 'seb'
       private_key = '12345'
       w = Wallet.new(address: address, private_key: private_key)
@@ -32,7 +32,7 @@ describe Wallet do
       expect( search.size ).to eq( 0 )
     end
     
-    it "stores does not valid Bitcoin private keys" do
+    it "does not store invalid Bitcoin private key" do
       address = 'sebas'
       private_key = '123'
       w = Wallet.new(address: address, private_key: private_key)
@@ -41,7 +41,7 @@ describe Wallet do
       expect( search.size ).to eq( 0 )
     end
 
-    it "stores wallets without visitor by default" do
+    it "new wallets are stored without visitor by default" do
       address = 'sebas'
       private_key = '12345'
       Wallet.create(address: address, private_key: private_key)
