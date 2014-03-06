@@ -56,6 +56,9 @@ gem 'simple_form' # forms made easy
 gem 'compass-rails'#, '~> 2.0.alpha.0' # support for Zurb Foundation
 #gem 'zurb-foundation' # 4.x version
 gem 'foundation-rails' # 5.x version
+group :test do
+  gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
+end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
 end

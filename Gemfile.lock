@@ -80,8 +80,11 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.4)
     mime-types (1.25.1)
     minitest (4.7.5)
+    mocha (1.0.0)
+      metaclass (~> 0.0.1)
     multi_json (1.8.4)
     multi_xml (0.5.5)
     pg (0.17.1)
@@ -132,6 +135,9 @@ GEM
       rspec-expectations (= 3.0.0.beta2)
       rspec-mocks (= 3.0.0.beta2)
       rspec-support (= 3.0.0.beta2)
+    rspec-rails-mocha (0.3.2)
+      mocha (>= 0.9.8)
+      rspec-rails (>= 2.0.0)
     rspec-support (3.0.0.beta2)
     sass (3.2.14)
     sass-rails (4.0.1)
@@ -189,6 +195,7 @@ DEPENDENCIES
   rails_12factor
   rails_layout
   rspec-rails (~> 3.0.0.beta)
+  rspec-rails-mocha (~> 0.3.1)
   sass-rails (~> 4.0.0)
   simple_form
   sqlite3

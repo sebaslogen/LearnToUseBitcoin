@@ -3,19 +3,7 @@ require 'exceptions'
 class VisitorsController < ApplicationController
   
   before_action :check_captcha, only: [:show]
-  
-  def check_captcha
-    session_secret = params['session_secret'] # in this case, using Rails
-    ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY'])
-    ayah_passed = ayah.score_result(session_secret, request.remote_ip)
-    Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: IP is: #{request.remote_ip}" ######################################################## TODO: Test code
-    Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Test is: #{ayah_passed}" ######################################################## TODO: Test code
-    if not ayah_passed
-      flash[:error] = "Our monkeys detected that you didn't pass the Human test. Don't worry our monkeys fail too, just try again and have fun"
-      redirect_to root_path # halts request cycle
-    end
-  end
-  
+ 
   def show
     search = Visitor.where(ip: request.remote_ip)
     if search.empty?
@@ -59,5 +47,17 @@ contact him directly at invitations@leartousebitcoin.com" # TODO: Improve messag
   def cn
     self.class.name
   end
-  
+    
+  def check_captcha
+    if not check_ayah_passed(request.remote_ip)
+      flash[:error] = "Our monkeys detected that you didn't pass the Human test. Don't worry our monkeys fail too, just try again and have fun"
+      redirect_to root_path # halts request cycle
+    end
+  end
+    
+  def check_ayah_passed(ip)
+    session_secret = params['session_secret'] # in this case, using Rails
+    ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY'])
+    return ayah.score_result(session_secret, ip)
+  end
 end
