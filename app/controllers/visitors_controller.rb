@@ -15,7 +15,7 @@ class VisitorsController < ApplicationController
         if @wallet
           if @visitor.save
             # TODO: Register event for statistics
-            Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Visitor with new wallet savedin DB" ######################################################## TODO: Test code
+            Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Visitor with new wallet saved in DB" ######################################################## TODO: Test code
             render action: 'show', :layout => false
           else
             # TODO: Revert wallet association as the visitor is not recorded and the wallet is not delivered to visitor
@@ -32,13 +32,13 @@ class VisitorsController < ApplicationController
         Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Error, no available wallets in DB" ######################################################## TODO: Test code
         flash[:error] = "Our monkeys discovered there are no more wallets in the DB, \
 wait until the master monkey refills it and come back or \
-contact him directly at invitations@leartousebitcoin.com" # TODO: Improve message and UX flow
+contact her directly at invitations@leartousebitcoin.com" # TODO: Improve message and UX flow
         redirect_to root_path # halts request cycle
       end
     else # Do not show wallet
       # TODO: proper render of message or page
       Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Not showing again wallet of existing visitor" ######################################################## TODO: Test code
-      flash[:error] = "Our super moneys detected that you already received a wallet with some Bitcoins before" # TODO improve messaging and UX flow
+      flash[:error] = "Our super monkeys detected that you already received a wallet with some Bitcoins before" # TODO improve messaging and UX flow
       redirect_to root_path # halts request cycle
     end
   end 
@@ -50,7 +50,7 @@ contact him directly at invitations@leartousebitcoin.com" # TODO: Improve messag
     
   def check_captcha
     if not check_ayah_passed(request.remote_ip)
-      flash[:error] = "Our monkeys detected that you didn't pass the Human test. Don't worry our monkeys fail too, just try again and have fun"
+      flash[:error] = "Our monkeys detected that you didn't pass the Human test. Don't worry our monkeys fail too, just try again and have fun!"
       redirect_to root_path # halts request cycle
     end
   end
