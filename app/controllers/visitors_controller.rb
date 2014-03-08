@@ -11,25 +11,26 @@ class VisitorsController < ApplicationController
       Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Good, search for IP #{request.remote_ip} didn't find any previous visitor in DB" ######################################################## TODO: Test code
       @visitor = Visitor.new(ip: request.remote_ip)
       begin
-        @wallet = Wallet.associate_with_visitor(@visitor.id)
+        @wallet = Wallet.associate_with_visitor!(@visitor)
         if @wallet
-          if @visitor.save
-            # TODO: Register event for statistics
-            Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Visitor with new wallet saved in DB" ######################################################## TODO: Test code
-            render action: 'show', :layout => false
-          else
-            # TODO: Revert wallet association as the visitor is not recorded and the wallet is not delivered to visitor
-            Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error saving new visitor to DB with IP:#{request.remote_ip}" ######################################################## TODO: Test code
-            flash[:error] = "Our monkeys made a mess again and created a magic error saving new visitor to DB with IP:#{request.remote_ip}"
-            redirect_to root_path # halts request cycle
-          end
+          # TODO: Register event for statistics
+          Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Visitor with new wallet saved in DB" ######################################################## TODO: Test code
+          render action: 'show', :layout => false
         else
-          Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error linking wallet to visitor in DB" ######################################################## TODO: Test code
+          Rails.logger.error "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error linking wallet to visitor in DB"
           flash[:error] = "Our monkeys made a mess again and created a magic error linking wallet to visitor in DB"
           redirect_to root_path # halts request cycle
         end
+      rescue ActiveRecord::ActiveRecordError => e
+        Rails.logger.error "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error, Not possible to interact with DB. Error:#{e}-#{e.message}"
+        flash[:error] = "Our monkeys made a mess and could not access the database. Contact invitations@leartousebitcoin.com"
+        redirect_to root_path # halts request cycle
+      rescue Exceptions::NoVisitorError
+        Rails.logger.error "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error, Not possible to create a new Visitor (recieved nil from call to new)"
+        flash[:error] = "Our monkeys made a mess and could not create a new record for you, our precious visitor. Contact invitations@leartousebitcoin.com"
+        redirect_to root_path # halts request cycle
       rescue Exceptions::NoFreeWalletsAvailable
-        Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Error, no available wallets in DB" ######################################################## TODO: Test code
+        Rails.logger.error "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error, no available wallets in DB" ######################################################## TODO: Test code
         flash[:error] = "Our monkeys discovered there are no more wallets in the DB, \
 wait until the master monkey refills it and come back or \
 contact her directly at invitations@leartousebitcoin.com" # TODO: Improve message and UX flow

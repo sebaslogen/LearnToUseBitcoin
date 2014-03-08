@@ -7,23 +7,28 @@ class Wallet < ActiveRecord::Base
   validates :address,
             presence: true,
             uniqueness: true,
-            #format: { with: /regex/i },
+            #format: { with: /regex/ },
             length: { minimum: 5, maximum: 150 }  ######################################################## TODO: Test code
   validates :private_key,
             presence: true,
             uniqueness: true,
-            #format: { with: /regex/i },
+            #format: { with: /regex/ },
             length: { minimum: 5, maximum: 150 }  ######################################################## TODO: Test code
   
-  def self.associate_with_visitor( id )
+  def self.associate_with_visitor!( visitor )
+    if not visitor
+      raise Exceptions::NoVisitorError
+    end
     # Associate the first not used wallet with the id of the visitor and return it
     search = Wallet.where(visitor_id: nil)
     if not search.empty?
       wallet = search.first
-      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: found in DB #{wallet.address}" ######################################################## TODO: Test code
-      wallet.update(visitor_id: id) # Mark the wallet as used by associating it to its new owner
-      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Wallet updated in DB" ######################################################## TODO: Test code
-      wallet.save # To add a new entry to the DB: it will return true OR false
+      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Wallet available found in DB #{wallet.address}"
+      ActiveRecord::Base.transaction do
+        visitor.save! # First save the Visitor to create an id in the DB for him/her
+        wallet.update!(visitor_id: visitor.id) # Mark the wallet as used by associating it to its new owner
+        Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Wallet #{wallet.address} assigned in DB to user #{visitor.id}"
+      end
       if search.size < 50
         # TODO: call create_new_wallets
       end
@@ -31,6 +36,26 @@ class Wallet < ActiveRecord::Base
     else # Error
       raise Exceptions::NoFreeWalletsAvailable
     end
+  end
+  
+  def self.disassociate!( visitor_id )
+=begin
+    # Associate the first not used wallet with the id of the visitor and return it
+    search = Wallet.where(visitor_id: nil)
+    if not search.empty?
+      wallet = search.first
+      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: found in DB #{wallet.address}" ######################################################## TODO: Test code
+      wallet.update(visitor_id: visitor_id) # Mark the wallet as used by associating it to its new owner
+      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}: Wallet updated in DB" ######################################################## TODO: Test code
+      wallet.save # To add a new entry to the DB: it will return true OR false
+      if search.size < 50
+        # TODO: call create_new_wallets
+      end
+      return wallet
+    else # Error
+=end
+      raise Exceptions::NoFreeWalletsAvailable
+    #end
   end
   
   def self.create_new_wallets
