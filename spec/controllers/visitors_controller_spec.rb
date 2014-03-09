@@ -15,10 +15,14 @@ describe VisitorsController do
   
   context 'when the Captcha is invalid' do
     it 'the Captcha check returns false' do
+      # Setup
       @controller = VisitorsController.new
       @controller.params = {:session_secret => '123465789'}
+      # Exercise
       ayah_passed = @controller.instance_eval{ check_ayah_passed("1.2.3.4") }   # invoke the private method
+      # Verify
       expect(ayah_passed).to be false
+      # Teardown
     end
   end
   
@@ -34,9 +38,10 @@ Don't worry our monkeys fail too, just try again and have fun!$/)
   context 'request to show wallet page after passing the Captcha for a new Visitor' do
     it 'renders the Wallet show page with wallet information' do
       AYAH::Integration.any_instance.stubs(:score_result).returns(true)
-      create_wallet
+      address, _, _ = create_wallet
       get :show
-      expect(response).to render_template('show')
+      expect( Visitor.first.wallets.first.address ).to eq( address )
+      expect( response ).to render_template('show')
     end
   end
   

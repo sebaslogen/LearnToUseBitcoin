@@ -9,7 +9,9 @@ end
 describe Wallet do
   context 'valid database structure' do
     it 'stores valid Bitcoin addresses' do
+      # Setup
       address, _, w = create_wallet
+      # Exercise and verify
       expect( w.save ).to be_truthy, "Failed to save to DB with error:#{w.errors.messages}"
       search = Wallet.where(address: address)
       expect( search.size ).to eq( 1 ), "There should be one and only one wallet with address #{address}. Size of search results:#{search.size}"
@@ -50,10 +52,12 @@ end
 
 describe Wallet, '.associate_with_visitor!' do
   it 'associates the first available wallet to the visitor and stores everything in DB' do
+    # Setup
     ip = '127.0.0.1'
     v = Visitor.new(ip: ip)
     _, _, w = create_wallet
     w.save!
+    # Exercise and verify
     expect( Wallet.associate_with_visitor!( v ) ).to be_truthy # passes if actual is truthy (not nil or false)
     db_visitor = Visitor.find(1)
     db_wallet = Wallet.find(1)
