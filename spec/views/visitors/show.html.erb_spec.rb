@@ -11,14 +11,12 @@ describe 'visitors/show' do
     #Setup
     ip = '1.2.3.4'
     address, private_key, w = create_wallet
-    w.save!
-    v = Visitor.new(ip: ip)
+    v = Visitor.create!(ip: ip)
     w.update!(visitor_id: v.id)
-    v.save!
     assign(:wallet, w)
     assign(:visitor, v)
 =begin
-    # Alternative with stubs
+# Alternative with stubs (but missing internals like @visitor.wallets.first.address)
     assign(:wallet, stub_model(Wallet,
       address: "sebas",
       private_key: '12345'
