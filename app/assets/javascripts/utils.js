@@ -120,7 +120,7 @@ function setupScrollFadingAndResize() {
 }
 
 function loadDemoContent() {
-  $("#demo-content").load("/demo");
+  $("#demo-content").load("demo");
 }
 
 $(document).ready(function() {
