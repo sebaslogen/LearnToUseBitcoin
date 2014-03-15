@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -56,11 +57,13 @@ gem 'simple_form' # forms made easy
 gem 'compass-rails'#, '~> 2.0.alpha.0' # support for Zurb Foundation
 #gem 'zurb-foundation' # 4.x version
 gem 'foundation-rails' # 5.x version
+gem "rails-assets-angular" # AngularJS library
 group :test do
   gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
 end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rails-assets-angular-mocks'
 end
 group :development do
   gem 'better_errors' # helps when things go wrong
