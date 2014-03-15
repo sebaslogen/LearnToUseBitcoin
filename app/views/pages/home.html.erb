@@ -53,21 +53,11 @@
   </div>
 </div>
 
-<div class="section sStart" id="start">
+<div class="section sStart" id="start" ng-controller="DemoCtrl">
   <h1>Start using Bitcoin</h1>
   <p>Get your first Bitcoins here.<br>
     After redeem finishes show the "share your love" dialog</p>
-  <button class="btn btn-primary" ng-click="showDemo()">Start using Bitcoin <i class="fi-bitcoin bitcoin-button"></i></button>
-  <form name="input_test" action="visitors/show" method="get">
-    <fieldset>
-      <label>You are almost there...</label>
-      <br>
-      <% ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY']) %>
-      <%= raw( ayah.get_publisher_html ) %>
-      <button type="submit" class="btn btn-primary">Get Bitcoins <i class="fi-bitcoin bitcoin-button"></i></button>
-      <!-- <button type="submit" class="btn btn-primary">Get Bitcoins</button> -->
-    </fieldset>
-  </form>
+  <button class="btn btn-primary" id="show-demo" ng-click="showDemo()">Start using Bitcoin <i class="fi-bitcoin bitcoin-button"></i></button>
 </div>
 
 <div class="section sUse" id="use">
