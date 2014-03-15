@@ -119,6 +119,10 @@ function setupScrollFadingAndResize() {
   });
 }
 
+function loadDemoContent() {
+  $("#demo-content").load("/demo");
+}
+
 $(document).ready(function() {
   setupJavaScript();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
@@ -127,4 +131,5 @@ $(document).ready(function() {
   setupScrollHintAnimation();
   setupScrollFadingAndResize();
   resizeWindow();
+  loadDemoContent();
 });
