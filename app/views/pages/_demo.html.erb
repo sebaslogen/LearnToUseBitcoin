@@ -4,9 +4,18 @@
   <a class="inline-title circle-button" href="#demo-section-3">3</a>
 </h2>
 
-<div id="demo-section-1">
-  <label class="fake-circle-button"> 1 </label>
-</div>
+Sending and receiving bitcoins is as simple as sending an email, the first thing we need is an <strong>address</strong><br><br>
+<table id="demo-section-1" class="rounded-border">
+  <td><label class="fake-circle-button"> 1 </label><%= image_tag "vault.png", alt: "Vault image" %></td>
+  <td>
+    A Bitcoin <strong>address</strong> is the place where the bitcoins are actually stored<br>
+    Like a transparent <strong>vault</strong>, the coins can only be moved by the <strong>key owner</strong> but the world can see what is inside<br><br>
+    The <strong>private key</strong>
+  </td>
+  <td>
+    <%= image_tag "vault.png", alt: "Vault image" %>
+  </td>
+</table>
 <div id="demo-section-2">
   <label class="fake-circle-button"> 2 </label>
 </div>
@@ -20,7 +29,7 @@
     <br>
     <% ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY']) %>
     <%= raw( ayah.get_publisher_html ) %>
-    <button type="submit" class="radius round large">Get your first bitcoins <i class="fi-bitcoin bitcoin-button"></i></button>
+    <button type="submit" class="radius round large">Get your first bitcoins <i class="fi-bitcoin-circle bitcoin-button"></i></button>
     <!-- <button type="submit" class="btn btn-primary">Get Bitcoins</button> -->
   </fieldset>
 </form>
