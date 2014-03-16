@@ -104,7 +104,7 @@ function resizeWindow() {
   $('#footsteps-image').height(parseInt(ratio * 444));
   $('#footsteps-image').css('top','-' + video_half_height + 'px');
   // Adjust div height according to window width using contents size
-  $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height()) + 66);
+  $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 100);
 }
 
 function setupScrollFadingAndResize() {
