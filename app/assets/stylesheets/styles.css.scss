@@ -10,11 +10,6 @@ h1 {
   text-shadow: 2px 2px 0px rgba(255, 255, 255, .8);
 }
 
-p, a {
-  text-align:center;
-  /*text-shadow: 0px 1px 0px rgba(255, 255, 255, .8);*/
-}
-
 h3 {
   font-family: proxima-nova, proxima-nova-1, proxima-nova-2, 'Helvetica Neue', Arial, sans-serif;
   color: #3F3F3F;
@@ -30,6 +25,10 @@ button:focus {
 }
 
 .circle-button {
+  // @include button($button-med, $alert-color, $button-round, false, false, false);
+  @extend .button;
+  @extend .round;
+  @extend .alert;
   margin: 5px;
   padding-left: 15px;
   padding-right: 15px;
@@ -38,12 +37,13 @@ button:focus {
   vertical-align: middle;
 }
 
-.fake-button {
-  @include button;
-  @extend radius;
-  @extend round;
-  @include alert;
-  @extend circle-button;
+a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-button:visited {
+  color:#FFFFFF;
+  text-decoration: none;
+}
+
+.fake-circle-button {
+  @extend .circle-button;
   cursor: default;
 }
 
@@ -60,10 +60,6 @@ a:link, a:visited {
 }
 a:hover, a:active {
     background-color:#7A991A;
-}*/
-/*
-p {
-    font-size: 20px;
 }*/
 
 .hidden {

@@ -1,5 +1,5 @@
 <% content_for :title do %>Learn To Use Bitcoin (Home)<% end %>
-<div class="navigation-menu visible-desktop" id="widthHeightOpacity" align="left">
+<div class="navigation-menu show-for-medium-up" id="widthHeightOpacity" align="left">
   <%= image_tag "index-icon.png", id: "navigation-menu-icon", alt: "Menu" %>
   <div class="navigation-content hidden" >
     <ul class="navigation-content-list">
@@ -24,13 +24,15 @@
 
 <div class="section sWelcome" id="welcome">
   <div id="welcome-content">
-    <div class="language lang-typo1" id="welcome_sp">Bienvenido</div>
-    <div class="language lang-typo1" id="welcome_et">Tere tulemast</div>
-    <div class="language lang-typo2" id="welcome_fr">Bienvenue</div>
-    <div class="language lang-typo3" id="welcome_nl">Welkom</div>
-    <div class="language lang-typo2" id="welcome_de">Willkommen</div>
-    <div class="language lang-typo3" id="welcome_pt">Bem-vindo</div>
-    <div class="language lang-typo2" id="welcome_it">Benvenuto</div>
+    <div id="welcom-languages" class="show-for-medium-up">
+      <div class="language lang-typo1" id="welcome_sp">Bienvenido</div>
+      <div class="language lang-typo1" id="welcome_et">Tere tulemast</div>
+      <div class="language lang-typo2" id="welcome_fr">Bienvenue</div>
+      <div class="language lang-typo3" id="welcome_nl">Welkom</div>
+      <div class="language lang-typo2" id="welcome_de">Willkommen</div>
+      <div class="language lang-typo3" id="welcome_pt">Bem-vindo</div>
+      <div class="language lang-typo2" id="welcome_it">Benvenuto</div>
+    </div>
     <h1 class="extruded background-position" id="welcome_en">Welcome</h1>
     <h2 class="extruded-subtitle background-position" >to the amazing revolution of money</h2>
     <%= image_tag "BC_Logotype.png", class: "background-position", alt: "Bitcoin" %>
@@ -48,15 +50,18 @@
   <div class="video-container" align="center">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Um63OQz3bjo?rel=0&cc_load_policy=1" frameborder="0" allowfullscreen></iframe>
   </div>
-  <div class="visible-desktop" id="footsteps" align="right">
+  <div class="show-for-medium-up" id="footsteps" align="right">
     <%= image_tag "footsteps.png", id: "footsteps-image", width: "174", height: "444" %>
   </div>
 </div>
 
 <div class="section sStart" id="start" ng-controller="DemoCtrl">
   <h1>Start using Bitcoin</h1>
-  <p>Get your first Bitcoins here.<br>
-    After redeem finishes show the "share your love" dialog</p>
+  <h4>Bitcoin is a digital <strong>currency</strong><br>
+    that allows you to send and recieve payments from person to person<br>
+    <strong>very fast</strong><br>
+    without the need of any intermediary (bank, goverment or company)<br>
+    <strong>at almost zero cost.</strong></h4>
   <button class="radius round" id="show-demo" ng-click="showDemo()">Start using Bitcoin <i class="fi-bitcoin bitcoin-button"></i></button>
 </div>
 
