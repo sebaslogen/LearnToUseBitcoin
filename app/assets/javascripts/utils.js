@@ -123,6 +123,19 @@ function loadDemoContent() {
   $("#demo-content").load("demo");
 }
 
+function updateToolTips() {
+  $(document).ready(function() {
+    $('.has-tooltip[title]').qtip({
+      style: { classes: 'qtip-youtube qtip-shadow qtip-rounded' },
+      position: {
+        my: 'bottom center',  // Position my bottom center...
+        at: 'top center', // at the top center of...
+        target: this // my target
+      }
+    });
+  });
+}
+
 $(document).ready(function() {
   setupJavaScript();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
@@ -132,4 +145,5 @@ $(document).ready(function() {
   setupScrollFadingAndResize();
   resizeWindow();
   loadDemoContent();
+  updateToolTips();
 });
