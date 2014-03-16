@@ -6,15 +6,26 @@
 
 Sending and receiving bitcoins is as simple as sending an email, the first thing we need is an <strong>address</strong><br><br>
 <table id="demo-section-1" class="rounded-border">
-  <td><label class="fake-circle-button"> 1 </label><%= image_tag "vault.png", alt: "Vault image" %></td>
+  <td><label class="fake-circle-button"> 1 </label></td>
+  <td valign="top"><%= image_tag "vault.png", alt: "Vault image" %></td>
   <td>
-    A Bitcoin <strong>address</strong> is the place where the bitcoins are actually stored<br>
-    Like a transparent <strong>vault</strong>, the coins can only be moved by the <strong>key owner</strong> but the world can see what is inside<br><br>
-    The <strong>private key</strong>
+    <div class="row">
+      <div class="small-10 columns text-left">
+        <p>
+          A Bitcoin <strong>address</strong> is the place where the bitcoins are actually stored<br>
+          Like a transparent <strong>vault</strong>, the coins can only be moved by the <strong>key owner</strong> but the world can see what is inside
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-2 columns"></div>
+      <div class="small-10 columns text-right">
+        <p>The <strong>private key</strong> is the only key in the world that can transfer the bitcoins<br>
+        You can have as many addresses as desired for free</p>
+      </div>
+    </div>
   </td>
-  <td>
-    <%= image_tag "vault.png", alt: "Vault image" %>
-  </td>
+  <td valign="bottom"><%= image_tag "key.png", alt: "Private Key image" %></td>
 </table>
 <div id="demo-section-2">
   <label class="fake-circle-button"> 2 </label>
