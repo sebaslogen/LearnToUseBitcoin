@@ -133,6 +133,19 @@ function updateToolTips() {
         target: this // my target
       }
     });
+    $('.has-external-tooltip').each(function() {
+      $(this).qtip({
+        content: {
+          text: $('#' + $(this).attr('tooltip-id'))
+        },
+        style: { classes: 'qtip-youtube qtip-shadow qtip-rounded' },
+        position: {
+          my: 'bottom center',  // Position my bottom center...
+          at: 'top center', // at the top center of...
+          target: this // my target
+        }
+      });
+    });
   });
 }
 
