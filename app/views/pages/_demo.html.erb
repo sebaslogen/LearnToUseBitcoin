@@ -1,7 +1,7 @@
 <h2 class="inline-title">Bitcoin is as easy as 
-  <a class="inline-title circle-button" href="#demo-section-1">1</a>
-  <a class="inline-title circle-button" href="#demo-section-2">2</a>
-  <a class="inline-title circle-button" href="#demo-section-3">3</a>
+  <a class="circle-button" href="#demo-section-1">1</a>
+  <a class="circle-button" href="#demo-section-2">2</a>
+  <a class="circle-button" href="#demo-section-3">3</a>
 </h2>
 
 <p>Sending and receiving bitcoins is as simple as sending an email, the first thing we need is an <strong>address</strong></p><br>
@@ -30,9 +30,13 @@
         <p>
           The <strong>private key</strong> is the only key in the world that can transfer the bitcoins from the Bitcoin address<br>
           The private key is a long sequence of letters and numbers and it looks like this:
-          <strong class="title has-tooltip" title="This key is unique for the address above">5J3p5psdFRh1XCBXsb8AbpaVTnwSjv5MMqt5ceAMMAHVeXhq8yi</strong>
         </p>        
       </div>
+    </div>
+    <div class="row text-right">
+      <p class="side-padding">
+        <strong class="title has-tooltip" title="This key is unique for the address above">5J3p5psdFRh1XCBXsb8AbpaVTnwSjv5MMqt5ceAMMAHVeXhq8yi</strong>
+      </p>
     </div>
   </td>
   <td valign="bottom"><%= image_tag "key.png", alt: "Private Key image" %></td>
@@ -42,10 +46,11 @@
   <td><label class="fake-circle-button"> 2 </label></td>
   <td>
     <p>
-      <strong>All the transactions</strong> ever made in the Bitcoin economy are stored in a public record<br>
+      <strong>All the transactions</strong> ever made in the Bitcoin economy are stored in a <strong class="title has-tooltip" title="A full and updated copy of all transactions is stored in the computer of most of the users of Bitcoin">public record</strong><br>
       This public record works as a ledger and it is called the <strong class="title has-external-tooltip" tooltip-id="blockchain-tooltip">Blockchain</strong><br>
     </p>
-    <div id="blockchain-tooltip" class="hidden">Do not confuse with Blockchain.info a website to see Bitcoin transactions happening in real time
+    <div id="blockchain-tooltip" class="hidden">
+      Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time
     </div>
   </td>
 </table>

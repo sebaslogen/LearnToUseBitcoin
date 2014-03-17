@@ -108,10 +108,6 @@ function resizeWindow() {
 }
 
 function setupScrollFadingAndResize() {
-  $(window).on({
-    scroll: scrollFading,
-    resize: resizeWindow
-  });
   $("body,html").bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
     if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
       $("html,body").stop();
@@ -131,6 +127,10 @@ function updateToolTips() {
         my: 'bottom center',  // Position my bottom center...
         at: 'top center', // at the top center of...
         target: this // my target
+      },
+      hide: {
+        fixed: true,
+        delay: 200
       }
     });
     $('.has-external-tooltip').each(function() {
@@ -143,6 +143,10 @@ function updateToolTips() {
           my: 'bottom center',  // Position my bottom center...
           at: 'top center', // at the top center of...
           target: this // my target
+        },
+        hide: {
+          fixed: true,
+          delay: 200
         }
       });
     });
@@ -159,4 +163,8 @@ $(document).ready(function() {
   resizeWindow();
   loadDemoContent();
   updateToolTips();
+  $(window).on({
+    scroll: scrollFading,
+    resize: resizeWindow
+  });
 });

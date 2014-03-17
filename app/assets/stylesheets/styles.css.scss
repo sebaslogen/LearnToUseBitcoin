@@ -54,6 +54,11 @@ a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-bu
 strong.title {
   color: #001A83;
 }
+
+p.side-padding {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
 /* Button links
 a:link, a:visited {
     display:block;
@@ -75,8 +80,8 @@ a:hover, a:active {
 
 .container {
   width:100%;
-  
 }
+
 .section {
   background:rgba(25,25,25,.05);
   width:100%;
