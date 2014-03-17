@@ -55,10 +55,6 @@ strong.title {
   color: #001A83;
 }
 
-p.side-padding {
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
-}
 /* Button links
 a:link, a:visited {
     display:block;
@@ -362,4 +358,21 @@ ul.navigation-content-list {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Quirks and fixes */
+p.side-padding { /* Fix for private key text correctly aligned */
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  float: right;
+}
+
+/* Fix image aligned to bottom right */
+td.relative-position {
+  position: relative;
+}
+div.fix-bottom-position {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
