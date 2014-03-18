@@ -1,8 +1,15 @@
-function setupJavaScript() {
+function setupActiveJavaScript() {
   $('#welcome-content').css({
     'position': 'fixed',
     'margin': '0 0 0 -37.5%'
   });
+}
+
+function isSmallScreen() {
+  if ($( window ).width() <= 640)
+    return true;
+  else
+    return false;
 }
 
 function moveToSection(id, speed) {
@@ -47,7 +54,7 @@ function setupNavigationMenu() {
 }
 
 function setupAutoScroll() {
-  if ($('div.alert-box').size() == 0) { // Only whe there is no flash message shown at page top
+  if (($('div.alert-box').size() == 0) && (! isSmallScreen()) ) { // Only whe there is no flash message shown at page top or is not a mobile
     // Automatically move to start section after a few seconds if user hasn't seen it yet
     setTimeout(function() {
       if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
@@ -154,7 +161,7 @@ function updateToolTips() {
 }
 
 $(document).ready(function() {
-  setupJavaScript();
+  setupActiveJavaScript();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
   setupNavigationMenu();
   setupAutoScroll();
