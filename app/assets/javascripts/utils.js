@@ -122,10 +122,6 @@ function setupScrollFadingAndResize() {
   });
 }
 
-function loadDemoContent() {
-  $("#demo-content").load("demo");
-}
-
 function updateToolTips() {
   $(document).ready(function() {
     $('.has-tooltip[title]').qtip({
@@ -168,7 +164,6 @@ $(document).ready(function() {
   setupScrollHintAnimation();
   setupScrollFadingAndResize();
   resizeWindow();
-  loadDemoContent();
   updateToolTips();
   $(window).on({
     scroll: scrollFading,

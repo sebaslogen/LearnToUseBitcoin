@@ -7,6 +7,8 @@ class PagesController < HighVoltage::PagesController
     case params[:id]
     when '_demo'
       false
+    when '_demo-small'
+      false
     else
       'application'
     end
