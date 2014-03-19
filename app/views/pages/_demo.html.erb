@@ -53,19 +53,34 @@
   <div class="small-1 columns text-center">
     <label class="fake-circle-button"> 2 </label>
   </div>
-  <div class="small-11 columns text-center">
+  <div class="small-8 columns text-center">
     <p>
-      <strong>All the transactions</strong> ever made in the Bitcoin economy are stored in a <strong class="title has-tooltip" title="A full and updated copy of all transactions is stored in the computer of most of the users of Bitcoin">public record</strong><br>
+      <br>
+      <strong>All transactions</strong> ever made in the Bitcoin economy are stored in a <strong class="title has-tooltip" title="A full and updated copy of all transactions is stored in the computer of most of the users of Bitcoin">public record</strong><br>
       This public record works as a ledger and it is called the <strong class="title has-external-tooltip" tooltip-id="blockchain-tooltip">Blockchain</strong><br>
     </p>
     <div id="blockchain-tooltip" class="hidden">
       Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time
     </div>
   </div>
+  <div class="small-3 columns text-center">
+    <%= image_tag "ledger.png", class: 'rounded-corners', alt: "Ledger image" %>
+  </div>
 </div>
 
-<div id="demo-section-3">
-  <label class="fake-circle-button"> 3 </label>
+<div id="demo-section-3" class="row rounded-border info-block">
+  <div class="small-1 columns text-center">
+    <label class="fake-circle-button"> 3 </label>
+  </div>
+  <div class="small-3 columns text-center">
+    <%= image_tag "wallet.png", alt: "Wallet image" %>
+  </div>
+  <div class="small-8 columns text-center">
+    <p>
+      The <strong>wallet</strong> is the manager of all your addresses and private keys<br>
+      It is the software that lets you easily send and receive or create new addresses
+    </p>
+  </div>
 </div>
 
 <form name="input_test" action="visitors/show" method="get">
