@@ -6,10 +6,11 @@ function setupActiveJavaScript() {
 }
 
 function isSmallScreen() {
-  if ($( window ).width() <= 640)
+  if ($( window ).width() <= 640){
     return true;
-  else
+  } else {
     return false;
+  }
 }
 
 function moveToSection(id, speed) {
@@ -102,7 +103,7 @@ function scrollFading() {
   $('#footsteps-image').css('opacity', footsteps_opacity / 2);
 }
 
-function resizeWindow() {
+function updateSizes() {
   $(document).ready(function() {
     /* Adapt footsteps position and size */
     var space_side_video = ( $(window).width() - $('.video-container').find('iframe').width() ) / 2;
@@ -116,8 +117,25 @@ function resizeWindow() {
     if ($('div#demo-content').css('display') != 'none') {
       $('div.sStart').height($('div#demo-content').height() + 100);
     }
-    updateToolTips();
-    console.log('resized');
+    checkUpdateSizeRequired();
+  });
+}
+
+function checkUpdateSizeRequired() {
+  setTimeout(function() {
+    if ($('div#demo-content').css('display') != 'none') {
+      if ($('div.sStart').height() != $('div#demo-content').height() + 100) {
+        $('div.sStart').height($('div#demo-content').height() + 100);
+        checkUpdateSizeRequired(); // Repeat until updated
+      }
+    }
+  }, 400); // Wait 200 milliseconds to let Foundation finish adjusting
+}
+
+function resizeWindow() {
+  $(document).ready(function() {
+    updateSizes();
+    loadDemoContent();
   });
 }
 
@@ -130,6 +148,7 @@ function setupScrollFadingAndResize() {
 }
 
 function updateToolTips() {
+  $(".qtip").remove();
   $(document).ready(function() {
     $('.has-tooltip[title]').qtip({
       style: { classes: 'qtip-youtube qtip-shadow qtip-rounded' },
@@ -163,6 +182,41 @@ function updateToolTips() {
   });
 }
 
+function loadDemoContent() {
+  if ($("#demo-content").hasClass('empty-content')) {
+    if (isSmallScreen()) {
+      $("#demo-content").load("/demo-small", function() {
+        $("#demo-content").addClass('small-content');
+        updateSizes();
+        updateToolTips();
+      });
+    } else {
+      $("#demo-content").load("/demo", function() {
+        $("#demo-content").addClass('normal-content');
+        updateSizes();
+        updateToolTips();
+      });
+    }
+  } else if ($("#demo-content").hasClass('normal-content')) {
+    if (isSmallScreen()) { // Load small content when page shrinks
+      $("#demo-content").load("/demo-small", function() {
+        $("#demo-content").removeClass('normal-content').addClass('small-content');
+        updateSizes();
+        updateToolTips();
+      });
+    }
+  } else if ($("#demo-content").hasClass('small-content')) {
+    if ( ! isSmallScreen()) { // Load nomal content when page grows
+      $("#demo-content").load("/demo", function() {
+        $("#demo-content").removeClass('small-content').addClass('normal-content');
+        updateSizes();
+        updateToolTips();
+      });
+    }
+  }
+}
+
+
 $(document).ready(function() {
   setupActiveJavaScript();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
@@ -172,6 +226,7 @@ $(document).ready(function() {
   setupScrollFadingAndResize();
   resizeWindow();
   updateToolTips();
+  loadDemoContent();
   $(window).on({
     scroll: scrollFading,
     resize: resizeWindow
