@@ -80,12 +80,29 @@
       The <strong>wallet</strong> is the manager of all your addresses and private keys<br>
       It is the software that lets you easily send and receive or create new addresses
     </p>
+    <p>
+      There are three types of <strong>wallet applications</strong>
+    </p>
+    <div class="row">
+      <div class="small-4 columns text-center">
+        <%= image_tag "phone.png", alt: "Phone image" %>
+        <p><br><strong class="title">Mobile</strong></p>
+      </div>
+      <div class="small-4 columns text-center">
+        <%= image_tag "desktop.png", alt: "Desktop PC image" %>
+        <p><strong class="title">Desktop App</strong></p>
+      </div>
+      <div class="small-4 columns text-center">
+        <%= image_tag "browser.png", alt: "Web browser image" %>
+        <p><strong class="title">Web wallet</strong></p>
+      </div>
+    </div>
   </div>
 </div>
 
 <form name="input_test" action="visitors/show" method="get">
   <fieldset>
-    <label>You are almost there...</label>
+    <p class="label round radius success">You are almost there...</p>
     <br>
     <% ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY']) %>
     <%= raw( ayah.get_publisher_html ) %>
