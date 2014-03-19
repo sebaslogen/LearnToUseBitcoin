@@ -78,23 +78,40 @@
   <div class="small-8 columns text-center">
     <p>
       The <strong>wallet</strong> is the manager of all your addresses and private keys<br>
-      It is the software that lets you easily send and receive or create new addresses
+      It is the software that lets you easily <strong>send and receive bitcoins</strong> or create new addresses
     </p>
     <p>
       There are three types of <strong>wallet applications</strong>
     </p>
     <div class="row">
       <div class="small-4 columns text-center">
-        <%= image_tag "phone.png", alt: "Phone image" %>
-        <p><br><strong class="title">Mobile</strong></p>
+        <span class="title has-external-tooltip" tooltip-id="phone-tooltip">
+          <%= image_tag "phone.png", alt: "Phone image" %>
+          <p><br><strong class="title">Mobile</strong></p>
+        </span>
+        <div id="phone-tooltip" class="hidden text-center">
+          This is convenient for day to day usage on the move<br>
+          A couple of good Android wallets <%= link_to('Blockchain.info', 'https://blockchain.info/wallet/android-app', target: "_blank") %> and 
+          <%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %>
+        </div>
       </div>
       <div class="small-4 columns text-center">
-        <%= image_tag "desktop.png", alt: "Desktop PC image" %>
-        <p><strong class="title">Desktop App</strong></p>
+        <span class="title has-external-tooltip" tooltip-id="desktop-tooltip">
+          <%= image_tag "desktop.png", alt: "Desktop PC image" %>
+          <p><strong class="title">Desktop App</strong></p>
+        </span>
+        <div id="desktop-tooltip" class="hidden text-center">
+          Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time
+        </div>
       </div>
       <div class="small-4 columns text-center">
-        <%= image_tag "browser.png", alt: "Web browser image" %>
-        <p><strong class="title">Web wallet</strong></p>
+        <span class="title has-external-tooltip" tooltip-id="browser-tooltip">
+          <%= image_tag "browser.png", alt: "Web browser image" %>
+          <p><strong class="title">Web wallet</strong></p>
+        </span>
+        <div id="browser-tooltip" class="hidden text-center">
+          Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time
+        </div>
       </div>
     </div>
   </div>

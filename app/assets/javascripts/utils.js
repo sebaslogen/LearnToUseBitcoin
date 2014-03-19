@@ -103,16 +103,22 @@ function scrollFading() {
 }
 
 function resizeWindow() {
-  /* Adapt footsteps position and size */
-  var space_side_video = ( $(window).width() - $('.video-container').find('iframe').width() ) / 2;
-  var video_half_height = $('.video-container').find('iframe').height() / 2;
-  var ratio = space_side_video / 178;
-  $('#footsteps-image').width(parseInt(ratio * 174));
-  $('#footsteps-image').height(parseInt(ratio * 444));
-  $('#footsteps-image').css('top','-' + video_half_height + 'px');
-  // Adjust div height according to window width using contents size
-  $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 100);
-  $('div.sStart').height($('div#demo-content').height() + 100);
+  $(document).ready(function() {
+    /* Adapt footsteps position and size */
+    var space_side_video = ( $(window).width() - $('.video-container').find('iframe').width() ) / 2;
+    var video_half_height = $('.video-container').find('iframe').height() / 2;
+    var ratio = space_side_video / 178;
+    $('#footsteps-image').width(parseInt(ratio * 174));
+    $('#footsteps-image').height(parseInt(ratio * 444));
+    $('#footsteps-image').css('top','-' + video_half_height + 'px');
+    // Adjust div height according to window width using contents size
+    $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 100);
+    if ($('div#demo-content').css('display') != 'none') {
+      $('div.sStart').height($('div#demo-content').height() + 100);
+    }
+    updateToolTips();
+    console.log('resized');
+  });
 }
 
 function setupScrollFadingAndResize() {
