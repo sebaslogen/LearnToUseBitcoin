@@ -37,8 +37,15 @@ button:focus {
   vertical-align: middle;
 }
 
-table.rounded-border {
+.info-block {
+  width:         100%;
+  margin-top:    30px;
+  margin-bottom: 30px;
+  max-width:     1300px;
+  padding:       15px;
   border-radius: 15px;
+  background-color:#fff;
+  font-family: verdana, arial, helvetica, sans-serif;
 }
 
 a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-button:visited {
@@ -368,7 +375,7 @@ p.side-padding { /* Fix for private key text correctly aligned */
 }
 
 /* Fix image aligned to bottom right */
-td.relative-position {
+div.relative-position {
   position: relative;
 }
 div.fix-bottom-position {

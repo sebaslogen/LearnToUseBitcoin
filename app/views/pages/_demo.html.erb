@@ -5,54 +5,55 @@
 </h2>
 
 <p>Sending and receiving bitcoins is as simple as sending an email, the first thing we need is an <strong>address</strong></p><br>
-<table id="demo-section-1" class="rounded-border">
-  <td><label class="fake-circle-button"> 1 </label></td>
-  <td class="relative-position">  
+
+<div id="demo-section-1" class="row rounded-border relative-position info-block">
+  <div class="small-1 columns text-center">
+    <label class="fake-circle-button"> 1 </label>
+  </div>
+  <div class="small-2 columns text-center">
+    <%= image_tag "vault.png", alt: "Vault image" %>
+  </div>
+  <div class="small-7 columns">
     <div class="row">
-      <div class="small-2 columns text-center">
-        <%= image_tag "vault.png", alt: "Vault image" %>
-      </div>
-      <div class="small-8 columns">
-        <div class="row">
-          <div class="small-10 columns text-left">
-            <p>
-              A Bitcoin <strong>address</strong> is the place where the bitcoins are actually stored<br>
-              Like a transparent <strong>vault</strong>, the coins can only be moved by the <strong>key owner</strong> but the world can see what is inside<br>
-              The address is a long sequence of letters and numbers and it looks like this:
-            </p>
-          </div>
-        </div>
-        <div class="row text-center">
-          <p>
-            <strong class="title has-tooltip" title="You can generate and use as many addresses as desired at no cost">19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</strong>&nbsp;&nbsp;&nbsp;
-            <%= image_tag "QR_code.png", class: "has-tooltip", title: "This QR code represents the same address and can be easily read with a phone", width: 200, height: 200, alt: "QR code image" %><br><br>
-          </p>
-        </div>
-        <div class="row">
-          <div class="small-2 columns"></div>
-          <div class="small-10 columns text-right">
-            <p>
-              The <strong>private key</strong> is the only key in the world that can transfer the bitcoins from the Bitcoin address<br>
-              The private key is a long sequence of letters and numbers and it looks like this:
-            </p>        
-          </div>
-        </div>
-        <div class="row text-right">
-          <p class="side-padding">
-            <strong class="title has-tooltip" title="This key is unique for the address above">5J3p5psdFRh1XCBXsb8AbpaVTnwSjv5MMqt5ceAMMAHVeXhq8yi</strong>
-          </p>
-        </div>
-      </div>
-      <div class="small-2 columns text-center fix-bottom-position">
-        <%= image_tag "key.png", alt: "Private Key image" %>
+      <div class="small-10 columns text-left">
+        <p>
+          A Bitcoin <strong>address</strong> is the place where the bitcoins are actually stored<br>
+          Like a transparent <strong>vault</strong>, the coins can only be moved by the <strong>key owner</strong> but the world can see what is inside<br>
+          The address is a long sequence of letters and numbers and it looks like this:
+        </p>
       </div>
     </div>
-  </td>
-</table>
+    <div class="row text-center">
+      <p>
+        <strong class="title has-tooltip" title="You can generate and use as many addresses as desired at no cost">19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</strong>&nbsp;&nbsp;&nbsp;
+        <%= image_tag "QR_code.png", class: "has-tooltip", title: "This QR code represents the same address and can be easily read with a phone", width: 200, height: 200, alt: "QR code image" %><br><br>
+      </p>
+    </div>
+    <div class="row">
+      <div class="small-2 columns"></div>
+      <div class="small-10 columns text-right">
+        <p>
+          The <strong>private key</strong> is the only key in the world that can transfer the bitcoins from the Bitcoin address<br>
+          The private key is a long sequence of letters and numbers and it looks like this:
+        </p>        
+      </div>
+    </div>
+    <div class="row text-right">
+      <p class="side-padding">
+        <strong class="title has-tooltip" title="This key is unique for the address above">5J3p5psdFRh1XCBXsb8AbpaVTnwSjv5MMqt5ceAMMAHVeXhq8yi</strong>
+      </p>
+    </div>
+  </div>
+  <div class="small-2 columns text-center fix-bottom-position">
+    <%= image_tag "key.png", alt: "Private Key image" %>
+  </div>
+</div>
 
-<table id="demo-section-2" class="rounded-border">
-  <td><label class="fake-circle-button"> 2 </label></td>
-  <td>
+<div id="demo-section-2" class="row rounded-border info-block">
+  <div class="small-1 columns text-center">
+    <label class="fake-circle-button"> 2 </label>
+  </div>
+  <div class="small-11 columns text-center">
     <p>
       <strong>All the transactions</strong> ever made in the Bitcoin economy are stored in a <strong class="title has-tooltip" title="A full and updated copy of all transactions is stored in the computer of most of the users of Bitcoin">public record</strong><br>
       This public record works as a ledger and it is called the <strong class="title has-external-tooltip" tooltip-id="blockchain-tooltip">Blockchain</strong><br>
@@ -60,8 +61,8 @@
     <div id="blockchain-tooltip" class="hidden">
       Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time
     </div>
-  </td>
-</table>
+  </div>
+</div>
 
 <div id="demo-section-3">
   <label class="fake-circle-button"> 3 </label>
