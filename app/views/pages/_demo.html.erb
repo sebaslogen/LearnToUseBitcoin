@@ -4,7 +4,7 @@
   <a class="circle-button" href="#demo-section-3">3</a>
 </h2>
 
-<p>Sending and receiving bitcoins is as simple as sending an email, the first thing we need is an <strong>address</strong></p><br>
+<p>Sending and receiving bitcoins is as simple as sending an <strong>email</strong>, the first thing we need is an <strong>address</strong></p><br>
 
 <div id="demo-section-1" class="row rounded-border relative-position info-block">
   <div class="small-1 columns text-center">
@@ -60,7 +60,7 @@
       This public record works as a ledger and it is called the <strong class="title has-external-tooltip" tooltip-id="blockchain-tooltip">Blockchain</strong><br>
     </p>
     <div id="blockchain-tooltip" class="hidden">
-      Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time
+      <p>Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time</p>
     </div>
   </div>
   <div class="small-3 columns text-center">
@@ -90,9 +90,11 @@
           <p><br><strong class="title">Mobile</strong></p>
         </span>
         <div id="phone-tooltip" class="hidden text-center">
-          This is convenient for day to day usage on the move<br>
-          A couple of good Android wallets <%= link_to('Blockchain.info', 'https://blockchain.info/wallet/android-app', target: "_blank") %> and 
-          <%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %>
+          <p>
+            This is convenient for day to day usage on the move<br>
+            A couple of good Android wallets <%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %> and 
+            <%= link_to('Blockchain.info', 'https://blockchain.info/wallet/android-app', target: "_blank") %>
+          </p>
         </div>
       </div>
       <div class="small-4 columns text-center">
@@ -101,7 +103,11 @@
           <p><strong class="title">Desktop App</strong></p>
         </span>
         <div id="desktop-tooltip" class="hidden text-center">
-          Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time
+          <p>
+            These wallets usually provide more security and more options<br>
+            A couple of good wallets <%= link_to('Electrum', 'https://electrum.org/', target: "_blank") %> and 
+            <%= link_to('MultiBit', 'https://multibit.org/', target: "_blank") %>
+          </p>
         </div>
       </div>
       <div class="small-4 columns text-center">
@@ -110,7 +116,11 @@
           <p><strong class="title">Web wallet</strong></p>
         </span>
         <div id="browser-tooltip" class="hidden text-center">
-          Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time
+          <p>
+            These wallets combine easy of use with plenty of features<br>
+            A good example where <strong>you</strong> completely manage your bitcoins is <%= link_to('Blockchain.info', 'https://blockchain.info/wallet', target: "_blank") %><br>
+            Another where the company secures and stores the bitcoins for you is <%= link_to('Coinbase', 'https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link', target: "_blank") %>
+          </p>
         </div>
       </div>
     </div>
