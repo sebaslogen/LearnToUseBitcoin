@@ -45,7 +45,13 @@ button:focus {
   padding:       15px;
   @extend .rounded-corners;
   background-color:#fff;
+  background: rgba(255, 255, 255, .7);
   font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.header-info-block {
+  @extend        .info-block;
+  max-width:     1000px;
 }
 
 .rounded-corners {
@@ -82,7 +88,7 @@ a:hover, a:active {
 }*/
 
 .hidden {
-  display:none;
+  display: none;
 } 
 
 .container {
@@ -93,7 +99,8 @@ a:hover, a:active {
   background:rgba(25,25,25,.05);
   width:100%;
   height:600px;
-  padding-top:10px;
+  padding-top:30px;
+  padding-bottom:30px;
 }
 
 /* Side naviagtion menu */
