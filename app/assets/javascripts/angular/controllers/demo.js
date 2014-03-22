@@ -3,6 +3,7 @@ function DemoCtrl ($scope) {
     $('#show-demo').fadeOut("slow", function() {
       $('#show-demo').replaceWith($("#demo-content").fadeIn("slow"));
       updateSizes();
+      moveToSection('#demo-content');
     });
   }
 }

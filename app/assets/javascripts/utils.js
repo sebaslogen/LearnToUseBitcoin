@@ -136,7 +136,7 @@ function updateToolTips() {
   $(".qtip").remove();
   $(document).ready(function() {
     $('.has-tooltip[title]').qtip({
-      style: { classes: 'qtip-youtube qtip-shadow qtip-rounded' },
+      style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
       position: {
         my: 'bottom center',  // Position my bottom center...
         at: 'top center', // at the top center of...
@@ -152,7 +152,7 @@ function updateToolTips() {
         content: {
           text: $('#' + $(this).attr('tooltip-id'))
         },
-        style: { classes: 'qtip-youtube qtip-shadow qtip-rounded' },
+        style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
         position: {
           my: 'bottom center',  // Position my bottom center...
           at: 'top center', // at the top center of...

@@ -33,7 +33,7 @@
       <div class="small-2 columns"></div>
       <div class="small-10 columns text-right">
         <p>
-          The <strong>private key</strong> is the only key in the world that can transfer the bitcoins from the Bitcoin address<br>
+          The <strong>private key</strong> is the <u>only</u> key in the world that can transfer the bitcoins from the Bitcoin address (like the email password)<br>
           The private key is a long sequence of letters and numbers and it looks like this:
         </p>        
       </div>
@@ -59,7 +59,7 @@
       <strong>All transactions</strong> ever made in the Bitcoin economy are stored in a <strong class="title has-tooltip" title="A full and updated copy of all transactions is stored in the computer of most of the users of Bitcoin">public record</strong><br>
       This public record works as a ledger and it is called the <strong class="title has-external-tooltip" tooltip-id="blockchain-tooltip">Blockchain</strong><br>
     </p>
-    <div id="blockchain-tooltip" class="hidden">
+    <div id="blockchain-tooltip" class="hidden tooltip-text">
       <p>Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time</p>
     </div>
   </div>
@@ -89,7 +89,7 @@
           <%= image_tag "phone.png", alt: "Phone image" %>
           <p><br><strong class="title">Mobile</strong></p>
         </div>        
-        <div id="phone-tooltip" class="hidden text-center">
+        <div id="phone-tooltip" class="hidden text-center tooltip-text">
           <p>
             This is convenient for day to day usage on the move<br>
             A couple of good Android wallets <%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %> and 
@@ -102,7 +102,7 @@
           <%= image_tag "desktop.png", alt: "Desktop PC image" %>
           <p><strong class="title">Desktop App</strong></p>
         </div>
-        <div id="desktop-tooltip" class="hidden text-center">
+        <div id="desktop-tooltip" class="hidden text-center tooltip-text">
           <p>
             These wallets usually provide more security and more options<br>
             A couple of good wallets <%= link_to('Electrum', 'https://electrum.org/', target: "_blank") %> and 
@@ -115,7 +115,7 @@
           <%= image_tag "browser.png", alt: "Web browser image" %>
           <p><strong class="title">Web wallet</strong></p>
         </div>
-        <div id="browser-tooltip" class="hidden text-center">
+        <div id="browser-tooltip" class="hidden text-center tooltip-text">
           <p>
             These wallets combine easy of use with plenty of features<br>
             A good example where <strong>you</strong> completely manage your bitcoins is <%= link_to('Blockchain.info', 'https://blockchain.info/wallet', target: "_blank") %><br>
