@@ -79,8 +79,57 @@
   <div> <%= image_tag "loading.gif", alt: "Counting starts in the universe..." %> </div>
 </div>
 
-<div class="row hidden" id="transactionAction">
-  <div class="small-12 columns" ng-controller="TransactionCtrl">
-    <label class="button radius round" ng-click="transactionDemo()">Send</label>
+<div id="transference-demo" class="rounded-border relative-position info-block hidden">
+  <h3>
+    sample Bitcoin transaction
+  </h3>
+  <div class="row rounded-border">
+    <div class="large-6 columns text-center right-border">
+      <div class="info-block">
+        <form> 
+          <fieldset>
+          <legend>Your sample wallet</legend>
+          <div class="row separated-row"> 
+            <div class="small-12 columns">
+              <label>Send bitcoins from this address:</label>
+              <div class="address-info-block">
+                <input type="radio" name="address" id="walletAddress" value="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" checked><label for="walletAddress">19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</label>
+              </div>
+            </div>
+          </div>
+          <div class="row collapse separated-row"> 
+            <div class="small-3 columns">
+              <label for="amount" class="right inline small-right-padding">amount: </label>
+            </div>
+            <div class="small-2 columns" id="amount">
+              <input type="text" class="text-center" placeholder="0.5" />
+            </div>
+            <div class="small-4 columns">
+              <span class="postfix radius"> bitcoins (BTC)</span>
+            </div>
+            <div class="small-3 columns"></div>
+          </div>
+          <div class="row collapse separated-row">
+            <div class="small-2 columns">
+              <span class="prefix radius button disabled">To:</span>
+            </div>
+            <div class="small-10 columns">
+              <input type="text" placeholder="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" />
+            </div>
+          </div>
+            <div class="row">
+              <div class="small-12 columns" ng-controller="TransactionCtrl">
+                <label class="button radius round" ng-click="transactionDemo()">Send</label>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>  
+    </div>
+    <div class="large-6 columns text-center">
+      <div class="info-block">
+        Shopping cart in your favorite web shop
+      </div>
+    </div>
   </div>
 </div>
