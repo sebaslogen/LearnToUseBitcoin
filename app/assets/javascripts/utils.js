@@ -114,22 +114,7 @@ function updateSizes() {
     $('#footsteps-image').css('top','-' + video_half_height + 'px');
     // Adjust div height according to window width using contents size
     $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 100);
-    if ($('div#demo-content').css('display') != 'none') {
-      $('div.sStart').height($('div#demo-content').height() + 100);
-    }
-    checkUpdateSizeRequired();
   });
-}
-
-function checkUpdateSizeRequired() {
-  setTimeout(function() {
-    if ($('div#demo-content').css('display') != 'none') {
-      if ($('div.sStart').height() != $('div#demo-content').height() + 100) {
-        $('div.sStart').height($('div#demo-content').height() + 100);
-        checkUpdateSizeRequired(); // Repeat until updated
-      }
-    }
-  }, 400); // Wait 200 milliseconds to let Foundation finish adjusting
 }
 
 function resizeWindow() {
@@ -187,35 +172,36 @@ function loadDemoContent() {
     if (isSmallScreen()) {
       $("#demo-content").load("/demo-small", function() {
         $("#demo-content").addClass('small-content');
-        updateSizes();
-        updateToolTips();
+        updateDemoContent();
       });
     } else {
       $("#demo-content").load("/demo", function() {
         $("#demo-content").addClass('normal-content');
-        updateSizes();
-        updateToolTips();
+        updateDemoContent();
       });
     }
   } else if ($("#demo-content").hasClass('normal-content')) {
     if (isSmallScreen()) { // Load small content when page shrinks
       $("#demo-content").load("/demo-small", function() {
         $("#demo-content").removeClass('normal-content').addClass('small-content');
-        updateSizes();
-        updateToolTips();
+        updateDemoContent();
       });
     }
   } else if ($("#demo-content").hasClass('small-content')) {
     if ( ! isSmallScreen()) { // Load nomal content when page grows
       $("#demo-content").load("/demo", function() {
         $("#demo-content").removeClass('small-content').addClass('normal-content');
-        updateSizes();
-        updateToolTips();
+        updateDemoContent();
       });
     }
   }
 }
 
+function updateDemoContent() {
+  $('div.sStart').height('100%');
+  updateSizes();
+  updateToolTips();
+}
 
 $(document).ready(function() {
   setupActiveJavaScript();
