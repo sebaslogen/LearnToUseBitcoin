@@ -164,11 +164,13 @@ function loadDemoContent() {
     if (isSmallScreen()) {
       $("#demo-content").load("/demo-small", function() {
         $("#demo-content").addClass('small-content');
+        $("#demo-content").removeClass('empty-content');
         updateDemoContent();
       });
     } else {
       $("#demo-content").load("/demo", function() {
         $("#demo-content").addClass('normal-content');
+        $("#demo-content").removeClass('empty-content');
         updateDemoContent();
       });
     }
