@@ -54,6 +54,15 @@ button:focus {
   max-width:     1000px;
 }
 
+.address-info-block {
+  @extend        .info-block;
+  padding:       5px;
+  padding-top:   15px;
+  margin-top:    10px;
+  margin-bottom: 10px;
+  background:    #CDFFD3;
+}
+
 .rounded-corners {
   border-radius: 15px;
 }
@@ -418,4 +427,14 @@ div.fix-bottom-position {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+/* Small padding space for the sample transaction amount label */
+.small-right-padding {
+  padding-right: 10px !important;
+}
+
+/* Vertical space between rows for the sample transaction wallet*/
+div.separated-row {
+  margin-bottom: 20px !important;
 }
