@@ -78,3 +78,9 @@
 <div class="hidden empty-content" id="demo-content">
   <div> <%= image_tag "loading.gif", alt: "Counting starts in the universe..." %> </div>
 </div>
+
+<div class="row hidden" id="transactionAction">
+  <div class="small-12 columns" ng-controller="TransactionCtrl">
+    <label class="button radius round" ng-click="transactionDemo()">Send</label>
+  </div>
+</div>

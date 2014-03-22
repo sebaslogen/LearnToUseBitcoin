@@ -226,6 +226,23 @@ function updateToolTips() {
   });
 }
 
+// Fix for resize on webpage load depending on the browser
+var windowResize = {
+  height:0,
+  width:0,
+  update: function() {
+    this.width =  $(window).width();
+    this.height = $(window).height();
+  },
+  checkResize: function(callback) {
+    if (( this.width != $(window).width() ) || ( this.height != $(window).height() )) {
+      this.update();
+      callback.apply();
+    }
+  }
+};
+windowResize.update();
+
 $(document).ready(function() {
   setupActiveJavaScript();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
@@ -233,11 +250,11 @@ $(document).ready(function() {
   setupAutoScroll();
   setupScrollHintAnimation();
   setupScrollFadingAndResize();
-  resizeWindow();
+  updateSizes();
   updateToolTips();
   loadDemoContent();
   $(window).on({
     scroll: scrollFading,
-    resize: resizeWindow
+    resize: function() { windowResize.checkResize( resizeWindow ) }
   });
 });
