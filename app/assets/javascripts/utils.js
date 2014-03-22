@@ -1,3 +1,6 @@
+var SMALL_WIDTH = 640;
+var MEDIUM_WIDTH = 1024;
+
 function setupActiveJavaScript() {
   $('#welcome-content').css({
     'position': 'fixed',
@@ -6,7 +9,16 @@ function setupActiveJavaScript() {
 }
 
 function isSmallScreen() {
-  if ($( window ).width() <= 640){
+  if ($( window ).width() <= SMALL_WIDTH) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isMediumScreen() {
+  var window_width = $( window ).width();
+  if ((window_width > SMALL_WIDTH) && (window_width <= MEDIUM_WIDTH)) {
     return true;
   } else {
     return false;
@@ -103,6 +115,21 @@ function scrollFading() {
   $('#footsteps-image').css('opacity', footsteps_opacity / 2);
 }
 
+function setupScrollFadingAndResize() {
+  $("body,html").bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
+    if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
+      $("html,body").stop();
+    }
+  });
+}
+
+function resizeWindow() {
+  $(document).ready(function() {
+    updateSizes();
+    loadDemoContent();
+  });
+}
+
 function updateSizes() {
   $(document).ready(function() {
     /* Adapt footsteps position and size */
@@ -117,19 +144,49 @@ function updateSizes() {
   });
 }
 
-function resizeWindow() {
-  $(document).ready(function() {
-    updateSizes();
-    loadDemoContent();
-  });
+function updateDemoContent() {
+  $('div.sStart').height('100%'); // Change from fixed to auto adjust height after load
+  // Change vrtical separation line to horizontal with smaller(medium) size window
+  if (isMediumScreen()) {
+    var element = $('div.right-border')
+    element.removeClass('right-border');
+    element.addClass('bottom-border');
+  } else if (! isSmallScreen()) {
+    var element = $('div.bottom-border')
+    element.removeClass('bottom-border');
+    element.addClass('right-border');
+  }
+  updateToolTips();
 }
 
-function setupScrollFadingAndResize() {
-  $("body,html").bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
-    if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
-      $("html,body").stop();
+function loadDemoContent() {
+  if ($("#demo-content").hasClass('empty-content')) {
+    if (isSmallScreen()) {
+      $("#demo-content").load("/demo-small", function() {
+        $("#demo-content").addClass('small-content');
+        updateDemoContent();
+      });
+    } else {
+      $("#demo-content").load("/demo", function() {
+        $("#demo-content").addClass('normal-content');
+        updateDemoContent();
+      });
     }
-  });
+  } else if ($("#demo-content").hasClass('normal-content')) {
+    if (isSmallScreen()) { // Load small content when page shrinks
+      $("#demo-content").load("/demo-small", function() {
+        $("#demo-content").removeClass('normal-content').addClass('small-content');
+        updateDemoContent();
+      });
+    }
+  } else if ($("#demo-content").hasClass('small-content')) {
+    if ( ! isSmallScreen()) { // Load nomal content when page grows
+      $("#demo-content").load("/demo", function() {
+        $("#demo-content").removeClass('small-content').addClass('normal-content');
+        updateDemoContent();
+      });
+    }
+  }
 }
 
 function updateToolTips() {
@@ -165,42 +222,6 @@ function updateToolTips() {
       });
     });
   });
-}
-
-function loadDemoContent() {
-  if ($("#demo-content").hasClass('empty-content')) {
-    if (isSmallScreen()) {
-      $("#demo-content").load("/demo-small", function() {
-        $("#demo-content").addClass('small-content');
-        updateDemoContent();
-      });
-    } else {
-      $("#demo-content").load("/demo", function() {
-        $("#demo-content").addClass('normal-content');
-        updateDemoContent();
-      });
-    }
-  } else if ($("#demo-content").hasClass('normal-content')) {
-    if (isSmallScreen()) { // Load small content when page shrinks
-      $("#demo-content").load("/demo-small", function() {
-        $("#demo-content").removeClass('normal-content').addClass('small-content');
-        updateDemoContent();
-      });
-    }
-  } else if ($("#demo-content").hasClass('small-content')) {
-    if ( ! isSmallScreen()) { // Load nomal content when page grows
-      $("#demo-content").load("/demo", function() {
-        $("#demo-content").removeClass('small-content').addClass('normal-content');
-        updateDemoContent();
-      });
-    }
-  }
-}
-
-function updateDemoContent() {
-  $('div.sStart').height('100%');
-  updateSizes();
-  updateToolTips();
 }
 
 $(document).ready(function() {

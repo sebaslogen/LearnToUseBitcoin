@@ -84,6 +84,19 @@ strong.title {
   font-size:      28px !important;
 }
 
+div.right-border {
+  border: 0px;
+  border-right-color: grey;
+  border-style: solid;
+  border-right-width: 1px;
+}
+
+div.bottom-border {
+  border: 0px;
+  border-bottom-color: grey;
+  border-style: solid;
+  border-bottom-width: 1px;
+}
 /* Button links
 a:link, a:visited {
     display:block;
