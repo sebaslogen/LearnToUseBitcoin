@@ -91,9 +91,9 @@
           <legend>Your sample wallet</legend>
           <div class="row separated-row"> 
             <div class="small-12 columns">
-              <label>Send bitcoins from this address:</label>
+              <span>Send bitcoins from this address:</span>
               <div class="address-info-block">
-                <input type="radio" name="address" id="walletAddress" value="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" checked><label for="walletAddress">19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</label>
+                <input type="radio" name="address" id="walletAddress" value="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" checked><label for="walletAddress"><span>19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</span></label>
               </div>
             </div>
           </div>
@@ -128,7 +128,16 @@
     </div>
     <div class="large-6 columns text-center">
       <div class="info-block">
-        Shopping cart in your favorite web shop
+        <fieldset>
+          <legend>Shopping cart in your favorite web shop</legend>
+          <div class="row separated-row">
+            <%= image_tag "QR-shop.png", alt: "Shop QR of address" %>
+          </div>
+          <div class="row separated-row address-info-block-shop">
+            <span>1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1</span>
+          </div>
+          <span class="hidden" id="open_private_key">5KVwAmmjHaxZ8hDGBybaoCwhdicK26gFFsDYm8RZYSfmdJrsB8i</span>
+        </fieldset>
       </div>
     </div>
   </div>
