@@ -114,6 +114,13 @@ div.bottom-border {
   border-bottom-width: 1px;
 }
 
+div.top-border {
+  border: 0px;
+  border-top-color: grey;
+  border-style: solid;
+  border-top-width: 1px;
+}
+
 .hidden {
   display: none;
 } 
