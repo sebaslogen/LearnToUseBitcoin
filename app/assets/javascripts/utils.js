@@ -127,6 +127,17 @@ function resizeWindow() {
   $(document).ready(function() {
     updateSizes();
     loadDemoContent();
+    // Change vertical separation line to horizontal 
+    // in demo transaction with smaller(medium) size window
+    if (isMediumScreen()) {
+      var element = $('div.right-border')
+      element.removeClass('right-border');
+      element.addClass('bottom-border');
+    } else if (! isSmallScreen()) {
+      var element = $('div.bottom-border')
+      element.removeClass('bottom-border');
+      element.addClass('right-border');
+    }
   });
 }
 
@@ -146,16 +157,6 @@ function updateSizes() {
 
 function updateDemoContent() {
   $('div.sStart').height('100%'); // Change from fixed to auto adjust height after load
-  // Change vrtical separation line to horizontal with smaller(medium) size window
-  if (isMediumScreen()) {
-    var element = $('div.right-border')
-    element.removeClass('right-border');
-    element.addClass('bottom-border');
-  } else if (! isSmallScreen()) {
-    var element = $('div.bottom-border')
-    element.removeClass('bottom-border');
-    element.addClass('right-border');
-  }
   updateToolTips();
 }
 
