@@ -1,4 +1,5 @@
 function TransactionCtrl ($scope) {
+  $scope.total_bitcoins = 2;
   $scope.transactionDemo = function() {
     console.log("Started transaction demo");
   }
@@ -6,11 +7,11 @@ function TransactionCtrl ($scope) {
     
   }, true);*/
   $scope.remainingBitcoins = function() {
-    console.log("calculating");
-    if (parseInt()) {
-      return 1 - $scope.input_amount;
-    } else {
-      return 1;
+    var result = $scope.total_bitcoins;
+    var parsed = parseFloat($scope.input_amount).toFixed(8);
+    if ( parsed > 0 ) {
+      result = $scope.total_bitcoins - parsed;
     }
+    return result;
   }
 }
