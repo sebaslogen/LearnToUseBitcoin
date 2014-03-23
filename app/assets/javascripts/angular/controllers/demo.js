@@ -4,7 +4,6 @@ function DemoCtrl ($scope) {
       $('#show-demo').replaceWith($("#demo-content").fadeIn("slow"));
       updateSizes();
       moveToSection('#demo-content');
-      $('#transactionActionPlaceholder').replaceWith($('#transference-demo').fadeIn("slow"));
     });
   }
 }

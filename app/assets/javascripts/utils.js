@@ -160,35 +160,37 @@ function updateDemoContent() {
   updateToolTips();
 }
 
+function moveOutDemoTransactionSection() { // Save demo transaction content if neccesary
+  $(document).ready(function() {
+    if ($('#transactionDemo').children().size() == 1) {
+      $('#transactionDemoPlaceholder').append($('#transference-demo'));
+    }
+  });
+}
+
+function moveInDemoTransactionSection() { // Restore demo transaction content if neccesary
+  $(document).ready(function() {
+    if ($('#transactionDemoPlaceholder').children().size() == 1) {
+      $('#transactionDemo').append($('#transference-demo'));
+    }
+  });
+}
+
 function loadDemoContent() {
-  if ($("#demo-content").hasClass('empty-content')) {
-    if (isSmallScreen()) {
-      $("#demo-content").load("/demo-small", function() {
-        $("#demo-content").addClass('small-content');
-        $("#demo-content").removeClass('empty-content');
-        updateDemoContent();
-      });
-    } else {
-      $("#demo-content").load("/demo", function() {
-        $("#demo-content").addClass('normal-content');
-        $("#demo-content").removeClass('empty-content');
-        updateDemoContent();
-      });
-    }
-  } else if ($("#demo-content").hasClass('normal-content')) {
-    if (isSmallScreen()) { // Load small content when page shrinks
-      $("#demo-content").load("/demo-small", function() {
-        $("#demo-content").removeClass('normal-content').addClass('small-content');
-        updateDemoContent();
-      });
-    }
-  } else if ($("#demo-content").hasClass('small-content')) {
-    if ( ! isSmallScreen()) { // Load nomal content when page grows
-      $("#demo-content").load("/demo", function() {
-        $("#demo-content").removeClass('small-content').addClass('normal-content');
-        updateDemoContent();
-      });
-    }
+  if ( ( $("#demo-content").hasClass('empty-content') || $("#demo-content").hasClass('normal-content') )
+      && isSmallScreen() ) { // Window is small
+    $("#demo-content").addClass('small-content').removeClass('empty-content').removeClass('normal-content');
+    moveOutDemoTransactionSection();
+    $("#demo-content").load("/demo-small", function() {
+      updateDemoContent();
+    });
+  } else if ( ( $("#demo-content").hasClass('empty-content') || $("#demo-content").hasClass('small-content') )
+      && ( ! isSmallScreen() ) ) { // Window is medium/big
+    $("#demo-content").addClass('normal-content').removeClass('empty-content').removeClass('small-content');
+    $("#demo-content").load("/demo", function() {
+      moveInDemoTransactionSection();
+      updateDemoContent();
+    });
   }
 }
 
