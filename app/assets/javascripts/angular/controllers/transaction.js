@@ -11,6 +11,7 @@ function TransactionCtrl ($scope) {
       $("#demo-transaction-send-button").addClass('disabled').qtip('destroy', true);
       $("#demo-transaction-send-button").removeAttr('title');
       $scope.disabled = true;
+      $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
     }
   }
   
