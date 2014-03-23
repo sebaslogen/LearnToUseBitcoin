@@ -123,12 +123,12 @@
                 <span class="prefix radius button disabled">To:</span>
               </div>
               <div class="small-10 columns">
-                <input type="text" placeholder="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required/>
+                <input type="text" placeholder="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1" data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required/>
               </div>
             </div>
               <div class="row">
                 <div class="small-12 columns">
-                  <label class="button radius round" ng-click="transactionDemo()">Send</label>
+                  <label class="button radius round" ng-click="transactionDemo()">Send &nbsp;<i class="fi-arrow-right"></i></label>
                 </div>
               </div>
             </fieldset>
@@ -139,14 +139,45 @@
         <div class="info-block">
           <fieldset>
             <legend>Shopping cart in your favorite web shop</legend>
+            <div>
+              <div class="row separated-row shop-table-title">
+                <div class="small-5 columns text-center">
+                  Item
+                </div>
+                <div class="small-2 columns text-center">
+                  Units
+                </div>
+                <div class="small-2 columns text-center">
+                  Price
+                </div>
+                <div class="small-3 columns"></div>
+              </div>
+              <div class="row separated-row shop-table-text">
+                <div class="small-5 columns text-center">
+                  <br>Soft and warm teddy bear
+                </div>
+                <div class="small-2 columns text-center">
+                  <br>x1
+                </div>
+                <div class="small-2 columns text-center">
+                  <br>$10
+                </div>
+                <div class="small-3 columns">
+                  <%= image_tag "teddy_bear.png", alt: "Teddy bear image" %>
+                </div>
+              </div>
+            </div>
             <div class="row separated-row">
-              <div class="small-12 columns">
-                Pair of warm socks
+              <div class="small-6 columns text-right">
+                <br>Pay to this address
+              </div>
+              <div class="small-6 columns text-left">
+                <%= image_tag "BC_accepted_here.png", width: '75%', alt: "Bitcoin accepted here logo" %>
               </div>
             </div>
             <div class="row separated-row">
               <div class="small-12 columns">
-                <%= image_tag "QR-shop.png", alt: "Shop QR of address" %>
+                <%= image_tag "QR-shop.png", width: '50%', alt: "Shop QR of address" %>
               </div>
             </div>
             <div class="row separated-row address-info-block-shop">
@@ -156,7 +187,7 @@
             </div>
             <div class="row separated-row top-border">
               <div class="small-12 columns">
-                Other payment menthods
+                Other payment methods
               </div>
             </div>
             <span class="hidden" id="open_private_key">5KVwAmmjHaxZ8hDGBybaoCwhdicK26gFFsDYm8RZYSfmdJrsB8i</span>

@@ -439,6 +439,22 @@ div.separated-row {
   margin-bottom: 20px !important;
 }
 
+/* Fake table for shop */
+.shop-table-text {
+  font-size: 14px;
+}
+.shop-table-title {
+  @extend .shop-table-text;
+  font-weight: bold;
+}
+.shop-table {
+  border-width: 1px;
+  border-color: rgb(185, 184, 184);
+  border-style: solid;
+  margin: 10px;
+  padding-top: 10px;
+}
+
 // Parsley Form validation
 input.parsley-success,
 select.parsley-success,
