@@ -5,9 +5,6 @@ function TransactionCtrl ($scope) {
       console.log("Started transaction demo"); 
     }
   }
-  /*$scope.$watch('input_amount', function() {
-    
-  }, true);*/
   $scope.remainingBitcoins = function() {
     var result = $scope.total_bitcoins;
     var parsed = parseFloat($scope.input_amount);
@@ -15,6 +12,6 @@ function TransactionCtrl ($scope) {
       result = $scope.total_bitcoins - parsed;
     }
     // Return the value rounding to 8 decimals and remove trailing zeros
-    return result.toFixed(8).replace(/(\.[0-9]*?)0+$/, "$1");
+    return result.toFixed(8).replace(/(\.[0-9]*?)0+$/, "$1").replace(/([0-9]*)\.$/, "$1");
   }
 }
