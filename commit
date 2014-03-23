@@ -3,4 +3,5 @@ if [ $# -ne 1 ]; then
   echo "Incorrect number of options, you should only provide the commit message"
   exit 1
 fi
+git status
 git add -A && git commit -m "$1" && git push
