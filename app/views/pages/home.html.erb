@@ -110,6 +110,7 @@
               </div>
               <div class="small-2 columns" id="amount">
                 <input type="text" class="text-center has-tooltip" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" required
+                       data-parsley-min="0" data-parsley-min-message="Value should be higher than or equal to 0." data-parsley-max="2" data-parsley-max-message="Value should be lower than or equal to 2."
                        title="1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="0.5" />
               </div>
               <div class="small-4 columns">
