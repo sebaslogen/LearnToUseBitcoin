@@ -1,9 +1,15 @@
 function TransactionCtrl ($scope) {
   $scope.total_bitcoins = 2;
+  $scope.disabled = false;
   
   $scope.transactionDemo = function() {
+    if ($scope.disabled) {
+      return;
+    }
     if ($("#demo-transaction-form").parsley().validate()) {
-      console.log("Started transaction demo"); 
+      console.log("Started transaction demo");
+      $("#demo-transaction-send-button").addClass('disabled');
+      $scope.disabled = true;
     }
   }
   
