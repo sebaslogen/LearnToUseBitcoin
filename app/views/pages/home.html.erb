@@ -80,7 +80,7 @@
 </div>
 
 <div id="transactionDemoPlaceholder" class="hidden">
-  <div id="transference-demo" class="rounded-border relative-position info-block">
+  <div id="transference-demo" class="rounded-border relative-position info-block" ng-controller="TransactionCtrl">
     <h3>
       sample Bitcoin transaction
     </h3>
@@ -100,7 +100,7 @@
             </div>
             <div class="row separated-row">
               <div class="small-3 small-centered columns">
-                <label class="inline">{{demo_bitcoin_available}}</label>
+                <label class="inline">{{remainingBitcoins()}}</label>
                 <label class="inline small-right-padding">available</label>
               </div>
             </div>
@@ -109,7 +109,8 @@
                 <label for="amount" class="right inline small-right-padding">amount: </label>
               </div>
               <div class="small-2 columns" id="amount">
-                <input type="text" class="text-center has-tooltip" title="1 bitcoin can be divided up to 8 decimal places (0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="0.5" />
+                <input type="text" class="text-center has-tooltip" ng-model="input_amount"
+                       title="1 bitcoin can be divided up to 8 decimal places (0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="0.5" />
               </div>
               <div class="small-4 columns">
                 <span class="postfix radius"> bitcoins (BTC)</span>
@@ -125,7 +126,7 @@
               </div>
             </div>
               <div class="row">
-                <div class="small-12 columns" ng-controller="TransactionCtrl">
+                <div class="small-12 columns">
                   <label class="button radius round" ng-click="transactionDemo()">Send</label>
                 </div>
               </div>
