@@ -65,9 +65,10 @@ button:focus {
 }
 
 .address-info-block-shop {
-  @extend        .address-info-block;
-  padding:       5px;
-  background:    #49ADCA;
+  background-color: lightsalmon !important;
+  &:hover {
+    background-color: saddlebrown !important;
+  }
 }
 
 .rounded-corners {

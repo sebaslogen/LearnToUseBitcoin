@@ -123,7 +123,8 @@
                 <span class="prefix radius button disabled">To:</span>
               </div>
               <div class="small-10 columns">
-                <input type="text" placeholder="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1" data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required/>
+                <input id="demo-pay-to-address-input" type="text" placeholder="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1" 
+                       data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required/>
               </div>
             </div>
               <div class="row">
@@ -180,9 +181,12 @@
                 <%= image_tag "QR-shop.png", width: '50%', alt: "Shop QR of address" %>
               </div>
             </div>
-            <div class="row separated-row address-info-block-shop">
-              <div class="small-12 columns">
-                <span>1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1</span>
+            <div class="row separated-row collapse">
+              <div class="small-2 columns">
+                <span class="prefix radius button alert address-info-block-shop" ng-click="copyAddress()"><i class="fi-page-copy"></i> Copy </span>
+              </div>
+              <div class="small-10 columns">
+                <span id="demo-pay-to-address" class="postfix radius button disabled">1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1</span>
               </div>
             </div>
             <div class="row separated-row top-border">
