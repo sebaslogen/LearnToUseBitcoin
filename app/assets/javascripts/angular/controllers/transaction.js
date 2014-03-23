@@ -8,10 +8,10 @@ function TransactionCtrl ($scope) {
   }, true);*/
   $scope.remainingBitcoins = function() {
     var result = $scope.total_bitcoins;
-    var parsed = parseFloat($scope.input_amount).toFixed(8);
+    var parsed = parseFloat($scope.input_amount);
     if ( parsed > 0 ) {
       result = $scope.total_bitcoins - parsed;
     }
-    return result;
+    return result.toPrecision(8);
   }
 }
