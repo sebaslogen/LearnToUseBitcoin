@@ -87,7 +87,7 @@
     <div class="row rounded-border">
       <div class="large-6 columns text-center right-border">
         <div class="info-block">
-          <form> 
+          <form id="demo-transaction-form" data-parsley-validate> 
             <fieldset>
             <legend>Your sample wallet</legend>
             <div class="row separated-row"> 
@@ -109,7 +109,7 @@
                 <label for="amount" class="right inline small-right-padding">amount: </label>
               </div>
               <div class="small-2 columns" id="amount">
-                <input type="text" class="text-center has-tooltip" ng-model="input_amount"
+                <input type="text" class="text-center has-tooltip" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" required
                        title="1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="0.5" />
               </div>
               <div class="small-4 columns">
@@ -122,7 +122,7 @@
                 <span class="prefix radius button disabled">To:</span>
               </div>
               <div class="small-10 columns">
-                <input type="text" placeholder="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" />
+                <input type="text" placeholder="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required/>
               </div>
             </div>
               <div class="row">

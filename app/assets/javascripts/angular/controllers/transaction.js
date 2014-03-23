@@ -1,6 +1,7 @@
 function TransactionCtrl ($scope) {
   $scope.total_bitcoins = 2;
   $scope.transactionDemo = function() {
+    $("#demo-transaction-form").parsley().validate();
     console.log("Started transaction demo");
   }
   /*$scope.$watch('input_amount', function() {
