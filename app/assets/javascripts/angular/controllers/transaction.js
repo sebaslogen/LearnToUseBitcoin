@@ -8,7 +8,8 @@ function TransactionCtrl ($scope) {
     }
     if ($("#demo-transaction-form").parsley().validate()) {
       console.log("Started transaction demo");
-      $("#demo-transaction-send-button").addClass('disabled');
+      $("#demo-transaction-send-button").addClass('disabled').qtip('destroy', true);
+      $("#demo-transaction-send-button").removeAttr('title');
       $scope.disabled = true;
     }
   }
