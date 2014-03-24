@@ -31,6 +31,6 @@ function TransactionCtrl ($scope) {
   }
   
   $scope.showBlockchainSection = function() {
-    $("#show-blockchain-section").replaceWith($("#demo-section-blockchain").fadeIn(1000));
+    $("#show-blockchain-section").replaceWith($("#demo-section-blockchain").fadeIn("slow"));
   }
 }
