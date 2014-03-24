@@ -82,63 +82,10 @@
 <div id="transactionDemoPlaceholder" class="hidden">
   <div id="transference-demo" class="rounded-border relative-position info-block" ng-controller="TransactionCtrl">
     <h3>
-      sample Bitcoin transaction
+      Demo Bitcoin transaction
     </h3>
     <div class="row rounded-border">
-      <div class="large-6 columns text-center right-border">
-        <div class="info-block">
-          <form id="demo-transaction-form" data-parsley-validate> 
-            <fieldset>
-            <legend>Your sample wallet</legend>
-            <div class="row separated-row"> 
-              <div class="small-12 columns">
-                <span>Send bitcoins from this address:</span>
-                <div class="address-info-block">
-                  <input type="radio" name="address" id="walletAddress"
-                         value="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" checked><label for="walletAddress">19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</label>
-                </div>
-              </div>
-            </div>
-            <div class="row separated-row">
-              <div class="small-12 columns text-center">
-                <label class="inline">{{remainingBitcoins()}} out of {{total_bitcoins}} bitcoins available</label>
-              </div>
-            </div>
-            <div class="row collapse separated-row"> 
-              <div class="small-3 columns">
-                <label for="amount" class="right inline small-right-padding">amount: </label>
-              </div>
-              <div class="small-2 columns" id="amount">
-                <input type="text" class="text-center has-tooltip" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" required
-                       data-parsley-min="0.1" data-parsley-min-message="Value should be 0.1, same as the price" data-parsley-max="0.1" data-parsley-max-message="Value should be 0.1, same as the price"
-                       title="1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="0.1" />
-              </div>
-              <div class="small-4 columns">
-                <span class="postfix radius"> bitcoins (BTC)</span>
-              </div>
-              <div class="small-3 columns"></div>
-            </div>
-            <div class="row collapse separated-row">
-              <div class="small-2 columns">
-                <span class="prefix radius button disabled has-tooltip" 
-                      title="enter here the Bitcoin address the shop provides for the payment (hint: use copy button)">To:</span>
-              </div>
-              <div class="small-10 columns">
-                <input id="demo-pay-to-address-input" type="text" placeholder="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1" 
-                       data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required/>
-              </div>
-            </div>
-              <div class="row">
-                <div class="small-12 columns">
-                  <label id="demo-transaction-send-button" class="button radius round has-tooltip" ng-click="transactionDemo()"
-                         title="send bitcoins to pay the bill">Send &nbsp;<i class="fi-arrow-right"></i></label>
-                </div>
-              </div>
-            </fieldset>
-          </form>
-        </div>  
-      </div>
-      <div class="large-6 columns text-center">
+      <div class="large-6 columns text-center right-border" id="demo-shopping-cart">
         <div class="info-block">
           <fieldset>
             <legend>Shopping cart in your favorite web shop</legend>
@@ -203,6 +150,61 @@
           </fieldset>
         </div>
       </div>
+      
+      <div class="large-6 columns text-center" id="demo-wallet-send">
+        <div class="info-block">
+          <form id="demo-transaction-form" data-parsley-validate> 
+            <fieldset>
+            <legend>Your demo wallet</legend>
+            <div class="row separated-row"> 
+              <div class="small-12 columns">
+                <span>Send bitcoins from this address:</span>
+                <div class="address-info-block">
+                  <input type="radio" name="address" id="walletAddress"
+                         value="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" checked><label for="walletAddress">19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</label>
+                </div>
+              </div>
+            </div>
+            <div class="row separated-row">
+              <div class="small-12 columns text-center">
+                <label class="inline">{{remainingBitcoins()}} out of {{total_bitcoins}} bitcoins available</label>
+              </div>
+            </div>
+            <div class="row collapse separated-row"> 
+              <div class="small-3 columns">
+                <label for="amount" class="right inline small-right-padding">amount: </label>
+              </div>
+              <div class="small-2 columns" id="amount">
+                <input type="text" class="text-center has-tooltip" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" required
+                       data-parsley-min="0.1" data-parsley-min-message="Value should be 0.1, same as the price" data-parsley-max="0.1" data-parsley-max-message="Value should be 0.1, same as the price"
+                       title="1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="0.1" />
+              </div>
+              <div class="small-4 columns">
+                <span class="postfix radius"> bitcoins (BTC)</span>
+              </div>
+              <div class="small-3 columns"></div>
+            </div>
+            <div class="row collapse separated-row">
+              <div class="small-2 columns">
+                <span class="prefix radius button disabled has-tooltip" 
+                      title="enter here the Bitcoin address the shop provides for the payment (hint: use copy button)">To:</span>
+              </div>
+              <div class="small-10 columns">
+                <input id="demo-pay-to-address-input" type="text" placeholder="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1" 
+                       data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required/>
+              </div>
+            </div>
+              <div class="row">
+                <div class="small-12 columns">
+                  <label id="demo-transaction-send-button" class="button radius round has-tooltip" ng-click="transactionDemo()"
+                         title="send bitcoins to pay the demo bill">Send &nbsp;&nbsp;<%= image_tag "send-inverted.png", width: '40%', class: 'rounded-corners' %></label>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>  
+      </div>
+      
     </div>
   </div>
 </div>
