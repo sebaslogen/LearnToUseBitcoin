@@ -120,7 +120,8 @@
             </div>
             <div class="row collapse separated-row">
               <div class="small-2 columns">
-                <span class="prefix radius button disabled">To:</span>
+                <span class="prefix radius button disabled has-tooltip" 
+                      title="enter here the Bitcoin address the shop provides for the payment (hint: use copy button)">To:</span>
               </div>
               <div class="small-10 columns">
                 <input id="demo-pay-to-address-input" type="text" placeholder="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1" 
@@ -172,10 +173,10 @@
             <div id="demo-transaction-details">
               <div class="row separated-row">
                 <div class="small-6 columns text-right">
-                  <br>Pay to this address
+                  <%= image_tag "BC_accepted_here.png", width: '75%', alt: "Bitcoin accepted here logo" %>
                 </div>
                 <div class="small-6 columns text-left">
-                  <%= image_tag "BC_accepted_here.png", width: '75%', alt: "Bitcoin accepted here logo" %>
+                  <br>Pay to this address
                 </div>
               </div>
               <div class="row separated-row">
