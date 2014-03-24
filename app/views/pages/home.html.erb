@@ -84,7 +84,9 @@
     <h3>
       Demo Bitcoin transaction
     </h3>
-    <div class="row rounded-border">
+    
+    <div class="row rounded-border separated-row">
+      
       <div class="large-6 columns text-center right-border" id="demo-shopping-cart">
         <div class="info-block">
           <fieldset>
@@ -138,11 +140,6 @@
                 </div>
                 <div class="small-10 columns">
                   <span id="demo-pay-to-address" class="postfix radius button disabled">1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1</span>
-                </div>
-              </div>
-              <div class="row separated-row top-border">
-                <div class="small-12 columns">
-                  Other payment methods
                 </div>
               </div>
               <span class="hidden" id="open_private_key">5KVwAmmjHaxZ8hDGBybaoCwhdicK26gFFsDYm8RZYSfmdJrsB8i</span>
@@ -205,6 +202,10 @@
         </div>  
       </div>
       
+    </div>
+    
+    <div>
+      <button class="radius round" id="show-blockchain-section" ng-click="showBlockchainSection()">How does this transaction work? &nbsp;&nbsp;<i class="fi-magnifying-glass"></i></button>
     </div>
   </div>
 </div>

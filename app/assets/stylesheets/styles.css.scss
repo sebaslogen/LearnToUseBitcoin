@@ -86,6 +86,11 @@ a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-bu
   cursor: default;
 }
 
+.blockchain-button-label {
+  @extend .fake-circle-button;
+  background-color: rgb(67, 172, 106) !important;
+}
+
 strong.title {
   color: #001A83;
 }
@@ -114,13 +119,6 @@ div.bottom-border {
   border-bottom-color: grey;
   border-style: solid;
   border-bottom-width: 1px;
-}
-
-div.top-border {
-  border: 0px;
-  border-top-color: grey;
-  border-style: solid;
-  border-top-width: 1px;
 }
 
 .hidden {

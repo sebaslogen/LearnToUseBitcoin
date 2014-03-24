@@ -29,4 +29,8 @@ function TransactionCtrl ($scope) {
     $('#demo-pay-to-address-input').val($("#demo-pay-to-address").text());
     $("#demo-transaction-form").parsley().validate();
   }
+  
+  $scope.showBlockchainSection = function() {
+    $("#show-blockchain-section").replaceWith($("#demo-section-blockchain").fadeIn(1000));
+  }
 }

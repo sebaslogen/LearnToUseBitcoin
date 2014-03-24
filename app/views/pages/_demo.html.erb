@@ -115,8 +115,9 @@
   </div>
   <div class="small-8 columns text-center">
     <p><br>
-      Now you need to fill the wallet with some bitcoins but you don't have to worry about this for now<br>
-      You can get your first bitcoins totally for free below (no attachments or register) but first let´s play with a <strong>demo</strong>
+      Now we need to fill the wallet with some bitcoins<br>
+      You can get your first bitcoins totally for free below (no attachments or register) but first let´s practice with a 
+      <strong class="title has-tooltip" title="No actual bitcoins will be send to any shop in the demo">demo</strong>
     </p>
   </div>
   <div class="small-3 columns text-center">
@@ -124,9 +125,11 @@
   </div>
 </div>
 
+<div id="transactionDemo"></div>
+
 <div id="demo-section-blockchain" class="row rounded-border info-block hidden">
   <div class="small-1 columns text-center">
-    <label class="fake-circle-button"> extra </label>
+    <label class="blockchain-button-label"> extra </label>
   </div>
   <div class="small-8 columns text-center">
     <p>
@@ -135,6 +138,9 @@
       ever made in the Bitcoin economy are stored in a 
       <strong class="title has-tooltip" title="A full and updated copy of all transactions is stored in the computer of most of the users of Bitcoin">public record</strong><br>
       This public record works as a ledger and it is called the <strong class="title has-external-tooltip" tooltip-id="blockchain-tooltip">Blockchain</strong><br>
+      When you send a bitcoin payment the transaction is send to all Bitcoin users through the Bitcoin 
+      <strong class="title has-tooltip" title="The transaction is send to a few users that forward it to more users and this is repeated until everybody in the network has received the transaction">peer to peer network</strong> 
+      to be stored in the Blockchain
     </p>
     <div id="blockchain-tooltip" class="hidden tooltip-text">
       <p>Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time</p>
@@ -144,8 +150,6 @@
     <%= image_tag "ledger.png", class: 'rounded-corners', alt: "Ledger image" %>
   </div>
 </div>
-
-<div id="transactionDemo"></div>
 
 <form name="input_test" action="visitors/show" method="get">
   <fieldset>
