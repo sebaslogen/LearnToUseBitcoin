@@ -82,6 +82,7 @@ a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-bu
 
 .fake-circle-button {
   @extend .circle-button;
+  background-color: rgb(240, 65, 36) !important;
   cursor: default;
 }
 
