@@ -1,4 +1,4 @@
-function DemoCtrl ($scope) {
+ltubApp.controller('DemoCtrl', ['$scope', function($scope) {
   $scope.showDemo = function() {
     $('#show-demo').fadeOut("slow", function() {
       $('#show-demo').replaceWith($("#demo-content").fadeIn("slow"));
@@ -6,4 +6,4 @@ function DemoCtrl ($scope) {
       moveToSection('#demo-content');
     });
   }
-}
+}]);

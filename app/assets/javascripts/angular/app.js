@@ -1,1 +1,1 @@
-angular.module('app', []);
+var ltubApp = angular.module('ltubApp', []);
