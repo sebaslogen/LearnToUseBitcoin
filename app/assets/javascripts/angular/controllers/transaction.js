@@ -1,6 +1,3 @@
-/*ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
-  $scope.greeting = 'Hola!';
-}])*/
 ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   $scope.total_bitcoins = 2;
   $scope.disabled = false;

@@ -255,9 +255,11 @@ $(document).ready(function() {
   setupScrollFadingAndResize();
   updateSizes();
   updateToolTips();
-  loadDemoContent();
   $(window).on({
     scroll: scrollFading,
     resize: function() { windowResize.checkResize( resizeWindow ) }
   });
+  setTimeout(function() { // Preload demo hidden section
+    loadDemoContent();
+  }, 2000); // Wait 2 seconds to automatically load
 });
