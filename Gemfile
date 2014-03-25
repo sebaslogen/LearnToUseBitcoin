@@ -76,4 +76,5 @@ group :production do
   gem 'pg' # PostgreSQL (Heroku doesn´t support SQLlite)
   gem 'rails_12factor' # Heroku requires this to support logging and server CSS/JS assets correctly
   gem 'thin' # Thin web server
+  gem 'heroku-deflater'
 end
