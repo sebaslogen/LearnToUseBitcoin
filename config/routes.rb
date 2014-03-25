@@ -1,7 +1,7 @@
 LearnToUseBitcoin::Application.routes.draw do
-  get "visitors/show"
-  resources :wallets
-  get '/testadd' => 'wallets#testadd'######################################################## TODO: Test code
+#  get "visitors/show"
+#  resources :wallets
+#  get '/testadd' => 'wallets#testadd'######################################################## TODO: Test code
   get 'demo-small' => 'pages#show', id: '_demo-small'
   get 'demo' => 'pages#show', id: '_demo'
   root :module=> :high_voltage, :controller => :pages, :action => :show, :id => 'home'
