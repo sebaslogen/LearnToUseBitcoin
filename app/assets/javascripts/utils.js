@@ -84,7 +84,23 @@ function setupScrollHintAnimation() {
   }
 }
 
+$.fn.isScrolledIntoView = function() {
+  var docViewTop = $(window).scrollTop();
+  console.log('docViewTop:'+docViewTop);
+  var docViewBottom = docViewTop + $(window).height();
+  console.log('docViewBottom:'+docViewBottom);
+  var elemTop = $(this).offset().top;
+  console.log('elemTop:'+elemTop);
+  var elemBottom = elemTop + $(this).height();
+  console.log('elemBottom:'+elemBottom);
+  return (((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) ||
+          ((elemTop >= docViewTop) && (elemTop <= docViewBottom)) ||
+          ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)) ||
+          ((elemTop <= docViewTop) && (elemBottom >= docViewBottom)) );
+}
+
 function scrollFading() {
+  showDemoTransaction();
   var sizeWelcome = parseInt($('#welcome').css('height'));
   var scrolled = $(window).scrollTop() * 1.5;
   var percentage = 1 - (scrolled / sizeWelcome);
@@ -155,45 +171,6 @@ function updateSizes() {
   });
 }
 
-function updateDemoContent() {
-  $('div.sStart').height('100%'); // Change from fixed to auto adjust height after load
-  updateToolTips();
-}
-
-function moveOutDemoTransactionSection() { // Save demo transaction content if neccesary
-  $(document).ready(function() {
-    if ($('#transactionDemo').children().size() == 1) {
-      $('#transactionDemoPlaceholder').append($('#transference-demo'));
-    }
-  });
-}
-
-function moveInDemoTransactionSection() { // Restore demo transaction content if neccesary
-  $(document).ready(function() {
-    if ($('#transactionDemoPlaceholder').children().size() == 1) {
-      $('#transactionDemo').append($('#transference-demo'));
-    }
-  });
-}
-
-function loadDemoContent() {
-  if ( ( $("#demo-content").hasClass('empty-content') || $("#demo-content").hasClass('normal-content') )
-      && isSmallScreen() ) { // Window is small
-    $("#demo-content").addClass('small-content').removeClass('empty-content').removeClass('normal-content');
-    moveOutDemoTransactionSection();
-    $("#demo-content").load("/demo-small", function() {
-      updateDemoContent();
-    });
-  } else if ( ( $("#demo-content").hasClass('empty-content') || $("#demo-content").hasClass('small-content') )
-      && ( ! isSmallScreen() ) ) { // Window is medium/big
-    $("#demo-content").addClass('normal-content').removeClass('empty-content').removeClass('small-content');
-    $("#demo-content").load("/demo", function() {
-      moveInDemoTransactionSection();
-      updateDemoContent();
-    });
-  }
-}
-
 function updateToolTips() {
   $(".qtip").remove();
   $(document).ready(function() {
@@ -249,7 +226,7 @@ windowResize.update();
 $(document).ready(function() {
   setupActiveJavaScript();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
-  setupNavigationMenu();
+  // setupNavigationMenu(); // DISABLED TODO: Remove or activate
   setupAutoScroll();
   setupScrollHintAnimation();
   setupScrollFadingAndResize();
