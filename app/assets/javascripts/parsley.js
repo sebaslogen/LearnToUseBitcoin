@@ -1,3 +1,23 @@
+window.ParsleyConfig = window.ParsleyConfig || {};
+(function($) {
+  // Add custom validators into ParsleyConfig,
+  // so we can use them globally (for all parsley form).
+  window.ParsleyConfig = $.extend(true, {}, window.ParsleyConfig, {
+    validators: {
+      // [Notice] the validator name nust be lower-case,
+      equal: {
+        fn: function(value, elem) {
+          return value == elem;
+        }
+      }
+    },
+    i18n: {
+      en: { equal: 'Use the Bitcoin address the shop provided' },
+      es: { equal: 'Usa la dirección de Bitcoin que la tienda proporciona'}
+    }
+  });
+}(window.jQuery));
+
 /*!
 * Parsleyjs
 * Guillaume Potier - <guillaume@wisembly.com>
