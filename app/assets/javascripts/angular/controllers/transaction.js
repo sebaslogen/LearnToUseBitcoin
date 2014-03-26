@@ -12,6 +12,9 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       $('#demo-pay-to-address-input').attr('disabled', '');
       $('#demo-input-amount').attr('disabled', '');
       $scope.disabled = true;
+      if ((isMediumScreen()) && ( ! $("#demo-transaction-details").isScrolledIntoView())) {
+        moveTo("#demo-transaction-details");
+      }
       setTimeout(function() { // Show with a little delay to simulate transaction time
         $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
       }, 1000);
@@ -29,7 +32,10 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   }
   
   $scope.copyAddress = function() { // Copy and validate demo-pay to address
-    $('#demo-pay-to-address-input').val($("#demo-pay-to-address").text());
+    if ((isMediumScreen()) && ( ! $("#demo-pay-to-address-input").isBottomScrolledIntoView())) {
+      moveTo("#demo-pay-to-address-input");
+    }
+    $("#demo-pay-to-address-input").val($("#demo-pay-to-address").text());
     $("#demo-transaction-form").parsley().validate();
   }
   

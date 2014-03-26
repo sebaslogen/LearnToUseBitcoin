@@ -25,7 +25,7 @@ function isMediumScreen() {
   }
 }
 
-function moveToSection(id, speed) {
+function moveTo(id, speed) {
   speed = (typeof speed === "undefined") ? 1000 : speed;
   var offset = 20;
   var target = $(id).offset().top - offset;
@@ -61,7 +61,7 @@ function setupNavigationMenu() {
   // Navigation menu links to sections
   $('a[href^="#"]').click(function(event) {
     var id = $(this).attr("href");
-    moveToSection(id);
+    moveTo(id);
     event.preventDefault();
   });
 }
@@ -71,7 +71,7 @@ function setupAutoScroll() {
     // Automatically move to start section after a few seconds if user hasn't seen it yet
     setTimeout(function() {
       if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
-        moveToSection('#what', 3000);  // Move automaticaly but slowly
+        moveTo('#what', 3000);  // Move automaticaly but slowly
       }
     }, 4000); // Wait 4 seconds to automatically move
   }
