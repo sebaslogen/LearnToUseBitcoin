@@ -7,11 +7,12 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       return;
     }
     if ($("#demo-transaction-form").parsley().validate()) {
-      console.log("Started transaction demo");
       $("#demo-transaction-send-button").addClass('disabled').qtip('destroy', true);
       $("#demo-transaction-send-button").removeAttr('title');
       $scope.disabled = true;
-      $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
+      setTimeout(function() { // Show with a little delay to simulate transaction time
+        $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
+      }, 1000);
     }
   }
   
