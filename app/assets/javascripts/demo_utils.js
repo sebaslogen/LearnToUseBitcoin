@@ -47,7 +47,9 @@ function showDemoTransaction() {
             $('#demo-wallet-send-info').fadeIn(3000, function() {
               setTimeout(function() { // Show with a little delay
                 $('#demo-wallet-send-content').fadeIn('slow', function() {
-                  $('#show-blockchain-section').fadeIn('slow');
+                  setTimeout(function() { // Show with a little delay
+                    $('#show-blockchain-section').fadeIn('slow');
+                  }, 4000);
                 });
               }, 2000);
             });
