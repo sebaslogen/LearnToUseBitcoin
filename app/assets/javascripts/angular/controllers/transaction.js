@@ -11,9 +11,10 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       $("#demo-transaction-send-button").removeAttr('title');
       $('#demo-pay-to-address-input').attr('disabled', '');
       $('#demo-input-amount').attr('disabled', '');
+      $('#demo-remaining-bitcoins').text($scope.remainingBitcoins() + " bitcoins available");
       $scope.disabled = true;
       if ((isMediumScreen()) && ( ! $("#demo-transaction-details").isScrolledIntoView())) {
-        moveTo("#demo-transaction-details");
+        moveTo("#demo-transaction-details"); // Refocus on medium windows to help find the update
       }
       setTimeout(function() { // Show with a little delay to simulate transaction time
         $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
@@ -33,7 +34,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   
   $scope.copyAddress = function() { // Copy and validate demo-pay to address
     if ((isMediumScreen()) && ( ! $("#demo-pay-to-address-input").isBottomScrolledIntoView())) {
-      moveTo("#demo-pay-to-address-input");
+      moveTo("#demo-pay-to-address-input"); // Refocus on medium windows to help find the update
     }
     $("#demo-pay-to-address-input").val($("#demo-pay-to-address").text());
     $("#demo-transaction-form").parsley().validate();
