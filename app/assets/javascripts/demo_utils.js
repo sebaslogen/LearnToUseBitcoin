@@ -1,8 +1,5 @@
 
 function updateDemoContent() {
-  //if ( $("#transference-demo").hasClass('available') ) {
-    $('div.sStart').height('100%'); // Change from fixed to auto adjust height after load
-  //}
   updateToolTips();
 }
 
