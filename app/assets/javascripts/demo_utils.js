@@ -1,6 +1,8 @@
 
 function updateDemoContent() {
-  $('div.sStart').height('100%'); // Change from fixed to auto adjust height after load
+  //if ( $("#transference-demo").hasClass('available') ) {
+    $('div.sStart').height('100%'); // Change from fixed to auto adjust height after load
+  //}
   updateToolTips();
 }
 
@@ -39,8 +41,22 @@ function loadDemoContent() {
 }
 
 function showDemoTransaction() {
-  if ( $("#demo-content").parent().hasClass('section') &&
-       $('#transference-demo').isScrolledIntoView() ) { // Only when demo is displayed
-    console.log('bottom: '+$('#transference-demo').isScrolledIntoView());
+  if ( $("#transference-demo").hasClass('available') &&
+       $('#transference-demo').isBottomScrolledIntoView() ) { // Only when demo transaction section is displayed
+    setTimeout(function() { // Show with a little delay
+      $('#demo-shopping-cart-info').fadeIn(3000, function() {
+        setTimeout(function() { // Show with a little delay
+          $('#demo-shopping-cart-content').fadeIn('slow', function() {
+            $('#demo-wallet-send-info').fadeIn(3000, function() {
+              setTimeout(function() { // Show with a little delay
+                $('#demo-wallet-send-content').fadeIn('slow', function() {
+                  $('#show-blockchain-section').fadeIn('slow');
+                });
+              }, 2000);
+            });
+          });
+        }, 2000);
+      });
+    }, 500);
   }
 }

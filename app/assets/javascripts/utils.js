@@ -84,15 +84,29 @@ function setupScrollHintAnimation() {
   }
 }
 
-$.fn.isScrolledIntoView = function() {
+function getScrolledItems(elem) {
   var docViewTop = $(window).scrollTop();
-  console.log('docViewTop:'+docViewTop);
   var docViewBottom = docViewTop + $(window).height();
-  console.log('docViewBottom:'+docViewBottom);
-  var elemTop = $(this).offset().top;
-  console.log('elemTop:'+elemTop);
-  var elemBottom = elemTop + $(this).height();
-  console.log('elemBottom:'+elemBottom);
+  var elemTop = $(elem).offset().top;
+  var elemBottom = elemTop + $(elem).height();
+  return [docViewTop, docViewBottom, elemTop, elemBottom];
+}
+
+$.fn.isBottomScrolledIntoView = function() {
+  var items = getScrolledItems(this);
+  var docViewTop = items[0];
+  var docViewBottom = items[1];
+  var elemTop = items[2];
+  var elemBottom = items[3];
+  return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
+}
+  
+$.fn.isScrolledIntoView = function() {
+  var items = getScrolledItems(this);
+  var docViewTop = items[0];
+  var docViewBottom = items[1];
+  var elemTop = items[2];
+  var elemBottom = items[3];
   return (((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) ||
           ((elemTop >= docViewTop) && (elemTop <= docViewBottom)) ||
           ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)) ||

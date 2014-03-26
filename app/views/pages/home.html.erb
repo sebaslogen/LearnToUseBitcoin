@@ -81,14 +81,16 @@
 
 <div id="transactionDemoPlaceholder" class="hidden">
   <div id="transference-demo" class="rounded-border relative-position info-block" ng-controller="TransactionCtrl">
-    <h3>
-      Demo Bitcoin transaction
-    </h3>
+    <h3>Bitcoin demo transaction</h3><br>
     
     <div class="row rounded-border separated-row">
       
       <div class="large-6 columns text-center right-border" id="demo-shopping-cart">
-        <div class="info-block">
+        <br>
+        <div class="hidden" id="demo-shopping-cart-info">
+          Imagine this section below is the website of an <strong>online shop</strong> where you are about to pay your purchase
+        </div>
+        <div class="info-block hidden" id="demo-shopping-cart-content">
           <fieldset>
             <legend>Shopping cart in your favorite web shop</legend>
             <div>
@@ -149,7 +151,11 @@
       </div>
       
       <div class="large-6 columns text-center" id="demo-wallet-send">
-        <div class="info-block">
+        <br>
+        <div class="hidden" id="demo-wallet-send-info">
+          This section below looks like the <strong>Bitcoin wallet</strong> software you can use to manage your bitcoins
+        </div>
+        <div class="info-block hidden" id="demo-wallet-send-content">
           <form id="demo-transaction-form" data-parsley-validate> 
             <fieldset>
             <legend>Your demo wallet</legend>
@@ -205,7 +211,7 @@
     </div>
     
     <div>
-      <button class="radius round" id="show-blockchain-section" ng-click="showBlockchainSection()">How does this transaction work? &nbsp;&nbsp;<i class="fi-magnifying-glass"></i></button>
+      <button class="radius round hidden" id="show-blockchain-section" ng-click="showBlockchainSection()">How does this transaction work? &nbsp;&nbsp;<i class="fi-magnifying-glass"></i></button>
     </div>
   </div>
 </div>

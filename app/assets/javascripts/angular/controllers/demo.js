@@ -4,6 +4,7 @@ ltubApp.controller('DemoCtrl', ['$scope', function($scope) {
       $('#show-demo').replaceWith($("#demo-content").fadeIn("slow"));
       updateSizes();
       moveToSection('#demo-content');
+      $('#transference-demo').addClass('available');
     });
   }
 }]);
