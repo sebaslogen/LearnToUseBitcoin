@@ -9,6 +9,8 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
     if ($("#demo-transaction-form").parsley().validate()) {
       $("#demo-transaction-send-button").addClass('disabled').qtip('destroy', true);
       $("#demo-transaction-send-button").removeAttr('title');
+      $('#demo-pay-to-address-input').attr('disabled', '');
+      $('#demo-input-amount').attr('disabled', '');
       $scope.disabled = true;
       setTimeout(function() { // Show with a little delay to simulate transaction time
         $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
