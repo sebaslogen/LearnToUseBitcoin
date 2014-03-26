@@ -155,19 +155,8 @@ function setupScrollFadingAndResize() {
 
 function resizeWindow() {
   $(document).ready(function() {
-    updateSizes();
     loadDemoContent();
-    // Change vertical separation line to horizontal 
-    // in demo transaction with smaller(medium) size window
-    if (isMediumScreen()) {
-      var element = $('div.right-border')
-      element.removeClass('right-border');
-      element.addClass('bottom-border');
-    } else if (! isSmallScreen()) {
-      var element = $('div.bottom-border')
-      element.removeClass('bottom-border');
-      element.addClass('right-border');
-    }
+    updateSizes();
   });
 }
 
@@ -182,6 +171,17 @@ function updateSizes() {
     $('#footsteps-image').css('top','-' + video_half_height + 'px');
     // Adjust div height according to window width using contents size
     $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 100);
+    // Change vertical separation line to horizontal 
+    // in demo transaction with smaller(medium) size window
+    if (isMediumScreen()) {
+      var element = $('div.right-border')
+      element.removeClass('right-border');
+      element.addClass('bottom-border');
+    } else if (! isSmallScreen()) {
+      var element = $('div.bottom-border')
+      element.removeClass('bottom-border');
+      element.addClass('right-border');
+    }
   });
 }
 
