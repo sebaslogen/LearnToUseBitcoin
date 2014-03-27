@@ -22,6 +22,15 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
     }
   }
   
+  $scope.remainingBitcoinsFormattedText = function() {
+    var result = $scope.remainingBitcoins()
+    if (result != $scope.total_bitcoins) {
+      return (result + " out of " + $scope.total_bitcoins + " bitcoins available");
+    } else {
+      return ($scope.total_bitcoins + " bitcoins available");
+    }
+  }
+    
   $scope.remainingBitcoins = function() {
     var result = $scope.total_bitcoins;
     var parsed = parseFloat($scope.input_amount);
