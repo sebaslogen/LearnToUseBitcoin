@@ -457,7 +457,7 @@ div.separated-row {
 
 // Fix for Angular adding click to label
 .no-cursor {
-  cursor: default;
+  cursor: default !important;
 }
 
 /* Parsley Form validation CSS */
