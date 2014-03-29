@@ -460,6 +460,16 @@ div.separated-row {
   cursor: default !important;
 }
 
+.fix-link-background:hover {
+  background-color: transparent;
+}
+
+// Fix for background on close X in modal messages
+a.close-reveal-modal:hover {
+  @extend .fix-link-background;
+  color: #000;
+}
+
 /* Parsley Form validation CSS */
 
 input.parsley-success,
