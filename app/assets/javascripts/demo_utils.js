@@ -51,10 +51,10 @@ function showDemoTransaction() {
                     $('#show-blockchain-section').fadeIn('slow');
                   }, 4000);
                 });
-              }, 2000);
+              }, 1500);
             });
           });
-        }, 2000);
+        }, 1500);
       });
     }, 500);
   }

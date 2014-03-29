@@ -19,6 +19,9 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       setTimeout(function() { // Show with a little delay to simulate transaction time
         $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
         $('#confirmation-sound')[0].play();
+        setTimeout(function() { // Show congratulations message
+          $('#congratulations-demo-modal').foundation('reveal', 'open');
+        }, 1800);
       }, 1000);
     }
   }
@@ -52,5 +55,10 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   
   $scope.showBlockchainSection = function() {
     $("#show-blockchain-section").replaceWith($("#demo-section-blockchain").fadeIn("slow"));
+  }
+  
+  $scope.discardDemoModal = function() {
+    $('#congratulations-demo-modal').foundation('reveal', 'close');
+    moveTo('#show-blockchain-section');
   }
 }]);

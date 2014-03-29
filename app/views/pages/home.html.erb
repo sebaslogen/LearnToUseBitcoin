@@ -220,7 +220,9 @@
     </div>
     <br>
     <div>
-      <button class="radius round hidden" id="show-blockchain-section" ng-click="showBlockchainSection()">How does this transaction work? &nbsp;&nbsp;<i class="fi-magnifying-glass"></i></button>
+      <button class="radius round hidden" id="show-blockchain-section" ng-click="showBlockchainSection()">
+        How does this transaction work? &nbsp;&nbsp;<i class="fi-magnifying-glass"></i>
+      </button>
     </div>
     <br>
   </div>
@@ -233,6 +235,13 @@
     </div>
   </div>
   <%= image_tag "ok_purchase.png", width: '70%', alt: "Purchase OK image" %>
+</div>
+
+<div id="congratulations-demo-modal" class="reveal-modal text-center" data-reveal ng-controller="TransactionCtrl"> 
+  <h2>Congratulations!</h2><br>
+  <h4>You have learned how to send bitcoins</h4><br>
+  <p>And there are many more things you can do with Bitcoin. <a ng-click="discardDemoModal()">See below</a></p>
+  <a class="close-reveal-modal">&#215;</a>
 </div>
 
 <div id="WIPModal" class="reveal-modal text-center" data-reveal> 
