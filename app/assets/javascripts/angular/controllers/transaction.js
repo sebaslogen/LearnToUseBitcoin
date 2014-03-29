@@ -18,6 +18,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       }
       setTimeout(function() { // Show with a little delay to simulate transaction time
         $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
+        $('#confirmation-sound')[0].play();
       }, 1000);
     }
   }
