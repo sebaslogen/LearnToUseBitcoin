@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="ltubApp">
   <head>
+    <%= favicon_link_tag 'bitcoin.ico' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Learn To Use Bitcoin" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Learn To Use Bitcoin" %>">
