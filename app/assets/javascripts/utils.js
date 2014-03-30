@@ -73,6 +73,7 @@ function setupAutoScroll() {
       if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
         moveTo('#what', 3000);  // Move automaticaly but slowly
       }
+      analytics.track('AutoScrolled to Welcome section');
     }, 4000); // Wait 4 seconds to automatically move
   }
 }

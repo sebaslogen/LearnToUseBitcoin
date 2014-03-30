@@ -27,7 +27,9 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
     } else {
       analytics.track('Failed attempt to submit demo transaction', {
         valid_amount: $('#demo-input-amount').parsley().isValid(),
-        valid_transaction: $('#demo-pay-to-address-input').parsley().isValid()
+        amount_value: $('#demo-input-amount').val(),
+        valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
+        address_value: $('#demo-pay-to-address-input').val()
       });
     }
   }
