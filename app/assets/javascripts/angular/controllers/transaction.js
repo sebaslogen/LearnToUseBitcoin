@@ -23,6 +23,12 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
           $('#congratulations-demo-modal').foundation('reveal', 'open');
         }, 1800);
       }, 1000);
+      analytics.track('Click Send demo transaction successful');
+    } else {
+      analytics.track('Failed attempt to submit demo transaction', {
+        valid_amount: $('#demo-input-amount').parsley().isValid(),
+        valid_transaction: $('#demo-pay-to-address-input').parsley().isValid()
+      });
     }
   }
   
@@ -51,14 +57,17 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
     }
     $("#demo-pay-to-address-input").val($("#demo-pay-to-address").text());
     $("#demo-transaction-form").parsley().validate();
+    analytics.track('Click Copy demo Bitcoin address');
   }
   
   $scope.showBlockchainSection = function() {
     $("#show-blockchain-section").replaceWith($("#demo-section-blockchain").fadeIn("slow"));
+    analytics.track('Click Show Blockchain extra information');
   }
   
   $scope.discardDemoModal = function() {
     $('#congratulations-demo-modal').foundation('reveal', 'close');
     moveTo('#show-blockchain-section');
+    analytics.track('Click Show more information from demo Send successful modal');
   }
 }]);
