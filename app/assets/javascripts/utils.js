@@ -187,7 +187,6 @@ function updateSizes() {
 }
 
 function updateToolTips() {
-  $(".qtip").remove();
   $(document).ready(function() {
     $('.has-tooltip[title]').qtip({
       style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
