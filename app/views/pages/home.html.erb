@@ -195,7 +195,7 @@
         <div class="hidden" id="demo-wallet-send-info">
           <p>
             This section below looks like the <strong>Bitcoin wallet</strong> software you can use to manage your bitcoins<br><br>
-            To practice, fill the form and press <strong>Send</strong>
+            To practice, <strong>fill</strong> the form and press <strong>Send</strong>
           </p>
         </div>
         <div class="info-block hidden" id="demo-wallet-send-content">
@@ -223,7 +223,7 @@
               <div class="small-2 columns" id="amount">
                 <input type="text" class="text-center has-tooltip" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
                        data-parsley-min="0.1" data-parsley-min-message="Value should be 0.1, same as the price" data-parsley-max="0.1" data-parsley-max-message="Value should be 0.1, same as the price"
-                       title="1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="0.1" />
+                       title="1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="eg 0.1" />
               </div>
               <div class="small-4 columns">
                 <span class="postfix radius"> bitcoins (BTC)</span>
@@ -232,12 +232,12 @@
             </div>
             <div class="row collapse separated-row">
               <div class="small-2 columns">
-                <span class="prefix radius button disabled has-tooltip" 
-                      title="enter here the Bitcoin address the shop provides for the payment (hint: use the copy button)">To:</span>
+                <span class="prefix radius button disabled">To:</span>
               </div>
               <div class="small-10 columns">
-                <input id="demo-pay-to-address-input" type="text" placeholder="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1" data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
-                       data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required/>
+                <input id="demo-pay-to-address-input" type="text" placeholder="eg 1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1" data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
+                       data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required class="has-tooltip"
+                       title="enter here the Bitcoin address the shop provides for the payment (<strong>Hint</strong>: use the copy button)"/>
               </div>
             </div>
               <div class="row">
