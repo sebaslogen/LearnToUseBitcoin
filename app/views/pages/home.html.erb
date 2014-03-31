@@ -70,7 +70,8 @@
   <div class="rounded-border info-block">
     <p>Today it's possible to pay with bitcoins in hundreds of <strong class="title has-external-tooltip" tooltip-id="shops-tooltip">shops around the world</strong></p>
     <div id="shops-tooltip" class="hidden tooltip-text">
-      <p>From <%= link_to('flights', 'https://www.cheapair.com', target: "_blank") %> to <%= link_to('furniture', 'https://www.overstock.com', target: "_blank") %></p>
+      <p>From <%= link_to('flights', 'https://www.cheapair.com', target: "_blank") %> to <%= link_to('furniture', 'https://www.overstock.com', target: "_blank") %> or
+      <%= link_to('food', 'http://www.takeaway.com', target: "_blank") %></p>
     </div>
     <p>Sending money internationally and remittances becomes a very cheap and fast 
       <strong class="title has-tooltip" title="You only need to have a Bitcoin wallet software to send and receive bitcoins, that's it">person to person</strong> transaction with Bitcoin</p>
@@ -91,7 +92,21 @@
 
 <div class="section sMyths" id="myths">
   <h1>Myths about Bitcoin</h1>
-  <p>- Who is backing a decentralized currency?</p>
+  <div class="rounded-border info-block">
+    <h4>Who is backing a decentralized currency?</h4>
+    <p>There is no goverment, corporation or legal entity backing Bitcoin which may make difficult to undertand how can the currency be trustworthy.<br>
+      Bitcoins solves this by moving trust away from organizations and persons whose interests can be influenced to a unique trust in math.<br>
+      The same way gold provides trust through a series of unique physical attributes that are difficult to imitate correctly, 
+      Bitcoin uses algorithms to prove that money belongs only to the owner of a private key and can only be spent once.</p>
+    <h4>Anonymity</h4>
+    <p>Bitcoin is not anonymous, it is pseudo-anonymous like cash.<br>
+      Similar to cash where your name is not present in the bills that you use, in Bitcoin it is not possible to see your name in the bitcoins that you send or receive 
+      but if you reveal your identity to the person or company that receives the bitcoins, it is possible to link your identity with your transaction
+      and since all transactions are linked and publicly stored in the blockchain, it is possible to partially track some of the previous transactions you made with the same Bitcoin address.</p>
+    <h4>Can I copy or create more bitcoins?</h4>
+    <p>Bitcoins are limited in quantity. It is often compared to gold in the way that the money is released into the world in a continuos and decreased rate, like minning.<br>
+      There will never be more than 21 million bitcoins in existence and every four years the amount of bitcoins released is halved until the last bitcoin is released around year 2140</p>
+  </div>
 </div>
 
 
