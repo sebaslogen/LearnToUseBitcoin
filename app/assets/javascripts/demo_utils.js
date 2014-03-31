@@ -46,16 +46,20 @@ function showDemoTransaction() {
           $('#demo-shopping-cart-content').fadeIn('slow', function() {
             $('#demo-wallet-send-info').fadeIn(3000, function() {
               setTimeout(function() { // Show with a little delay
-                $('#demo-wallet-send-content').fadeIn('slow', function() {
-                  setTimeout(function() { // Show with a little delay
-                    $('#show-blockchain-section').fadeIn('slow');
-                  }, 4000);
-                });
+                $('#demo-wallet-send-content').fadeIn('slow');
               }, 1500);
             });
           });
         }, 1500);
       });
+    }, 500);
+  }
+}
+
+function showGetFirstBitcoins() {
+  if ( $("#transference-demo").isBottomScrolledIntoView() ) { // Only when section end is visible
+    setTimeout(function() { // Show with a little delay
+      $('#get-bitcoins-section').fadeIn('slow');
     }, 500);
   }
 }

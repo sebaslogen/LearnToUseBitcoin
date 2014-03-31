@@ -19,8 +19,10 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       setTimeout(function() { // Show with a little delay to simulate transaction time
         $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
         $('#confirmation-sound')[0].play();
-        setTimeout(function() { // Show congratulations message
+        setTimeout(function() { // Show congratulations message and blockchain extra information
           $('#congratulations-demo-modal').foundation('reveal', 'open');
+          $('#show-blockchain-section').fadeIn('slow');
+          showGetFirstBitcoins();
         }, 1800);
       }, 1000);
       analytics.track('Click Send demo transaction successful');
