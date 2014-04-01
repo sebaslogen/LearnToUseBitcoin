@@ -41,10 +41,10 @@ function showDemoTransaction() {
   if ( $("#transference-demo").hasClass('available') &&
        $('#transference-demo').isBottomScrolledIntoView() ) { // Only when demo transaction section is displayed
     setTimeout(function() { // Show with a little delay
-      $('#demo-shopping-cart-info').fadeIn(3000, function() {
+      $('#demo-shopping-cart-info').fadeIn(2000, function() {
         setTimeout(function() { // Show with a little delay
           $('#demo-shopping-cart-content').fadeIn('slow', function() {
-            $('#demo-wallet-send-info').fadeIn(3000, function() {
+            $('#demo-wallet-send-info').fadeIn(2000, function() {
               setTimeout(function() { // Show with a little delay
                 $('#demo-wallet-send-content').fadeIn('slow');
               }, 1500);
