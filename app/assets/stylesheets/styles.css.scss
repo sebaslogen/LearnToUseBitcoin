@@ -141,6 +141,18 @@ div.sMyths {
   height: 100% !important;
 }
 
+.highlighted-box:focus {
+  box-shadow: 0px 0px 7px red !important;
+  border-color: red !important;
+}
+
+.highlighted-box {
+  //transition: box-shadow 3s !important;
+  -webkit-transition: -webkit-box-shadow 3s, border-color 3s ease-in-out !important;
+  -moz-transition: -moz-box-shadow 3s, border-color 3s ease-in-out !important;
+  transition: box-shadow 3s, border-color 3s ease-in-out !important;
+}
+
 /* Side naviagtion menu */
 
 .navigation-menu {
