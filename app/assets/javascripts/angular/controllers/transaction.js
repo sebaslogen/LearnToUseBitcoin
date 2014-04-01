@@ -22,7 +22,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
         setTimeout(function() { // Show congratulations message and blockchain extra information
           $('#congratulations-demo-modal').foundation('reveal', 'open');
           $('#show-blockchain-section').fadeIn('slow');
-          showGetFirstBitcoins();
+          show_bottom_elements = true;
         }, 1800);
       }, 1000);
       analytics.track('Click Send demo transaction successful');

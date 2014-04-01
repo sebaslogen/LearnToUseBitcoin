@@ -56,10 +56,12 @@ function showDemoTransaction() {
   }
 }
 
-function showGetFirstBitcoins() {
-  if ( $("#transference-demo").isBottomScrolledIntoView() ) { // Only when section end is visible
+function showBottomElements() {
+  if ( show_bottom_elements && $("#transference-demo").isBottomScrolledIntoView() ) { // Only when section end is visible
     setTimeout(function() { // Show with a little delay
       $('#get-bitcoins-section').fadeIn('slow');
+      $('#use').fadeIn('slow');
+      $('#myths').fadeIn('slow');
     }, 500);
   }
 }

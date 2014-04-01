@@ -59,13 +59,14 @@
   <div class="show-for-medium-up" id="footsteps" align="right">
     <%= image_tag "footsteps.png", id: "footsteps-image", width: "174", height: "444" %>
   </div>
+  <br>
 </div>
 
 <div class="section sStart" id="start" ng-controller="DemoCtrl">
   <button class="radius round large super-button" id="show-demo" ng-click="showDemo()">Start using Bitcoin <i class="fi-bitcoin bitcoin-button"></i></button>
 </div>
 
-<div class="section sUse" id="use">
+<div class="section sUse hidden" id="use">
   <h1 id="fourth">What can I do with Bitcoin?</h1>
   <div class="rounded-border info-block">
     <p>Today it's possible to pay with bitcoins in hundreds of <strong class="title has-external-tooltip" tooltip-id="shops-tooltip">shops around the world</strong></p>
@@ -90,7 +91,7 @@
   </div>
 </div>
 
-<div class="section sMyths" id="myths">
+<div class="section sMyths hidden" id="myths">
   <h1>Myths about Bitcoin</h1>
   <div class="rounded-border info-block">
     <h4>Who is backing a decentralized currency?</h4>
@@ -109,11 +110,13 @@
   </div>
 </div>
 
+<div class="text-center info-block" id="contact-info">
+  <p>Made with <i class="fi-heart"></i> by Sebas<br>
+  love@learntousebitcoin.com<p>
+</div>
 
 
-
-
-<!-- Hidden elements -->
+<!-- Hidden moving elements -->
 
 <div class="empty-content hidden" id="demo-content">
   <div> <%= image_tag "loading.gif", alt: "Counting starts in the universe..." %> </div>
@@ -271,14 +274,14 @@
   <%= image_tag "ok_purchase.png", width: '70%', alt: "Purchase OK image" %>
 </div>
 
-<div id="congratulations-demo-modal" class="reveal-modal text-center" data-reveal ng-controller="TransactionCtrl"> 
+<div id="congratulations-demo-modal" class="reveal-modal text-center hidden" data-reveal ng-controller="TransactionCtrl"> 
   <h2>Congratulations!</h2><br>
   <h4>You have learned how to send bitcoins</h4><br>
   <p>And there are many more things you can do with Bitcoin. <a ng-click="discardDemoModal()">See below</a></p>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
-<div id="WIPModal" class="reveal-modal text-center" data-reveal> 
+<div id="WIPModal" class="reveal-modal text-center hidden" data-reveal> 
   <h2>In construction</h2>
   <h4>Apologies, this part of the website is not yet finished</h4>
   <p>Come back later and you should be able to get some bitcoins for free</p>

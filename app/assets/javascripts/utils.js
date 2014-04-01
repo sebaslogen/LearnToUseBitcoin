@@ -1,5 +1,6 @@
 var SMALL_WIDTH = 640;
 var MEDIUM_WIDTH = 1024;
+var show_bottom_elements = false;
 
 function setupActiveJavaScript() {
   $('#welcome-content').css({
@@ -116,6 +117,7 @@ $.fn.isScrolledIntoView = function() {
 
 function scrollFading() {
   showDemoTransaction();
+  showBottomElements();
   var sizeWelcome = parseInt($('#welcome').css('height'));
   var scrolled = $(window).scrollTop() * 1.5;
   var percentage = 1 - (scrolled / sizeWelcome);
@@ -154,13 +156,6 @@ function setupScrollFadingAndResize() {
   });
 }
 
-function resizeWindow() {
-  $(document).ready(function() {
-    loadDemoContent();
-    updateSizes();
-  });
-}
-
 function updateSizes() {
   $(document).ready(function() {
     /* Adapt footsteps position and size */
@@ -171,7 +166,7 @@ function updateSizes() {
     $('#footsteps-image').height(parseInt(ratio * 444));
     $('#footsteps-image').css('top','-' + video_half_height + 'px');
     // Adjust div height according to window width using contents size
-    $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 100);
+    $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 170);
     // Change vertical separation line to horizontal 
     // in demo transaction with smaller(medium) size window
     if (isMediumScreen()) {
@@ -217,6 +212,14 @@ function updateToolTips() {
         }
       });
     });
+  });
+}
+
+
+function resizeWindow() {
+  $(document).ready(function() {
+    loadDemoContent();
+    updateSizes();
   });
 }
 
