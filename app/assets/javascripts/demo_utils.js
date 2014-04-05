@@ -46,7 +46,6 @@ function showDemoTransaction() {
        $('#transference-demo').isBottomScrolledIntoView() &&
        ! $("#transference-demo").hasClass('enabled')) { // Only when demo transaction section is displayed
     $("#transference-demo").addClass('enabled');
-console.log('\nCall showDemoTransaction ONCE\n');/////////////////////////////////////////////////////////////////////////////////////////////////
     setTimeout(function() { // Show with a little delay
       $('#demo-shopping-cart-info').fadeIn(2000, function() {
         setTimeout(function() { // Show with a little delay
@@ -76,17 +75,13 @@ function showBottomElements() {
   }
 }
 
-function startDemoFieldsGlowing() {
-  console.log('\nstartDemoFieldsGlowing');
+function startDemoFieldsGlowing() { // Change glow if enabled and call itself in loop
   if (demo_input_amount_glowing || demo_input_address_glowing) {
     if (demo_input_amount_glowing) {
-      console.log('demo_input_amount_glowing==true');
       demo_input_amount_glowing_on = ! demo_input_amount_glowing_on;
       if (demo_input_amount_glowing_on) {
-        console.log('demo_input_amount_glowing ON == True');
         $('#demo-input-amount').css("box-shadow", "0px 0px 30px #FF5E5E");
       } else {
-        console.log('demo_input_amount_glowing ON == False');
         $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
       }
     }
