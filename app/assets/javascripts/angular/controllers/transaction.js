@@ -74,4 +74,14 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
     moveTo('#show-blockchain-section');
     analytics.track('Click Show more information from demo Send successful modal');
   }
+  
+  $scope.disableAddressGlowing = function() {
+    demo_input_address_glowing = false;
+    $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
+  }
+  
+  $scope.disableAmountGlowing = function() {
+    demo_input_amount_glowing = false;
+    $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
+  }
 }]);

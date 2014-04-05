@@ -1,3 +1,7 @@
+var demo_input_amount_glowing = false;
+var demo_input_amount_glowing_on = false;
+var demo_input_address_glowing = false;
+var demo_input_address_glowing_on = false;
 
 function updateDemoContent() {
   updateToolTips();
@@ -39,7 +43,10 @@ function loadDemoContent() {
 
 function showDemoTransaction() {
   if ( $("#transference-demo").hasClass('available') &&
-       $('#transference-demo').isBottomScrolledIntoView() ) { // Only when demo transaction section is displayed
+       $('#transference-demo').isBottomScrolledIntoView() &&
+       ! $("#transference-demo").hasClass('enabled')) { // Only when demo transaction section is displayed
+    $("#transference-demo").addClass('enabled');
+console.log('\nCall showDemoTransaction ONCE\n');/////////////////////////////////////////////////////////////////////////////////////////////////
     setTimeout(function() { // Show with a little delay
       $('#demo-shopping-cart-info').fadeIn(2000, function() {
         setTimeout(function() { // Show with a little delay
@@ -47,6 +54,9 @@ function showDemoTransaction() {
             $('#demo-wallet-send-info').fadeIn(2000, function() {
               setTimeout(function() { // Show with a little delay
                 $('#demo-wallet-send-content').fadeIn('slow');
+                demo_input_amount_glowing = true;
+                demo_input_address_glowing = true;
+                startDemoFieldsGlowing();
               }, 1500);
             });
           });
@@ -63,5 +73,36 @@ function showBottomElements() {
       $('#use').fadeIn('slow');
       $('#myths').fadeIn('slow');
     }, 500);
+  }
+}
+
+function startDemoFieldsGlowing() {
+  console.log('\nstartDemoFieldsGlowing');
+  if (demo_input_amount_glowing || demo_input_address_glowing) {
+    if (demo_input_amount_glowing) {
+      console.log('demo_input_amount_glowing==true');
+      demo_input_amount_glowing_on = ! demo_input_amount_glowing_on;
+      if (demo_input_amount_glowing_on) {
+        console.log('demo_input_amount_glowing ON == True');
+        $('#demo-input-amount').css("box-shadow", "0px 0px 30px #FF5E5E");
+      } else {
+        console.log('demo_input_amount_glowing ON == False');
+        $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
+      }
+    }
+    if (demo_input_address_glowing) {
+      demo_input_address_glowing_on = ! demo_input_address_glowing_on;
+      if (demo_input_address_glowing_on) {
+        $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 30px #FF5E5E");
+      } else {
+        $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
+      }
+    }
+    setTimeout(function() { // Show with a little delay
+      startDemoFieldsGlowing();
+    }, 3000);
+  } else {
+    $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
+    $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
   }
 }

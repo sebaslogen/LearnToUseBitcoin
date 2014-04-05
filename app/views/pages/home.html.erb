@@ -221,10 +221,10 @@
             </div>
             <div class="row collapse separated-row"> 
               <div class="small-3 columns">
-                <label for="amount" class="right inline small-right-padding">amount: </label>
+                <label for="amount" class="right inline small-right-padding ">amount: </label>
               </div>
               <div class="small-2 columns" id="amount">
-                <input type="text" class="text-center has-tooltip" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
+                <input type="text" class="highlighted-box text-center has-tooltip" ng-click="disableAmountGlowing()" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
                        data-parsley-min="0.1" data-parsley-min-message="Value should be 0.1, same as the price" data-parsley-max="0.1" data-parsley-max-message="Value should be 0.1, same as the price"
                        title="1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="eg 0.1" />
               </div>
@@ -238,8 +238,8 @@
                 <span class="prefix radius button disabled">To:</span>
               </div>
               <div class="small-10 columns">
-                <input id="demo-pay-to-address-input" type="text" placeholder="eg 1JL27iKbmVBNBnwuST7aqyu..." data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
-                       data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required class="has-tooltip"
+                <input id="demo-pay-to-address-input" type="text" ng-click="disableAddressGlowing()" placeholder="eg 1JL27iKbmVBNBnwuST7aqyu..." data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
+                       data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required class="highlighted-box has-tooltip"
                        title="enter here the Bitcoin address the shop provides for the payment (<strong>Hint</strong>: use the <i class='fi-page-copy'></i> Copy button)"/>
               </div>
             </div>
