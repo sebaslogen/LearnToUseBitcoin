@@ -71,6 +71,13 @@ button:focus {
   }
 }
 
+.address-info-block-shop-higlighted {
+  background-color: red !important;
+  &:hover {
+    background-color: saddlebrown !important;
+  }
+}
+
 .rounded-corners {
   border-radius: 15px;
 }

@@ -56,6 +56,8 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   }
   
   $scope.copyAddress = function() { // Copy and validate demo-pay to address
+    demo_copy_address_button_glowing = false;
+    $('#copy-demo-button').css("box-shadow", "0px 0px 0px #FFF").removeClass('address-info-block-shop-higlighted').addClass('address-info-block-shop');
     if ((isMediumScreen()) && ( ! $("#demo-pay-to-address-input").isBottomScrolledIntoView())) {
       moveTo("#demo-pay-to-address-input"); // Refocus on medium windows to help find the update
     }
@@ -76,12 +78,20 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   }
   
   $scope.disableAddressGlowing = function() {
-    demo_input_address_glowing = false;
-    $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
+    
+    if ( ! $('#demo-pay-to-address-input').parsley().isValid() ) {
+      demo_copy_address_button_glowing = true;
+      $('#copy-demo-button').removeClass('address-info-block-shop').addClass('address-info-block-shop-higlighted');
+    } else {
+      demo_input_address_glowing = false;
+      $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
+    }
   }
   
   $scope.disableAmountGlowing = function() {
-    demo_input_amount_glowing = false;
-    $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
+    if ( $('#demo-input-amount').parsley().isValid() ) {
+      demo_input_amount_glowing = false;
+      $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
+    }
   }
 }]);

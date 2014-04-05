@@ -2,6 +2,8 @@ var demo_input_amount_glowing = false;
 var demo_input_amount_glowing_on = false;
 var demo_input_address_glowing = false;
 var demo_input_address_glowing_on = false;
+var demo_copy_address_button_glowing = false;
+var demo_copy_address_button_glowing_on = false;
 
 function updateDemoContent() {
   updateToolTips();
@@ -76,10 +78,10 @@ function showBottomElements() {
 }
 
 function startDemoFieldsGlowing() { // Change glow if enabled and call itself in loop
-  if (demo_input_amount_glowing || demo_input_address_glowing) {
+  if (demo_input_amount_glowing || demo_input_address_glowing || demo_copy_address_button_glowing) {
     if (demo_input_amount_glowing) {
       demo_input_amount_glowing_on = ! demo_input_amount_glowing_on;
-      if (demo_input_amount_glowing_on) {
+      if (demo_input_amount_glowing_on && ( ! $('#demo-input-amount').parsley().isValid() ) ) {
         $('#demo-input-amount').css("box-shadow", "0px 0px 30px #FF5E5E");
       } else {
         $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
@@ -87,10 +89,18 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
     }
     if (demo_input_address_glowing) {
       demo_input_address_glowing_on = ! demo_input_address_glowing_on;
-      if (demo_input_address_glowing_on) {
+      if (demo_input_address_glowing_on && ( ! $('#demo-pay-to-address-input').parsley().isValid() ) ) {
         $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 30px #FF5E5E");
       } else {
         $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
+      }
+    }
+    if (demo_copy_address_button_glowing) {
+      demo_copy_address_button_glowing_on = ! demo_copy_address_button_glowing_on;
+      if (demo_copy_address_button_glowing_on) {
+        $('#copy-demo-button').css("box-shadow", "0px 0px 50px #EA0000");
+      } else {
+        $('#copy-demo-button').css("box-shadow", "0px 0px 0px #FFF");
       }
     }
     setTimeout(function() { // Show with a little delay
@@ -99,5 +109,6 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
   } else {
     $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
     $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
+    $('#copy-demo-button').css("box-shadow", "0px 0px 0px #FFF");
   }
 }
