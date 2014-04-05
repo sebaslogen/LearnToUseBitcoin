@@ -487,6 +487,23 @@ a.close-reveal-modal:hover {
   color: #000;
 }
 
+// Fix for Zurb Foundation sizes
+#breakpoints {  
+  height:0px;  
+  div {
+    width:1px;
+    height:0px;
+    visibility:hidden;    
+    &.breakpoint-small {
+      display:block;
+    }
+    &.breakpoint-medium,
+    &.breakpoint-large {
+      display:none;
+    }
+  }
+}
+
 /* Parsley Form validation CSS */
 
 input.parsley-success,

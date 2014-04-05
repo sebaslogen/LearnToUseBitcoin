@@ -7,7 +7,7 @@ ltubApp.controller('DemoCtrl', ['$scope', function($scope) {
       moveTo('#demo-content');
       $('#transference-demo').addClass('available');
       analytics.track('Click Start using Bitcoin', {
-        small: isSmallScreen()
+        small: (getWindowsSize() == "small")
       });
     });
   }

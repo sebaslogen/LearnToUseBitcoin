@@ -1,5 +1,3 @@
-var SMALL_WIDTH = 640;
-var MEDIUM_WIDTH = 1024;
 var show_bottom_elements = false;
 
 function setupActiveJavaScript() {
@@ -9,21 +7,8 @@ function setupActiveJavaScript() {
   });
 }
 
-function isSmallScreen() {
-  if ($( window ).width() <= SMALL_WIDTH) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function isMediumScreen() {
-  var window_width = $( window ).width();
-  if ((window_width > SMALL_WIDTH) && (window_width <= MEDIUM_WIDTH)) {
-    return true;
-  } else {
-    return false;
-  }
+function getWindowsSize() {
+  return $('#breakpoints div:visible').first().data('size');
 }
 
 function moveTo(id, speed) {
@@ -68,7 +53,7 @@ function setupNavigationMenu() {
 }
 
 function setupAutoScroll() {
-  if (($('div.alert-box').size() == 0) && (! isSmallScreen()) ) { // Only whe there is no flash message shown at page top or is not a mobile
+  if (($('div.alert-box').size() == 0) && (getWindowsSize() != "small") ) { // Only whe there is no flash message shown at page top or is not a mobile
     // Automatically move to start section after a few seconds if user hasn't seen it yet
     setTimeout(function() {
       if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
@@ -169,11 +154,11 @@ function updateSizes() {
     $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 170);
     // Change vertical separation line to horizontal 
     // in demo transaction with smaller(medium) size window
-    if (isMediumScreen()) {
+    if (getWindowsSize() == "medium") {
       var element = $('div.right-border')
       element.removeClass('right-border');
       element.addClass('bottom-border');
-    } else if (! isSmallScreen()) {
+    } else if (getWindowsSize() == "large") {
       var element = $('div.bottom-border')
       element.removeClass('bottom-border');
       element.addClass('right-border');

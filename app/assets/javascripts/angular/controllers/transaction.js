@@ -13,7 +13,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       $('#demo-input-amount').attr('disabled', '');
       $('#demo-remaining-bitcoins').text($scope.remainingBitcoins() + " bitcoins available");
       $scope.disabled = true;
-      if ((isMediumScreen()) && ( ! $("#demo-transaction-details").isScrolledIntoView())) {
+      if ((getWindowsSize() == "medium") && ( ! $("#demo-transaction-details").isScrolledIntoView())) {
         moveTo("#demo-transaction-details"); // Refocus on medium windows to help find the update
       }
       setTimeout(function() { // Show with a little delay to simulate transaction time
@@ -58,7 +58,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   $scope.copyAddress = function() { // Copy and validate demo-pay to address
     demo_copy_address_button_glowing = false;
     $('#copy-demo-button').css("box-shadow", "0px 0px 0px #FFF").removeClass('address-info-block-shop-higlighted').addClass('address-info-block-shop');
-    if ((isMediumScreen()) && ( ! $("#demo-pay-to-address-input").isBottomScrolledIntoView())) {
+    if ((getWindowsSize() == "medium") && ( ! $("#demo-pay-to-address-input").isBottomScrolledIntoView())) {
       moveTo("#demo-pay-to-address-input"); // Refocus on medium windows to help find the update
     }
     $("#demo-pay-to-address-input").val($("#demo-pay-to-address").text());
