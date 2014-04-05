@@ -116,6 +116,7 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
 }
 
 function registerDemoParsleyEvents() {
+  // Fix automatically commas introduced in the field and replace by dots
   $('#demo-input-amount').parsley().subscribe('parsley:field:validate', function() {
     // Fix when it's not valid and contains commas
     var current_value = $('#demo-input-amount').val();
