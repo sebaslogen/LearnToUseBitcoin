@@ -32,6 +32,7 @@ function loadDemoContent() {
     moveOutDemoTransactionSection();
     $("#demo-content").load("/demo-small", function() {
       updateDemoContent();
+      // TODO: Not sure if required! registerDemoParsleyEvents();
     });
   } else if ( ( $("#demo-content").hasClass('empty-content') || $("#demo-content").hasClass('small-content') )
       && ( ! isSmallScreen() ) ) { // Window is medium/big
@@ -39,6 +40,7 @@ function loadDemoContent() {
     $("#demo-content").load("/demo", function() {
       moveInDemoTransactionSection();
       updateDemoContent();
+      registerDemoParsleyEvents();
     });
   }
 }
@@ -111,4 +113,17 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
     $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
     $('#copy-demo-button').css("box-shadow", "0px 0px 0px #FFF");
   }
+}
+
+function registerDemoParsleyEvents() {
+  $('#demo-input-amount').parsley().subscribe('parsley:field:validate', function() {
+    // Fix when it's not valid and contains commas
+    var current_value = $('#demo-input-amount').val();
+    if ((! $('#demo-input-amount').parsley().isValid()) &&
+       ( current_value.indexOf(",") != -1 ) ) {
+      var res = current_value.replace(",",".");
+      $('#demo-input-amount').val(res);
+      $('#demo-input-amount').parsley().validate();
+    }
+  });
 }
