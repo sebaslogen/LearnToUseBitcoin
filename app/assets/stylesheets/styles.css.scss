@@ -15,6 +15,13 @@ h3 {
   color: #3F3F3F;
 }
 
+a:hover {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
 .bitcoin-button {
   font-size: 40px;
   vertical-align: middle;
