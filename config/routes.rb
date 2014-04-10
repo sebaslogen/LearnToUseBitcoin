@@ -5,7 +5,7 @@ LearnToUseBitcoin::Application.routes.draw do
   root :module=> :high_voltage, :controller => :pages, :action => :show, :id => 'home'
   get 'demo' => 'pages#show', id: '_demo'
   get 'demo-small' => 'pages#show', id: '_demo-small'
-  get 'minning' => 'pages#show', id: '_minning'
+  get 'mining' => 'pages#show', id: '_mining'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

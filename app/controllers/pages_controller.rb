@@ -9,7 +9,7 @@ class PagesController < HighVoltage::PagesController
       false
     when '_demo-small'
       false
-    when '_minning'
+    when '_mining'
       false
     else
       'application'

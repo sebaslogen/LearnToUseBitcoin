@@ -132,8 +132,5 @@ function registerDemoParsleyEvents() {
 function enable_bottom_sections_after_demo() {
   $('#show-blockchain-section').fadeIn('slow');
   show_bottom_elements = true; // Enable showing when scrolling
-  console.log('loading minning');
-  $("#minning-content").load("/minning", function() {
-    //updateDemoContent();
-  });
+  $("#mining-content").load("/mining");
 }
