@@ -21,8 +21,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
         $('#confirmation-sound')[0].play();
         setTimeout(function() { // Show congratulations message and blockchain extra information
           $('#congratulations-demo-modal').foundation('reveal', 'open');
-          $('#show-blockchain-section').fadeIn('slow');
-          show_bottom_elements = true;
+          enable_bottom_sections_after_demo();
         }, 1800);
       }, 1000);
       analytics.track('Click Send demo transaction successful');

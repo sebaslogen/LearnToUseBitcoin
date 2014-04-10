@@ -2,9 +2,10 @@ LearnToUseBitcoin::Application.routes.draw do
 #  get "visitors/show"
 #  resources :wallets
 #  get '/testadd' => 'wallets#testadd'######################################################## TODO: Test code
-  get 'demo-small' => 'pages#show', id: '_demo-small'
-  get 'demo' => 'pages#show', id: '_demo'
   root :module=> :high_voltage, :controller => :pages, :action => :show, :id => 'home'
+  get 'demo' => 'pages#show', id: '_demo'
+  get 'demo-small' => 'pages#show', id: '_demo-small'
+  get 'minning' => 'pages#show', id: '_minning'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -106,7 +106,10 @@
       and since all transactions are linked and publicly stored in the blockchain, it is possible to partially track some of the previous transactions you made with the same Bitcoin address.</p>
     <h4>Can I copy or create more bitcoins?</h4>
     <p>Bitcoins are limited in quantity. It is often compared to gold in the way that the money is released into the world in a continuos and decreased rate, like minning.<br>
-      There will never be more than 21 million bitcoins in existence and every four years the amount of bitcoins released is halved until the last bitcoin is released around year 2140</p>
+      There will never be more than 21 million bitcoins in existence and every four years the amount of bitcoins released is halved until the last bitcoin is released around year 2140.</p>
+    <h4>How are the coins created?</h4>
+    <p ng-controller="ModalsCtrl">Bitcoins are created as a reward for those who help verify valid transactions in the Bitcoin network.<br>
+      This process is called <a ng-click="showMinningInfo()">Bitcoin minning</a></p>
   </div>
 </div>
 
@@ -116,7 +119,10 @@
 </div>
 
 
-<!-- Hidden moving elements -->
+
+
+
+<!-- Hidden or moving elements -->
 
 <div class="empty-content hidden" id="demo-content">
   <div> <%= image_tag "loading.gif", alt: "Counting starts in the universe..." %> </div>
@@ -285,6 +291,13 @@
   <h2>In construction</h2>
   <h4>Apologies, this part of the website is not yet finished</h4>
   <p>Come back later and you should be able to get some bitcoins for free</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="minning-info-modal" class="reveal-modal text-center hidden" data-reveal>
+  <div id="minning-content">
+    <h2>Bitcoin Minning</h2>
+  </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
