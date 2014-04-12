@@ -133,4 +133,5 @@ function enable_bottom_sections_after_demo() {
   $('#show-blockchain-section').fadeIn('slow');
   show_bottom_elements = true; // Enable showing when scrolling
   $("#mining-content").load("/mining");
+  $("#mining-POW-content").load("/mining-POW");
 }
