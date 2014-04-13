@@ -31,19 +31,6 @@ button:focus {
   outline: none;
 }
 
-.circle-button {
-  // @include button($button-med, $alert-color, $button-round, false, false, false);
-  @extend .button;
-  @extend .round;
-  @extend .alert;
-  margin: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  vertical-align: middle;
-}
-
 .info-block {
   width:         100%;
   margin-top:    30px;
@@ -89,7 +76,21 @@ button:focus {
   border-radius: 15px;
 }
 
+.circle-button {
+  // @include button($button-med, $alert-color, $button-round, false, false, false);
+  @extend .button;
+  @extend .round;
+  @extend .alert;
+  margin: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+}
+
 a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-button:visited {
+  @extend .circle-button;
   color:#FFFFFF;
   text-decoration: none;
 }
