@@ -19,11 +19,11 @@ function detectLocation() {
 function loadLocalBitcoinSellers() {
   var cc = user_location.country_code;
   if (cc == 'NL' || (cc == 'BE')) {
-    $('#bitcoin-sellers').append('<a href="https://www.Bitonic.nl" target="_blank">Bitonic.nl</a>');
-    $('#bitcoin-sellers').append('<a href="https://www.happycoins.com/Account/Index/eb754703-5a33-46fd-b0d2-9a2bb7e465e3" target="_blank">HappyCoins</a>');
+    $('#bitcoin-sellers').append('<a href="https://www.Bitonic.nl" target="_blank"> Bitonic.nl </a>');
+    $('#bitcoin-sellers').append('<a href="https://www.happycoins.com/Account/Index/eb754703-5a33-46fd-b0d2-9a2bb7e465e3" target="_blank"> HappyCoins </a>');
   }
   if (cc == 'UK' || cc == 'SE' || cc == 'NL' || cc == 'DE' || cc == 'FR' || cc == 'IT' || cc == 'ES' || cc == 'PL' || (cc == 'HU') ) {
-    $('#bitcoin-sellers').append('<a href="https://safello.com/" target="_blank">Safello</a>');
+    $('#bitcoin-sellers').append('<a href="https://safello.com/" target="_blank"> Safello </a>');
   }
 }
 
