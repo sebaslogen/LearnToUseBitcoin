@@ -3,23 +3,33 @@
   <h2>Lottery rewards with Proof of Work</h2>
   <%= image_tag "lottery.png", id: "lottery-image" %>
   
-  <p>Proof of Work is a system to prevent and discourage spam by requiring some expensive enough work that makes cheating more expensive that performing the correct work<br>
-    An example is an email system that cost a minute of desktop computer system computations to be able to send an email, <br>
-    in this sample system email is still a fast enough channel of communication but a spammer that wants to send thousands of emails with spam content <br>
-    will need to consume thousands of minutes of computer's use to perform the attack, making it expensive and <strong>unprofitable</strong>
-    
-    A proof-of-work (POW) system (or protocol, or function) is an economic measure to deter denial of service attacks and other service abuses such as spam on a network by requiring some work from the service requester, usually meaning processing time by a computer
-    The metaphor with gold mining refers to the fact that bitcoins are <strong>limited in supply like gold</strong><br>
-    Nevertheless, the actual process of Bitcoin mining is more similar to a <strong>lottery</strong> system than to a gold mine</p>
-
-  <p>The term Bitcoin mining is used to describe how bitcoins are created and secured<br>
-    The metaphor with gold mining refers to the fact that bitcoins are <strong>limited in supply like gold</strong><br>
-    Nevertheless, the actual process of Bitcoin mining is more similar to a <strong>lottery</strong> system than to a gold mine</p>
-  <h4>Goals of mining</h4>
-  <h5>Verify transactions in the Bitcoin ledger (the Blockchain)</h5>
-  <p>The miners perfom the <strong>accounting role</strong> of the Bitcoin economy. For example, they make sure your Bitcoin address contains 
-    enough bitcoins before sending them and also verify that you don't send the same bitcoins to two persons simultaneously</p>
-  <h5>Create and distribute new bitcoins</h5>
-  <p>Every 10 minutes (on average) a miner creates a new block that <strong>confirms</strong> the last transactions in the Bitcoin economy and this block becomes part of the Blockchain, forever<br>
-    This new block contains new bitcoins that go to the miner's Bitcoin address as a reward for performing the accounting work</p>
+  <p>Proof of Work is a system to <strong>discourage Spam</strong> by requiring some expensive enough work that <strong>makes cheating more expensive that performing valid work</strong><br>
+    An example is an email system that costs 1 minute of intensive computer processing work to be able to send 1 email<br>
+    In this sample system, an email is still delivered fast enough for a normal human communication but a spammer that wants to send thousands of emails with Spam content or a virus <br>
+    will need to consume thousands of minutes of computer's processing to perform the attack, making it an <u>expensive and unprofitable attack</u></p>
+  
+  <h4>The Bitcoin Mining system works in three parts</h4>
+  
+  <h5><label class="fake-circle-button"> 1 </label><strong>Validate all Bitcoin transactions</strong> for the last block</h5>
+  <p>This is actually a very fast process but it is the most important one<br>
+    This same amount of work is performed by all the miners of the Bitcoin network when a block is being calculated but <strong>only one of the miner's work is included in the Blockchain</strong></p>
+  
+  <h5><label class="fake-circle-button"> 2 </label>Solve a <strong>complex problem</strong> to prove the work</h5>
+  <p>The problem is an algorithm that is very complex to solve but very easy to verify (Proof of Work)<br>
+    You can think of predicting the weather as a very complex task, while verifying the correctness of the prediction is as simple as looking at the sky<br>
+    The problem is changed for each new block and depends on the previous block, making it impossible to cheat</p>
+  
+  <h5><label class="fake-circle-button"> 3 </label>Receive a <strong>reward</strong> for the block that solves the problem above</h5>
+  <p>This reward works as an incentive to invest the expensive processing power in solving the problem above and include the valid transactions<br>
+    Therefore, it is an incentive to <strong>produce trusted work even if you do not trust the worker</strong> because cheating becomes more expensive than playing by the rules</p>
+  
+  <h4>The lottery reward</h4>
+  <p>The reward is given to the <strong>first</strong> miner that solves the complex problem<br>
+    Solving the problem requires an amount of processing power, so the more processing power the better chances to solve the problem and win the reward<br>
+    In Bitcoin mining, the processing power of the miners is like a <strong>lottery ticket</strong>, the more power the miner has, the more tickets to win the lottery<br>
+    The winner of the lottery that finds the solution to the problem is, like a lottery, <strong>completely random</strong><br>
+    Therefore, the network is secure as long as no single miner has more than 51% of all the lottery tickets<br>
+    This is know as the 51% attack and <%= link_to('the cost of a 51% attack can be seen here', 'http://www.coinometrics.com/bitcoin/rix', target: "_blank") %>
+  </p>
+  
 </div>
