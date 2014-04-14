@@ -1,0 +1,177 @@
+<div class="section sStart" id="start" ng-controller="DemoCtrl">
+  <button class="radius round large super-button" id="show-demo" ng-click="showDemo()">Discover Bitcoin <i class="fi-bitcoin bitcoin-button"></i></button>
+</div>
+
+<!-- Hidden or moving elements -->
+
+<div class="empty-content hidden" id="demo-content">
+  <div> <%= image_tag "loading.gif", alt: "Counting starts in the universe..." %> </div>
+</div>
+
+<div id="transactionDemoPlaceholder" class="hidden">
+  <div id="transference-demo" class="rounded-border relative-position info-block" ng-controller="TransactionCtrl">
+    <br><h2>Bitcoin demo transaction</h2><br>
+    
+    <div class="row rounded-border separated-row">
+      
+      <div class="large-6 columns text-center right-border" id="demo-shopping-cart">
+        <br>
+        <div class="hidden" id="demo-shopping-cart-info">
+          <p>Imagine this section below is the website of an <strong>on-line shop</strong> where you are about to pay your purchase</p>
+        </div>
+        <div class="info-block hidden" id="demo-shopping-cart-content">
+          <fieldset>
+            <legend>Shopping cart in your favorite web shop</legend>
+            <div>
+              <div class="row separated-row shop-table-title">
+                <div class="small-4 columns text-center">
+                  Item
+                </div>
+                <div class="small-2 columns text-center">
+                  Units
+                </div>
+                <div class="small-3 columns text-center">
+                  Price
+                </div>
+                <div class="small-3 columns"></div>
+              </div>
+              <div class="row separated-row shop-table-text">
+                <div class="small-4 columns text-center">
+                  <br>Soft and warm teddy bear
+                </div>
+                <div class="small-2 columns text-center">
+                  <br>x1
+                </div>
+                <div class="small-3 columns text-center">
+                  <br><strong class="title">0.1 bitcoins</strong> (or $10)
+                </div>
+                <div class="small-3 columns">
+                  <%= image_tag "teddy_bear.png", alt: "Teddy bear image" %>
+                </div>
+              </div>
+            </div>
+            <div id="demo-transaction-details">
+              <div class="row separated-row">
+                <div class="small-6 columns text-right">
+                  <%= image_tag "BC_accepted_here.png", width: '75%', alt: "Bitcoin accepted here logo" %>
+                </div>
+                <div class="small-6 columns text-left">
+                  <br>Pay to this address
+                </div>
+              </div>
+              <div class="row separated-row">
+                <div class="small-12 columns">
+                  <%= image_tag "QR-shop.png", width: '50%', alt: "Shop QR of address" %>
+                </div>
+              </div>
+              <div class="row separated-row collapse">
+                <div class="small-2 columns">
+                  <span class="prefix radius button alert address-info-block-shop highlighted-box has-tooltip" ng-click="copyAddress()"
+                        id="copy-demo-button" title="copy the shop payment address to your wallet"><i class="fi-page-copy"></i> Copy </span>
+                </div>
+                <div class="small-10 columns">
+                  <span id="demo-pay-to-address" class="postfix radius button disabled">1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1</span>
+                </div>
+              </div>
+              <span class="hidden" id="open_private_key">5KVwAmmjHaxZ8hDGBybaoCwhdicK26gFFsDYm8RZYSfmdJrsB8i</span>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      
+      <div class="large-6 columns text-center" id="demo-wallet-send">
+        <br>
+        <div class="hidden" id="demo-wallet-send-info">
+          <p>
+            This section below looks like the <strong>Bitcoin wallet</strong> software you can use to manage your bitcoins<br><br>
+            To practice, <strong>fill</strong> the form and press <strong>Send</strong>
+          </p>
+        </div>
+        <div class="info-block hidden" id="demo-wallet-send-content">
+          <form id="demo-transaction-form" data-parsley-validate> 
+            <fieldset>
+            <legend>Your demo wallet</legend>
+            <div class="row separated-row"> 
+              <div class="small-12 columns">
+                <span>Send bitcoins from this address:</span>
+                <div class="address-info-block">
+                  <input type="radio" name="address" id="walletAddress"
+                         value="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" checked><label class="no-cursor" for="walletAddress">19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</label>
+                </div>
+              </div>
+            </div>
+            <div class="row separated-row">
+              <div class="small-12 columns text-center">
+                <label id="demo-remaining-bitcoins" class="inline no-cursor">{{remainingBitcoinsFormattedText()}}</label>
+              </div>
+            </div>
+            <div class="row collapse separated-row"> 
+              <div class="small-3 columns">
+                <label for="amount" class="right inline small-right-padding ">amount: </label>
+              </div>
+              <div class="small-2 columns" id="amount">
+                <input type="text" class="highlighted-box text-center has-tooltip" ng-click="disableAmountGlowing()" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
+                       data-parsley-min="0.1" data-parsley-min-message="Value should be 0.1, same as the price" data-parsley-max="0.1" data-parsley-max-message="Value should be 0.1, same as the price"
+                       title="1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="eg 0.1" />
+              </div>
+              <div class="small-4 columns">
+                <span class="postfix radius"> bitcoins (BTC)</span>
+              </div>
+              <div class="small-3 columns"></div>
+            </div>
+            <div class="row collapse separated-row">
+              <div class="small-2 columns">
+                <span class="prefix radius button disabled">To:</span>
+              </div>
+              <div class="small-10 columns">
+                <input id="demo-pay-to-address-input" type="text" ng-click="disableAddressGlowing()" placeholder="eg 1JL27iKbmVBNBnwuST7aqyu..." data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
+                       data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required class="highlighted-box has-tooltip"
+                       title="enter here the Bitcoin address the shop provides for the payment (<strong>Hint</strong>: use the <i class='fi-page-copy'></i> Copy button)"/>
+              </div>
+            </div>
+              <div class="row">
+                <div class="small-12 columns">
+                  <label id="demo-transaction-send-button" class="button radius round has-tooltip" ng-click="transactionDemo()"
+                         title="send bitcoins to pay the demo bill">Send &nbsp;&nbsp;<%= image_tag "send-inverted.png", width: '40%', class: 'rounded-corners' %></label>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>  
+      </div>
+      
+    </div>
+    <br>
+    <div>
+      <button class="radius round hidden" id="show-blockchain-section" ng-click="showBlockchainSection()">
+        How does this transaction work? &nbsp;&nbsp;<i class="fi-magnifying-glass"></i>
+      </button>
+    </div>
+    <br>
+  </div>
+</div>
+
+<div id="ok-purchase" class="hidden">
+  <div class="row separated-row">
+    <div class="small-12 columns">
+      <p><strong class="title">Payment received correctly</strong></p>
+    </div>
+  </div>
+  <%= image_tag "ok_purchase.png", width: '70%', alt: "Purchase OK image" %>
+</div>
+
+<div id="congratulations-demo-modal" class="reveal-modal text-center hidden" data-reveal ng-controller="TransactionCtrl"> 
+  <h2>Congratulations!</h2><br>
+  <h4>You have learned how to send bitcoins</h4><br>
+  <p>And there are many more things you can do with Bitcoin. <a ng-click="discardDemoModal()">See below</a></p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="WIP-modal" class="reveal-modal text-center hidden" data-reveal> 
+  <h2>In construction</h2>
+  <h4>Apologies, this part of the website is not yet finished</h4>
+  <p>Come back later and you should be able to get some bitcoins for free</p>
+  <p>In the meanwhile, you can install one of the wallets <strong class="title has-external-tooltip" tooltip-id="desktop-tooltip">suggested above</strong> and get bitcoins from one of these services:</p>
+  <div id="bitcoin-sellers"></div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
