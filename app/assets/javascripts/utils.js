@@ -103,4 +103,10 @@ $(document).ready(function() {
   setTimeout(function() { // Preload demo hidden section
     loadDemoContent();
   }, 2000); // Wait 2 seconds to automatically load
+  // Load script for animation asynchronously
+  $.getScript('assets/vendor/javascript/box2D-min.js', function( data, textStatus, jqxhr ) {
+    if (jqxhr.status == 200 ) {
+      console.log( "box2D load was performed" );
+    }
+  });
 });
