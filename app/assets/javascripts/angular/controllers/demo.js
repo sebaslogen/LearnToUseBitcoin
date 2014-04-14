@@ -6,7 +6,7 @@ ltubApp.controller('DemoCtrl', ['$scope', function($scope) {
       updateSizes();
       moveTo('#demo-content');
       $('#transference-demo').addClass('available');
-      analytics.track('Click Start using Bitcoin', {
+      analytics.track('Click Discover Bitcoin', {
         small: (getWindowsSize() == "small")
       });
     });
