@@ -143,7 +143,7 @@ $(document).ready(function() {
   $.getScript('assets/vendor/javascript/box2D-min.js', function( data, textStatus, jqxhr ) {
     if (jqxhr.status == 200 ) {
       console.log( "box2D load was performed" );
-      startCoinAnimation();
+      //startCoinAnimation();
     }
   });
 });

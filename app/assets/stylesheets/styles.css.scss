@@ -365,6 +365,10 @@ ul.navigation-content-list {
   z-index: 8;
 }
 
+#coinCanvas {
+  position: absolute;
+  z-index: 101;
+}
 /* Sections */
 
 .sWelcome {
@@ -427,6 +431,7 @@ ul.navigation-content-list {
   padding-bottom: 56.25%;
   padding-top: 30px; height: 0; overflow: hidden;
   width: 70%;
+  z-index: 200;
 }
 
 .video-container iframe, .video-container object, .video-container embed {

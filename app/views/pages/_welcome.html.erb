@@ -1,3 +1,4 @@
+<canvas id="coinCanvas" width="800" height="600" class="show-for-medium-up"></canvas>
 <div class="section sWelcome" id="welcome">
   <div id="welcome-content">
     <div id="welcom-languages" class="show-for-medium-up">
@@ -12,7 +13,7 @@
     <h1 class="extruded background-position" id="welcome_en">Welcome</h1>
     <h2 class="extruded-subtitle background-position" >to the amazing revolution of money</h2>
     <br>
-    <%= image_tag "BC_Logotype.png", class: "background-position", alt: "Bitcoin" %>
+    <%= image_tag "BC_Logotype.png", class: "background-position", alt: "Bitcoin", id: "bitcoin-logo" %>
     <br>
     <br>
     <div id='scroll-message'>
@@ -20,4 +21,8 @@
       <%= image_tag "scroll.png", id: "scroll-arrow", class: "background-position" %>
     </div>
   </div>
+</div>
+
+<div class="hidden">
+  <%= image_tag "BC_Logo.png", id: 'bitcoin-logo-image' %>
 </div>

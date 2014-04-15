@@ -5,6 +5,11 @@ function setupActiveJavaScript() {
     'position': 'fixed',
     'margin': '0 0 0 -37.5%'
   });
+  $('#coinCanvas').css({
+    'position': 'fixed',
+    'margin': $('#bitcoin-logo').position().top+'px 0 0 33.5%'
+  });
+  //$('#bitcoin-logo').position().left // Position of the reference logo
 }
 
 function getWindowsSize() {
