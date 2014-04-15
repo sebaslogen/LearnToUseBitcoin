@@ -52,18 +52,6 @@ function setupNavigationMenu() {
   });
 }
 
-function setupAutoScroll() {
-  if (($('div.alert-box').size() == 0) && (getWindowsSize() != "small") ) { // Only whe there is no flash message shown at page top or is not a mobile
-    // Automatically move to start section after a few seconds if user hasn't seen it yet
-    setTimeout(function() {
-      if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
-        moveTo('#what', 3000);  // Move automaticaly but slowly
-      }
-      analytics.track('AutoScrolled to Welcome section');
-    }, 4000); // Wait 4 seconds to automatically move
-  }
-}
-
 function setupScrollHintAnimation() {
   // Show arrow animation
   if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
@@ -165,41 +153,6 @@ function updateSizes() {
     }
   });
 }
-
-function updateToolTips() {
-  $(document).ready(function() {
-    $('.has-tooltip[title]').qtip({
-      style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
-      position: {
-        my: 'bottom center',  // Position my bottom center...
-        at: 'top center', // at the top center of...
-        target: this // my target
-      },
-      hide: {
-        fixed: true,
-        delay: 200
-      }
-    });
-    $('.has-external-tooltip').each(function() {
-      $(this).qtip({
-        content: {
-          text: $('#' + $(this).attr('tooltip-id'))
-        },
-        style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
-        position: {
-          my: 'bottom center',  // Position my bottom center...
-          at: 'top center', // at the top center of...
-          target: this // my target
-        },
-        hide: {
-          fixed: true,
-          delay: 200
-        }
-      });
-    });
-  });
-}
-
 
 function resizeWindow() {
   $(document).ready(function() {

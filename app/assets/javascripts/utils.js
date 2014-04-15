@@ -40,6 +40,41 @@ function loadLocalBitcoinSellers() {
   }
 }
 
+function updateToolTips() {
+  $(document).ready(function() {
+    $('.has-tooltip[title]').qtip({
+      style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
+      position: {
+        my: 'bottom center',  // Position my bottom center...
+        at: 'top center', // at the top center of...
+        target: this // my target
+      },
+      hide: {
+        fixed: true,
+        delay: 200
+      }
+    });
+    $('.has-external-tooltip').each(function() {
+      $(this).qtip({
+        content: {
+          text: $('#' + $(this).attr('tooltip-id'))
+        },
+        style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
+        position: {
+          my: 'bottom center',  // Position my bottom center...
+          at: 'top center', // at the top center of...
+          target: this // my target
+        },
+        hide: {
+          fixed: true,
+          delay: 200
+        }
+      });
+    });
+  });
+}
+
+
 /* Youtube video control functions */
 // This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
@@ -84,6 +119,7 @@ function onPlayerError() {
 }
 
 
+
 /* Enable functions after document load */
 
 $(document).ready(function() {
@@ -103,10 +139,11 @@ $(document).ready(function() {
   setTimeout(function() { // Preload demo hidden section
     loadDemoContent();
   }, 2000); // Wait 2 seconds to automatically load
-  // Load script for animation asynchronously
+  // Load script for coin animation asynchronously
   $.getScript('assets/vendor/javascript/box2D-min.js', function( data, textStatus, jqxhr ) {
     if (jqxhr.status == 200 ) {
       console.log( "box2D load was performed" );
+      startCoinAnimation();
     }
   });
 });
