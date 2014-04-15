@@ -5,11 +5,6 @@ function setupActiveJavaScript() {
     'position': 'fixed',
     'margin': '0 0 0 -37.5%'
   });
-  $('#coinCanvas').css({
-    'position': 'fixed',
-    'margin': $('#bitcoin-logo').position().top+'px 0 0 33.5%'
-  });
-  //$('#bitcoin-logo').position().left // Position of the reference logo
 }
 
 function getWindowsSize() {
@@ -103,9 +98,11 @@ function scrollFading() {
   if (percentage <= 0) {
     percentage = 0;
     $('#welcome-content').addClass('hidden');
+    $('#coin-canvas').css('opacity', 0);
   } else {
     $('#welcome-content').removeClass('hidden');
     $('#welcome-content').css('opacity', percentage);
+    $('#coin-canvas').css('opacity', percentage);
     $('#welcome-content').find('div#scroll-message').css('opacity', percentage - (scrolled / sizeWelcome));
     // Change extrusion of Welcome text
     if (percentage < 0.6) {
