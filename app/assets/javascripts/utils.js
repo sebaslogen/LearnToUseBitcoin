@@ -29,7 +29,7 @@ function loadLocalBitcoinSellers() {
   }
   if (cc == 'GB' || cc == 'SE' || cc == 'NL' || cc == 'DE' || cc == 'FR' || cc == 'IT' || cc == 'ES' || 
       cc == 'PL' || (cc == 'HU') || (cc == 'PT') || (cc == 'LI') || (cc == 'LU') || (cc == 'BE') || (cc == 'AT') ) {
-    $('#bitcoin-sellers').append('<a href="https://bittylicious.com/" target="_blank"> Bittylicious </a>');
+    $('#bitcoin-sellers').append('<a href="https://bittylicious.com/r/19542" target="_blank"> Bittylicious </a>');
   }
   if (cc == 'RU') {
     $('#bitcoin-sellers').append('<a href="https://btc-e.com" target="_blank"> BTC-e </a>');
