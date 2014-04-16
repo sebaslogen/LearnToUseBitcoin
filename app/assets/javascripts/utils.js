@@ -140,10 +140,15 @@ $(document).ready(function() {
     loadDemoContent();
   }, 2000); // Wait 2 seconds to automatically load
   // Load script for coin animation asynchronously
-  $.getScript('assets/vendor/javascript/box2D-min.js', function( data, textStatus, jqxhr ) {
-    if (jqxhr.status == 200 ) {
-      console.log( "box2D load was performed" );
-      startCoinAnimation();
-    }
-  });
+  if ( getWindowsSize() != "small" ) { // Load coin animation only on big enough screens
+    $.getScript('assets/vendor/javascript/box2D-min.js', function( data, textStatus, jqxhr ) {
+      if (jqxhr.status == 200 ) {
+        $.getScript('assets/vendor/javascript/coinAnimation.js', function( data, textStatus, jqxhr ) {
+          if (jqxhr.status == 200 ) {
+            startCoinAnimation();
+          }
+        });
+      }
+    });
+  }
 });

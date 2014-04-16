@@ -12,19 +12,3 @@ function setupAutoScroll() {
     }, 4000); // Wait 4 seconds to automatically move
   }
 }
-
-function startCoinAnimation() {
-  if (! autoscrolled) {
-    $('#coin-canvas').css({ // Position of the reference logo
-      'position': 'fixed',
-      'margin': $('#bitcoin-logo').offset().top+'px 0 0 '+$('#bitcoin-logo').offset().left+'px'//33.5%'
-    });
-    console.log('start coin animation');
-    var canvas = document.getElementById('coin-canvas');
-    var context = canvas.getContext('2d');
-    /*context.fillStyle = 'rgba(250,250,120,1)'; // Show first draw to user in a few milliseconds after HTML is loaded
-    context.fillRect(0, 0, canvas.width, canvas.height);*/
-    var img = document.getElementById("bitcoin-logo-image");
-    context.drawImage(img, 0, 0);
-  }
-}
