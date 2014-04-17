@@ -1,4 +1,4 @@
-
+console.log('loaded box2D');
 var Box2D={};(function(a2j,undefined){if(!(Object.prototype.defineProperty instanceof Function)&&Object.prototype.__defineGetter__ instanceof Function&&Object.prototype.__defineSetter__ instanceof Function)
 {Object.defineProperty=function(obj,p,cfg){if(cfg.get instanceof Function)
 obj.__defineGetter__(p,cfg.get);if(cfg.set instanceof Function)

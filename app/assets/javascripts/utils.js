@@ -145,7 +145,7 @@ $(document).ready(function() {
       if (jqxhr.status == 200 ) {
         $.getScript('assets/vendor/javascript/coinAnimation.js', function( data, textStatus, jqxhr ) {
           if (jqxhr.status == 200 ) {
-            //////////////////startCoinAnimation();
+            //startCoinAnimation();
           }
         });
       }

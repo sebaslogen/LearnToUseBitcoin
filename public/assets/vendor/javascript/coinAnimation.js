@@ -283,6 +283,7 @@ requestAnimationFrame = window.requestAnimationFrame ||
 
 
 var physBody = null;
+var frames = 0;
 
 function startCoinAnimation() {
   if (! autoscrolled) {
@@ -297,13 +298,13 @@ function startCoinAnimation() {
       type: 'static',
       x: 0,
       y: 0,
-      halfHeight: 180, // Bounding collision box size for the player
-      halfWidth: 200,
+      halfHeight: 128, // Bounding collision box size for the player
+      halfWidth: 128,
       angle: 0
     };
     gPhysicsEngine.create();
     physBody = gPhysicsEngine.addBody(entityDef); // Initialize physic body of coin
-    physBody.SetLinearVelocity(new Vec2(0, 0));//Vec2(1, 0)
+    physBody.SetLinearVelocity(new Vec2(10, 0));//Vec2(1, 0)
     physBody.linearDamping = 0;
     requestAnimationFrame( animateCoin );
     ///////////////gPhysicsEngine.removeBody(physBody);
@@ -315,7 +316,10 @@ function animateCoin() {
     if ( ! coinAnimationEnd ) {
       updatePhysics();
       drawBackground();
-      coinAnimationEnd = true;
+      frames++;
+      if (frames > 100)
+        return;
+      //coinAnimationEnd = true;
     }
     requestAnimationFrame( animateCoin );
   }, 1000 / FPS); // Dynamic background drawn half times than foreground
@@ -338,27 +342,12 @@ function drawBackground() { // Draw background with moving sun and score
   var pos = physBody.GetPosition();
   var canvas = document.getElementById('coin-canvas');
   var context = canvas.getContext('2d');
+  console.log('rendering in ',pos.x , pos.y);
+  context.clearRect(0, 0, canvas.width, canvas.height); // First clean up screen
   context.fillStyle = 'rgba(250,250,120,1)'; // Show first draw to user in a few milliseconds after HTML is loaded
   context.fillRect(0, 0, canvas.width, canvas.height);
   context.drawImage(img, pos.x, pos.y);
-  /*if (this.sprites_loaded == 1) { // Draw only when images are loaded
-    this.sprites_loaded = 2; // Never draw it again
-    var tree_context = document.getElementById('TreeCanvas').getContext('2d');
-    drawSprite('tree.png', 1100, 420, 0, tree_context); // Draw tree on top of future score text
-  }
-  dynamic_background_context.clearRect(0, 0, dynamic_background_canvas.width, dynamic_background_canvas.height); // Clear background
-  // Draw sun on top of circular glow
-  drawSprite('sol.png', 1420, 170, sun_angle, dynamic_background_context); // Draw sun
-  // Draw Score
-  if (this.scrore_frames > 0) {
-    dynamic_background_context.font = 'bold 500pt ' + game_font;
-    var points_color = Math.round(this.player0.points * 255 / end_of_game_points);
-    dynamic_background_context.fillStyle = 'rgba(' + points_color + ',0,' + (255 - points_color) + ',1)';
-    dynamic_background_context.textAlign = 'center';
-    dynamic_background_context.fillText(this.player0.points, canvas.width / 2, canvas.height / 2 + 200);
-    this.scrore_frames = (this.scrore_frames + 1) % (FPS + 2); // Show for one second
-    if (victory) {
-      this.scrore_frames = (FPS + 1);
-    }
-  }*/
+  physBody.SetLinearVelocity(new Vec2(10, 0));
 }
+
+console.log('loaded coinAnimation');
