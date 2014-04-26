@@ -16,22 +16,17 @@ function setupAutoScroll() {
 
 
 /* Youtube video control functions */
-// This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 // This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
 var player;
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('youtube-video', {
-    events: {
-      'onStateChange': onPlayerStateChange,
-      'onError': onPlayerError
-    }
-  });
+  player = new YT.Player('youtube-video');
+  try {
+    player.addEventListener("onStateChange", 'onPlayerStateChange');
+    player.addEventListener("onError", 'onPlayerError');
+  } catch(err) { // Retry in one second if Youtube player was not ready
+    setTimeout(onYouTubeIframeAPIReady, 1000);
+  }
 }
 
 // The API calls this function when the player's state changes to playing
@@ -58,3 +53,9 @@ function autoScrollOnVideoFinish() {
 function onPlayerError() {
   moveTo('#start', 2000);
 }
+
+// This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
