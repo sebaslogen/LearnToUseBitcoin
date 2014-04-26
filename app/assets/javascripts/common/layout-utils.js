@@ -140,9 +140,10 @@ function updateSizes() {
     var ratio = space_side_video / 178;
     var youtube_aspect_ratio = 360 / 640;
     $('#youtube-video').width(parseInt(video_width)).height(parseInt(youtube_aspect_ratio * video_width));
+    $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
     $('#footsteps-image').width(parseInt(ratio * 174));
     $('#footsteps-image').height(parseInt(ratio * 444));
-    $('#footsteps-image').css('top','-' + $('#youtube-video').height() + 'px');
+    $('#footsteps-image').css('top','-' + ($('#youtube-video').height() / 2) + 'px');
     // Adjust div height according to window width using contents size
     $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 170);
     // Change vertical separation line to horizontal 
