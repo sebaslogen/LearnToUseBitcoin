@@ -134,12 +134,15 @@ function setupScrollFadingAndResize() {
 function updateSizes() {
   $(document).ready(function() {
     /* Adapt footsteps position and size */
-    var space_side_video = ( $(window).width() - $('.video-container').find('iframe').width() ) / 2;
-    var video_half_height = $('.video-container').find('iframe').height() / 2;
+    var video_height = $('#youtube-video-container').height();
+    var video_width = $('#youtube-video-container').width();
+    var space_side_video = ( $(window).width() - video_width ) / 2;
     var ratio = space_side_video / 178;
+    var youtube_aspect_ratio = 360 / 640;
+    $('#youtube-video').width(parseInt(video_width)).height(parseInt(youtube_aspect_ratio * video_width));
     $('#footsteps-image').width(parseInt(ratio * 174));
     $('#footsteps-image').height(parseInt(ratio * 444));
-    $('#footsteps-image').css('top','-' + video_half_height + 'px');
+    $('#footsteps-image').css('top','-' + $('#youtube-video').height() + 'px');
     // Adjust div height according to window width using contents size
     $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 170);
     // Change vertical separation line to horizontal 
