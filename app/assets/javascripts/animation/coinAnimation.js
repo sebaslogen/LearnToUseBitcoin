@@ -29,18 +29,7 @@ function startCoinAnimation() {
     return;
   }
   
-  getImageDimension($('#bitcoin-logo-image'), function(d) {
-    coinImage = {
-      width: d.width,
-      height: d.height,
-      half_x: - d.width / 2,
-      half_y: - d.height / 2
-    };
-  });
-  
   positionCoinAnimationCanvas();
-  
-  verticalCoinAnimationLimit = $('#coin-canvas').height() + (2 * coinImage.height);
   
   var b2Vec2 = Box2D.Common.Math.b2Vec2,
       b2BodyDef = Box2D.Dynamics.b2BodyDef,
@@ -195,6 +184,15 @@ function positionCoinAnimationCanvas() {
   $('#coin-canvas').css({ // Position of the reference logo
     'position': 'fixed',
     'margin': $('#bitcoin-logo').offset().top+'px 0 0 '+$('#bitcoin-logo').offset().left+'px'
+  });
+  getImageDimension($('#bitcoin-logo-image'), function(d) {
+    coinImage = {
+      width: d.width,
+      height: d.height,
+      half_x: - d.width / 2,
+      half_y: - d.height / 2
+    };
+    verticalCoinAnimationLimit = $('#coin-canvas').height() + coinImage.height;
   });
 }
 
