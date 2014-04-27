@@ -106,6 +106,13 @@ a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-bu
   background-color: rgb(67, 172, 106) !important;
 }
 
+.bitcoin-address {
+  background-image: -webkit-gradient(linear, left top, right top, 
+      from(rgba(0, 0, 120, 1)), to(rgba(0, 170, 200, 1)));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 .touch-wallet-border {
   background-color: rgba(150, 230, 0, 0.2);
 }
