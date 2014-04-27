@@ -53,10 +53,7 @@ function setupNavigationMenu() {
 }
 
 function setupScrollHintAnimation() {
-  // Show arrow animation
-  if ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) {
-    $('#scroll-arrow').animate({top:'+=40'}, 4000, 'easeInOutQuart');
-  }
+  $('#scroll-arrow').animate({top:'+=40'}, 4000, 'easeInOutQuart'); // Show arrow animation
 }
 
 function getScrolledItems(elem) {

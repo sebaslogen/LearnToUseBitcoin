@@ -1,8 +1,17 @@
 var world;
 var FPS = 30;
-var physicsBody = null;
 var frames = 0;
-var coinAnimationEnd = false;
+var scale = 32;
+var physicsBody = null;
+var coinAnimationStarted = false;
+var coinAnimationFinished = false;
+var coinImage = {
+  width: 0,
+  height: 0,
+  half_x: 0,
+  half_y: 0
+};
+var canvasHeight = $('#coin-canvas').height();
 
 requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -10,21 +19,38 @@ requestAnimationFrame = window.requestAnimationFrame ||
   window.msRequestAnimationFrame ||
   setTimeout;
 
-function init() {
-  var   b2Vec2 = Box2D.Common.Math.b2Vec2
-   ,  b2BodyDef = Box2D.Dynamics.b2BodyDef
-   ,  b2Body = Box2D.Dynamics.b2Body
-   ,  b2FixtureDef = Box2D.Dynamics.b2FixtureDef
-   ,  b2Fixture = Box2D.Dynamics.b2Fixture
-   ,  b2World = Box2D.Dynamics.b2World
-   ,  b2MassData = Box2D.Collision.Shapes.b2MassData
-   ,  b2PolygonShape = Box2D.Collision.Shapes.b2PolygonShape
-   ,  b2CircleShape = Box2D.Collision.Shapes.b2CircleShape
-    ;
+function startCoinAnimation() {
+  if (autoscrolled) {
+    return; // Cancel animation if page already scrolled
+  }
+  
+  getImageDimension($('#bitcoin-logo-image'), function(d) {
+    coinImage = {
+      width: d.width,
+      height: d.height,
+      half_x: - d.width / 2,
+      half_y: - d.height / 2
+    };
+  });
+  
+  $('#coin-canvas').css({ // Position of the reference logo
+    'position': 'fixed',
+    'margin': $('#bitcoin-logo').offset().top+'px 0 0 '+$('#bitcoin-logo').offset().left+'px'
+  });
+  
+  var b2Vec2 = Box2D.Common.Math.b2Vec2,
+      b2BodyDef = Box2D.Dynamics.b2BodyDef,
+      b2Body = Box2D.Dynamics.b2Body,
+      b2FixtureDef = Box2D.Dynamics.b2FixtureDef,
+      b2Fixture = Box2D.Dynamics.b2Fixture,
+      b2World = Box2D.Dynamics.b2World,
+      b2MassData = Box2D.Collision.Shapes.b2MassData,
+      b2PolygonShape = Box2D.Collision.Shapes.b2PolygonShape,
+      b2CircleShape = Box2D.Collision.Shapes.b2CircleShape;
    
   world = new b2World(
-       new b2Vec2(0, 10)    //gravity
-    ,  true                 //allow sleep
+    new b2Vec2(0, 10),   //gravity
+    false                 //allow sleep
   );
 
   var fixDef = new b2FixtureDef;
@@ -34,98 +60,118 @@ function init() {
 
   var bodyDef = new b2BodyDef;
 
-  //create ground left down
+  // create ground left down
   bodyDef.type = b2Body.b2_staticBody;
-  bodyDef.position.x = 2;
-  bodyDef.position.y = 2;
+  bodyDef.position.x = 0;
+  bodyDef.position.y = 2.95;
   fixDef.shape = new b2PolygonShape;
-  fixDef.shape.SetAsBox(5.8, 0.5);
+  fixDef.shape.SetAsBox(8.5, 0.5);
   var surface = world.CreateBody(bodyDef);
-  var radians = 40 * (Math.PI / 180);
+  var radians = 20 * (Math.PI / 180);
   surface.SetAngle(radians);
   surface.CreateFixture(fixDef);
 
-  //create ground right up
+  // create ground right down
   bodyDef.type = b2Body.b2_staticBody;
-  bodyDef.position.x = 8;
-  bodyDef.position.y = 2;
+  bodyDef.position.x = 11;
+  bodyDef.position.y = 9;
   fixDef.shape = new b2PolygonShape;
-  fixDef.shape.SetAsBox(7, 0.5);
+  fixDef.shape.SetAsBox(3, 0.5);
   var surface = world.CreateBody(bodyDef);
-  var radians = 65 * (Math.PI / 180);
+  var radians = 60 * (Math.PI / 180);
   surface.SetAngle(radians);
   surface.CreateFixture(fixDef);
 
-  //create ground 2
-  bodyDef.type = b2Body.b2_staticBody;
-  bodyDef.position.x = 9;
-  bodyDef.position.y = 8;
-  fixDef.shape = new b2PolygonShape;
-  fixDef.shape.SetAsBox(7, 0.5);
-  var surface = world.CreateBody(bodyDef);
-  var radians = -60 * (Math.PI / 180);
-  surface.SetAngle(radians);
-  surface.CreateFixture(fixDef);
-
-  //create some objects
+  //create Coin object
   bodyDef.type = b2Body.b2_dynamicBody;
   fixDef.shape = new b2CircleShape(1); // radius 1
-  bodyDef.position.x = 3;
-  bodyDef.position.y = 1;
+  bodyDef.position.x = 2;
+  bodyDef.position.y = 2;
   physicsBody = world.CreateBody(bodyDef);
   physicsBody.CreateFixture(fixDef);
-   
-  //setup debug draw
-  /**var b2DebugDraw = Box2D.Dynamics.b2DebugDraw;
-  var debugDraw = new b2DebugDraw();
-  debugDraw.SetSprite(document.getElementById("canvas").getContext("2d"));
-  debugDraw.SetDrawScale(30.0);
-  debugDraw.SetFillAlpha(0.3);
-  debugDraw.SetLineThickness(1.0);
-  debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
-  world.SetDebugDraw(debugDraw);****/
-     
-  //window.setInterval(update, 1000 / FPS);
-  requestAnimationFrame( animateCoin );
+  
+  requestAnimationFrame( animateCoin ); // Start animation
+  coinAnimationStarted = true;
 }
 
 function animateCoin() {
   setTimeout(function() {
-    if ( ! coinAnimationEnd ) {
+    if ( ! coinAnimationFinished ) {
       updatePhysics();
-      drawBackground();
+      draw();
       frames++;
-      if (frames > 100) {
-        coinAnimationEnd = true;
-        return;
-      }
+      finishCoinAnimation();
     }
     requestAnimationFrame( animateCoin );
   }, 1000 / FPS); // Dynamic background drawn half times than foreground
 }
 
-function updatePhysics() {
-  world.Step(
-      1 / FPS   //frame-rate
-    ,  10       //velocity iterations
-    ,  10       //position iterations
-  );
-  ////////////////////////////////////////////////////world.DrawDebugData();
-  world.ClearForces();
-  console.log('Fixure position x:'+physicsBody.GetPosition().x+',y:'+physicsBody.GetPosition().y+',angle:'+physicsBody.GetAngle());
+function finishCoinAnimation() {
+  if ((frames > 200) || coinAnimationFinished) {
+    coinAnimationFinished = true;
+    var canvas = document.getElementById('coin-canvas');
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height); // Clear canvas on finish
+    $('#coin-canvas').css('position', 'absolute'); // Avoid canvas blocking other objects
+    autoScrollToWelcome();
+    return;
+  }
 }
 
-function drawBackground() { // Draw background with moving sun and score
+function updatePhysics() {
+  world.Step(
+    1 / FPS,  //frame-rate
+    10,       //velocity iterations
+    10);      //position iterations
+  world.ClearForces();
+}
+
+function draw() { // Draw background with moving sun and score
   var img = document.getElementById("bitcoin-logo-image");
   var pos = physicsBody.GetPosition(); // Update position
   var angle = physicsBody.GetAngle(); // Update angle
   var canvas = document.getElementById('coin-canvas');
   var context = canvas.getContext('2d');
-  console.log('rendering in ', pos.x, pos.y, 'with angle:', angle);
   context.clearRect(0, 0, canvas.width, canvas.height); // First clean up screen
-  context.fillStyle = 'rgba(250,250,120,1)'; // Show first draw to user in a few milliseconds after HTML is loaded
-  context.fillRect(0, 0, canvas.width, canvas.height);
-  context.drawImage(img, pos.x, pos.y);
+  var posX = scale * pos.x;
+  var posY = scale * pos.y;
+  _drawImageInternal(img, posX, posY, angle, context);
+  if (posY > canvasHeight - coinImage.half_y ) {
+    coinAnimationFinished = true;
+  }
+}
+
+function _drawImageInternal(image, posX, posY, angle, draw_context) {
+  if ((typeof draw_context === 'undefined') || (draw_context == null)) {
+    draw_context = context; // Use default drawing canvas if no other is defined
+  }
+  var target_x = coinImage.half_x;
+  var target_y = coinImage.half_y;
+  if ((typeof angle !== 'undefined') && (angle != null)) { // Paint rotated object
+    draw_context.translate(posX, posY);
+    draw_context.rotate(angle);
+    draw_context.drawImage(image, 0, 0, coinImage.width, coinImage.height, target_x, target_y, coinImage.width, coinImage.height);
+    draw_context.rotate(-angle);
+    draw_context.translate(-posX, -posY);
+  } else {
+    target_x += posX;
+    target_y += posY;
+    draw_context.drawImage(image, target_x, target_y);
+  }
+  console.log('rendering in ', target_x + posX, target_y + posY, 'with angle:', angle);
 }
 
 console.log('loaded coinAnimation');
+
+function getImageDimension(el, onReady) {    
+  var src = typeof el.attr === 'function' ? el.attr('src') : el.src !== undefined ? el.src : el;  
+  var image = new Image();
+  image.onload = function(){
+    if (typeof(onReady) == 'function') {
+      onReady({
+        width: image.width,
+        height: image.height
+      });
+    }
+  };
+  image.src = src;
+}

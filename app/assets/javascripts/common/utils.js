@@ -83,7 +83,7 @@ $(document).ready(function() {
   detectLocation();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
   // setupNavigationMenu(); // DISABLED TODO: Remove or activate
-  setupAutoScroll();
+  //setupAutoScroll();
   setupScrollHintAnimation();
   setupScrollFadingAndResize();
   updateSizes();
