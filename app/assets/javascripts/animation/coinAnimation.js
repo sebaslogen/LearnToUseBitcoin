@@ -122,6 +122,9 @@ function finishCoinAnimation() {
   canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height); // Clear canvas on finish
   $('#coin-canvas').css('position', 'absolute'); // Avoid canvas blocking other objects
   autoScrollToWelcome();
+  if (frames > 100) {
+    analytics.track('Watched coin intro animation');
+  }
 }
 
 function updatePhysics() {
