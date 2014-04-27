@@ -96,7 +96,7 @@ function startCoinAnimation() {
   
   setTimeout(function() { // Start animation one second later
     requestAnimationFrame( animateCoin ); // Start animation
-  }, 1000);
+  }, 2000);
   coinAnimationStarted = true;
 }
 
