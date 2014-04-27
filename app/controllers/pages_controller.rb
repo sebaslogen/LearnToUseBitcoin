@@ -13,6 +13,8 @@ class PagesController < HighVoltage::PagesController
       false
     when '_mining-POW'
       false
+    when '_animation'
+      false
     else
       'application'
     end

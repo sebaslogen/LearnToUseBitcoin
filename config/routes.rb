@@ -7,6 +7,7 @@ LearnToUseBitcoin::Application.routes.draw do
   get 'demo-small' => 'pages#show', id: '_demo-small'
   get 'mining' => 'pages#show', id: '_mining'
   get 'mining-POW' => 'pages#show', id: '_mining-POW'
+  get 'animation' => 'pages#show', id: '_animation'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
