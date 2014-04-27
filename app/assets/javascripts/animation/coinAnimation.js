@@ -12,6 +12,8 @@ var coinImage = {
   half_y: 0
 };
 var verticalCoinAnimationLimit = 0;
+var FPSLastCalledTime;
+var measuredFPS;
 
 requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -106,9 +108,11 @@ function animateCoin() {
       frames++;
       if ((frames > 200) || coinAnimationFinished) {
         finishCoinAnimation();
+      } else {
+        requestAnimationFrame( animateCoin );
+        measureFPSPerformance();
       }
     }
-    requestAnimationFrame( animateCoin );
   }, 1000 / FPS); // Dynamic background drawn half times than foreground
 }
 
@@ -162,6 +166,24 @@ function _drawImageInternal(image, posX, posY, angle, draw_context) {
   }
 }
 
+function measureFPSPerformance() {
+  // Measure FPS to determine if it's worth to continue animation or the performance is too bad
+  if ((frames > 2) && (frames < 10)) {
+    if (!FPSLastCalledTime) {
+      FPSLastCalledTime = new Date().getTime();
+      measuredFPS = 0;
+    } else {
+      delta = (new Date().getTime() - FPSLastCalledTime)/1000;
+      FPSLastCalledTime = new Date().getTime();
+      var prevMeasuredFPS = measuredFPS;
+      measuredFPS = 1/delta;
+      var averageFPS = (prevMeasuredFPS + measuredFPS) / 2;
+      if ((prevMeasuredFPS > 0) && (averageFPS < 20)){
+        finishCoinAnimation();
+      }
+    }
+  }
+}
 function getImageDimension(el, onReady) {    
   var src = typeof el.attr === 'function' ? el.attr('src') : el.src !== undefined ? el.src : el;  
   var image = new Image();
