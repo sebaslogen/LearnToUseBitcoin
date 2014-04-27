@@ -11,7 +11,7 @@ var coinImage = {
   half_x: 0,
   half_y: 0
 };
-var canvasHeight = $('#coin-canvas').height();
+var verticalCoinAnimationLimit = 0;
 
 requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -20,8 +20,10 @@ requestAnimationFrame = window.requestAnimationFrame ||
   setTimeout;
 
 function startCoinAnimation() {
-  if (autoscrolled) {
-    return; // Cancel animation if page already scrolled
+  if ( autoscrolled || // Cancel animation if page already scrolled
+    ( $(window).scrollTop() >= parseInt($('#welcome').css('height')) ) ) {
+    finishCoinAnimation();
+    return;
   }
   
   getImageDimension($('#bitcoin-logo-image'), function(d) {
@@ -37,6 +39,8 @@ function startCoinAnimation() {
     'position': 'fixed',
     'margin': $('#bitcoin-logo').offset().top+'px 0 0 '+$('#bitcoin-logo').offset().left+'px'
   });
+  
+  verticalCoinAnimationLimit = $('#coin-canvas').height() - coinImage.half_y;
   
   var b2Vec2 = Box2D.Common.Math.b2Vec2,
       b2BodyDef = Box2D.Dynamics.b2BodyDef,
@@ -100,21 +104,20 @@ function animateCoin() {
       updatePhysics();
       draw();
       frames++;
-      finishCoinAnimation();
+      if ((frames > 200) || coinAnimationFinished) {
+        finishCoinAnimation();
+      }
     }
     requestAnimationFrame( animateCoin );
   }, 1000 / FPS); // Dynamic background drawn half times than foreground
 }
 
 function finishCoinAnimation() {
-  if ((frames > 200) || coinAnimationFinished) {
-    coinAnimationFinished = true;
-    var canvas = document.getElementById('coin-canvas');
-    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height); // Clear canvas on finish
-    $('#coin-canvas').css('position', 'absolute'); // Avoid canvas blocking other objects
-    autoScrollToWelcome();
-    return;
-  }
+  coinAnimationFinished = true;
+  var canvas = document.getElementById('coin-canvas');
+  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height); // Clear canvas on finish
+  $('#coin-canvas').css('position', 'absolute'); // Avoid canvas blocking other objects
+  autoScrollToWelcome();
 }
 
 function updatePhysics() {
@@ -125,7 +128,7 @@ function updatePhysics() {
   world.ClearForces();
 }
 
-function draw() { // Draw background with moving sun and score
+function draw() {
   var img = document.getElementById("bitcoin-logo-image");
   var pos = physicsBody.GetPosition(); // Update position
   var angle = physicsBody.GetAngle(); // Update angle
@@ -135,7 +138,7 @@ function draw() { // Draw background with moving sun and score
   var posX = scale * pos.x;
   var posY = scale * pos.y;
   _drawImageInternal(img, posX, posY, angle, context);
-  if (posY > canvasHeight - coinImage.half_y ) {
+  if (posY > verticalCoinAnimationLimit ) {
     coinAnimationFinished = true;
   }
 }
@@ -157,10 +160,7 @@ function _drawImageInternal(image, posX, posY, angle, draw_context) {
     target_y += posY;
     draw_context.drawImage(image, target_x, target_y);
   }
-  console.log('rendering in ', target_x + posX, target_y + posY, 'with angle:', angle);
 }
-
-console.log('loaded coinAnimation');
 
 function getImageDimension(el, onReady) {    
   var src = typeof el.attr === 'function' ? el.attr('src') : el.src !== undefined ? el.src : el;  

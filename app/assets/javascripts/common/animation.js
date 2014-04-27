@@ -13,20 +13,30 @@ function setupAutoScroll() {
 }
 
 function autoScrollToWelcome() {
-  autoscrolled = true;
-  moveTo('#what', 3000);  // Move automaticaly but slowly
-  analytics.track('AutoScrolled to Welcome section');
+  if ( (autoscrolled == false) &&
+    (  $(window).scrollTop() <= parseInt( $('#welcome').css('height') )  )) {
+    autoscrolled = true;
+    moveTo('#what', 3000);  // Move automaticaly but slowly
+    analytics.track('AutoScrolled to Welcome section');
+  }
 }
 
 function loadCoinAnimation() { // Asynchronously load script for coin animation
   if ( getWindowsSize() != "small" ) { // Load coin animation only on big enough screens
     $("#canvas-container").load("/animation", function() {
-      console.log('canvas loaded');
       startCoinAnimation();
     });
   }
 }
 
+function checkCoinAnimationCancel() {
+  if ( autoscrolled || // Cancel animation if page already scrolled
+    ( $(window).scrollTop() >= parseInt($('#welcome').css('height')) ) ) {
+    if ((typeof coinAnimationStarted !== 'undefined') && coinAnimationStarted ) {
+      finishCoinAnimation();
+    }
+  }
+}
 
 /* Youtube video control functions */
 // This function creates an <iframe> (and YouTube player)

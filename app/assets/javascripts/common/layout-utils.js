@@ -53,7 +53,10 @@ function setupNavigationMenu() {
 }
 
 function setupScrollHintAnimation() {
-  $('#scroll-arrow').animate({top:'+=40'}, 4000, 'easeInOutQuart'); // Show arrow animation
+  // Show arrow animation
+  if (  $(window).scrollTop() <= parseInt( $('#welcome').css('height') )  ) {
+    $('#scroll-arrow').animate({top:'+=40'}, 4000, 'easeInOutQuart');
+  }
 }
 
 function getScrolledItems(elem) {
@@ -86,6 +89,7 @@ $.fn.isScrolledIntoView = function() {
 }
 
 function scrollFading() {
+  checkCoinAnimationCancel();
   showDemoTransaction();
   showBottomElements();
   var sizeWelcome = parseInt($('#welcome').css('height'));
