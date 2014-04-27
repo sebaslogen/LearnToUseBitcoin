@@ -88,6 +88,15 @@ $.fn.isScrolledIntoView = function() {
           ((elemTop <= docViewTop) && (elemBottom >= docViewBottom)) );
 }
 
+$.fn.isCompletelyScrolledIntoView = function() {
+  var items = getScrolledItems(this);
+  var docViewTop = items[0];
+  var docViewBottom = items[1];
+  var elemTop = items[2];
+  var elemBottom = items[3];
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
 function scrollFading() {
   checkCoinAnimationCancel();
   showDemoTransaction();

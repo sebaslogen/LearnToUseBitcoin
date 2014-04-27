@@ -13,7 +13,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       $('#demo-input-amount').attr('disabled', '');
       $('#demo-remaining-bitcoins').text($scope.remainingBitcoins() + " bitcoins available");
       $scope.disabled = true;
-      if ((getWindowsSize() == "medium") && ( ! $("#demo-transaction-details").isScrolledIntoView())) {
+      if ((getWindowsSize() == "medium") && ( ! $("#demo-transaction-details").isCompletelyScrolledIntoView())) {
         moveTo("#demo-transaction-details"); // Refocus on medium windows to help find the update
       }
       setTimeout(function() { // Show with a little delay to simulate transaction time
