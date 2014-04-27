@@ -83,7 +83,7 @@ $(document).ready(function() {
   detectLocation();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
   // setupNavigationMenu(); // DISABLED TODO: Remove or activate
-  //setupAutoScroll();
+  setupAutoScroll();
   setupScrollHintAnimation();
   setupScrollFadingAndResize();
   updateSizes();
@@ -94,6 +94,6 @@ $(document).ready(function() {
   });
   setTimeout(function() { // Preload demo hidden section
     loadDemoContent();
-  }, 2000); // Wait 2 seconds to automatically load
+  }, 5000); // Wait 5 seconds to automatically load
   loadCoinAnimation(); // Asynchronously load script for coin animation
 });

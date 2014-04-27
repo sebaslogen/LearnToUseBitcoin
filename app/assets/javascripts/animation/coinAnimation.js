@@ -5,6 +5,7 @@ var scale = 32;
 var physicsBody = null;
 var coinAnimationStarted = false;
 var coinAnimationFinished = false;
+var coinAnimationClosed = false;
 var coinImage = {
   width: 0,
   height: 0,
@@ -37,12 +38,9 @@ function startCoinAnimation() {
     };
   });
   
-  $('#coin-canvas').css({ // Position of the reference logo
-    'position': 'fixed',
-    'margin': $('#bitcoin-logo').offset().top+'px 0 0 '+$('#bitcoin-logo').offset().left+'px'
-  });
+  positionCoinAnimationCanvas();
   
-  verticalCoinAnimationLimit = $('#coin-canvas').height() - coinImage.half_y;
+  verticalCoinAnimationLimit = $('#coin-canvas').height() + (2 * coinImage.height);
   
   var b2Vec2 = Box2D.Common.Math.b2Vec2,
       b2BodyDef = Box2D.Dynamics.b2BodyDef,
@@ -96,7 +94,9 @@ function startCoinAnimation() {
   physicsBody = world.CreateBody(bodyDef);
   physicsBody.CreateFixture(fixDef);
   
-  requestAnimationFrame( animateCoin ); // Start animation
+  setTimeout(function() { // Start animation one second later
+    requestAnimationFrame( animateCoin ); // Start animation
+  }, 1000);
   coinAnimationStarted = true;
 }
 
@@ -117,13 +117,16 @@ function animateCoin() {
 }
 
 function finishCoinAnimation() {
-  coinAnimationFinished = true;
-  var canvas = document.getElementById('coin-canvas');
-  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height); // Clear canvas on finish
-  $('#coin-canvas').css('position', 'absolute'); // Avoid canvas blocking other objects
-  autoScrollToWelcome();
-  if (frames > 100) {
-    analytics.track('Watched coin intro animation');
+  if ( ! coinAnimationClosed ) {
+    coinAnimationClosed = true;
+    coinAnimationFinished = true;
+    var canvas = document.getElementById('coin-canvas');
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height); // Clear canvas on finish
+    $('#coin-canvas').remove();
+    autoScrollToWelcome();
+    if (frames > 100) {
+      analytics.track('Watched coin intro animation');
+    }
   }
 }
 
@@ -187,6 +190,14 @@ function measureFPSPerformance() {
     }
   }
 }
+
+function positionCoinAnimationCanvas() {
+  $('#coin-canvas').css({ // Position of the reference logo
+    'position': 'fixed',
+    'margin': $('#bitcoin-logo').offset().top+'px 0 0 '+$('#bitcoin-logo').offset().left+'px'
+  });
+}
+
 function getImageDimension(el, onReady) {    
   var src = typeof el.attr === 'function' ? el.attr('src') : el.src !== undefined ? el.src : el;  
   var image = new Image();

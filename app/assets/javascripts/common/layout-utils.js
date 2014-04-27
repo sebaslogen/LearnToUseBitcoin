@@ -158,6 +158,17 @@ function updateSizes() {
       element.removeClass('bottom-border');
       element.addClass('right-border');
     }
+    if (typeof coinAnimationStarted !== 'undefined') {
+      if (getWindowsSize() == "small") {
+        finishCoinAnimation(); // Small screens should not have the coin animation
+      } else {
+        if (coinAnimationFinished) {
+          finishCoinAnimation();
+        } else { // Adjust position
+          positionCoinAnimationCanvas();
+        }
+      }
+    }
   });
 }
 
