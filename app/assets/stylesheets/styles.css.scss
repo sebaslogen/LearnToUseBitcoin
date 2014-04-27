@@ -315,6 +315,7 @@ ul.navigation-content-list {
 #welcome-content {
   width: 75%;
   left: 50%;
+  z-index: 100;
 }
 
 #footsteps-image {
@@ -407,6 +408,11 @@ ul.navigation-content-list {
   z-index: 101;
 }
 /* Sections */
+
+#what-section-intro {
+  z-index: 200;
+  position: relative;
+}
 
 .sWelcome {
   background: #b2e1ff; /* Old browsers */
