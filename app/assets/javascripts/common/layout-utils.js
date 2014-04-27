@@ -97,10 +97,20 @@ $.fn.isCompletelyScrolledIntoView = function() {
   return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
+var scrollFadingBlocked = false; // Detect multiple requests in less than 200ms
+var scrollFadingChecker = null;
+
 function scrollFading() {
-  checkCoinAnimationCancel();
-  showDemoTransaction();
-  showBottomElements();
+  if (scrollFadingBlocked) { // Prevent too many updates
+    if (scrollFadingChecker != null) {
+      clearTimeout(scrollFadingChecker);
+      scrollFadingChecker = null;
+    }
+    scrollFadingChecker = setTimeout(200, scrollFading);
+    return;
+  } else {
+    scrollFadingBlocked = true;
+  }
   var sizeWelcome = parseInt($('#welcome').css('height'));
   var scrolled = $(window).scrollTop() * 1.5;
   var percentage = 1 - (scrolled / sizeWelcome);
@@ -114,23 +124,30 @@ function scrollFading() {
     $('#welcome-content').css('opacity', percentage);
     $('#coin-canvas').css('opacity', percentage);
     $('#welcome-content').find('div#scroll-message').css('opacity', percentage - (scrolled / sizeWelcome));
-    // Change extrusion of Welcome text
-    if (percentage < 0.6) {
-      $('#welcome-content').find('h1').addClass('de_extruded').removeClass('extruded');
-    } else {
-      $('#welcome-content').find('h1').addClass('extruded').removeClass('de_extruded');
-    }
-    // Change extrusion of Welcome subtitle text
-    if (percentage < 0.83) {
-      $('#welcome-content').find('h2').addClass('de_extruded-subtitle').removeClass('extruded-subtitle');
-    } else {
-      $('#welcome-content').find('h2').addClass('extruded-subtitle').removeClass('de_extruded-subtitle');
+    if (getWindowsSize() == "large") {
+      // Change extrusion of Welcome text
+      if (percentage < 0.6) {
+        $('#welcome-content').find('h1').addClass('de_extruded').removeClass('extruded');
+      } else {
+        $('#welcome-content').find('h1').addClass('extruded').removeClass('de_extruded');
+      }
+      // Change extrusion of Welcome subtitle text
+      if (percentage < 0.83) {
+        $('#welcome-content').find('h2').addClass('de_extruded-subtitle').removeClass('extruded-subtitle');
+      } else {
+        $('#welcome-content').find('h2').addClass('extruded-subtitle').removeClass('de_extruded-subtitle');
+      }
     }
   }
   // Increase footsteps opacity
   var sizeWelcomeAndWhat = parseInt($('#welcome').css('height')) + (parseInt($('#what').css('height')) / 2);
   var footsteps_opacity = (scrolled / sizeWelcomeAndWhat);
   $('#footsteps-image').css('opacity', footsteps_opacity / 2);
+  checkCoinAnimationCancel();
+  showDemoTransaction();
+  showBottomElements();
+  
+  scrollFadingBlocked = false;
 }
 
 function setupScrollFadingAndResize() {
