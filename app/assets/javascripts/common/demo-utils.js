@@ -6,6 +6,7 @@ var demo_copy_address_button_glowing = false;
 var demo_copy_address_button_glowing_on = false;
 
 function updateDemoContent() {
+  setupTouchLayouts()
   updateToolTips();
 }
 

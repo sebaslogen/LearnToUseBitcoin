@@ -106,6 +106,10 @@ a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-bu
   background-color: rgb(67, 172, 106) !important;
 }
 
+.touch-wallet-border {
+  background-color: rgba(150, 230, 0, 0.2);
+}
+
 .wallet-border:hover {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;

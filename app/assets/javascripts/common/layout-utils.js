@@ -179,6 +179,12 @@ function resizeWindow() {
   });
 }
 
+function setupTouchLayouts() {
+  if (Modernizr.touch) {
+    $('.wallet-info').addClass('touch-wallet-border');
+  }
+}
+
 // Fix for resize on webpage load depending on the browser
 var windowResize = {
   height:0,
