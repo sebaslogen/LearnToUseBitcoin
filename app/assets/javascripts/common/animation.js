@@ -13,6 +13,19 @@ function setupAutoScroll() {
   }
 }
 
+function loadCoinAnimation() { // Asynchronously load script for coin animation
+  /*if ( getWindowsSize() != "small" ) { // Load coin animation only on big enough screens
+    $.getScript('assets/vendor/javascript/box2D-min.js', function( data, textStatus, jqxhr ) {
+      if (jqxhr.status == 200 ) {
+        $.getScript('assets/vendor/javascript/coinAnimation.js', function( data, textStatus, jqxhr ) {
+          if (jqxhr.status == 200 ) {
+            //startCoinAnimation();
+          }
+        });
+      }
+    });
+  }*/
+}
 
 
 /* Youtube video control functions */

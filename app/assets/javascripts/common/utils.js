@@ -95,16 +95,5 @@ $(document).ready(function() {
   setTimeout(function() { // Preload demo hidden section
     loadDemoContent();
   }, 2000); // Wait 2 seconds to automatically load
-  // Load script for coin animation asynchronously
-  /*if ( getWindowsSize() != "small" ) { // Load coin animation only on big enough screens
-    $.getScript('assets/vendor/javascript/box2D-min.js', function( data, textStatus, jqxhr ) {
-      if (jqxhr.status == 200 ) {
-        $.getScript('assets/vendor/javascript/coinAnimation.js', function( data, textStatus, jqxhr ) {
-          if (jqxhr.status == 200 ) {
-            //startCoinAnimation();
-          }
-        });
-      }
-    });
-  }*/
+  loadCoinAnimation(); // Asynchronously load script for coin animation
 });
