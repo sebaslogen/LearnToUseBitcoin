@@ -25,7 +25,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
         }, 1800);
       }, 1000);
       analytics.track('Click Send demo transaction successful');
-    } else {
+    } else { // Log failed attempt data to gather feedback on user difficulties
       analytics.track('Failed attempt to submit demo transaction', {
         valid_amount: $('#demo-input-amount').parsley().isValid(),
         amount_value: $('#demo-input-amount').val(),
