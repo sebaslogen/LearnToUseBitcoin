@@ -151,7 +151,7 @@ function _drawImageInternal(image, posX, posY, angle, draw_context) {
   if ((typeof angle !== 'undefined') && (angle != null)) { // Paint rotated object
     draw_context.translate(posX, posY);
     draw_context.rotate(angle);
-    draw_context.drawImage(image, 0, 0, coinImage.width, coinImage.height, target_x, target_y, coinImage.width, coinImage.height);
+    draw_context.drawImage(image, 0, 0, coinImage.original_width, coinImage.original_height, target_x, target_y, coinImage.width, coinImage.height);
     draw_context.rotate(-angle);
     draw_context.translate(-posX, -posY);
   } else {
@@ -186,12 +186,17 @@ function positionCoinAnimationCanvas() {
     'margin': $('#bitcoin-logo').offset().top+'px 0 0 '+$('#bitcoin-logo').offset().left+'px'
   });
   getImageDimension($('#bitcoin-logo-image'), function(d) {
+    var resized_height = $('#bitcoin-logo').height();
+    var percentage = resized_height / d.width;
     coinImage = {
-      width: d.width,
-      height: d.height,
-      half_x: - d.width / 2,
-      half_y: - d.height / 2
+      original_width: d.width,
+      original_height: d.height,
+      width: d.width * percentage,
+      height: d.height * percentage,
+      half_x: - d.width * percentage / 2,
+      half_y: - d.height * percentage / 2
     };
+    scale *= percentage;
     verticalCoinAnimationLimit = $('#coin-canvas').height() + coinImage.height;
   });
 }
