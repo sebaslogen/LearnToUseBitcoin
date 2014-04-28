@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require foundation
 //= require angular
+//= require common-bundle
 $(function() {
   $(document).foundation();
 });
