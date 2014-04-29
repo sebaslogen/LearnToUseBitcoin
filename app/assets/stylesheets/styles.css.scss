@@ -195,57 +195,6 @@ div.sMyths {
   transition: box-shadow 3s, border-color 3s ease-in-out !important;
 }
 
-/* Side naviagtion menu */
-
-.navigation-menu {
-  position: fixed;
-  background: rgba(30, 87, 153, .85);
-  border: 1px solid;
-  border-color: #ffffff;
-  border-radius: 0px 0px 15px 0px;
-  padding-left: 0px;
-  margin-top: 0px;
-  top: -1px;
-  left: -1px;
-}
-
-#navigation-menu-icon {
-  opacity: 1;
-  padding-top: 8px;
-  padding-left: 10px;
-}
-
-#widthHeightOpacity {
-  width:50px; height:50px; opacity:0.5; /* The width is 10px shorter due to navigation left padding */
-  transition:width 200ms 400ms, height 200ms linear 200ms, opacity 200ms linear;
-}
-#widthHeightOpacity:hover {
-  width:170px; height:125px; opacity:1;
-  transition:width 200ms, height 200ms linear 200ms, opacity 200ms linear 400ms;
-}
-
-a.navigation-link:link, a.navigation-link:visited {
-  text-decoration: none;
-  color: #fff;
-  font-size: 12px;
-}
-
-a.navigation-link:hover, a.navigation-link:active {
-  color: #DBB22B;
-}
-
-ul.navigation-content-list {
-  margin: 0;
-  list-style-type: none;
-  -moz-padding-start: 10px;
-  -webkit-padding-start: 10px;
-  -khtml-padding-start: 10px;
-  -o-padding-start: 10px;
-  padding-start: 10px;
-  padding: 10px;
-  font-family: serif;
-}
-
 /* Welcome titles and texts */
 
 .semi-transparent {
