@@ -19,24 +19,36 @@ function detectLocation() {
 function loadLocalBitcoinSellers() {
   $('#bitcoin-sellers').children().remove(); // Remove any previous links (e.g. on IP/country change)
   var cc = user_location.country_code;
+  var sellers_list = [];
+  var link_start = '<a target="_blank" href="';
   if (cc == 'NL' || (cc == 'BE') || (cc == 'LU')) {
-    $('#bitcoin-sellers').append('<a href="https://bitonic.nl/?refcode=8w0UlJ123111" target="_blank"> Bitonic </a>');
-    $('#bitcoin-sellers').append('<a href="https://www.happycoins.com/Account/Index/eb754703-5a33-46fd-b0d2-9a2bb7e465e3" target="_blank"> HappyCoins </a>');
+    sellers_list.push('https://bitonic.nl/?refcode=8w0UlJ123111"> Bitonic </a>');
+    sellers_list.push('https://www.happycoins.com/Account/Index/eb754703-5a33-46fd-b0d2-9a2bb7e465e3"> HappyCoins </a>');
+    sellers_list.push('http://www.bitcoin-bon.nl"> Bitcoin Bon </a>');
   }
   if (cc == 'GB' || cc == 'SE' || cc == 'NL' || cc == 'DE' || cc == 'FR' || cc == 'IT' || cc == 'ES' || 
       cc == 'PL' || (cc == 'HU') ) {
-    $('#bitcoin-sellers').append('<a href="https://safello.com/buy" target="_blank"> Safello </a>');
+    sellers_list.push('http://safello.com/buy"> Safello </a>');
   }
   if (cc == 'GB' || cc == 'SE' || cc == 'NL' || cc == 'DE' || cc == 'FR' || cc == 'IT' || cc == 'ES' || 
       cc == 'PL' || (cc == 'HU') || (cc == 'PT') || (cc == 'LI') || (cc == 'LU') || (cc == 'BE') || (cc == 'AT') ) {
-    $('#bitcoin-sellers').append('<a href="https://bittylicious.com/r/19542" target="_blank"> Bittylicious </a>');
+    sellers_list.push('https://bittylicious.com/r/19542"> Bittylicious </a>');
   }
   if (cc == 'RU') {
-    $('#bitcoin-sellers').append('<a href="https://btc-e.com" target="_blank"> BTC-e </a>');
+    sellers_list.push('https://btc-e.com" target="_blank"> BTC-e </a>');
   }
   if (cc == 'US') {
-    $('#bitcoin-sellers').append('<a href="https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link" target="_blank"> coinbase </a>');
-    $('#bitcoin-sellers').append('<a href="http://www.expresscoin.com/" target="_blank"> expresscoin </a>');
+    sellers_list.push('https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link"> coinbase </a>');
+    sellers_list.push('http://www.expresscoin.com/"> expresscoin </a>');
+  }
+  for (var i = 0; i < sellers_list.length; i++) {
+    if ( i % 4 == 0 ) {
+      $('#bitcoin-sellers').append( '<br>' );
+    }
+    else if ( i > 0 ) {
+      $('#bitcoin-sellers').append( '-' );
+    }
+    $('#bitcoin-sellers').append( link_start + sellers_list[i] );
   }
 }
 
