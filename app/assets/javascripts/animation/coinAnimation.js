@@ -109,7 +109,11 @@ function finishCoinAnimation() {
   if ( ! coinAnimationClosed ) {
     coinAnimationClosed = true;
     coinAnimationFinished = true;
-    var canvas = document.getElementById('coin-canvas');
+    var canvas = $('#coin-canvas');
+    if (canvas.length == 0) {
+      return;
+    }
+    canvas = canvas[0];
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height); // Clear canvas on finish
     $('#coin-canvas').remove();
     autoScrollToWelcome();
@@ -131,7 +135,12 @@ function draw() {
   var img = document.getElementById("bitcoin-logo-image");
   var pos = physicsBody.GetPosition(); // Update position
   var angle = physicsBody.GetAngle(); // Update angle
-  var canvas = document.getElementById('coin-canvas');
+  var canvas = $('#coin-canvas');
+  if (canvas.length == 0) {
+    coinAnimationFinished = true;
+    return;
+  }
+  canvas = canvas[0];
   var context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height); // First clean up screen
   var posX = scale * pos.x;
