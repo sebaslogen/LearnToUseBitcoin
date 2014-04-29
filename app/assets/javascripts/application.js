@@ -12,7 +12,6 @@
 //
 //= require jquery_ujs
 //= require turbolinks
-//= require foundation
 //= require common-bundle
 $(function() {
   $(document).foundation();
