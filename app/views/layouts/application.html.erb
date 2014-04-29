@@ -9,10 +9,30 @@
     <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      window.jQuery || document.write(unescape('%3Cscript src="/assets/jquery.min.js?body=1">%3C/script>'))//]]>
+    </script> 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      (window.jQuery && window.jQuery.ui) || document.write(unescape('%3Cscript src="/assets/jquery-ui.min.js?body=1">%3C/script>'))//]]>
+    </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      (window.jQuery && window.jQuery.qtip) || document.write(unescape('%3Cscript src="/assets/jquery.qtip.min.js?body=1">%3C/script>'))//]]>
+    </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/js/foundation.min.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      (window.Foundation) || document.write(unescape('%3Cscript src="/assets/foundation.min.js?body=1">%3C/script>'))//]]>
+    </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      (window.angular) || document.write(unescape('%3Cscript src="/assets/angular.min.js?body=1">%3C/script>'))//]]>
+    </script>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <script type="text/javascript">
