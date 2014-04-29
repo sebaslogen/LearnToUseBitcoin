@@ -17,7 +17,7 @@ function detectLocation() {
 }
 
 function loadLocalBitcoinSellers() {
-  $('#bitcoin-sellers').children().remove(); // Remove any previous links (e.g. on IP/country change)
+  $('#bitcoin-sellers').empty(); // Remove any previous links (e.g. on IP/country change)
   var cc = user_location.country_code;
   var sellers_list = [];
   var link_start = '<a target="_blank" href="';
