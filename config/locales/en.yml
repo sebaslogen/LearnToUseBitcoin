@@ -20,4 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome: 'Welcome'
+  welcome2: 'to the amazing revolution of money'
+  what: 'What is Bitcoin?'
+  scroll: 'SCROLL'
