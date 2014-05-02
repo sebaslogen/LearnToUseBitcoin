@@ -1,4 +1,4 @@
-<% content_for :title do %>Learn To Use Bitcoin<% end %>
+<% content_for :title do %><%=t :ltub%><% end %>
 
 <%= render 'welcome', layout: false %>
 
@@ -11,7 +11,7 @@
 <%= render 'myths', layout: false %>
 
 <div class="text-center info-block" id="contact-info">
-  <p>Made with <i class="fi-heart"></i> by Sebas<br>
+  <p><%=t :made%> <i class="fi-heart"></i> <%=t :by%> Sebas<br>
   love@learntousebitcoin.com<p>
 </div>
 
