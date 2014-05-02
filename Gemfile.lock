@@ -73,6 +73,7 @@ GEM
       rack (>= 1.4.5)
     high_voltage (2.1.0)
     hike (1.2.3)
+    http_accept_language (2.0.1)
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -200,6 +201,7 @@ DEPENDENCIES
   gibbon
   heroku-deflater
   high_voltage
+  http_accept_language
   jbuilder (~> 1.2)
   jquery-rails
   pg
