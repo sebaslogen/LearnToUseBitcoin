@@ -20,6 +20,13 @@ es:
 # start
   discover: 'Descubrir Bitcoin'
   counting_stars: 'Contando las estrellas en el universo...'
+# easy explanations
+  bitcoin_easy: 'Bitcoin tan fácil como'
+  sending_receiving_html: 'Enviar y recibir bitcoins es tan simple como enviar un <strong>correo electrónico</strong>, la primera cosa que necesitamos es una <strong>dirección</strong>'
+  bitcoin_address_html: 'Una <strong>dirección de Bitcoin</strong> es el lugar dónde se guardan los bitcoins<br> Como en una <strong>caja fuerte</strong> transparente, las monedas sólo pueden ser movidas por el <strong>dueño</strong>, pero todo el mundo puede ver lo que hay'
+  inside: 'dentro'
+  bitcoin_address_looks: 'La dirección es una larga secuencia de cifras y letras parecida a ésto'
+  anonymous_email: 'Como en una dirección de correo electrónico anónima, la dirección de Bitcoin no está enlazada a ninguna identidad<br>Es tan sólo una secuencia de cifras y letras'
 # demo
   demo1: 'Demostración de una transacción Bitcoin'
   # shop

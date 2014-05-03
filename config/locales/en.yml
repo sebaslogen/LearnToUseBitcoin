@@ -41,6 +41,13 @@ en:
 # start
   discover: 'Discover Bitcoin'
   counting_stars: 'Counting starts in the universe...'
+# easy explanations
+  bitcoin_easy: 'Bitcoin is as easy as'
+  sending_receiving_html: 'Sending and receiving bitcoins is as simple as sending an <strong>email</strong>, the first thing we need is an <strong>address</strong>'
+  bitcoin_address_html: 'A <strong>Bitcoin address</strong> is the place where the bitcoins are stored<br> Like a transparent <strong>vault</strong>, the coins can only be moved by the <strong>key owner</strong>, but the world can see what is'
+  inside: 'inside'
+  bitcoin_address_looks: 'The address is a long sequence of letters and numbers that looks like this'
+  anonymous_email: 'Like an anonymous email, the Bitcoin address is not linked to any identity<br>It is just a sequence of numbers and letters'
 # demo
   demo1: 'Bitcoin demo transaction'
   # shop

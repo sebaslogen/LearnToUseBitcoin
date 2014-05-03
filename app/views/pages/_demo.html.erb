@@ -1,12 +1,12 @@
 <%= audio_tag "demo-confirmation.wav", id: "confirmation-sound", autoplay: false, controls: false, autobuffer: true %>
 
-<h2>Bitcoin is as easy as 
+<h2><%=t :bitcoin_easy%> 
   <a class="circle-button" href="#demo-section-1">1</a>
   <a class="circle-button" href="#demo-section-2">2</a>
   <a class="circle-button" href="#demo-section-3">3</a>
 </h2>
 
-<p>Sending and receiving bitcoins is as simple as sending an <strong>email</strong>, the first thing we need is an <strong>address</strong></p><br>
+<p><%=t :sending_receiving_html%></p><br>
 
 <div id="demo-section-1" class="row rounded-border relative-position info-block">
   <div class="small-1 columns text-center">
@@ -19,10 +19,9 @@
     <div class="row">
       <div class="small-10 columns text-left">
         <p>
-          A Bitcoin <strong>address</strong> is the place where the bitcoins are actually stored<br>
-          Like a transparent <strong>vault</strong>, the coins can only be moved by the <strong>key owner</strong> but the world can see what is 
-          <strong class="title has-tooltip" title="Like an anonymous email, the Bitcoin address is not linked to any identity<br>It is just a sequence of numbers and letters">inside</strong><br>
-          The address is a long sequence of letters and numbers that looks like this:
+          <%=t :bitcoin_address_html%> 
+          <strong class="title has-tooltip" title="<%=t :anonymous_email%>"><%=t :inside%></strong><br>
+          <%=t :bitcoin_address_looks%>:
         </p>
       </div>
     </div>

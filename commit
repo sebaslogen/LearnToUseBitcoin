@@ -1,4 +1,7 @@
 #!/bin/bash
+if [ -f public/javascripts/translations.js ]; then
+  mv public/javascripts/translations.js app/assets/javascripts/common/
+fi
 if [ $# -ne 1 ]; then
   echo "Incorrect number of options, you should only provide the commit message"
   exit 1
