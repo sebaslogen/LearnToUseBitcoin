@@ -435,6 +435,11 @@ div.sMyths {
 }
 
 /* Quirks and fixes */
+
+legend {
+  line-height: normal;
+}
+
 p.side-padding { /* Fix for private key text correctly aligned */
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;

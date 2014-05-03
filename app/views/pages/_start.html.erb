@@ -5,23 +5,23 @@
 <!-- Hidden or moving elements -->
 
 <div class="empty-content hidden" id="demo-content">
-  <div> <%= image_tag "loading.gif", alt: "Counting starts in the universe..." %> </div>
+  <div> <%= image_tag "loading.gif", alt: t(:counting_stars) %> </div>
 </div>
 
 <div id="transactionDemoPlaceholder" class="hidden">
   <div id="transference-demo" class="rounded-border relative-position info-block" ng-controller="TransactionCtrl">
-    <br><h2>Bitcoin demo transaction</h2><br>
+    <br><h2><%=t :demo1%></h2><br>
     
     <div class="row rounded-border separated-row">
       
       <div class="large-6 columns text-center right-border" id="demo-shopping-cart">
         <br>
         <div class="hidden" id="demo-shopping-cart-info">
-          <p>Imagine this section below is the website of an <strong>on-line shop</strong> where you are about to pay your purchase</p>
+          <p><%=t :imagine_shop%> <strong><%=t :imagine_shop_1%></strong> <%=t :imagine_shop_2%></p>
         </div>
         <div class="info-block hidden" id="demo-shopping-cart-content">
           <fieldset>
-            <legend>Shopping cart in your favorite web shop</legend>
+            <legend><%=t :shop_legend%></legend>
             <div>
               <div class="row separated-row shop-table-title">
                 <div class="small-4 columns text-center">
