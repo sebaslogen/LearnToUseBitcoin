@@ -78,6 +78,8 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
+    i18n-js (2.1.2)
+      i18n
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -202,6 +204,7 @@ DEPENDENCIES
   heroku-deflater
   high_voltage
   http_accept_language
+  i18n-js
   jbuilder (~> 1.2)
   jquery-rails
   pg

@@ -8,33 +8,46 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag "vendor/modernizr" %>
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript">
       //<![CDATA[
       window.jQuery || document.write(unescape('%3Cscript src="/assets/jquery.min.js?body=1">%3C/script>'))//]]>
     </script> 
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script type="text/javascript">
       //<![CDATA[
       (window.jQuery && window.jQuery.ui) || document.write(unescape('%3Cscript src="/assets/jquery-ui.min.js?body=1">%3C/script>'))//]]>
     </script>
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
     <script type="text/javascript">
       //<![CDATA[
       (window.jQuery && window.jQuery.qtip) || document.write(unescape('%3Cscript src="/assets/jquery.qtip.min.js?body=1">%3C/script>'))//]]>
     </script>
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/js/foundation.min.js"></script>
     <script type="text/javascript">
       //<![CDATA[
       (window.Foundation) || document.write(unescape('%3Cscript src="/assets/foundation.min.js?body=1">%3C/script>'))//]]>
     </script>
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
     <script type="text/javascript">
       //<![CDATA[
       (window.angular) || document.write(unescape('%3Cscript src="/assets/angular.min.js?body=1">%3C/script>'))//]]>
     </script>
+    
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    
+    <script type="text/javascript">
+      I18n.defaultLocale = "<%= I18n.default_locale %>";
+      I18n.locale = "<%= I18n.locale %>";
+    </script>
+    
     <%= csrf_meta_tags %>
+    
     <script type="text/javascript">
       window.analytics||(window.analytics=[]),window.analytics.methods=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group","on","once","off"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var method=window.analytics.methods[i];window.analytics[method]=window.analytics.factory(method)}window.analytics.load=function(t){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)},window.analytics.SNIPPET_VERSION="2.0.8",
       window.analytics.load("ddgl3j4f48");

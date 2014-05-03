@@ -61,6 +61,7 @@ gem 'foundation-icons-sass-rails' # Foundation Icon Fonts on SASS for Rails
 gem "rails-assets-angular" # AngularJS library
 gem 'analytics-ruby', '~>1.0' # Segment.io analytics
 gem 'http_accept_language' # Detect client selected language
+gem "i18n-js" # Add Rails internationalization support for JavaScript
 group :test do
   gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
 end

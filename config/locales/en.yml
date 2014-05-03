@@ -62,7 +62,8 @@ en:
   demo_wallet_legend: 'Your Bitcoin demo wallet'
   demo_send_address: 'Send bitcoins from this Bitcoin address:'
   multiple_addresses: 'Your Bitcoin wallet can contain as many Bitcoin addresses as you want'
-  
+  out_of: 'out of'
+  available: 'available'
   
   
   

@@ -41,6 +41,8 @@ es:
   demo_wallet_legend: 'Tu cartera Bitcoin de ejemplo'
   demo_send_address: 'Enviar bitcoins desde ésta dirección de Bitcoin:'
   multiple_addresses: 'Tu cartera Bitcoin puede contener tantas direcciones de Bitcoin como desees'
+  out_of: 'de'
+  available: 'disponibles'
   
   
   
