@@ -20,30 +20,30 @@
       <div class="small-10 columns text-left">
         <p>
           <%=t :bitcoin_address_html%> 
-          <strong class="title has-tooltip" title="<%=t :anonymous_email%>"><%=t :inside%></strong><br>
+          <strong class="title has-tooltip" title="<%=t :anonymous_email_html%>"><%=t :inside%></strong><br>
           <%=t :bitcoin_address_looks%>:
         </p>
       </div>
     </div>
     <div class="row text-center">
       <p>
-        <strong class="bitcoin-address title has-tooltip" title="You can generate and use as many addresses as desired at no cost<br>The Bitcoin address is what you share when you want to get paid">
+        <strong class="bitcoin-address title has-tooltip" title="<%=t :bitcoin_address_tooltip_html%>">
           19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</strong>&nbsp;&nbsp;&nbsp;
-        <%= image_tag "QR_code.png", class: "has-tooltip", title: "This QR code represents the same address and can be easily read with a phone", width: 200, height: 200, alt: "QR code image" %><br><br>
+        <%= image_tag "QR_code.png", class: "has-tooltip", title: t(:bitcoin_address_qr_tooltip), width: 200, height: 200, alt: t(:address_qr) %><br><br>
       </p>
     </div>
     <div class="row">
       <div class="small-2 columns"></div>
       <div class="small-10 columns text-right">
         <p>
-          The <strong>private key</strong> is the <u>only</u> key in the world that can transfer the bitcoins from the Bitcoin address (like the email password)<br>
-          The private key is a long sequence of letters and numbers and you should always keep it secret
+          <%=t :bitcoin_private_key_html%><br>
+          <%=t :bitcoin_private_key_2%>
         </p>        
       </div>
     </div>
   </div>
   <div class="small-2 columns text-center fix-bottom-position">
-    <%= image_tag "key.png", alt: "Private Key image" %>
+    <%= image_tag "key.png", alt: t(:private_key_image) %>
   </div>
 </div>
 
@@ -52,54 +52,51 @@
     <label class="fake-circle-button"> 2 </label>
   </div>
   <div class="small-3 columns text-center">
-    <%= image_tag "wallet.png", alt: "Wallet image" %>
+    <%= image_tag "wallet.png", alt: t(:wallet_image) %>
   </div>
   <div class="small-8 columns text-center">
     <p>
-      A <strong>Bitcoin wallet</strong> is a software that allows you to manage multiple addresses and private keys<br>
-      It lets you easily <strong>send and receive bitcoins</strong> or create new Bitcoin addresses
+      <%=t :bitcoin_wallet_html%><br>
+      <%=t :bitcoin_wallet_2_html%>
     </p>
     <p>
-      There are three types of <strong>wallet applications</strong>
+      <%=t :wallet_types_html%>
     </p>
     <div class="row">
       <div class="small-4 columns text-center">
         <div class="wallet-info wallet-mobile has-external-tooltip" tooltip-id="phone-tooltip">
-          <%= image_tag "phone.png", alt: "Phone image" %>
-          <p><br><strong class="title">Mobile App</strong></p>
+          <%= image_tag "phone.png", alt: t(:phone_image) %>
+          <p><br><strong class="title"><%=t :mobile_app%></strong></p>
         </div>        
         <div id="phone-tooltip" class="hidden text-center tooltip-text">
           <p>
-            This is convenient for day to day usage on the move<br>
-            A couple of good Android wallets:<br><%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %> and 
+            <%=t :mobile_wallet_html%>:<br><%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %> <%=t :and%> 
             <%= link_to('Blockchain.info', 'https://blockchain.info/wallet/android-app', target: "_blank") %>
           </p>
         </div>
       </div>
       <div class="small-4 columns text-center">
         <div class="wallet-info wallet-desktop has-external-tooltip" tooltip-id="desktop-tooltip">
-          <%= image_tag "desktop.png", alt: "Desktop PC image" %>
-          <p><strong class="title">Desktop App</strong></p>
+          <%= image_tag "desktop.png", alt: t(:pc_image) %>
+          <p><strong class="title"><%=t :desktop_app%></strong></p>
         </div>
         <div id="desktop-tooltip" class="hidden text-center tooltip-text">
           <p>
-            These wallets usually provide more security and more options<br>
-            A couple of good wallets:<br><%= link_to('Electrum', 'https://electrum.org/', target: "_blank") %> and 
+            <%=t :desktop_wallet_html%>:<br><%= link_to('Electrum', 'https://electrum.org/', target: "_blank") %> <%=t :and%> 
             <%= link_to('MultiBit', 'https://multibit.org/', target: "_blank") %>
           </p>
         </div>
       </div>
       <div class="small-4 columns text-center">
         <div class="wallet-info wallet-web has-external-tooltip" tooltip-id="browser-tooltip">
-          <%= image_tag "browser.png", alt: "Web browser image" %>
-          <p><strong class="title">Web wallet</strong></p>
+          <%= image_tag "browser.png", alt: t(:browser_image) %>
+          <p><strong class="title"><%=t :browser_app%></strong></p>
         </div>
         <div id="browser-tooltip" class="hidden text-center tooltip-text">
           <p>
-            These wallets combine easy of use with plenty of features<br>
-            Two good examples where <strong>you</strong> completely manage your bitcoins are <%= link_to('Blockchain.info', 'https://blockchain.info/wallet', target: "_blank") %><br>
-            and <%= link_to('GreenAddress.it', 'https://greenaddress.it', target: "_blank") %> <br>
-            Another where the company secures and stores the bitcoins for you is <%= link_to('Coinbase', 'https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link', target: "_blank") %>
+            <%=t :browser_wallet_html%>: <%= link_to('Blockchain.info', 'https://blockchain.info/wallet', target: "_blank") %><br>
+            <%=t :and%> <%= link_to('GreenAddress.it', 'https://greenaddress.it', target: "_blank") %> <br>
+            <%=t :browser_wallet_2%>: <%= link_to('Coinbase', 'https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link', target: "_blank") %>
           </p>
         </div>
       </div>
@@ -113,13 +110,12 @@
   </div>
   <div class="small-8 columns text-center">
     <p><br>
-      Now you need to fill the wallet with some bitcoins<br>
-      You can get your first bitcoins totally for free below (no attachments or register) but first let's practice with a 
-      <strong class="title has-tooltip" title="No actual bitcoins will be send to any shop in the demo">demo</strong>
+      <%=t :fill_wallet_html%> 
+      <strong class="title has-tooltip" title="<%=t :demo_tooltip%>"><%=t :demo%></strong>
     </p>
   </div>
   <div class="small-3 columns text-center">
-    <%= image_tag "Bitcoin_euro.png", class: 'rounded-corners', alt: "Coin image" %>
+    <%= image_tag "Bitcoin_euro.png", class: 'rounded-corners', alt: t(:coin_image) %>
   </div>
 </div>
 
@@ -127,25 +123,25 @@
 
 <div id="demo-section-blockchain" class="row rounded-border info-block hidden">
   <div class="small-1 columns text-center">
-    <label class="blockchain-button-label"> extra </label>
+    <label class="blockchain-button-label"> <%=t :extra%> </label>
   </div>
   <div class="small-8 columns text-center">
     <p>
       <br>
-      <strong class="title has-tooltip" title="This means all Bitcoin addresses and all bitcoins sent between them">All transactions</strong> 
-      ever made in the Bitcoin economy are stored in a 
-      <strong class="title has-tooltip" title="A full and updated copy of all transactions is stored in the computer of most of the users of Bitcoin">public record</strong><br>
-      This public record works as a ledger and it is called the <strong class="title has-external-tooltip" tooltip-id="blockchain-tooltip">Blockchain</strong><br>
-      When you send a bitcoin payment the transaction is send to all Bitcoin users through the Bitcoin 
-      <strong class="title has-tooltip" title="The transaction is send to a few users that forward it to more users and this is repeated until everybody in the network has received the transaction">peer to peer network</strong> 
-      to be stored in the Blockchain
+      <strong class="title has-tooltip" title="<%=t :all_transactions_tooltip%>"><%=t :all_transactions%></strong> 
+      <%=t :blockchain_1%> 
+      <strong class="title has-tooltip" title="<%=t :public_record_tooltip%>"><%=t :public_record%></strong><br>
+      <%=t :blockchain_2%> <strong class="title has-external-tooltip" tooltip-id="blockchain-tooltip"><%=t :blockchain%></strong><br>
+      <%=t :blockchain_3%> 
+      <strong class="title has-tooltip" title="<%=t :p2p_tooltip%>"><%=t :p2p%></strong> 
+      <%=t :blockchain_4%>
     </p>
     <div id="blockchain-tooltip" class="hidden tooltip-text">
-      <p>Do not confuse with <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> a useful website to see Bitcoin transactions happening in real time</p>
+      <p><%=t :blockchain_confuse%> <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> <%=t :blockchain_confuse_2%></p>
     </div>
   </div>
   <div class="small-3 columns text-center">
-    <%= image_tag "ledger.png", class: 'rounded-corners', alt: "Ledger image" %>
+    <%= image_tag "ledger.png", class: 'rounded-corners', alt: t(:leger_image) %>
   </div>
 </div>
 
