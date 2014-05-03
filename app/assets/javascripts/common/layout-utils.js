@@ -141,7 +141,7 @@ function scrollFading() {
   }
   // Increase footsteps opacity
   var sizeWelcomeAndWhat = parseInt($('#welcome').css('height')) + (parseInt($('#what').css('height')) / 2);
-  var footsteps_opacity = (scrolled / sizeWelcomeAndWhat);
+  var footsteps_opacity = ((scrolled*scrolled/1500) / sizeWelcomeAndWhat);
   $('#footsteps-image').css('opacity', footsteps_opacity / 2);
   checkCoinAnimationCancel();
   showDemoTransaction();
