@@ -1,25 +1,29 @@
 Licenses
 
-Class object based on John Resigs code; inspired by base2 and Prototype: http://ejohn.org/blog/simple-javascript-inheritance/
+This project is licensed under Creative Commons Attribution 3.0 Unported License: https://creativecommons.org/licenses/by/3.0/
 
-Box2D physics library - http://code.google.com/p/box2dweb/
+These are the rest of the licensed components used, thanks to all the original authors:
 
-images/index-icon.png - Linkware (Backlink to http://www.visualpharm.com required)
+- Class object based on John Resigs code; inspired by base2 and Prototype: http://ejohn.org/blog/simple-javascript-inheritance/
 
-What is Bitcoin? Video - WeUseCoins.comn - Creative Commons Attribution 3.0 Unported License
+- Box2D physics library - http://code.google.com/p/box2dweb/
 
-Vault icon - https://www.iconfinder.com/icons/55828/safebox_safety_icon#size=128
+- images/index-icon.png - Linkware (Backlink to http://www.visualpharm.com required)
 
-Key icon - https://www.iconfinder.com/icons/27855/key_password_icon#size=128
+- What is Bitcoin? Video - WeUseCoins.comn - Creative Commons Attribution 3.0 Unported License
 
-Wallet and shopping bag icons - Creative Commons Attribution-NoDerivs 3.0 Unported License: RocketTheme eCommerce Icon Pack 1 by RocketTheme - http://www.rockettheme.com
+- Vault icon - https://www.iconfinder.com/icons/55828/safebox_safety_icon#size=128
 
-Desktop icon - PC Unleashed - http://pcunleashed.com/
+- Key icon - https://www.iconfinder.com/icons/27855/key_password_icon#size=128
 
-Teddy bear - Graphics Work Space - http://www.graphicsworkspace.com
+- Wallet and shopping bag icons - Creative Commons Attribution-NoDerivs 3.0 Unported License: RocketTheme eCommerce Icon Pack 1 by RocketTheme - http://www.rockettheme.com
 
-Bitcoin icon set - www.joelandy.co.uk
+- Desktop icon - PC Unleashed - http://pcunleashed.com/
 
-Demo confirmation sound - https://www.freesound.org/people/walkingdistance/ - Creative Commons Attribution 3.0 Unported
+- Teddy bear - Graphics Work Space - http://www.graphicsworkspace.com
 
-Bitcoin website icon - BlueshiftGfx.com
+- Bitcoin icon set - www.joelandy.co.uk
+
+- Demo Send button confirmation sound - https://www.freesound.org/people/walkingdistance/ - Creative Commons Attribution 3.0 Unported
+
+- Bitcoin website icon - BlueshiftGfx.com

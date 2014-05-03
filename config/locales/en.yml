@@ -20,13 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+# home
   ltub: 'Learn To Use Bitcoin'
   made: 'Made with'
   by: 'by'
-  
+# welcome
   welcome: 'Welcome'
   welcome2: 'to the amazing revolution of money'
   scroll: 'SCROLL'
+# what
   what: 'What is Bitcoin?'
   what1: 'Bitcoin is a new class of'
   digital_money: 'digital money'

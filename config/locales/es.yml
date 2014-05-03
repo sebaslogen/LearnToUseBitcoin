@@ -1,11 +1,13 @@
 es:
+# home
   ltub: 'Aprende a Usar Bitcoin'
   made: 'Hecho con'
   by: 'por'
-  
+# welcome
   welcome: 'Bienvenido'
   welcome2: 'a la increíble revolución del dinero'
   scroll: 'Mira Abajo'
+# what
   what: '¿Qué es Bitcoin?'
   what1: 'Bitcoin es una nueva clase de'
   digital_money: 'dinero digital'
@@ -15,5 +17,5 @@ es:
   what4: 'a un coste casi nulo'
   what_tip1: 'Envía dinero a cualquier parte del mundo,<br>el destinatario puede usar el dinero después de tan sólo 10 minutos'
   what_tip2: '5 céntimos de dólar para enviar 10,000 USD a cualquier parte del mundo'
-  
+# start
   discover: 'Descubrir Bitcoin'
