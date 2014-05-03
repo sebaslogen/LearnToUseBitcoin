@@ -61,13 +61,13 @@
               </div>
               <div class="row separated-row">
                 <div class="small-12 columns">
-                  <%= image_tag "QR-shop.png", width: '50%', alt: t(:shop_qr) %>
+                  <%= image_tag "QR-shop.png", width: '50%', alt: t(:shop_qr), class: "has-tooltip", title: t(:shop_qr_tooltip) %>
                 </div>
               </div>
               <div class="row separated-row collapse">
                 <div class="small-2 columns">
                   <span class="prefix radius button alert address-info-block-shop highlighted-box has-tooltip" ng-click="copyAddress()"
-                        id="copy-demo-button" title="<%=t :copy_tooltip%>"><i class="fi-page-copy"></i> Copy </span>
+                        id="copy-demo-button" title="<%=t :copy_tooltip%>"><i class="fi-page-copy"></i> <%=t :copy%> </span>
                 </div>
                 <div class="small-10 columns">
                   <span id="demo-pay-to-address" class="postfix radius button disabled">1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1</span>
@@ -107,12 +107,12 @@
             </div>
             <div class="row collapse separated-row"> 
               <div class="small-3 columns">
-                <label for="amount" class="right inline small-right-padding ">amount: </label>
+                <label for="amount" class="right inline small-right-padding "><%=t :amount%>: </label>
               </div>
               <div class="small-2 columns" id="amount">
                 <input type="text" class="highlighted-box text-center has-tooltip" ng-click="disableAmountGlowing()" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
-                       data-parsley-min="0.1" data-parsley-min-message="Value should be <strong class='title'>0.1</strong>, same as the price" data-parsley-max="0.1" data-parsley-max-message="Value should be <strong class='title'>0.1</strong>, same as the price"
-                       title="1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)" placeholder="eg 0.1" />
+                       data-parsley-min="0.1" data-parsley-min-message="<%=t :demo_input_amount_fail_help_html%>" data-parsley-max="0.1" data-parsley-max-message="<%=t :demo_input_amount_fail_help_html%>"
+                       title="<%=t :demo_input_amount_tooltip_html%>" placeholder="eg 0.1" />
               </div>
               <div class="small-4 columns">
                 <span class="postfix radius"> bitcoins (BTC)</span>
@@ -121,18 +121,18 @@
             </div>
             <div class="row collapse separated-row">
               <div class="small-2 columns">
-                <span class="prefix radius button disabled">To:</span>
+                <span class="prefix radius button disabled"><%=t :to%>:</span>
               </div>
               <div class="small-10 columns">
                 <input id="demo-pay-to-address-input" type="text" ng-click="disableAddressGlowing()" placeholder="eg 1JL27iKbmVBNBnwuST7aqyu..." data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
                        data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required class="highlighted-box has-tooltip"
-                       title="enter here the Bitcoin address the shop provides for the payment (<strong>Hint</strong>: use the <i class='fi-page-copy'></i> Copy button)"/>
+                       title="<%=t :demo_input_address_tooltip_html%>"/>
               </div>
             </div>
               <div class="row">
                 <div class="small-12 columns">
                   <label id="demo-transaction-send-button" class="button radius round has-tooltip" ng-click="transactionDemo()"
-                         title="send bitcoins to pay the demo bill">Send &nbsp;&nbsp;<%= image_tag "send-inverted.png", width: '40%', class: 'rounded-corners' %></label>
+                         title="<%=t :send_button_tooltip%>"><%=t :send%> &nbsp;&nbsp;<%= image_tag "send-inverted.png", width: '40%', class: 'rounded-corners' %></label>
                 </div>
               </div>
             </fieldset>
@@ -144,7 +144,7 @@
     <br>
     <div>
       <button class="radius round hidden" id="show-blockchain-section" ng-click="showBlockchainSection()">
-        How does this transaction work? &nbsp;&nbsp;<i class="fi-magnifying-glass"></i>
+        <%=t :how_transaction%> &nbsp;&nbsp;<i class="fi-magnifying-glass"></i>
       </button>
     </div>
     <br>
@@ -154,7 +154,7 @@
 <div id="ok-purchase" class="hidden">
   <div class="row separated-row">
     <div class="small-12 columns">
-      <p><strong class="title">Payment received correctly</strong></p>
+      <p><strong class="title"><%=t :payment_received%></strong></p>
     </div>
   </div>
   <%= image_tag "ok_purchase.png", width: '70%', alt: "Purchase OK image" %>

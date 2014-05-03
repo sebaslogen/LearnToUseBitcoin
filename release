@@ -1,5 +1,6 @@
 #!/bin/bash
 rake i18n:js:export
+mv public/javascripts/translations.js app/assets/javascripts/common/
 RAILS_ENV=production rake assets:precompile
 git add -A
 git commit -m "Assets compiled for Heroku"

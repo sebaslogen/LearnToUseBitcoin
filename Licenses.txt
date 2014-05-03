@@ -27,3 +27,6 @@ These are the rest of the licensed components used, thanks to all the original a
 - Demo Send button confirmation sound - https://www.freesound.org/people/walkingdistance/ - Creative Commons Attribution 3.0 Unported
 
 - Bitcoin website icon - BlueshiftGfx.com
+
+- Form validation with Parsley - MIT license
+- Parsley languages from: https://github.com/guillaumepotier/Parsley.js/tree/master/src/i18n

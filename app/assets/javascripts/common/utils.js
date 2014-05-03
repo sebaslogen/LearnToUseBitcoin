@@ -86,12 +86,18 @@ function updateToolTips() {
   });
 }
 
+function setupLocalization() {
+  if (typeof window.ParsleyConfig.i18n[I18n.locale] !== 'undefined') {// Set Parsley language only when locale is available
+    window.ParsleyValidator.setLocale( I18n.locale );
+  }
+}
 
 
 /* Enable functions after document load */
 
 $(document).ready(function() {
   setupActiveJavaScript();
+  setupLocalization();
   detectLocation();
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
   // setupNavigationMenu(); // DISABLED TODO: Remove or activate

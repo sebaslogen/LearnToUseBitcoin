@@ -54,6 +54,8 @@ en:
   item_image: 'Teddy bear image'
   pay_address: 'Pay to this address'
   shop_qr: 'Shop QR of address'
+  shop_qr_tooltip: 'This QR code is easily read with a Bitcoin wallet app on a mobile phone'
+  copy: 'Copy'
   logo_bitcoin: 'Bitcoin accepted here logo'
   copy_tooltip: 'copy the shop payment address to your Bitcoin wallet'
   # wallet
@@ -64,6 +66,17 @@ en:
   multiple_addresses: 'Your Bitcoin wallet can contain as many Bitcoin addresses as you want'
   out_of: 'out of'
   available: 'available'
+  amount: 'amount'
+  demo_input_amount_fail_help_html: "Value should be <strong class='title'>0.1</strong> (same as the price)"
+  demo_input_amount_tooltip_html: '1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)'
+  to: 'To'
+  demo_input_address_tooltip_html: "enter here the Bitcoin address the shop provides for the payment (<strong>Hint</strong>: use the <i class='fi-page-copy'></i> Copy button)"
+  send_button_tooltip: 'send bitcoins to pay the demo bill'
+  send: 'Send'
+  payment_received: 'Payment received correctly'
+# blockchain
+  how_transaction: 'How does this transaction work?'
+  
   
   
   

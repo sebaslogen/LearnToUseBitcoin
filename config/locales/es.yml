@@ -33,6 +33,8 @@ es:
   item_image: 'Imagen de un oso de peluche'
   pay_address: 'Pagar a esta dirección'
   shop_qr: 'Código QR de la dirección de pago de la tienda'
+  shop_qr_tooltip: 'Este código QR se lee fácilmente con una aplicación de cartera Bitcoin en un teléfono móvil'
+  copy: 'Copiar'
   logo_bitcoin: 'Logo de Bitcoin aceptado aquí'
   copy_tooltip: 'copiar la dirección de pago a tu cartera Bitcoin'
   # wallet
@@ -43,6 +45,16 @@ es:
   multiple_addresses: 'Tu cartera Bitcoin puede contener tantas direcciones de Bitcoin como desees'
   out_of: 'de'
   available: 'disponibles'
+  amount: 'cantidad'
+  demo_input_amount_fail_help_html: "El valor debe ser <strong class='title'>0.1</strong> (el mismo que el precio)"
+  demo_input_amount_tooltip_html: '1 bitcoin se puede dividir en hasta 8 unidades decimales<br>(0.00000001 bitcoins valen actualmente alrededor de 0.00001 USD)'
+  to: 'A'
+  demo_input_address_tooltip_html: "introduce la dirección de Bitcoin que la tienda proporciona para el pago (<strong>Consejo</strong>: usa el botón <i class='fi-page-copy'></i> Copiar)"
+  send_button_tooltip: 'enviar bitcoins para pagar la factura de ejemplo'
+  send: 'Enviar'
+  payment_received: 'Pago procesado correctamente'
+# blockchain
+  how_transaction: '¿Cómo funciona esta transacción?'
   
   
   

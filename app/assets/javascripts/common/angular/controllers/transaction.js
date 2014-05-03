@@ -11,7 +11,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       $("#demo-transaction-send-button").removeAttr('title');
       $('#demo-pay-to-address-input').attr('disabled', '');
       $('#demo-input-amount').attr('disabled', '');
-      $('#demo-remaining-bitcoins').text($scope.remainingBitcoins() + " bitcoins available");
+      $('#demo-remaining-bitcoins').text($scope.remainingBitcoins() + " bitcoins " + I18n.t("available"));
       $scope.disabled = true;
       if ((getWindowsSize() == "medium") && ( ! $("#demo-transaction-details").isCompletelyScrolledIntoView())) {
         moveTo("#demo-transaction-details"); // Refocus on medium windows to help find the update
