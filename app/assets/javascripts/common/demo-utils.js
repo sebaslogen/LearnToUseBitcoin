@@ -60,6 +60,7 @@ function showDemoTransaction() {
                 $('#demo-wallet-send-content').fadeIn('slow');
                 demo_input_amount_glowing = true;
                 demo_input_address_glowing = true;
+                demo_copy_address_button_glowing = true;
                 startDemoFieldsGlowing();
               }, 1500);
             });
@@ -87,7 +88,7 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
       if (demo_input_amount_glowing_on && ( ! $('#demo-input-amount').parsley().isValid() ) ) {
         $('#demo-input-amount').css("box-shadow", "0px 0px 30px #FF5E5E");
       } else {
-        $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
+        $('#demo-input-amount').css("box-shadow", "0px 0px 5px #FFF");
       }
     }
     if (demo_input_address_glowing) {
@@ -95,7 +96,7 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
       if (demo_input_address_glowing_on && ( ! $('#demo-pay-to-address-input').parsley().isValid() ) ) {
         $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 30px #FF5E5E");
       } else {
-        $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
+        $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 5px #FFF");
       }
     }
     if (demo_copy_address_button_glowing) {
@@ -103,12 +104,12 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
       if (demo_copy_address_button_glowing_on) {
         $('#copy-demo-button').css("box-shadow", "0px 0px 50px #EA0000");
       } else {
-        $('#copy-demo-button').css("box-shadow", "0px 0px 0px #FFF");
+        $('#copy-demo-button').css("box-shadow", "0px 0px 5px #FFF");
       }
     }
     setTimeout(function() { // Show with a little delay
       startDemoFieldsGlowing();
-    }, 3000);
+    }, 1800);
   } else {
     $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
     $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 0px #FFF");
