@@ -101,7 +101,7 @@
               </div>
             </div>
             <div class="row separated-row">
-              <div class="small-12 columns text-center">
+              <div class="small-12 columns text-center has-tooltip" title="<%=t :demo_input_amount_tooltip_html%>">
                 <label id="demo-remaining-bitcoins" class="inline no-cursor">{{remainingBitcoinsFormattedText()}}</label>
               </div>
             </div>
@@ -110,9 +110,9 @@
                 <label for="amount" class="right inline small-right-padding "><%=t :amount%>: </label>
               </div>
               <div class="small-2 columns" id="amount">
-                <input type="text" class="highlighted-box text-center has-tooltip" ng-click="disableAmountGlowing()" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
+                <input type="text" class="highlighted-box text-center" ng-click="disableAmountGlowing()" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
                        data-parsley-min="0.1" data-parsley-min-message="<%=t :demo_input_amount_fail_help_html%>" data-parsley-max="0.1" data-parsley-max-message="<%=t :demo_input_amount_fail_help_html%>"
-                       title="<%=t :demo_input_amount_tooltip_html%>" placeholder="eg 0.1" />
+                       placeholder="eg 0.1" />
               </div>
               <div class="small-4 columns">
                 <span class="postfix radius"> bitcoins (BTC)</span>
