@@ -74,8 +74,24 @@ en:
   send_button_tooltip: 'send bitcoins to pay the demo bill'
   send: 'Send'
   payment_received: 'Payment received correctly'
+  purchase_ok_image: 'Purchase OK image'
+  # confirmation
+  congratulations: 'Congratulations!'
+  congrats_1: 'You have learned how to send bitcoins'
+  congrats_2: 'And there are many more things you can do with Bitcoin'
+  see_below: 'See below'
 # blockchain
   how_transaction: 'How does this transaction work?'
+# get bitcoins
+  in_construction: 'In construction'
+  apologies: 'Apologies, this part of the website is not yet finished'
+  come_back: 'Come back later and you should be able to get some bitcoins for free'
+  meanwhile: 'In the meanwhile, you can easily create'
+  first_wallet: 'your first Bitcoin wallet on-line'
+  or_install: 'or install one of the desktop Bitcoin wallets'
+  suggested_above: 'suggested above'
+  and_get_bitcoins: 'and get bitcoins from one of these services'
+  
   
   
   

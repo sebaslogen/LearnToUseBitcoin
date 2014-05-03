@@ -53,8 +53,26 @@ es:
   send_button_tooltip: 'enviar bitcoins para pagar la factura de ejemplo'
   send: 'Enviar'
   payment_received: 'Pago procesado correctamente'
+  purchase_ok_image: 'Imágen de compra correcta'
+  # confirmation
+  congratulations: '¡Felicidades!'
+  congrats_1: 'Has aprendido cómo enviar bitcoins'
+  congrats_2: 'Y todavía hay muchas más cosas que puedes hacer con Bitcoin'
+  see_below: 'Ver más'
 # blockchain
   how_transaction: '¿Cómo funciona esta transacción?'
+# get bitcoins
+  in_construction: 'En construcción'
+  apologies: 'Lo siento, esta parte de la web todavía no está terminada'
+  come_back: 'Regresa en otro momento y deberías poder obtener algunos bitcoins gratis'
+  meanwhile: 'Mientras tanto, puedes crear fácilmente'
+  first_wallet: 'tu primera cartera de Bitcoin on-line'
+  or_install: 'o instalar una de las aplicaciones de cartera de Bitcoin para ordenador'
+  suggested_above: 'sugeridas anteriormente'
+  and_get_bitcoins: 'y comprar bitcoins en uno de estos servicios'
+  
+  
+  
   
   
   

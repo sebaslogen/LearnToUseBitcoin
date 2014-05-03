@@ -157,23 +157,23 @@
       <p><strong class="title"><%=t :payment_received%></strong></p>
     </div>
   </div>
-  <%= image_tag "ok_purchase.png", width: '70%', alt: "Purchase OK image" %>
+  <%= image_tag "ok_purchase.png", width: '70%', alt: t(:purchase_ok_image) %>
 </div>
 
 <div id="congratulations-demo-modal" class="reveal-modal text-center hidden" data-reveal ng-controller="TransactionCtrl"> 
-  <h2>Congratulations!</h2><br>
-  <h4>You have learned how to send bitcoins</h4><br>
-  <p>And there are many more things you can do with Bitcoin. <a ng-click="discardDemoModal()">See below</a></p>
+  <h2><%=t :congratulations%></h2><br>
+  <h4><%=t :congrats_1%></h4><br>
+  <p><%=t :congrats_2%>. <a ng-click="discardDemoModal()"><%=t :see_below%></a></p>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
 <div id="WIP-modal" class="reveal-modal text-center hidden" data-reveal> 
-  <h2>In construction</h2>
-  <h4>Apologies, this part of the website is not yet finished</h4>
-  <p>Come back later and you should be able to get some bitcoins for free</p>
-  <p>In the meanwhile, you can easily create <strong class="title"><%= link_to('your first Bitcoin wallet online', 'https://greenaddress.it/wallet/#/create/', target: "_blank") %></strong><br>
-    or install one of the desktop Bitcoin wallets <strong class="title has-external-tooltip" tooltip-id="desktop-tooltip">suggested above</strong> 
-    and get bitcoins from one of these services:</p>
+  <h2><%=t :in_construction%></h2>
+  <h4><%=t :apologies%></h4>
+  <p><%=t :come_back%></p>
+  <p><%=t :meanwhile%> <strong class="title"><%= link_to(t(:first_wallet), 'https://greenaddress.it/wallet/#/create/', target: "_blank") %></strong><br>
+    <%=t :or_install%> <strong class="title has-external-tooltip" tooltip-id="desktop-tooltip"><%=t :suggested_above%></strong> 
+    <%=t :and_get_bitcoins%>:</p>
   <div id="bitcoin-sellers"></div>
   <a class="close-reveal-modal">&#215;</a>
 </div>
