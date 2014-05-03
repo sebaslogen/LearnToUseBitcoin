@@ -133,14 +133,16 @@ en:
   blockchain_confuse_2: 'a useful website to see Bitcoin transactions happening in real time'
   leger_image: 'Ledger image'
 # get bitcoins
+  almost_there: 'You are almost there'
+  get_bitcoins: 'Get your first bitcoins'
   in_construction: 'In construction'
   apologies: 'Apologies, this part of the website is not yet finished'
   come_back: 'Come back later and you should be able to get some bitcoins for free'
-  meanwhile: 'In the meanwhile, you can easily create'
+  meanwhile: 'In the meanwhile, it´s recommended that you easily create'
   first_wallet: 'your first Bitcoin wallet on-line'
   or_install: 'or install one of the desktop Bitcoin wallets'
   suggested_above: 'suggested above'
-  and_get_bitcoins: 'and get bitcoins from one of these services'
+  and_get_bitcoins: 'and you can also get bitcoins from one of these services'
   
   
   
