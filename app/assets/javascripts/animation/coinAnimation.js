@@ -1,5 +1,6 @@
 var world;
 var FPS = 30;
+var minFPStoPlayAnimation = 17;
 var frames = 0;
 var scale = 32;
 var physicsBody = null;
@@ -182,7 +183,7 @@ function measureFPSPerformance() {
       var prevMeasuredFPS = measuredFPS;
       measuredFPS = 1/delta;
       var averageFPS = (prevMeasuredFPS + measuredFPS) / 2;
-      if ((prevMeasuredFPS > 0) && (averageFPS < 20)){
+      if ((prevMeasuredFPS > 0) && (averageFPS < minFPStoPlayAnimation)){
         finishCoinAnimation();
       }
     }
