@@ -9,12 +9,12 @@ es:
   scroll: 'Mira Abajo'
 # what
   what: '¿Qué es Bitcoin?'
-  what1: 'Bitcoin es una nueva clase de'
+  what_1: 'Bitcoin es una nueva clase de'
   digital_money: 'dinero digital'
-  what2: 'que te permite enviar y recibir dinero a cualquier parte del mundo'
+  what_2: 'que te permite enviar y recibir dinero a cualquier parte del mundo'
   very_fast: 'muy rápidamente'
-  what3: 'sin necesidad de ningún intermediario (banco o corporación)'
-  what4: 'a un coste casi nulo'
+  what_3: 'sin necesidad de ningún intermediario (banco o corporación)'
+  what_4: 'a un coste casi nulo'
   what_tip1_html: 'Envía dinero a cualquier parte del mundo y el destinatario podrá usar el dinero después de tan sólo 10 minutos'
   what_tip2: '5 céntimos de dólar para enviar 10,000 USD a cualquier parte del mundo'
 # start
@@ -122,6 +122,36 @@ es:
   or_install: 'o instalar una de las aplicaciones de cartera de Bitcoin para ordenador'
   suggested_above: 'sugeridas anteriormente'
   and_get_bitcoins: 'y también puedes comprar bitcoins en uno de estos servicios'
+# use bitcoin
+  use: '¿Qué puedo hacer con Bitcoin?'
+  use_1: 'Hoy en día es posible pagar con bitcoins en cientos de'
+  use_2: 'tiendas alrededor del mundo'
+  From: 'Desde'
+  flights: 'vuelos'
+  hotels: 'hoteles'
+  to: 'hasta'
+  furniture: 'muebles'
+  food: 'comida'
+  sending_money: 'El envío internacional de dinero y los giros bancarios se convierten en transacciones muy económicas (céntimos) y rápidas (minutos)'
+  person_to_person: 'entre particulares'
+  sending_money_tooltip: "Sólo necesitas tener una cartera de Bitcoin para enviar y recibir bitcoins, eso es todo"
+  sending_money_2: "usando Bitcoin"
+  donating_to: "Las donaciones a"
+  non_profit: "organizaciones sin ánimo de lucro"
+  donating_to_1: "son directas, rápidas y mucho más económicas, eliminando"
+  donating_to_2: "los costes de todos los intermediarios"
+  donating_to_tooltip_html: "El dinero llega <strong>directamente</strong> a las manos de aquellos que más lo necesitan sin retrasos"
+  sean_outpost: "ha dado de comer durante meses a los más necesitados únicamente con Bitcoin y la"
+  bitgive_foundation: "impulsa proyectos para la mejora de la salud y el medio ambiente"
+  democratization: "Democratización de la banca: con Bitcoin"
+  democratization_1: "cualquier persona en el mundo puede tener acceso a servicios financieros"
+  democratization_2: "sin tener en cuenta su país o situación económica, el único requisito es acceso a Internet"
+  democratization_tooltip_html: "2.5 <strong>billones</strong> de personas en el mundo no tienen acceso a bancos ni a microcréditos"
+  small_payments: "Los pequeños pagos (inferiores a $1) al fin son posibles. Esto abre la puerta a pequeñas donaciones o"
+  content_payments: "al pago por contenidos"
+  on_internet: "en Internet"
+  content_payments_tooltip: "Ayuda a organizaciones caritativas para niños y a la Cruz Roja en"
+  content_payments_tooltip_1: "contribuyendo cualquier cantidad de bitcoins y a cambio recibirás juegos"
   
   
   
