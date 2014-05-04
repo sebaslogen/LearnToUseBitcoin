@@ -132,6 +132,7 @@ es:
   to: 'hasta'
   furniture: 'muebles'
   food: 'comida'
+  food_link: "http://www.takeaway.com"
   sending_money: 'El envío internacional de dinero y los giros bancarios se convierten en transacciones muy económicas (céntimos) y rápidas (minutos)'
   person_to_person: 'entre particulares'
   sending_money_tooltip: "Sólo necesitas tener una cartera de Bitcoin para enviar y recibir bitcoins, eso es todo"
