@@ -151,3 +151,14 @@ en:
   bitcoin_address: Bitcoin address
   myths_4_tooltip: The Wallet software will easily create and manage new addresses for you
   myths_5: Bitcoins are digital and I could copy them like digital music
+  myths_6_html: "Bitcoins are limited in quantity.<br>
+      It is often compared to gold in the way that the money is released into the world in a continuous and decreased rate, like gold mining.<br>
+      There will <strong>never be more than 21 million bitcoins</strong> in existence and every four years the amount of bitcoins released is halved, until the last bitcoin is released around year 2140.<br>
+      This is done by a mathematical algorithm, not a person."
+  myths_7: Bitcoins are created at will out of thin air
+  myths_8_1: Bitcoins are created as a reward for those who help verify
+  valid_transactions: valid transactions
+  valid_transactions_tooltip: For example, verify that you have enough bitcoins to send before transferring them
+  myths_8_2: in the Bitcoin network
+  
+      

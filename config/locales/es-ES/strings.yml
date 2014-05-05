@@ -151,3 +151,17 @@ es:
   bitcoin_address: dirección de Bitcoin
   myths_4_tooltip: La aplicación de cartera de Bitcoin permite fácilmente crear y administrar nuevas direcciones de Bitcoin
   myths_5: Si los Bitcoins son digitales entonces puedo copiarlos como la música digital
+  myths_6_html: "El número de bitcoins es limitado.<br>
+      Bitcoin se suele comparar al oro ya que los bitcoins se liberan al mundo de manera continua y cada vez en menor cantidad, como el oro extraído de la minería.<br>
+      <strong>Nunca jamás habrá más de 21 millones de bitcoins</strong> en existencia y cada cuatro años el número de bitcoins liberados se reduce a la mitad, hasta que el último bitcoin se libere alrededor del año 2140.<br>
+      Esto se debe a un algoritmo matemático, no a una persona."
+  myths_7: Los Bitcoins se crean de la nada
+  myths_8_1: Los bitcoins se crean como recompensa para aquellos que ayudan a verificar
+  valid_transactions: transacciones válidas
+  valid_transactions_tooltip: Por ejemplo, comprobar que tienes suficientes bitcoins para enviar antes de transferirlos
+  myths_8_2: en la red de Bitcoin
+      
+      
+      
+      
+      
