@@ -137,3 +137,17 @@ en:
   on_internet: on Internet
   content_payments_tooltip: Help children charities and Red Cross in
   content_payments_tooltip_1: by contributing any amount of bitcoins and you receive games in exchange
+  myths: Myths about Bitcoin
+  myths_1: Money only works because there is a government backing it
+  myths_2_html: "There is no government, corporation or legal entity backing Bitcoin which may make difficult to understand how can the currency be trustworthy.<br>
+      Bitcoin solves this by moving trust away from organizations and persons whose interests can be influenced to a unique <strong>trust in math</strong>.<br>
+      Similar to the way gold provides trust through a series of unique physical attributes that are difficult to imitate correctly, 
+      Bitcoin uses algorithms to prove that money belongs only to the owner of a private key and can only be spent once."
+  myths_3: Everything in Bitcoin is anonymous
+  myths_4_html: "Bitcoin is not anonymous, it protects your privacy like cash.<br>
+      Similar to cash where your name is not present in the bills that you use, in Bitcoin it is not possible to see your name in the bitcoins that you send or receive, 
+      but if you reveal your identity to the person or company that receives the bitcoins, it is possible to link your identity with your transaction
+      and since all transactions are linked and publicly stored in the Blockchain, it is possible to partially track some of the previous transactions you made with the same"
+  bitcoin_address: Bitcoin address
+  myths_4_tooltip: The Wallet software will easily create and manage new addresses for you
+  myths_5: Bitcoins are digital and I could copy them like digital music

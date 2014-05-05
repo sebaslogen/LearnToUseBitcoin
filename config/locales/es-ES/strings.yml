@@ -137,3 +137,17 @@ es:
   on_internet: en Internet
   content_payments_tooltip: Ayuda a organizaciones caritativas para niños y a la Cruz Roja en
   content_payments_tooltip_1: contribuyendo cualquier cantidad de bitcoins y a cambio recibirás juegos
+  myths: Mitos sobre Bitcoin
+  myths_1: El dinero sólo puede funcionar gracias al apoyo de un gobierno
+  myths_2_html: "No hay gobierno, corporación o entidad legal asegurando Bitcoin, lo cual puede hacer difícil entender cómo es posible que Bitcoin sea una moneda realmente fiable.<br>
+      Bitcoin resuelve esto eliminando la confianza en personas y organizaciones cuyos intereses pueden ser influenciados y la sustituye únicamente por <strong>confianza en las matemáticas</strong>.<br>
+      De la misma forma que el oro provee confianza gracias a una serie de atributos físicos que son difíciles de imitar correctamente,
+      Bitcoin usa algoritmos matemáticos para probar que el dinero pertenece sólo al dueño de la llave privada y sólo puede ser gastado una vez por transacción."
+  myths_3: Todo en Bitcoin es anónimo
+  myths_4_html: "Bitcoin no es anónimo, protege tu privacidad de la misma forma que el dinero en efectivo.<br>
+      De la misma forma que el dinero en efectivo no lleva escrito tu nombre en los billetes que usas, en Bitcoin no es posible ver tu nombre en los bitcoins que envías o recibes, 
+      pero si revelas tu identidad a la persona o compañía que recibe los bitcoins, entonces es posible enlazar tu identidad con tu transacción
+      y como todas las transacciones están enlazadas y son almacenadas públicamente en el Blockchain, es parcialmente posible seguir las transacciones anteriores que se hayan hecho con la misma"
+  bitcoin_address: dirección de Bitcoin
+  myths_4_tooltip: La aplicación de cartera de Bitcoin permite fácilmente crear y administrar nuevas direcciones de Bitcoin
+  myths_5: Si los Bitcoins son digitales entonces puedo copiarlos como la música digital
