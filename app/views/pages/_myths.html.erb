@@ -10,16 +10,16 @@
     <p><%=t :myths_6_html%></p>
     <h4><%=t :myths_7%></h4>
     <p><%=t :myths_8_1%> <strong class="title has-tooltip" title="<%=t :valid_transactions_tooltip%>"><%=t :valid_transactions%></strong> <%=t :myths_8_2%>.<br>
-      This process is called <a data-reveal-id="mining-info-modal" class="fix-link-background">Bitcoin mining</a> and takes care of the accounting of the economy.</p>
+      <%=t :myths_9_1%> <a data-reveal-id="mining-info-modal" class="fix-link-background"><%=t :bitcoin_mining%></a> <%=t :myths_9_2%>.</p>
   </div>
 </div>
 
 <div id="mining-info-modal" class="reveal-modal text-center hidden" data-reveal>
   <div id="mining-content">
-    <h2>Bitcoin Mining</h2>
+    <h2><%=t :bitcoin_mining%></h2>
   </div>
   <div id="mining-lottery-link">
-    <p>To understand how a miner gets a reward you can learn how the <a data-reveal-id="mining-POW-modal" class="fix-link-background"><strong>lottery</strong> reward works with Proof of Work</a></p>
+    <p><%=t :mining_lottery_1%> <a data-reveal-id="mining-POW-modal" class="fix-link-background"><strong><%=t :lottery_rewards%></strong> <%=t :mining_lottery_2%> <%=t :proof_of_work%> <%=t :proof_of_work_extra%></a></p>
   </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>

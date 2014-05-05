@@ -160,6 +160,14 @@ es:
   valid_transactions: transacciones válidas
   valid_transactions_tooltip: Por ejemplo, comprobar que tienes suficientes bitcoins para enviar antes de transferirlos
   myths_8_2: en la red de Bitcoin
+  myths_9_1: Este proceso se llama
+  bitcoin_mining: Minería Bitcoin
+  myths_9_2: y se encarga de procesar la contabilidad de la economía
+  mining_lottery_1: Para entender cómo un minero obtiene su recompensa puedes aprender cómo funcionan los
+  lottery_rewards: premios de lotería
+  mining_lottery_2: con
+  proof_of_work: Prueba de Trabajo
+  proof_of_work_extra: (Proof of Work o POW)
       
       
       

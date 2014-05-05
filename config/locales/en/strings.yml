@@ -160,5 +160,12 @@ en:
   valid_transactions: valid transactions
   valid_transactions_tooltip: For example, verify that you have enough bitcoins to send before transferring them
   myths_8_2: in the Bitcoin network
-  
+  myths_9_1: This process is called
+  bitcoin_mining: Bitcoin Mining
+  myths_9_2: and takes care of the accounting of the economy
+  mining_lottery_1: To understand how a miner gets a reward you can learn how the
+  lottery_rewards: lottery rewards
+  mining_lottery_2: work with
+  proof_of_work: Proof of Work
+  proof_of_work_extra: (or POW)
       
