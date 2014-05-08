@@ -73,12 +73,14 @@ ko:
   amount: amount
   demo_input_amount_fail_help_html: "Value should be <strong class='title'>0.1</strong> (same as the price)"
   demo_input_amount_tooltip_html: '1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)'
-  to: to
+  to_address: to
   demo_input_address_tooltip_html: "enter here the Bitcoin address the shop provides for the payment (<strong>Hint</strong>: use the <i class='fi-page-copy'></i> Copy button)"
   send_button_tooltip: send bitcoins to pay the demo bill
   send: Send
   payment_received: Payment received correctly
   purchase_ok_image: Purchase OK image
+  demo_fail_help: The amount introduced in the demo Bitcoin wallet is not correct
+  demo_fail_help_1: "Don't worry, I have already introduced the right value for you, try again"
   congratulations: Congratulations!
   congrats_1: You have learned how to send bitcoins
   congrats_2: And there are many more things you can do with Bitcoin
@@ -112,6 +114,7 @@ ko:
   use_1: "Today it's possible to pay with bitcoins in hundreds of"
   use_2: shops around the world
   From: From
+  to_until: to
   flights: flights
   hotels: hotels
   furniture: furniture
@@ -142,12 +145,12 @@ ko:
   myths_2_html: |
     There is no government, corporation or legal entity backing Bitcoin which may make difficult to understand how can the currency be trustworthy.<br>
     Bitcoin solves this by moving trust away from organizations and persons whose interests can be influenced to a unique <strong>trust in math</strong>.<br>
-    Similar to the way gold provides trust through a series of unique physical attributes that are difficult to imitate correctly, 
+    Similar to the way gold provides trust through a series of unique physical attributes that are difficult to imitate correctly,
     Bitcoin uses algorithms to prove that money belongs only to the owner of a private key and can only be spent once.
   myths_3: Everything in Bitcoin is anonymous
   myths_4_html: |
     Bitcoin is not anonymous, it protects your privacy like cash.<br>
-    Similar to cash where your name is not present in the bills that you use, in Bitcoin it is not possible to see your name in the bitcoins that you send or receive, 
+    Similar to cash where your name is not present in the bills that you use, in Bitcoin it is not possible to see your name in the bitcoins that you send or receive,
     but if you reveal your identity to the person or company that receives the bitcoins, it is possible to link your identity with your transaction
     and since all transactions are linked and publicly stored in the Blockchain, it is possible to partially track some of the previous transactions you made with the same
   bitcoin_address: Bitcoin address

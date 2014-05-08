@@ -150,7 +150,7 @@ es:
   myths_3: Todo en Bitcoin es anónimo
   myths_4_html: |
     Bitcoin no es anónimo, protege tu privacidad de la misma forma que el dinero en efectivo.<br>
-    De la misma forma que el dinero en efectivo no lleva escrito tu nombre en los billetes que usas, en Bitcoin no es posible ver tu nombre en los bitcoins que envías o recibes, 
+    De la misma forma que el dinero en efectivo no lleva escrito tu nombre en los billetes que usas, en Bitcoin no es posible ver tu nombre en los bitcoins que envías o recibes,
     pero si revelas tu identidad a la persona o compañía que recibe los bitcoins, entonces es posible enlazar tu identidad con tu transacción
     y como todas las transacciones están enlazadas y son almacenadas públicamente en el Blockchain, es parcialmente posible seguir las transacciones anteriores que se hayan hecho con la misma
   bitcoin_address: dirección de Bitcoin
