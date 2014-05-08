@@ -121,7 +121,7 @@
             </div>
             <div class="row collapse separated-row">
               <div class="small-2 columns">
-                <span class="prefix radius button disabled"><%=t :to%>:</span>
+                <span class="prefix radius button disabled"><%=t :to_address%>:</span>
               </div>
               <div class="small-10 columns">
                 <input id="demo-pay-to-address-input" type="text" ng-click="disableAddressGlowing()" placeholder="eg 1JL27iKbmVBNBnwuST7aqyu..." data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
@@ -158,6 +158,12 @@
     </div>
   </div>
   <%= image_tag "ok_purchase.png", width: '70%', alt: t(:purchase_ok_image) %>
+</div>
+
+<div id="help-demo-modal" class="reveal-modal text-center hidden" data-reveal> 
+  <h4><%=t :demo_fail_help%></h4><br>
+  <h3><%=t :demo_fail_help_1%></h3><br>
+  <a class="close-reveal-modal">&#215;</a>
 </div>
 
 <div id="congratulations-demo-modal" class="reveal-modal text-center hidden" data-reveal ng-controller="TransactionCtrl"> 

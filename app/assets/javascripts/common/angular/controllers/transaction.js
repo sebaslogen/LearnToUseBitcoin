@@ -1,6 +1,7 @@
 ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   $scope.total_bitcoins = 2;
   $scope.disabled = false;
+  $scope.failures = 0;
   
   $scope.transactionDemo = function() {
     if ($scope.disabled) {
@@ -25,12 +26,29 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       }, 1000);
       analytics.track('Click Send demo transaction successful');
     } else { // Log failed attempt data to gather feedback on user difficulties
-      analytics.track('Failed attempt to submit demo transaction', {
-        valid_amount: $('#demo-input-amount').parsley().isValid(),
-        amount_value: $('#demo-input-amount').val(),
-        valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
-        address_value: $('#demo-pay-to-address-input').val()
-      });
+      $scope.failures++;
+      if (( ! $('#demo-input-amount').parsley().isValid()) && ($scope.failures == 2)) {
+        $('#demo-input-amount').val('0.1');
+        analytics.track('Failed attempt to submit demo transaction', {
+          failed_count: $scope.failures,
+          valid_amount: $('#demo-input-amount').parsley().isValid(),
+          amount_value: $('#demo-input-amount').val(),
+          valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
+          address_value: $('#demo-pay-to-address-input').val(),
+          auto_filled: true
+        });
+        $('#help-demo-modal').foundation('reveal', 'open');
+        $("#demo-transaction-form").parsley().validate();
+      } else {
+        analytics.track('Failed attempt to submit demo transaction', {
+          failed_count: $scope.failures,
+          valid_amount: $('#demo-input-amount').parsley().isValid(),
+          amount_value: $('#demo-input-amount').val(),
+          valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
+          address_value: $('#demo-pay-to-address-input').val(),
+          auto_filled: false
+        });
+      }
     }
   }
   

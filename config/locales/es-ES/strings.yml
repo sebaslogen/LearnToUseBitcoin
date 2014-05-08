@@ -73,12 +73,14 @@ es:
   amount: cantidad
   demo_input_amount_fail_help_html: "El valor debe ser <strong class='title'>0.1</strong> (el mismo que el precio)"
   demo_input_amount_tooltip_html: '1 bitcoin se puede dividir en hasta 8 unidades decimales<br>(0.00000001 bitcoins valen actualmente alrededor de 0.00001 USD)'
-  to: hasta
+  to_address: a
   demo_input_address_tooltip_html: "introduce la dirección de Bitcoin que la tienda proporciona para el pago (<strong>Consejo</strong>: usa el botón <i class='fi-page-copy'></i> Copiar)"
   send_button_tooltip: enviar bitcoins para pagar la factura de ejemplo
   send: Enviar
   payment_received: Pago procesado correctamente
   purchase_ok_image: Imagen de compra correcta
+  demo_fail_help: La cantidad introducida en la cartera Bitcoin de ejemplo no es correcta
+  demo_fail_help_1: No te preocupes, ya he introducido el valor correcto por ti, prueba de nuevo
   congratulations: ¡Felicidades!
   congrats_1: Has aprendido cómo enviar bitcoins
   congrats_2: Y todavía hay muchas más cosas que puedes hacer con Bitcoin
@@ -112,6 +114,7 @@ es:
   use_1: Hoy en día es posible pagar con bitcoins en cientos de
   use_2: tiendas alrededor del mundo
   From: Desde
+  to_until: hasta
   flights: vuelos
   hotels: hoteles
   furniture: muebles
