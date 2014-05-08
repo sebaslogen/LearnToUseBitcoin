@@ -1,4 +1,4 @@
-en:
+de:
   ltub: Learn To Use Bitcoin
   made: Made with
   by: by
@@ -116,7 +116,7 @@ en:
   hotels: hotels
   furniture: furniture
   food: food
-  food_link: http://www.takeaway.com
+  food_link: http://www.lieferservice.de
   sending_money: Sending money internationally and remittances become very cheap (cents) and fast (minutes)
   person_to_person: person to person
   sending_money_tooltip: "You only need to have a Bitcoin wallet software to send and receive bitcoins, that's it"
