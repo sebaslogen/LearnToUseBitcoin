@@ -94,7 +94,7 @@
           <form id="demo-transaction-form" data-parsley-validate> 
             <fieldset>
             <legend class="show-for-medium-up"><%=t :demo_wallet_legend%></legend>
-            <div class="row separated-row"> 
+            <div class="row separated-row show-for-medium-up"> 
               <div class="small-12 columns">
                 <span><%=t :demo_send_address%></span>
                 <div class="address-info-block has-tooltip" title="<%=t :multiple_addresses%>">
@@ -109,18 +109,18 @@
               </div>
             </div>
             <div class="row collapse separated-row"> 
-              <div class="small-3 columns">
+              <div class="small-3 small-3 columns">
                 <label for="amount" class="right inline small-right-padding "><%=t :amount%>: </label>
               </div>
-              <div class="small-2 columns" id="amount">
+              <div class="small-5 medium-2 columns" id="amount">
                 <input type="text" class="highlighted-box text-center" ng-click="disableAmountGlowing()" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
                        data-parsley-min="0.1" data-parsley-min-message="<%=t :demo_input_amount_fail_help_html%>" data-parsley-max="0.1" data-parsley-max-message="<%=t :demo_input_amount_fail_help_html%>"
                        placeholder="eg 0.1" />
               </div>
-              <div class="small-4 columns">
+              <div class="small-4 medium-4 columns">
                 <span class="postfix radius"> bitcoins (BTC)</span>
               </div>
-              <div class="small-3 columns"></div>
+              <div class="hide-for-small medium-3 columns"></div>
             </div>
             <div class="row collapse separated-row">
               <div class="small-2 columns">
