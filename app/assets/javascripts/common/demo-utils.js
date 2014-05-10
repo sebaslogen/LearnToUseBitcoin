@@ -12,16 +12,16 @@ function updateDemoContent() {
 
 function moveOutDemoTransactionSection() { // Save demo transaction content if neccesary
   $(document).ready(function() {
-    if ($('#transactionDemo').children().size() == 1) {
-      $('#transactionDemoPlaceholder').append($('#transference-demo'));
+    if ($('#transaction-demo').children().size() == 1) {
+      $('#transaction-demo-placeholder').append($('#transference-demo'));
     }
   });
 }
 
 function moveInDemoTransactionSection() { // Restore demo transaction content if neccesary
   $(document).ready(function() {
-    if ($('#transactionDemoPlaceholder').children().size() == 1) {
-      $('#transactionDemo').append($('#transference-demo'));
+    if ($('#transaction-demo-placeholder').children().size() == 1) {
+      $('#transaction-demo').append($('#transference-demo'));
     }
   });
 }
@@ -32,12 +32,14 @@ function loadDemoContent() {
     $("#demo-content").addClass('small-content').removeClass('empty-content').removeClass('normal-content');
     moveOutDemoTransactionSection();
     $("#demo-content").load("/demo-small", function() {
+      moveInDemoTransactionSection();
       updateDemoContent();
-      // TODO: Not sure if required! registerDemoParsleyEvents();
+      registerDemoParsleyEvents();
     });
   } else if ( ( $("#demo-content").hasClass('empty-content') || $("#demo-content").hasClass('small-content') )
       && ( getWindowsSize() != "small" ) ) { // Window is medium/big
     $("#demo-content").addClass('normal-content').removeClass('empty-content').removeClass('small-content');
+    moveOutDemoTransactionSection();
     $("#demo-content").load("/demo", function() {
       moveInDemoTransactionSection();
       updateDemoContent();

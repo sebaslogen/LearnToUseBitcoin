@@ -175,7 +175,7 @@ function updateSizes() {
     $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 170);
     // Change vertical separation line to horizontal 
     // in demo transaction with smaller(medium) size window
-    if (getWindowsSize() == "medium") {
+    if (getWindowsSize() != "large") {
       var element = $('div.right-border')
       element.removeClass('right-border');
       element.addClass('bottom-border');

@@ -106,3 +106,43 @@
     </p>
   </div>
 </div>
+
+<div id="transaction-demo" class="separated-row"></div>
+
+<div id="demo-section-blockchain" class="row rounded-border info-block">
+  <div class="small-12 columns text-center">
+    <div class="row">
+      <strong class="title"><%=t :blockchain%></strong><br><br>
+    </div>
+    <%= image_tag "ledger.png", class: 'rounded-corners', alt: t(:leger_image) %>
+    <p>
+      <br>
+      <strong><%=t :all_transactions%></strong> 
+      <%=t :blockchain_1%> 
+      <strong><%=t :public_record%></strong><br>
+      <%=t :blockchain_2%> <strong class="title"><%=t :blockchain%></strong><br><br>
+      <%=t :blockchain_3%> 
+      <strong><%=t :p2p%></strong> 
+      <%=t :blockchain_4%>
+    </p>
+  </div>
+</div>
+
+<br>
+
+<fieldset class="hidden" id="get-bitcoins-section">
+  <p class="label round radius success"><%=t :almost_there%>...</p><br><br>
+  <a data-reveal-id="WIP-modal" class="fix-link-background">
+    <button type="submit" class="radius round large"><%=t :get_bitcoins%> <i class="fi-bitcoin-circle bitcoin-button"></i></button>
+  </a>
+</fieldset>
+<!-- Disabled as Work In Progress
+<form name="input_test" action="visitors/show" method="get" class="hidden" id="get-bitcoins-section">
+  <fieldset>
+    <p class="label round radius success">You are almost there...</p><br><br>
+    <%# ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY']) %>
+    <%#= raw( ayah.get_publisher_html ) %>
+    <button type="submit" class="radius round large"><%=t :get_bitcoins%> <i class="fi-bitcoin-circle bitcoin-button"></i></button>
+  </fieldset>
+</form>
+-->
