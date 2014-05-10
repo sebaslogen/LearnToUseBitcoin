@@ -113,6 +113,12 @@ a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-bu
 	-webkit-text-fill-color: transparent;
 }
 
+.bitcoin-address-small {
+  @extend .bitcoin-address;
+  font-size: small;
+  overflow-wrap: break-word !important;
+}
+
 .touch-wallet-border {
   background-color: rgba(150, 230, 0, 0.2);
 }

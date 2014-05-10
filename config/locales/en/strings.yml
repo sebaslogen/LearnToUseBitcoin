@@ -29,6 +29,7 @@ en:
   bitcoin_private_key_2: The private key is another long sequence of letters and numbers that you should always keep secret
   private_key_image: Private Key image
   wallet_image: Wallet image
+  bitcoin_wallet: Bitcoin wallet
   bitcoin_wallet_html: 'A <strong>Bitcoin wallet</strong> is a software that allows you to manage multiple Bitcoin addresses and their private keys'
   bitcoin_wallet_2_html: 'It lets you easily <strong>send and receive bitcoins</strong> or create new Bitcoin addresses'
   wallet_types_html: 'There are three types of <strong>wallet applications</strong>'
