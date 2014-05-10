@@ -21,10 +21,15 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
         if ($('#confirmation-sound').length > 0) {
           $('#confirmation-sound')[0].play();
         }
-        setTimeout(function() { // Show congratulations message and blockchain extra information
+        if (getWindowsSize() != "small") {
+          setTimeout(function() { // Show congratulations message and blockchain extra information
+            $('#congratulations-demo-modal').foundation('reveal', 'open');
+            enable_bottom_sections_after_demo();
+          }, 1800);
+        } else {
           $('#congratulations-demo-modal').foundation('reveal', 'open');
           enable_bottom_sections_after_demo();
-        }, 1800);
+        }
       }, 1000);
       analytics.track('Click Send demo transaction successful');
     } else { // Log failed attempt data to gather feedback on user difficulties
