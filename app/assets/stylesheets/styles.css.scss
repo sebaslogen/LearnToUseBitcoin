@@ -520,6 +520,22 @@ a.close-reveal-modal:hover {
   }
 }
 
+// Fix for demo forms on really small phone screens
+fieldset {
+  min-width: 210px;
+}
+
+// Reduce wasted spaces in small phone screens
+@media #{$small-only} {
+  .super-small-padding {
+    padding: 2px;
+  }
+
+  .super-small-overflow {
+    overflow: hidden;
+  }
+}
+
 /* Parsley Form validation CSS */
 
 input.parsley-success,
