@@ -30,7 +30,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
     } else { // Log failed attempt data to gather feedback on user difficulties
       $scope.failures++;
       if (( ! $('#demo-input-amount').parsley().isValid()) && ($scope.failures == 2)) {
-        fillDemoInputAmount();
+        fillDemoInputAmount($scope);
         analytics.track('Failed attempt to submit demo transaction', {
           failed_count: $scope.failures,
           valid_amount: $('#demo-input-amount').parsley().isValid(),

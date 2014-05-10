@@ -119,11 +119,17 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
   }
 }
 
-function fillDemoInputAmount() {
+function fillDemoInputAmount(scope) {
   $('#demo-input-amount').val('0.1');
-  $('#demo-input-amount').scope().$apply(function() { // Update AngularJS model
-    $('#demo-input-amount').scope().input_amount = $('#demo-input-amount').val()
-  });
+  if (typeof scope === 'undefined') {
+    console.log('without scope');
+    $('#demo-input-amount').scope().$apply(function() { // Update AngularJS model
+      $('#demo-input-amount').scope().input_amount = $('#demo-input-amount').val();
+    });
+  } else { // Calling from AngularJS scope
+    console.log('WITH scope');
+    scope.input_amount = $('#demo-input-amount').val();
+  }
 }
 
 function copyDemoPayToAddres() {
