@@ -121,6 +121,9 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
 
 function fillDemoInputAmount() {
   $('#demo-input-amount').val('0.1');
+  $('#demo-input-amount').scope().$apply(function() { // Update AngularJS model
+    $('#demo-input-amount').scope().input_amount = $('#demo-input-amount').val()
+  });
 }
 
 function copyDemoPayToAddres() {
