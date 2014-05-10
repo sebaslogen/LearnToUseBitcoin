@@ -9,6 +9,10 @@ ltubApp.controller('DemoCtrl', ['$scope', function($scope) {
       updateSizes();
       moveTo('#demo-content');
       $('#transference-demo').addClass('available');
+      if ( getWindowsSize() == "small" ) {
+        fillDemoInputAmount();
+        copyDemoPayToAddres();
+      }
       analytics.track('Click Discover Bitcoin', {
         small: (getWindowsSize() == "small"),
         language: I18n.locale

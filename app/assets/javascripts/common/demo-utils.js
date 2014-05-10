@@ -119,6 +119,14 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
   }
 }
 
+function fillDemoInputAmount() {
+  $('#demo-input-amount').val('0.1');
+}
+
+function copyDemoPayToAddres() {
+  $("#demo-pay-to-address-input").val($("#demo-pay-to-address").text());
+}
+
 function registerDemoParsleyEvents() {
   // Fix automatically commas introduced in the field and replace by dots
   $('#demo-input-amount').parsley().subscribe('parsley:field:validate', function() {

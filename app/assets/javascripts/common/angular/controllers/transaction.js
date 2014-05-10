@@ -30,7 +30,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
     } else { // Log failed attempt data to gather feedback on user difficulties
       $scope.failures++;
       if (( ! $('#demo-input-amount').parsley().isValid()) && ($scope.failures == 2)) {
-        $('#demo-input-amount').val('0.1');
+        fillDemoInputAmount();
         analytics.track('Failed attempt to submit demo transaction', {
           failed_count: $scope.failures,
           valid_amount: $('#demo-input-amount').parsley().isValid(),
@@ -79,7 +79,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
     if ((getWindowsSize() == "medium") && ( ! $("#demo-pay-to-address-input").isBottomScrolledIntoView())) {
       moveTo("#demo-pay-to-address-input"); // Refocus on medium windows to help find the update
     }
-    $("#demo-pay-to-address-input").val($("#demo-pay-to-address").text());
+    copyDemoPayToAddres();
     $("#demo-transaction-form").parsley().validate();
     analytics.track('Click Copy demo Bitcoin address');
   }
