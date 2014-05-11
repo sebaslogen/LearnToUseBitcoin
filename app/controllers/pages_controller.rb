@@ -13,8 +13,6 @@ class PagesController < HighVoltage::PagesController
     case params[:id]
     when '_demo'
       false
-    when '_demo-small'
-      false
     when '_mining'
       false
     when '_mining-POW'

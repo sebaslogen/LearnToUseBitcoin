@@ -4,7 +4,6 @@ LearnToUseBitcoin::Application.routes.draw do
 #  get '/testadd' => 'wallets#testadd'######################################################## TODO: Test code
   root :module=> :high_voltage, :controller => :pages, :action => :show, :id => 'home'
   get 'demo' => 'pages#show', id: '_demo'
-  get 'demo-small' => 'pages#show', id: '_demo-small'
   get 'mining' => 'pages#show', id: '_mining'
   get 'mining-POW' => 'pages#show', id: '_mining-POW'
   get 'animation' => 'pages#show', id: '_animation'
