@@ -2,50 +2,64 @@
   <%= audio_tag "demo-confirmation.wav", id: "confirmation-sound", autoplay: false, controls: false, autobuffer: true %>
 <% end %>
 
-<h2><%=t :bitcoin_easy%> 
-  <a class="circle-button" href="#demo-section-1">1</a>
-  <a class="circle-button" href="#demo-section-2">2</a>
-  <a class="circle-button" href="#demo-section-3">3</a>
+<h2><span class="super-small-inline-title"><%=t :bitcoin_easy%></span> 
+  <%= link_to(1, '#demo-section-1', class: "circle-button") %>
+  <%= link_to(2, '#demo-section-2', class: "circle-button") %>
+  <%= link_to(3, '#demo-section-3', class: "circle-button") %>
 </h2>
 
 <p><%=t :sending_receiving_html%></p><br>
 
-<div id="demo-section-1" class="row rounded-border relative-position info-block">
-  <div class="small-1 columns text-center">
-    <label class="fake-circle-button"> 1 </label>
+<div id="demo-section-1" class="rounded-border relative-position info-block">
+  <div class="row">
+    <h5><strong class="title"><%=t(:bitcoin_address).capitalize%></strong></h5><br><br>
   </div>
-  <div class="small-2 columns text-center">
+  <div class="row show-for-small-only">
     <%= image_tag "vault.png", alt: "Vault image" %>
   </div>
-  <div class="small-7 columns">
-    <div class="row">
-      <div class="small-10 columns text-left">
+  <div class="row">
+    <div class="hide-for-small medium-1 columns text-center">
+      <label class="fake-circle-button"> 1 </label>
+    </div>
+    
+    <div class="hide-for-small medium-2 columns text-center">
+      <%= image_tag "vault.png", alt: "Vault image" %>
+    </div>
+    
+    <div class="small-12 medium-7 columns">
+      <div class="row">
+        <div class="small-12 medium-10 columns text-left">
+          <p>
+            <%=t :bitcoin_address_html%> 
+            <strong class="title has-tooltip hide-tooltip-small" title="<%=t :anonymous_email_html%>"><%=t :inside%></strong><br><br class="show-for-small-only">
+            <%=t :bitcoin_address_looks%>:
+          </p>
+        </div>
+      </div>
+      <div class="row text-center">
         <p>
-          <%=t :bitcoin_address_html%> 
-          <strong class="title has-tooltip" title="<%=t :anonymous_email_html%>"><%=t :inside%></strong><br>
-          <%=t :bitcoin_address_looks%>:
+          <strong class="bitcoin-address title has-tooltip hide-tooltip-small" title="<%=t :bitcoin_address_tooltip_html%>">
+            19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</strong>&nbsp;&nbsp;&nbsp;
+          <%= image_tag "QR_code.png", class: "has-tooltip hide-tooltip-small", title: t(:bitcoin_address_qr_tooltip), width: 200, height: 200, alt: t(:address_qr) %><br><br>
+          <span class="show-for-small-only"><%=t :bitcoin_address_qr_tooltip%></span>
         </p>
       </div>
-    </div>
-    <div class="row text-center">
-      <p>
-        <strong class="bitcoin-address title has-tooltip" title="<%=t :bitcoin_address_tooltip_html%>">
-          19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</strong>&nbsp;&nbsp;&nbsp;
-        <%= image_tag "QR_code.png", class: "has-tooltip", title: t(:bitcoin_address_qr_tooltip), width: 200, height: 200, alt: t(:address_qr) %><br><br>
-      </p>
-    </div>
-    <div class="row">
-      <div class="small-2 columns"></div>
-      <div class="small-10 columns text-right">
-        <p>
-          <%=t :bitcoin_private_key_html%><br>
-          <%=t :bitcoin_private_key_2%>
-        </p>        
+      <div class="row show-for-small-only">
+        <%= image_tag "key.png", alt: t(:private_key_image) %>
+      </div>
+      <div class="row">
+        <div class="hide-for-small medium-2 columns"></div>
+        <div class="small-12 medium-10 columns text-right">
+          <p>
+            <%=t :bitcoin_private_key_html%><br><br class="show-for-small-only">
+            <%=t :bitcoin_private_key_2%>
+          </p>        
+        </div>
       </div>
     </div>
-  </div>
-  <div class="small-2 columns text-center fix-bottom-position">
-    <%= image_tag "key.png", alt: t(:private_key_image) %>
+    <div class="hide-for-small medium-2 columns text-center fix-bottom-position">
+      <%= image_tag "key.png", alt: t(:private_key_image) %>
+    </div>
   </div>
 </div>
 

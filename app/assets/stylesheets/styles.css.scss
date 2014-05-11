@@ -113,12 +113,6 @@ a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-bu
 	-webkit-text-fill-color: transparent;
 }
 
-.bitcoin-address-small {
-  @extend .bitcoin-address;
-  font-size: small;
-  overflow-wrap: break-word !important;
-}
-
 .touch-wallet-border {
   background-color: rgba(150, 230, 0, 0.2);
 }
@@ -440,7 +434,13 @@ div.sMyths {
   height: 100%;
 }
 
-/* Quirks and fixes */
+
+
+
+
+/* 
+  Quirks and fixes 
+*/
 
 legend {
   line-height: normal;
@@ -525,6 +525,10 @@ fieldset {
   min-width: 210px;
 }
 
+.super-small-inline-title {
+  display: inline;
+}
+
 // Reduce wasted spaces in small phone screens
 @media #{$small-only} {
   .super-small-padding {
@@ -533,6 +537,15 @@ fieldset {
 
   .super-small-overflow {
     overflow: hidden;
+  }
+
+  .super-small-inline-title {
+    display: block;
+  }
+
+  .bitcoin-address {
+    font-size: small;
+    overflow-wrap: break-word !important;
   }
 
   .video-container {

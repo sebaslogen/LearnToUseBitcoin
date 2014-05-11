@@ -32,6 +32,7 @@ function loadDemoContent() {
     $("#demo-content").addClass('small-content').removeClass('empty-content').removeClass('normal-content');
     moveOutDemoTransactionSection();
     $("#demo-content").load("/demo-small", function() {
+    //////////////////$("#demo-content").load("/demo", function() {
       moveInDemoTransactionSection();
       updateDemoContent();
       registerDemoParsleyEvents();

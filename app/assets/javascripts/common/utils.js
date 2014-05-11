@@ -52,8 +52,21 @@ function loadLocalBitcoinSellers() {
   }
 }
 
+function removeToolTipElement(element) {
+  $(element).removeAttr('title');
+  $(element).removeClass('has-external-tooltip').removeClass('has-tooltip').removeClass('hide-tooltip-small');
+}
+
 function updateToolTips() {
   $(document).ready(function() {
+    $('.has-tooltip[title]').each(function(index, element) {
+      if (getWindowsSize() != "small") {
+        return false; // Remove not needed tooltips only for small screens
+      }
+      if ($(element).hasClass('hide-tooltip-small')) {
+        removeToolTipElement(element);
+      }
+    });
     $('.has-tooltip[title]').qtip({
       style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
       position: {
@@ -66,22 +79,26 @@ function updateToolTips() {
         delay: 200
       }
     });
-    $('.has-external-tooltip').each(function() {
-      $(this).qtip({
-        content: {
-          text: $('#' + $(this).attr('tooltip-id'))
-        },
-        style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
-        position: {
-          my: 'bottom center',  // Position my bottom center...
-          at: 'top center', // at the top center of...
-          target: this // my target
-        },
-        hide: {
-          fixed: true,
-          delay: 200
-        }
-      });
+    $('.has-external-tooltip').each(function(index, element) {
+      if ($(element).hasClass('hide-tooltip-small')) {
+        removeToolTipElement(element);
+      } else {
+        $(element).qtip({
+          content: {
+            text: $('#' + $(element).attr('tooltip-id'))
+          },
+          style: { classes: 'tooltip-text qtip-youtube qtip-shadow qtip-rounded' },
+          position: {
+            my: 'bottom center',  // Position my bottom center...
+            at: 'top center', // at the top center of...
+            target: element // my target
+          },
+          hide: {
+            fixed: true,
+            delay: 200
+          }
+        });
+      }
     });
   });
 }
