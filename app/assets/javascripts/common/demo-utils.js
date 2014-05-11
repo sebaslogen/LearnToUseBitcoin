@@ -27,19 +27,8 @@ function moveInDemoTransactionSection() { // Restore demo transaction content if
 }
 
 function loadDemoContent() {
-  if ( ( $("#demo-content").hasClass('empty-content') || $("#demo-content").hasClass('normal-content') )
-      && (getWindowsSize() == "small") ) { // Window is small
-    $("#demo-content").addClass('small-content').removeClass('empty-content').removeClass('normal-content');
-    moveOutDemoTransactionSection();
-    //////////////////$("#demo-content").load("/demo-small", function() {
-    $("#demo-content").load("/demo", function() {
-      moveInDemoTransactionSection();
-      updateDemoContent();
-      registerDemoParsleyEvents();
-    });
-  } else if ( ( $("#demo-content").hasClass('empty-content') || $("#demo-content").hasClass('small-content') )
-      && ( getWindowsSize() != "small" ) ) { // Window is medium/big
-    $("#demo-content").addClass('normal-content').removeClass('empty-content').removeClass('small-content');
+  if ( $("#demo-content").hasClass('empty-content') ) {
+    $("#demo-content").removeClass('empty-content');
     moveOutDemoTransactionSection();
     $("#demo-content").load("/demo", function() {
       moveInDemoTransactionSection();

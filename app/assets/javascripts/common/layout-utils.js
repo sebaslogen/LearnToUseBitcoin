@@ -200,7 +200,6 @@ function updateSizes() {
 
 function resizeWindow() {
   $(document).ready(function() {
-    loadDemoContent();
     updateSizes();
   });
 }
