@@ -33,16 +33,20 @@ button:focus {
   outline: none;
 }
 
-.info-block {
+.sub-info-block {
   width:         100%;
   margin-top:    30px;
-  margin-bottom: 30px;
   max-width:     1300px;
-  padding:       15px;
-  @extend .rounded-corners;
-  background-color:#fff;
-  background: rgba(255, 255, 255, .7);
   font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.info-block {
+  @extend .rounded-corners;
+  @extend .sub-info-block;
+  padding:          15px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  background:       rgba(255, 255, 255, .7);
 }
 
 .header-info-block {

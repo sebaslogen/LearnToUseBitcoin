@@ -12,12 +12,12 @@
 
 <div id="demo-section-1" class="rounded-border relative-position info-block">
   <div class="row">
-    <h5><strong class="title"><%=t(:bitcoin_address).capitalize%></strong></h5><br><br>
+    <h5><strong class="title"><%=t(:bitcoin_address).capitalize%></strong></h5><br class="show-for-small-only">
   </div>
   <div class="row show-for-small-only">
     <%= image_tag "vault.png", alt: "Vault image" %>
   </div>
-  <div class="row">
+  <div class="row sub-info-block">
     <div class="hide-for-small medium-1 columns text-center">
       <label class="fake-circle-button"> 1 </label>
     </div>
@@ -63,57 +63,66 @@
   </div>
 </div>
 
-<div id="demo-section-2" class="row rounded-border info-block">
-  <div class="small-1 columns text-center">
-    <label class="fake-circle-button"> 2 </label>
+<div id="demo-section-2" class="rounded-border info-block">
+  <div class="row">
+    <h5><strong class="title"><%=t(:bitcoin_wallet).capitalize%></strong></h5><br class="show-for-small-only">
   </div>
-  <div class="small-3 columns text-center">
+  <div class="row show-for-small-only">
     <%= image_tag "wallet.png", alt: t(:wallet_image) %>
   </div>
-  <div class="small-8 columns text-center">
-    <p>
-      <%=t :bitcoin_wallet_html%><br>
-      <%=t :bitcoin_wallet_2_html%>
-    </p>
-    <p>
-      <%=t :wallet_types_html%>
-    </p>
-    <div class="row">
-      <div class="small-4 columns text-center">
-        <div class="wallet-info wallet-mobile has-external-tooltip" tooltip-id="phone-tooltip">
-          <%= image_tag "phone.png", alt: t(:phone_image) %>
-          <p><br><strong class="title"><%=t :mobile_app%></strong></p>
-        </div>        
-        <div id="phone-tooltip" class="hidden text-center tooltip-text">
-          <p>
-            <%=t :mobile_wallet_html%>:<br><%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %> <%=t :and%> 
-            <%= link_to('Blockchain.info', 'https://blockchain.info/wallet/android-app', target: "_blank") %>
-          </p>
+  <div class="row sub-info-block">
+    <div class="hide-for-small medium-1 columns text-center">
+      <label class="fake-circle-button"> 2 </label>
+    </div>
+    <div class="hide-for-small medium-3 columns text-center">
+      <%= image_tag "wallet.png", alt: t(:wallet_image) %>
+    </div>
+    
+    <div class="small-12 medium-8 columns text-center">
+      <p>
+        <%=t :bitcoin_wallet_html%><br>
+        <%=t :bitcoin_wallet_2_html%>
+      </p>
+      <p>
+        <%=t :wallet_types_html%>
+      </p>
+      <div class="row">
+        <div class="small-4 columns text-center">
+          <div class="wallet-info wallet-mobile has-external-tooltip" tooltip-id="phone-tooltip">
+            <%= image_tag "phone.png", alt: t(:phone_image) %>
+            <p><br><strong class="title"><%=t :mobile_app%></strong></p>
+          </div>        
+          <div id="phone-tooltip" class="hidden text-center tooltip-text">
+            <p>
+              <%=t :mobile_wallet_html%>:<br><%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %> <%=t :and%> 
+              <%= link_to('Blockchain.info', 'https://blockchain.info/wallet/android-app', target: "_blank") %>
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="small-4 columns text-center">
-        <div class="wallet-info wallet-desktop has-external-tooltip" tooltip-id="desktop-tooltip">
-          <%= image_tag "desktop.png", alt: t(:pc_image) %>
-          <p><strong class="title"><%=t :desktop_app%></strong></p>
+        <div class="small-4 columns text-center">
+          <div class="wallet-info wallet-desktop has-external-tooltip" tooltip-id="desktop-tooltip">
+            <%= image_tag "desktop.png", alt: t(:pc_image) %>
+            <p><strong class="title"><%=t :desktop_app%></strong></p>
+          </div>
+          <div id="desktop-tooltip" class="hidden text-center tooltip-text">
+            <p>
+              <%=t :desktop_wallet_html%>:<br><%= link_to('Electrum', 'https://electrum.org/', target: "_blank") %> <%=t :and%> 
+              <%= link_to('MultiBit', 'https://multibit.org/', target: "_blank") %>
+            </p>
+          </div>
         </div>
-        <div id="desktop-tooltip" class="hidden text-center tooltip-text">
-          <p>
-            <%=t :desktop_wallet_html%>:<br><%= link_to('Electrum', 'https://electrum.org/', target: "_blank") %> <%=t :and%> 
-            <%= link_to('MultiBit', 'https://multibit.org/', target: "_blank") %>
-          </p>
-        </div>
-      </div>
-      <div class="small-4 columns text-center">
-        <div class="wallet-info wallet-web has-external-tooltip" tooltip-id="browser-tooltip">
-          <%= image_tag "browser.png", alt: t(:browser_image) %>
-          <p><strong class="title"><%=t :browser_app%></strong></p>
-        </div>
-        <div id="browser-tooltip" class="hidden text-center tooltip-text">
-          <p>
-            <%=t :browser_wallet_html%>: <%= link_to('Blockchain.info', 'https://blockchain.info/wallet', target: "_blank") %><br>
-            <%=t :and%> <%= link_to('GreenAddress.it', 'https://greenaddress.it', target: "_blank") %> <br>
-            <%=t :browser_wallet_2%>: <%= link_to('Coinbase', 'https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link', target: "_blank") %>
-          </p>
+        <div class="small-4 columns text-center">
+          <div class="wallet-info wallet-web has-external-tooltip" tooltip-id="browser-tooltip">
+            <%= image_tag "browser.png", alt: t(:browser_image) %>
+            <p><strong class="title"><%=t :browser_app%></strong></p>
+          </div>
+          <div id="browser-tooltip" class="hidden text-center tooltip-text">
+            <p>
+              <%=t :browser_wallet_html%>: <%= link_to('Blockchain.info', 'https://blockchain.info/wallet', target: "_blank") %><br>
+              <%=t :and%> <%= link_to('GreenAddress.it', 'https://greenaddress.it', target: "_blank") %> <br>
+              <%=t :browser_wallet_2%>: <%= link_to('Coinbase', 'https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link', target: "_blank") %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
