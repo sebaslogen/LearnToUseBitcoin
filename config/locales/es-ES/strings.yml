@@ -48,6 +48,7 @@ es:
   demo: demostración
   demo_tooltip: Ningún bitcoin será realmente enviado durante esta demostración
   coin_image: Imagen de una moneda
+  some_bitcoins: algunos bitcoins
   extra: extra
   demo1: Demostración de una transacción Bitcoin
   imagine_shop_html: 'Imagina que ésta sección es la página web de una <strong>tienda on-line</strong> donde estás a punto de pagar por tu compra'

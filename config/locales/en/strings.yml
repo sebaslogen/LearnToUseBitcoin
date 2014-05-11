@@ -48,6 +48,7 @@ en:
   demo: demo
   demo_tooltip: No actual bitcoins will be send to any shop during the demo
   coin_image: Coin image
+  some_bitcoins: some bitcoins
   extra: extra
   demo1: Bitcoin demo transaction
   imagine_shop_html: 'Imagine this section below is the website of an <strong>on-line shop</strong> where you are about to pay your purchase'
