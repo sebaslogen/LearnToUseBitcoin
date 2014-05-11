@@ -1,5 +1,7 @@
 @import "foundation";
 
+$strong-blue: #001A83;
+
 html, body {
   margin:0;
   padding:0;
@@ -140,7 +142,7 @@ a.circle-button:hover, a.circle-button:active, a.circle-button:link, a.circle-bu
 }
 
 strong.title {
-  color: #001A83;
+  color: $strong-blue;
 }
 
 .tooltip-text .qtip-content{
@@ -550,6 +552,12 @@ fieldset {
 
   .video-container {
     width: 100%;
+  }
+}
+
+@media #{$medium-up} {
+  .title-medium-up {
+    color: $strong-blue;
   }
 }
 
