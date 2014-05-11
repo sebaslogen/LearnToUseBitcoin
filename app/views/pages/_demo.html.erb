@@ -154,27 +154,35 @@
 
 <div id="transaction-demo" class="separated-row"></div>
 
-<div id="demo-section-blockchain" class="row rounded-border info-block hidden">
-  <div class="small-1 columns text-center">
-    <label class="blockchain-button-label"> <%=t :extra%> </label>
+<div id="demo-section-blockchain" class="rounded-border info-block hidden">
+  <div class="row">
+    <h5><strong class="title"><%=t :blockchain%></strong></h5><br class="show-for-small-only">
   </div>
-  <div class="small-8 columns text-center">
-    <p>
-      <br>
-      <strong class="title has-tooltip" title="<%=t :all_transactions_tooltip%>"><%=t :all_transactions%></strong> 
-      <%=t :blockchain_1%> 
-      <strong class="title has-tooltip" title="<%=t :public_record_tooltip%>"><%=t :public_record%></strong><br>
-      <%=t :blockchain_2%> <strong class="title has-external-tooltip" tooltip-id="blockchain-tooltip"><%=t :blockchain%></strong><br>
-      <%=t :blockchain_3%> 
-      <strong class="title has-tooltip" title="<%=t :p2p_tooltip%>"><%=t :p2p%></strong> 
-      <%=t :blockchain_4%>
-    </p>
-    <div id="blockchain-tooltip" class="hidden tooltip-text">
-      <p><%=t :blockchain_confuse%> <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> <%=t :blockchain_confuse_2%></p>
-    </div>
-  </div>
-  <div class="small-3 columns text-center">
+  <div class="row show-for-small-only">
     <%= image_tag "ledger.png", class: 'rounded-corners', alt: t(:leger_image) %>
+  </div>
+  <div class="row sub-info-block">
+    <div class="hide-for-small medium-1 columns text-center">
+      <label class="blockchain-button-label"> <%=t :extra%> </label>
+    </div>
+    <div class="small-12 medium-8 columns text-center">
+      <p>
+        <br>
+        <strong class="title-medium-up has-tooltip hide-tooltip-small" title="<%=t :all_transactions_tooltip%>"><%=t :all_transactions%></strong> 
+        <%=t :blockchain_1%> 
+        <strong class="title-medium-up has-tooltip hide-tooltip-small" title="<%=t :public_record_tooltip%>"><%=t :public_record%></strong><br>
+        <%=t :blockchain_2%> <strong class="title has-external-tooltip hide-tooltip-small" tooltip-id="blockchain-tooltip"><%=t :blockchain%></strong><br>
+        <%=t :blockchain_3%> 
+        <strong class="title-medium-up has-tooltip hide-tooltip-small" title="<%=t :p2p_tooltip%>"><%=t :p2p%></strong> 
+        <%=t :blockchain_4%>
+      </p>
+      <div id="blockchain-tooltip" class="hidden tooltip-text">
+        <p><%=t :blockchain_confuse%> <%= link_to('Blockchain.info', 'https://www.blockchain.info', target: "_blank") %> <%=t :blockchain_confuse_2%></p>
+      </div>
+    </div>
+    <div class="hide-for-small medium-3 columns text-center">
+      <%= image_tag "ledger.png", class: 'rounded-corners', alt: t(:leger_image) %>
+    </div>
   </div>
 </div>
 
