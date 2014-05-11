@@ -1,4 +1,6 @@
-<%= audio_tag "demo-confirmation.wav", id: "confirmation-sound", autoplay: false, controls: false, autobuffer: true %>
+<% unless is_mobile_device? %>
+  <%= audio_tag "demo-confirmation.wav", id: "confirmation-sound", autoplay: false, controls: false, autobuffer: true %>
+<% end %>
 
 <h2><%=t :bitcoin_easy%> 
   <a class="circle-button" href="#demo-section-1">1</a>
