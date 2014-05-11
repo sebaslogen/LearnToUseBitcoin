@@ -44,7 +44,7 @@ button:focus {
   @extend .rounded-corners;
   @extend .sub-info-block;
   padding:          15px;
-  margin-bottom: 30px;
+  margin-bottom:    30px;
   background-color: #fff;
   background:       rgba(255, 255, 255, .7);
 }
@@ -189,6 +189,11 @@ div.bottom-border {
   height:600px;
   padding-top:50px;
   padding-bottom:50px;
+}
+
+.section-large {
+  @extend .section;
+  height: 100%;
 }
 
 div.sMyths {
