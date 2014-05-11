@@ -67,12 +67,15 @@ es:
   copy_tooltip: copiar la dirección de pago a tu cartera Bitcoin de ejemplo
   imagine_wallet_html: 'Esta sección es similar a una aplicación de <strong>cartera Bitcoin</strong> que puedes usar para administrar tus bitcoins'
   imagine_wallet_instructions_html: 'Para practicar, <strong>rellena</strong> el formulario y pulsa <strong>Enviar</strong>'
-  demo_wallet_legend: Tu cartera Bitcoin de ejemplo
+  demo_wallet_legend: tu cartera Bitcoin de ejemplo
+  in: en
   demo_send_address: 'Enviar bitcoins desde ésta dirección de Bitcoin:'
   multiple_addresses: Tu cartera Bitcoin puede contener tantas direcciones de Bitcoin como desees
+  you_have: Tienes
   out_of: de
   available: disponibles
   amount: cantidad
+  ready_to: listos para enviar
   demo_input_amount_fail_help_html: "El valor debe ser <strong class='title'>0.1</strong> (el mismo que el precio)"
   demo_input_amount_tooltip_html: '1 bitcoin se puede dividir en hasta 8 unidades decimales<br>(0.00000001 bitcoins valen actualmente alrededor de 0.00001 USD)'
   to_address: a

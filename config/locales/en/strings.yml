@@ -67,12 +67,15 @@ en:
   copy_tooltip: copy the shop payment address to your demo Bitcoin wallet
   imagine_wallet_html: 'This section below looks like the <strong>Bitcoin wallet</strong> software you can use to manage your bitcoins'
   imagine_wallet_instructions_html: 'To practice, <strong>fill</strong> the form and press <strong>Send</strong>'
-  demo_wallet_legend: Your Bitcoin demo wallet
+  demo_wallet_legend: your Bitcoin demo wallet
+  in: in
   demo_send_address: 'Send bitcoins from this Bitcoin address:'
   multiple_addresses: Your Bitcoin wallet can contain as many Bitcoin addresses as you want
+  you_have: You have
   out_of: out of
   available: available
   amount: amount
+  ready_to: ready to send
   demo_input_amount_fail_help_html: "Value should be <strong class='title'>0.1</strong> (same as the price)"
   demo_input_amount_tooltip_html: '1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)'
   to_address: to

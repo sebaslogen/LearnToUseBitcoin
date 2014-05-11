@@ -470,7 +470,7 @@ div.fix-bottom-position {
 
 /* Small padding space for the sample transaction amount label */
 .small-right-padding {
-  padding-right: 10px !important;
+  padding-right: 5px !important;
 }
 
 /* Vertical space between rows for the sample transaction wallet*/
@@ -497,6 +497,15 @@ div.separated-row {
 // Fix for Angular adding click cursor to label
 .no-cursor {
   cursor: default !important;
+}
+
+// Fix too big margin on paragraphs
+p.no-margin {
+  margin: 3px;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0px !important;
 }
 
 .fix-link-background:hover {

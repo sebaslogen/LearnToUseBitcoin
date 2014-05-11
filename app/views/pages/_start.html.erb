@@ -95,45 +95,49 @@
         <div class="info-block hidden" id="demo-wallet-send-content">
           <form id="demo-transaction-form" data-parsley-validate> 
             <fieldset>
-            <legend class="show-for-medium-up"><%=t :demo_wallet_legend%></legend>
-            <div class="row separated-row show-for-medium-up"> 
-              <div class="small-12 columns">
-                <span><%=t :demo_send_address%></span>
-                <div class="address-info-block has-tooltip" title="<%=t :multiple_addresses%>">
-                  <input type="radio" name="address" id="walletAddress"
-                         value="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" checked><label class="no-cursor" for="walletAddress">19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</label>
+              <legend class="show-for-medium-up"><%=single_capitalize(t(:demo_wallet_legend))%></legend>
+              <div class="row separated-row show-for-medium-up"> 
+                <div class="small-12 columns">
+                  <span><%=t :demo_send_address%></span>
+                  <div class="address-info-block has-tooltip" title="<%=t :multiple_addresses%>">
+                    <input type="radio" name="address" id="walletAddress"
+                           value="19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ" checked><label class="no-cursor" for="walletAddress">19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</label>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row separated-row">
-              <div class="small-12 columns text-center has-tooltip" title="<%=t :demo_input_amount_tooltip_html%>">
-                <label id="demo-remaining-bitcoins" class="inline no-cursor">{{remainingBitcoinsFormattedText()}}</label>
+              <p class="no-margin"><%=t :you_have%></p>
+              <div class="row">
+                <div class="small-12 columns text-center has-tooltip" title="<%=t :demo_input_amount_tooltip_html%>">
+                  <label id="demo-remaining-bitcoins" class="inline no-cursor no-margin no-padding-bottom"><p class="no-margin">{{remainingBitcoinsFormattedText()}}</p></label>
+                </div>
               </div>
-            </div>
-            <div class="row collapse separated-row"> 
-              <div class="small-3 small-3 columns">
-                <label for="amount" class="right inline small-right-padding "><%=t :amount%>: </label>
+              <p class="show-for-small-only"><%=t :in%> <%=t :demo_wallet_legend%></p>
+              <br>
+              <div class="row collapse no-margin"> 
+                <div class="small-3 small-3 columns">
+                  <label for="amount" class="right inline small-right-padding"><p class="no-margin"><%=t(:amount).capitalize%>: </p></label>
+                </div>
+                <div class="small-5 medium-2 columns" id="amount">
+                  <input type="text" class="highlighted-box text-center" ng-click="disableAmountGlowing()" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
+                         data-parsley-min="0.1" data-parsley-min-message="<%=t :demo_input_amount_fail_help_html%>" data-parsley-max="0.1" data-parsley-max-message="<%=t :demo_input_amount_fail_help_html%>"
+                         placeholder="eg 0.1" />
+                </div>
+                <div class="small-4 medium-4 columns">
+                  <span class="postfix radius"> bitcoins (BTC)</span>
+                </div>
+                <div class="hide-for-small medium-3 columns"></div>
               </div>
-              <div class="small-5 medium-2 columns" id="amount">
-                <input type="text" class="highlighted-box text-center" ng-click="disableAmountGlowing()" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
-                       data-parsley-min="0.1" data-parsley-min-message="<%=t :demo_input_amount_fail_help_html%>" data-parsley-max="0.1" data-parsley-max-message="<%=t :demo_input_amount_fail_help_html%>"
-                       placeholder="eg 0.1" />
+              <p><%=t :ready_to%></p>
+              <div class="row collapse separated-row">
+                <div class="small-2 columns">
+                  <span class="prefix radius button disabled"><%=t :to_address%>:</span>
+                </div>
+                <div class="small-10 columns">
+                  <input id="demo-pay-to-address-input" type="text" ng-click="disableAddressGlowing()" placeholder="eg 1JL27iKbmVBNBnwuST7aqyu..." data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
+                         data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required class="highlighted-box has-tooltip"
+                         title="<%=t :demo_input_address_tooltip_html%>"/>
+                </div>
               </div>
-              <div class="small-4 medium-4 columns">
-                <span class="postfix radius"> bitcoins (BTC)</span>
-              </div>
-              <div class="hide-for-small medium-3 columns"></div>
-            </div>
-            <div class="row collapse separated-row">
-              <div class="small-2 columns">
-                <span class="prefix radius button disabled"><%=t :to_address%>:</span>
-              </div>
-              <div class="small-10 columns">
-                <input id="demo-pay-to-address-input" type="text" ng-click="disableAddressGlowing()" placeholder="eg 1JL27iKbmVBNBnwuST7aqyu..." data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
-                       data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required class="highlighted-box has-tooltip"
-                       title="<%=t :demo_input_address_tooltip_html%>"/>
-              </div>
-            </div>
               <div class="row">
                 <div class="small-12 columns">
                   <label id="demo-transaction-send-button" class="button radius round has-tooltip" ng-click="transactionDemo()"
