@@ -29,6 +29,7 @@ uk:
   bitcoin_private_key_2: The private key is another long sequence of letters and numbers that you should always keep secret
   private_key_image: Private Key image
   wallet_image: Wallet image
+  bitcoin_wallet: Bitcoin wallet
   bitcoin_wallet_html: 'A <strong>Bitcoin wallet</strong> is a software that allows you to manage multiple Bitcoin addresses and their private keys'
   bitcoin_wallet_2_html: 'It lets you easily <strong>send and receive bitcoins</strong> or create new Bitcoin addresses'
   wallet_types_html: 'There are three types of <strong>wallet applications</strong>'
@@ -47,6 +48,7 @@ uk:
   demo: demo
   demo_tooltip: No actual bitcoins will be send to any shop during the demo
   coin_image: Coin image
+  some_bitcoins: some bitcoins
   extra: extra
   demo1: Bitcoin demo transaction
   imagine_shop_html: 'Imagine this section below is the website of an <strong>on-line shop</strong> where you are about to pay your purchase'
@@ -65,12 +67,15 @@ uk:
   copy_tooltip: copy the shop payment address to your demo Bitcoin wallet
   imagine_wallet_html: 'This section below looks like the <strong>Bitcoin wallet</strong> software you can use to manage your bitcoins'
   imagine_wallet_instructions_html: 'To practice, <strong>fill</strong> the form and press <strong>Send</strong>'
-  demo_wallet_legend: Your Bitcoin demo wallet
+  demo_wallet_legend: your Bitcoin demo wallet
+  in: in
   demo_send_address: 'Send bitcoins from this Bitcoin address:'
   multiple_addresses: Your Bitcoin wallet can contain as many Bitcoin addresses as you want
+  you_have: You have
   out_of: out of
   available: available
   amount: amount
+  ready_to: ready to send
   demo_input_amount_fail_help_html: "Value should be <strong class='title'>0.1</strong> (same as the price)"
   demo_input_amount_tooltip_html: '1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)'
   to_address: to
@@ -174,3 +179,4 @@ uk:
   mining_lottery_2: work with
   proof_of_work: Proof of Work
   proof_of_work_extra: (or POW)
+  share_love_tooltip: Send love back with Bitcoin
