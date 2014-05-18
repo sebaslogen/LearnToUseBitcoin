@@ -33,6 +33,7 @@ function loadDemoContent() {
     $("#demo-content").load("/demo", function() {
       moveInDemoTransactionSection();
       updateDemoContent();
+      hideAnimatedElements();
       registerDemoParsleyEvents();
     });
   }

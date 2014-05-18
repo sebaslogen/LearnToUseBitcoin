@@ -42,7 +42,7 @@ function loadLocalBitcoinSellers() {
     sellers_list.push('http://www.expresscoin.com/"> expresscoin </a>');
   }
   for (var i = 0; i < sellers_list.length; i++) {
-    if ( i % 4 == 0 ) {
+    if ( i % 4 === 0 ) {
       $('#bitcoin-sellers').append( '<br>' );
     }
     else if ( i > 0 ) {

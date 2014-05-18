@@ -1,11 +1,11 @@
 var autoscrolled = false;
 
 function setupAutoScroll() {
-  if (($('div.alert-box').size() == 0) && (getWindowsSize() != "small") ) { // Only when there is no flash message shown at page top or is not a mobile
+  if (($('div.alert-box').size() === 0) && (getWindowsSize() != "small") ) { // Only when there is no flash message shown at page top or is not a mobile
     // Automatically move to start section after a few seconds if user hasn't seen it yet
     setTimeout(function() {
-      if ( ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) // Welcome section not visible
-          && ((typeof coinAnimationStarted === 'undefined') || (coinAnimationStarted == false)) ) { // Coin animation not started
+      if ( ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) && // Welcome section not visible
+          ((typeof coinAnimationStarted === 'undefined') || (coinAnimationStarted === false)) ) { // Coin animation not started
         autoScrollToWelcome();
       }
     }, 4000); // Wait 4 seconds to automatically move
@@ -13,7 +13,7 @@ function setupAutoScroll() {
 }
 
 function autoScrollToWelcome() {
-  if ( (autoscrolled == false) &&
+  if ( (autoscrolled === false) &&
     (  $(window).scrollTop() <= parseInt( $('#welcome').css('height') )  )) {
     autoscrolled = true;
     moveTo('#what', 3000);  // Move automaticaly but slowly
@@ -36,6 +36,24 @@ function checkCoinAnimationCancel() {
       finishCoinAnimation();
     }
   }
+}
+
+function showAnimatedElements() {
+  if (( $(window).scrollTop() >= parseInt($('#circle-button-1').css('height')) ) &&
+    ( $('#circle-button-1').hasClass('will-animate'))) {
+    introSequenceCircle('#circle-button-1');
+    setTimeout(function() {introSequenceCircle('#circle-button-2');}, 250);
+    setTimeout(function() {introSequenceCircle('#circle-button-3');}, 500);
+  }
+}
+
+function introSequenceCircle(id) {
+  $(id).show();
+  $(id).removeClass('will-animate').addClass('animated-two-sec').addClass('fadeInRightBig');
+}
+
+function hideAnimatedElements() {
+  $('.will-animate').css('opacity', 0);
 }
 
 /* Youtube video control functions */
@@ -61,7 +79,7 @@ function onPlayerStateChange(event) {
 
 // Auto-scroll to next section in the last seconds of the video or when it´s finished
 function autoScrollOnVideoFinish() {
-  if (player != null) {
+  if (player !== null) {
     if ( (player.getDuration() - player.getCurrentTime() <= 3.5 ) ||
        (player.getPlayerState() == YT.PlayerState.ENDED) ) {
       player = null;

@@ -8,6 +8,7 @@ ltubApp.controller('DemoCtrl', ['$scope', function($scope) {
       $('#show-demo').replaceWith($("#demo-content").fadeIn("slow"));
       updateSizes();
       moveTo('#demo-content');
+      showAnimatedElements();
       $('#transference-demo').addClass('available');
       if ( getWindowsSize() == "small" ) { // Auto-fill form on mobile devices
         $(document).ready(function() { // Wait for demo content to load
