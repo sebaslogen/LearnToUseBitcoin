@@ -40,18 +40,34 @@ function checkCoinAnimationCancel() {
 
 function showAnimatedElements() {
   if ( ! $("#demo-content").hasClass('hidden') ) {
-    if (( $(window).scrollTop() >= parseInt($('#circle-button-1').css('height')) ) &&
-      ( $('#circle-button-1').hasClass('will-animate'))) {
-      introSequenceCircle('#circle-button-1');
-      setTimeout(function() {introSequenceCircle('#circle-button-2');}, 300);
-      setTimeout(function() {introSequenceCircle('#circle-button-3');}, 600);
+    // Show key with rotation
+    if ( $('#key-image').isScrolledIntoView() && // Visible
+        $('#demo-content').hasClass('available') && // Animation to show ful section is finished
+        $('#key-image').hasClass('will-animate') ) { // Still has to be animated
+      if ( $('#circle-button-3').hasClass('will-animate') ) { // Circles are still animating
+        // Disable animation to avoid confusion
+        $('#key-image').removeClass('will-animate').show();
+        $('#key-image').css('opacity', 1);
+        console.log('just showing key');
+      } else { // Show animation
+        introSequenceCircle('#key-image', 'flipInY');
+        console.log('rotating key');
+      }      
     }
+    // Show circle links to information sections in demo
+    if ( $('#circle-button-1').isScrolledIntoView() &&
+        $('#circle-button-1').hasClass('will-animate') ) {
+      introSequenceCircle('#circle-button-1', 'fadeInRightBig');
+      setTimeout(function() {introSequenceCircle('#circle-button-2', 'fadeInRightBig');}, 300);
+      setTimeout(function() {introSequenceCircle('#circle-button-3', 'fadeInRightBig');}, 600);
+    }
+
   }
 }
 
-function introSequenceCircle(id) {
+function introSequenceCircle(id, fading_effect) {
   $(id).show();
-  $(id).removeClass('will-animate').addClass('animated-two-sec').addClass('fadeInRightBig');
+  $(id).removeClass('will-animate').addClass('animated-two-sec').addClass(fading_effect);
 }
 
 function hideAnimatedElements() {

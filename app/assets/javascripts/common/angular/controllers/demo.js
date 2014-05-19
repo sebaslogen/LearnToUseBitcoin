@@ -5,7 +5,9 @@ ltubApp.controller('DemoCtrl', ['$scope', function($scope) {
     }
     $('#show-demo').fadeOut("slow", function() {
       $('div.sStart').height('100%'); // Change from fixed to auto adjust height after load
-      $('#show-demo').replaceWith($("#demo-content").fadeIn("slow"));
+      $('#show-demo').replaceWith($("#demo-content").fadeIn("slow", function() {
+        $("#demo-content").addClass('available');
+      }));
       $("#demo-content").removeClass('hidden');
       updateSizes();
       moveTo('#demo-content');

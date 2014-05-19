@@ -7,6 +7,7 @@ $right_fade_size: 300px;
     animation-fill-mode: both; 
 } 
 
+// Fade from the left side of the window
 @-webkit-keyframes fadeInLeftBig { 
     0% { 
         opacity: 0; 
@@ -32,6 +33,7 @@ $right_fade_size: 300px;
     animation-name: fadeInLeftBig; 
 }
 
+// Fade from the right side of the window
 @-webkit-keyframes fadeInRightBig { 
     0% { 
         opacity: 0; 
@@ -55,4 +57,32 @@ $right_fade_size: 300px;
 .fadeInRightBig { 
     -webkit-animation-name: fadeInRightBig; 
     animation-name: fadeInRightBig; 
+}
+
+// Rotate in Y
+@-webkit-keyframes flipInY { 
+    0% { 
+        -webkit-transform: perspective(400px) rotateY(0deg); 
+        opacity: 0; 
+    }
+    100% { 
+        -webkit-transform: perspective(400px) rotateY(180deg); 
+        opacity: 1; 
+    } 
+} 
+@keyframes flipInY { 
+    0% { 
+        transform: perspective(400px) rotateY(0deg); 
+        opacity: 0; 
+    }
+    100% { 
+        transform: perspective(340px) rotateY(180deg); 
+        opacity: 1; 
+    } 
+} 
+.flipInY { 
+    -webkit-backface-visibility: visible !important; 
+    -webkit-animation-name: flipInY; 
+    backface-visibility: visible !important; 
+    animation-name: flipInY; 
 }
