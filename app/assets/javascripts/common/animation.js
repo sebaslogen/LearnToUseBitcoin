@@ -39,11 +39,13 @@ function checkCoinAnimationCancel() {
 }
 
 function showAnimatedElements() {
-  if (( $(window).scrollTop() >= parseInt($('#circle-button-1').css('height')) ) &&
-    ( $('#circle-button-1').hasClass('will-animate'))) {
-    introSequenceCircle('#circle-button-1');
-    setTimeout(function() {introSequenceCircle('#circle-button-2');}, 250);
-    setTimeout(function() {introSequenceCircle('#circle-button-3');}, 500);
+  if ( ! $("#demo-content").hasClass('hidden') ) {
+    if (( $(window).scrollTop() >= parseInt($('#circle-button-1').css('height')) ) &&
+      ( $('#circle-button-1').hasClass('will-animate'))) {
+      introSequenceCircle('#circle-button-1');
+      setTimeout(function() {introSequenceCircle('#circle-button-2');}, 300);
+      setTimeout(function() {introSequenceCircle('#circle-button-3');}, 600);
+    }
   }
 }
 
