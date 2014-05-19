@@ -48,10 +48,8 @@ function showAnimatedElements() {
         // Disable animation to avoid confusion
         $('#key-image').removeClass('will-animate').show();
         $('#key-image').css('opacity', 1);
-        console.log('just showing key');
       } else { // Show animation
         introSequenceCircle('#key-image', 'flipInY');
-        console.log('rotating key');
       }      
     }
     // Show circle links to information sections in demo
