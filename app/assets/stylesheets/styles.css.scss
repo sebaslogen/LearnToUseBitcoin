@@ -612,6 +612,11 @@ fieldset {
   .video-container {
     width: 100%;
   }
+  
+  .small-demo-title {
+    font-size: 40px;
+    width: 90%;
+  }
 }
 
 @media #{$medium-up} {
