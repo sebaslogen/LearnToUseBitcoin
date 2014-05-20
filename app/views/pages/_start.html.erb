@@ -10,7 +10,7 @@
 
 <div id="transaction-demo-placeholder" class="hidden">
   <div id="transference-demo" class="rounded-border relative-position info-block super-small-padding" ng-controller="TransactionCtrl">
-    <br><h2><%=t :demo1%></h2><br>
+    <br><h2 class='extruded-demo-title'><%=t :demo1%></h2><br>
     
     <div class="row rounded-border separated-row">
       
@@ -20,7 +20,7 @@
           <p><%=t :imagine_shop_html%></p>
         </div>
         <div class="info-block hidden" id="demo-shopping-cart-content">
-          <%= image_tag "basket.png", width: '84', alt: 'basket' %>
+          <%= image_tag "basket.png", width: '84', alt: 'basket', id: 'minibasket-image', class: 'will-animate' %>
           <fieldset>
             <legend class="show-for-medium-up"><%=t :shop_legend%></legend>
             <div>
@@ -94,7 +94,7 @@
           </p>
         </div>
         <div class="info-block hidden" id="demo-wallet-send-content">
-          <%= image_tag "wallet.png", width: '84', alt: 'basket' %>
+          <%= image_tag "wallet.png", width: '84', alt: 'wallet', id: 'miniwallet-image', class: 'will-animate' %>
           <form id="demo-transaction-form" data-parsley-validate> 
             <fieldset>
               <legend class="show-for-medium-up"><%=single_capitalize(t(:demo_wallet_legend))%></legend>

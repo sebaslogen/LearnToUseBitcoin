@@ -71,6 +71,17 @@ function showAnimatedElements() {
           ($('#browser-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
         introSequenceCircle('#coin-image', 'flipInY');
       }
+      
+      // Show demo transaction basket
+      if ( $('#minibasket-image').isBottomScrolledIntoView() &&
+          $('#minibasket-image').hasClass('will-animate') ) {
+        introSequenceCircle('#minibasket-image', 'fadeInLeftBig');
+      }
+      // Show demo transaction wallet
+      if ( $('#miniwallet-image').isBottomScrolledIntoView() &&
+          $('#miniwallet-image').hasClass('will-animate') ) {
+        introSequenceCircle('#miniwallet-image', 'fadeInRightBig');
+      }
     }
     
     // Show circle links to information sections in demo

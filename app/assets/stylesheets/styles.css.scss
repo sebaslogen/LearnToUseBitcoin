@@ -286,6 +286,21 @@ div.sMyths {
   transition: all 0.3s ease-out;
 }
 
+.extruded-demo-title {
+  color: #C74848;
+  font-family: proxima-nova-1, proxima-nova-2, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: -1px 1px 0 #090A09, #D8A704 -2px 2px, #3FD804 -3px 3px, #D8A704 -4px 4px;
+  position: relative;
+  left: 5px;
+  top: -5px;
+  -moz-transition: all 0.3s ease-out; /* FF3.7+ */
+  -o-transition: all 0.3s ease-out; /* Opera 10.5 */
+  -webkit-transition: all 0.3s ease-out; /* Saf3.2+, Chrome */
+  transition: all 0.3s ease-out;
+}
+
 .bitcoin-address-title {
   color: rgb(0, 191, 255);
 }
