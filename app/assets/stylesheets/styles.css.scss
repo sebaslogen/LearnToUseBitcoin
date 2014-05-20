@@ -624,6 +624,8 @@ textarea.parsley-error {
 }
 
 .parsley-errors-list {
+  color: red;
+  font-style: italic;
   white-space:nowrap;
   margin: 2px 0 3px 0;
   padding: 0;
