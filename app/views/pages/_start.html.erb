@@ -20,6 +20,7 @@
           <p><%=t :imagine_shop_html%></p>
         </div>
         <div class="info-block hidden" id="demo-shopping-cart-content">
+          <%= image_tag "basket.png", width: '84', alt: 'basket' %>
           <fieldset>
             <legend class="show-for-medium-up"><%=t :shop_legend%></legend>
             <div>
@@ -93,6 +94,7 @@
           </p>
         </div>
         <div class="info-block hidden" id="demo-wallet-send-content">
+          <%= image_tag "wallet.png", width: '84', alt: 'basket' %>
           <form id="demo-transaction-form" data-parsley-validate> 
             <fieldset>
               <legend class="show-for-medium-up"><%=single_capitalize(t(:demo_wallet_legend))%></legend>
