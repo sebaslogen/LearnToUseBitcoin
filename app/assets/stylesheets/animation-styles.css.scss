@@ -62,21 +62,21 @@ $right_fade_size: 300px;
 // Rotate in Y
 @-webkit-keyframes flipInY { 
     0% { 
-        -webkit-transform: perspective(400px) rotateY(0deg); 
+        -webkit-transform: perspective(400px) rotateY(180deg); 
         opacity: 0; 
     }
     100% { 
-        -webkit-transform: perspective(400px) rotateY(180deg); 
+        -webkit-transform: perspective(400px) rotateY(0deg); 
         opacity: 1; 
     } 
 } 
 @keyframes flipInY { 
     0% { 
-        transform: perspective(400px) rotateY(0deg); 
+        transform: perspective(400px) rotateY(180deg); 
         opacity: 0; 
     }
     100% { 
-        transform: perspective(340px) rotateY(180deg); 
+        transform: perspective(340px) rotateY(0deg); 
         opacity: 1; 
     } 
 } 

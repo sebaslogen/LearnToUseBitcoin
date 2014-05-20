@@ -62,6 +62,14 @@ function showAnimatedElements() {
         introSequenceCircle('#phone-image', 'fadeInRightBig');
         setTimeout(function() {introSequenceCircle('#pc-image', 'fadeInRightBig');}, 500);
         setTimeout(function() {introSequenceCircle('#browser-image', 'fadeInRightBig');}, 1000);
+        setTimeout(showAnimatedElements, 3000); // Trigger animations that were pending on this one
+      }
+      
+      // Show coin image with rotation
+      if ( $('#coin-image').isBottomScrolledIntoView() && // Visible
+          $('#coin-image').hasClass('will-animate') && // Still has to be animated
+          ($('#browser-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
+        introSequenceCircle('#coin-image', 'flipInY');
       }
     }
     
