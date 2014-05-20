@@ -40,24 +40,38 @@ function checkCoinAnimationCancel() {
 
 function showAnimatedElements() {
   if ( ! $("#demo-content").hasClass('hidden') ) {
-    // Show key with rotation
-    if ( $('#key-image').isScrolledIntoView() && // Visible
-        $('#demo-content').hasClass('available') && // Animation to show ful section is finished
-        $('#key-image').hasClass('will-animate') ) { // Still has to be animated
-      if ( $('#circle-button-3').hasClass('will-animate') ) { // Circles are still animating
-        // Disable animation to avoid confusion
-        $('#key-image').removeClass('will-animate').show();
-        $('#key-image').css('opacity', 1);
-      } else { // Show animation
+    if ($('#demo-content').hasClass('available')) { // Animation to show full section is finished
+      // Show key image with rotation
+      if ( $('#key-image').isScrolledIntoView() && // Visible
+          $('#key-image').hasClass('will-animate') && // Still has to be animated
+          ($('#circle-button-3').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
         introSequenceCircle('#key-image', 'flipInY');
-      }      
+        setTimeout(showAnimatedElements, 2000); // Trigger animations that were pending on this one
+      }
+      
+      // Show wallet image with rotation
+      if ( $('#wallet-image').isScrolledIntoView() && // Visible
+          $('#wallet-image').hasClass('will-animate') && // Still has to be animated
+          ($('#key-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
+        introSequenceCircle('#wallet-image', 'flipInY');
+      }
+      
+      // Show different wallet type images
+      if ( $('#phone-image').isBottomScrolledIntoView() &&
+          $('#phone-image').hasClass('will-animate') ) {
+        introSequenceCircle('#phone-image', 'fadeInRightBig');
+        setTimeout(function() {introSequenceCircle('#pc-image', 'fadeInRightBig');}, 500);
+        setTimeout(function() {introSequenceCircle('#browser-image', 'fadeInRightBig');}, 1000);
+      }
     }
+    
     // Show circle links to information sections in demo
     if ( $('#circle-button-1').isScrolledIntoView() &&
         $('#circle-button-1').hasClass('will-animate') ) {
       introSequenceCircle('#circle-button-1', 'fadeInRightBig');
       setTimeout(function() {introSequenceCircle('#circle-button-2', 'fadeInRightBig');}, 300);
       setTimeout(function() {introSequenceCircle('#circle-button-3', 'fadeInRightBig');}, 600);
+      setTimeout(showAnimatedElements, 2000); // Trigger animations that were pending on this one
     }
 
   }

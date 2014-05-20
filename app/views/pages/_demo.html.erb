@@ -75,7 +75,7 @@
       <label class="fake-circle-button"> 2 </label>
     </div>
     <div class="hide-for-small medium-3 columns text-center">
-      <%= image_tag "wallet.png", alt: t(:wallet_image) %>
+      <%= image_tag "wallet.png", alt: t(:wallet_image), id: 'wallet-image', class: 'will-animate' %>
     </div>
     
     <div class="small-12 medium-8 columns text-center">
@@ -89,7 +89,7 @@
       <div class="row">
         <div class="medium-4 columns text-center">
           <div class="wallet-info wallet-mobile has-external-tooltip" tooltip-id="phone-tooltip">
-            <%= image_tag "phone.png", alt: t(:phone_image) %>
+            <%= image_tag "phone.png", alt: t(:phone_image), id: 'phone-image', class: 'will-animate' %>
             <p><br><strong class="title"><%=t :mobile_app%></strong></p>
           </div>        
           <div id="phone-tooltip" class="hidden text-center tooltip-text">
@@ -101,7 +101,7 @@
         </div>
         <div class="medium-4 columns text-center">
           <div class="wallet-info wallet-desktop has-external-tooltip" tooltip-id="desktop-tooltip">
-            <%= image_tag "desktop.png", alt: t(:pc_image) %>
+            <%= image_tag "desktop.png", alt: t(:pc_image), id: 'pc-image', class: 'will-animate' %>
             <p><strong class="title"><%=t :desktop_app%></strong></p>
           </div>
           <div id="desktop-tooltip" class="hidden text-center tooltip-text">
@@ -113,7 +113,7 @@
         </div>
         <div class="medium-4 columns text-center">
           <div class="wallet-info wallet-web has-external-tooltip" tooltip-id="browser-tooltip">
-            <%= image_tag "browser.png", alt: t(:browser_image) %>
+            <%= image_tag "browser.png", alt: t(:browser_image), id: 'browser-image', class: 'will-animate' %>
             <p><strong class="title"><%=t :browser_app%></strong></p>
           </div>
           <div id="browser-tooltip" class="hidden text-center tooltip-text">
