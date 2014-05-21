@@ -39,7 +39,11 @@ function checkCoinAnimationCancel() {
 }
 
 function showAnimatedElements() {
-  if ( ! $("#demo-content").hasClass('hidden') ) {
+  if ( $("#demo-content").hasClass('hidden') ) {
+    if ( $('#show-demo').isBottomScrolledIntoView() ) { // Automatically show demo information after a small delay
+      setTimeout(function() {angular.element($('#start')).scope().showDemo();}, 3000);
+    }
+  } else {
     if ($('#demo-content').hasClass('available')) { // Animation to show full section is finished
       // Show key image with rotation
       if ( $('#key-image').isScrolledIntoView() && // Visible
