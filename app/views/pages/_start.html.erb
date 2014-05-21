@@ -120,9 +120,10 @@
                   <label for="amount" class="right inline small-right-padding"><p class="no-margin"><%=t(:amount).capitalize%>: </p></label>
                 </div>
                 <div class="small-5 medium-2 columns" id="amount">
-                  <input type="text" class="highlighted-box text-center" ng-click="disableAmountGlowing()" ng-model="input_amount" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
-                         data-parsley-min="0.1" data-parsley-min-message="<%=t :demo_input_amount_fail_help_html%>" data-parsley-max="0.1" data-parsley-max-message="<%=t :demo_input_amount_fail_help_html%>"
-                         placeholder="eg 0.1" />
+                  <input type="text" class="highlighted-box text-center animated-one-sec" ng-click="disableAmountGlowing()" ng-model="input_amount" 
+                         data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
+                         data-parsley-min="0.1" data-parsley-min-message="<%=t :demo_input_amount_fail_help_html%>" 
+                         data-parsley-max="0.1" data-parsley-max-message="<%=t :demo_input_amount_fail_help_html%>" placeholder="eg 0.1" />
                 </div>
                 <div class="small-4 medium-4 columns">
                   <span class="postfix radius"> bitcoins (BTC)</span>
@@ -135,8 +136,9 @@
                   <span class="prefix radius button disabled"><%=t :to_address%>:</span>
                 </div>
                 <div class="small-10 columns">
-                  <input id="demo-pay-to-address-input" type="text" ng-click="disableAddressGlowing()" placeholder="eg 1JL27iKbmVBNBnwuST7aqyu..." data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
-                         data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required class="highlighted-box has-tooltip hide-tooltip-small"
+                  <input id="demo-pay-to-address-input" type="text" class="highlighted-box has-tooltip hide-tooltip-small animated-one-sec"
+                         ng-click="disableAddressGlowing()" placeholder="eg 1JL27iKbmVBNBnwuST7aqyu..." data-parsley-equal="1JL27iKbmVBNBnwuST7aqyuE94ShS4CFE1"
+                         data-parsley-range="[30, 40]" data-parsley-type="alphanum" data-parsley-trigger="change" required
                          title="<%=t :demo_input_address_tooltip_html%>"/>
                 </div>
               </div>

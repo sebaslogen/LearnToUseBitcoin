@@ -1,5 +1,12 @@
 $right_fade_size: 300px;
 
+.animated-one-sec { 
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+} 
+
 .animated-two-sec { 
     -webkit-animation-duration: 2s; 
     animation-duration: 2s; 
@@ -85,4 +92,20 @@ $right_fade_size: 300px;
     -webkit-animation-name: flipInY; 
     backface-visibility: visible !important; 
     animation-name: flipInY; 
+}
+
+// Shake box
+@-webkit-keyframes shake { 
+    0%, 100% {-webkit-transform: translateX(0);} 
+    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);} 
+    20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);} 
+} 
+@keyframes shake { 
+    0%, 100% {transform: translateX(0);} 
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);} 
+    20%, 40%, 60%, 80% {transform: translateX(10px);} 
+} 
+.shake { 
+    -webkit-animation-name: shake; 
+    animation-name: shake; 
 }

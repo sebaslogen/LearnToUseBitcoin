@@ -34,6 +34,16 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       analytics.track('Click Send demo transaction successful');
     } else { // Log failed attempt data to gather feedback on user difficulties
       $scope.failures++;
+      // Animations on failure
+      if ( ! $('#demo-input-amount').parsley().isValid()) {
+        $('#demo-input-amount').addClass('shake');
+        setTimeout(function() {$('#demo-input-amount').removeClass('shake');}, 2000);
+      }
+      if ( ! $('#demo-pay-to-address-input').parsley().isValid()) {
+        $('#demo-pay-to-address-input').addClass('shake');
+        setTimeout(function() {$('#demo-pay-to-address-input').removeClass('shake');}, 2000);
+      }
+      // Analyze errors and assist the user on consecutive errors
       if (( ! $('#demo-input-amount').parsley().isValid()) && ($scope.failures == 2)) {
         fillDemoInputAmount($scope);
         analytics.track('Failed attempt to submit demo transaction', {
