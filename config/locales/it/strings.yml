@@ -1,0 +1,170 @@
+it:
+  ltub: Impara ad usare i Bitcoin
+  made: Creato con
+  by: da
+  welcome: Benvenuto
+  welcome2: "all'incredibile rivoluzione monetaria"
+  scroll: scrolla
+  what: Cosa sono i Bitcoin?
+  what_1: I Bitcoin sono
+  digital_money: monete digitali per Internet
+  what_2: che ti consentono di inviare e ricevere pagamenti da persona a persona
+  very_fast: molto velocemente
+  what_3: senza intermediari (banche o corporazioni)
+  what_4: a costo quasi nullo
+  what_tip1_html: Invia denaro ovunque nel mondo ed il destinatario può spenderlo dopo solo 10 minuti
+  what_tip2: 5 centesimi di dollaro per inviare 10.000 dollari ovunque
+  discover: Scopri i Bitcoin
+  counting_stars: "Il conteggio inizia nell'universo..."
+  bitcoin_easy: Bitcoin è semplice come
+  sending_receiving_html: "Inviare e ricevere Bitcoin è semplice come mandare un'<strong>email</strong>, la prima cosa di cui abbiamo bisogno è un <strong>indirizzo</strong>"
+  bitcoin_address_html: "Un <strong>indirizzo Bitcoin</strong> è dove i Bitcoin sono immagazzinati<br> Come per una <strong>cassaforte</strong> trasparente, le monete digitali possono essere spostate solo da chi <strong>possiede la chiave</strong>, ma chiunque può vedere cosa c'è"
+  inside: dentro
+  bitcoin_address_looks: "L'indirizzo è una lunga sequenza di lettere e numeri, tipo questa"
+  anonymous_email_html: "Come una mail anonima, l'indirizzo Bitcoin non è legato a nessuna identità<br>È semplicemente una sequenza di numeri e lettere"
+  bitcoin_address_tooltip_html: "Puoi creare ed usare tutti gli indirizzi che vuoi, a nessun costo<br>L'indirizzo Bitcoin è quello che condividi quando vuoi ricevere un pagamento"
+  bitcoin_address_qr_tooltip: Questo codice QR rappresenta lo stesso indirizzo Bitcoin e può essere letto facilmente con un telefono
+  address_qr: Immagine del codice QR
+  bitcoin_private_key_html: 'La <strong>chiave privata</strong> è la <u>sola</u> chiave nel mondo che può trasferire i Bitcoin da un indirizzo Bitcoin (come la password di un indirizzo email)'
+  bitcoin_private_key_2: "La chiave privata è un'altra lunga sequenza di lettere e numeri che devi sempre tenere segreta"
+  private_key_image: Immagine della chiave privata
+  wallet_image: Immagine del portafoglio
+  bitcoin_wallet: Portafoglio Bitcoin
+  bitcoin_wallet_html: 'Un <strong>portafoglio Bitcoin</strong> è un programma che ti consente di gestire molteplici indirizzi Bitcoin e le loro chiavi private'
+  bitcoin_wallet_2_html: 'Ti consente di <strong>inviare e ricevere Bitcoin</strong> facilmente o di creare nuovi indirizzi Bitcoin'
+  wallet_types_html: 'Ci sono tre tipi di <strong>applicazioni per il portafoglio</strong>'
+  phone_image: Immagine del telefono
+  mobile_app: Mobile App
+  mobile_wallet_html: 'Questo è utile per un uso giornaliero in movimento<br>Un paio di buoni portafogli per Android'
+  and: e
+  pc_image: Immagine del desktop PC
+  desktop_app: App Desktop
+  desktop_wallet_html: 'Generalmente questi portafogli offrono più sicurezza e più opzioni<br>Un paio di buoni portafogli'
+  browser_image: Immagine del web browser
+  browser_app: Portafoglio Web
+  browser_wallet_html: "Questi portafogli combinano facilità d'uso con molte funzioni<br>Due buoni esempi dove <strong>tu</strong> gestisci completamente i tuoi Bitcoin"
+  browser_wallet_2: "Un'altro portafoglio dove la compagnia immagazzina e protegge i Bitcoin per te è"
+  fill_wallet_html: "Adesso devi mettere alcune Bitcoin nel portafoglio<br>Puoi ottenere i tuoi primi Bitcoin totalmente gratis dal link sottostante (nessun'allegato o registrazione necessaria), ma prima esercitiamoci con un piccolo"
+  demo: demo
+  demo_tooltip: Nessun Bitcoin reale sarà mandato a nessun negozio durante questo demo
+  coin_image: Immagine moneta
+  some_bitcoins: alcuni bitcoin
+  extra: extra
+  demo1: Demo di una transazione Bitcoin
+  imagine_shop_html: 'Immagina che la sezione qui sotto sia il sito di un <strong>negozio online</strong> dove stai per pagare il tuo acquisto'
+  shop_legend: Carrello del tuo negozio online preferito
+  item: Elemento
+  units: Unità
+  price: Prezzo
+  bear_description: Orsetto di peluche caldo e morbido
+  or: o
+  item_image: "Immagine dell'orsetto"
+  pay_address: Paga a questo indirizzo
+  shop_qr: Codice QR o indirizzo del negozio
+  shop_qr_tooltip: "Questo codice QR è facilmente leggibile con un'applicazione di portafoglio Bitcoin su uno smartphone"
+  copy: Copia
+  logo_bitcoin: 'Logo di "Bitcoin accettate qui"'
+  copy_tooltip: "copia l'indirizzo Bitcoin del negozio al portafoglio Bitcoin del demo"
+  imagine_wallet_html: "Questa sezione sotto rappresenta l'applicazione di <strong>portafoglio Bitcoin</strong> che puoi usare per gestire i tuoi Bitcoin"
+  imagine_wallet_instructions_html: 'Per esercitarti, <strong>riempi</strong> il modulo e premi <strong>Invia</strong>'
+  demo_wallet_legend: il demo del tuo portafoglio Bitcoin
+  in: in
+  demo_send_address: 'Invia Bitcoin da questo indirizzo Bitcoin:'
+  multiple_addresses: Il tuo portafoglio Bitcoin può contenere tutti gli indirizzi Bitcoin che vuoi
+  you_have: Hai
+  out_of: su
+  available: disponibile
+  amount: quantità
+  ready_to: pronto a inviare
+  demo_input_amount_fail_help_html: "Il valore dovrebbe essere <strong class='title'>0.1</strong> (lo stesso che il prezzo)"
+  demo_input_amount_tooltip_html: '1 bitcoin può essere diviso fino a 8 cifre decimali<br>(al momento, 0.00000001 bitcoins sono valutate circa 0.00001 dollari)'
+  to_address: a
+  demo_input_address_tooltip_html: "inserisci qui l'indirizzo Bitcoin fornito dal negozio per il pagamento (<strong>Suggerimento</strong>: usa il bottone <i class='fi-page-copy'></i>Copia)"
+  send_button_tooltip: invia bitcoins per pagare il conto dimostrativo
+  send: Invia
+  payment_received: Pagamento ricevuto correttamente
+  purchase_ok_image: "Immagine di OK all'acquisto"
+  demo_fail_help: La quantità introdotta nel portafoglio Bitcoin dimostrativo non è corretta
+  demo_fail_help_1: Non preoccuparti, ho già introdotto la giusta quantità per te, prova di nuovo
+  congratulations: Congratulazioni!
+  congrats_1: Hai imparato come inviare bitcoins
+  congrats_2: E ci sono molte altre cose che puoi fare con i Bitcoins
+  see_below: Vedi sotto
+  how_transaction: Come funziona questa transazione?
+  all_transactions: Tutte le transazioni
+  all_transactions_tooltip: Vuol dire tutti i bitcoin e gli indirizzi Bitcoin inviati tra di loro
+  blockchain_1: "fatti nell'economia dei Bitcoin sono registrati in un"
+  public_record: registro pubblico
+  public_record_tooltip: Una copia aggiornata delle transazioni è registrata nei computer della maggiorparte degli utenti Bitcoin
+  blockchain_2: Questo registro pubblico funziona come contabilità ed è chiamato
+  blockchain: Blockchain
+  blockchain_3: Quando invii un pagamento Bitcoin, la traccia della transazione è inviata a tutti gli utenti Bitcoin attraverso
+  p2p: la rete peer-to-peer Bitcoin
+  p2p_tooltip: La traccia della transazione è inviata da utente ad utente finché tutta la rete ha ricevuto la traccia (il tutto avviene in secondi)
+  blockchain_4: da registrare per sempre nella Blockchain
+  blockchain_confuse: Da non confondere con
+  blockchain_confuse_2: un utile sito per vedere le tracce delle transazioni Bitcoin in tempo reale
+  leger_image: Immagine contabilità
+  almost_there: Ci sei quasi
+  get_bitcoins: Ottieni i tuoi primi bitcoins
+  in_construction: In costruzione
+  apologies: Ci scusiamo, questa parte del sito non è ancora pronta
+  come_back: Torna più tardi e dovresti poter ottenere alcuni bitcoins gratis
+  meanwhile: Nel frattempo, ti raccomandiamo di creare
+  first_wallet: il tuo primo portafoglio Bitcoin online
+  or_install: o installa una delle applicazioni portafoglio Bitcoin sul desktop
+  suggested_above: suggerito sopra
+  and_get_bitcoins: e puoi anche ottenere bitcoins da uno di questi servizi
+  use: Cosa posso fare con i Bitcoin?
+  use_1: "Al giorno d'oggi è possibile pagare in bitcoins in centinaia di"
+  use_2: negozi in tutto il mondo
+  From: Da
+  to_until: a
+  flights: voli
+  hotels: alberghi
+  furniture: mobilio
+  food: cibo
+  food_link: http://www.takeaway.com
+  sending_money: Trasferimenti internazionali di denaro e rimesse diventano economiche (centesimi) e veloci (minuti)
+  person_to_person: persona a persona
+  sending_money_tooltip: "Tutto quel che ti serve è un'applicazione di portafoglio Bitcoin per inviare e ricevere bitcoins"
+  sending_money_2: transazioni con Bitcoin
+  donating_to: Donare a
+  non_profit: organizzazioni no-profit
+  donating_to_1: diventa più veloce, diretto ed economico, rimuovendo
+  donating_to_2: tutte le commissioni intermedie
+  donating_to_tooltip_html: 'Puoi essere sicuro che il denaro arrivi <strong>direttamente</strong> nelle mani di coloro che ne hanno più bisogno, senza ritardi'
+  sean_outpost: ha nutrito i bisognosi per mesi solo con Bitcoin, e la
+  bitgive_foundation: promuove salute e progetti di miglioramento del territorio
+  democratization: "Democratizzazione dell'attività bancaria: con Bitcoin"
+  democratization_1: ognuno nel mondo può avere accesso a servizi finanziari
+  democratization_2: "indipendentemente dal loro paese o dalla loro situazione economica, l'unico requisito è l'accesso a Internet"
+  democratization_tooltip_html: '2,5 <strong>miliardi</strong> di persone nel mondo non hanno accesso a banche o istituti di microfinanza'
+  small_payments: Piccoli pagamenti (inferiori a 1 dollaro), diventano finalmente possibili. Questo apre la strada a piccole donazioni o
+  content_payments: pagamenti per contenuto
+  on_internet: su Internet
+  content_payments_tooltip: Aiuta organizzazioni di carità per bambini e la Croce Rossa
+  content_payments_tooltip_1: contribuendo con qualsiasi quantità di Bitcoin e si ricevono in cambio giochi
+  myths: Miti su Bitcoin
+  myths_1: Il denaro funziona solo perché lo sostiene un governo
+  myths_2_html: "Non non c'è nessun governo, società o persona giuridica dietro Bitcoin, il che può rendere difficile capire come la valuta può essere affidabile.<br>Bitcoin risolve questo problema spostando fiducia lontano da organizzazioni e persone (i cui interessi possono essere influenzati) in un'unica <strong>fiducia nella matematica</strong>.<br>In maniera simile al modo in cui l'oro fornisce fiducia attraverso una serie di attributi fisici unici che sono difficili da imitare correttamente, Bitcoin utilizza algoritmi per dimostrare che il denaro appartiene solo al proprietario di una chiave privata e può essere speso solo una volta."
+  myths_3: Tutto in Bitcoin è anonimo
+  myths_4_html: "Bitcoin non è anonimo, ma protegge la tua privacy come denaro contante.<br>Un po'come il tuo nome non è presente sulle monete che si utilizzano, in Bitcoin non è possibile vedere il tuo nome nei Bitcoin che si ricevono. Se tuttavia decidi di rivelare la tua identità alla persona o società che riceve i bitcoins, è possibile collegare la tua identità con la transazione. Poiché tutte le transazioni sono  registrate pubblicamente nella Blockchain, è possibile tenere traccia parziale di alcune delle operazioni che hai fatto precedentemente con lo stesso"
+  bitcoin_address: indirizzo Bitcoin
+  myths_4_tooltip: "L'applicazione portafoglio Bitcoin può facilmente creare e gestire nuovi indirizzi Bitcoin per te"
+  myths_5: I Bitcoins sono digitali e posso copiarli esattamente come copio la musica
+  myths_6_html: "I Bitcoins sono limitati nella quantità.<br>Spesso sono paragonati all'oro: il denaro Bitcoin è rilasciato nel mondo ad un ritmo continuo e decrescente nel tempo, come nelle miniere d'oro.<br>Non ci potranno <strong>mai essere più di 21 milioni di Bitcoin</strong> e ogni quattro anni la quantità di Bitcoin rilasciati viene dimezzata, fino a quando l'ultimo bitcoin sarà rilasciato intorno all'anno 2140.<br>Questo meccanismo viene gestito da un algoritmo matematico, e non da una persona."
+  myths_7: I Bitcoin sono creati dal nulla, a volontà
+  myths_8_1: I Bitcoin vengono creati come ricompensa per chi aiuta a verificare
+  valid_transactions: transazioni valide
+  valid_transactions_tooltip: Ad esempio, verifica che tu abbia sufficienti bitcoins da inviare prima di iniziare un trasferimento
+  myths_8_2: nella rete Bitcoin
+  myths_9_1: Questo processo è chiamato
+  bitcoin_mining: Data Mining Bitcoin
+  myths_9_2: "e si prende cura della contabilità dell'economia"
+  mining_lottery_1: Per capire come un minatore ottiene una ricompensa in bitcoins puoi imparare come la
+  lottery_rewards: lotteria della ricompensa
+  mining_lottery_2: funziona con
+  proof_of_work: la Prova del Lavoro
+  proof_of_work_extra: "(o POW, dall'inglese Proof of Work)"
+  share_love_tooltip: Invia amore con Bitcoin
