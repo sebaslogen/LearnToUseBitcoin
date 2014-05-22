@@ -12,6 +12,7 @@ window.ParsleyConfig = window.ParsleyConfig || {};
       }
     },
     i18n: {
+      it: { equal: "Inserisci qui l'indirizzo Bitcoin fornito dal negozio" },
       en: { equal: 'Use the Bitcoin address the shop provided' },
       es: { equal: 'Usa la dirección de Bitcoin que la tienda proporciona'}
     }
