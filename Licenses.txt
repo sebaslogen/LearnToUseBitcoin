@@ -30,3 +30,5 @@ These are the rest of the licensed components used, thanks to all the original a
 
 - Form validation with Parsley - MIT license
 - Parsley languages from: https://github.com/guillaumepotier/Parsley.js/tree/master/src/i18n
+
+- TextEffect-jQuery-plugin created by Chris Ozols copyright MIT license 2013
