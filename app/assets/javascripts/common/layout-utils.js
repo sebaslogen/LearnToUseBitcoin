@@ -1,10 +1,12 @@
 var show_bottom_elements = false;
 
 function setupActiveJavaScript() {
-  $('#welcome-content').css({
-    'position': 'fixed',
-    'margin': '0 0 0 -37.5%'
-  });
+  if (getWindowsSize() != "small") { // Fading title works well only on tabs or faster HW
+    $('#welcome-content').css({
+      'position': 'fixed',
+      'margin': '0 0 0 -37.5%'
+    });
+  }
   hideAnimatedElements();
 }
 

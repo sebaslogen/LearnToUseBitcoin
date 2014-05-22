@@ -31,4 +31,6 @@ These are the rest of the licensed components used, thanks to all the original a
 - Form validation with Parsley - MIT license
 - Parsley languages from: https://github.com/guillaumepotier/Parsley.js/tree/master/src/i18n
 
-- TextEffect-jQuery-plugin created by Chris Ozols copyright MIT license 2013
+- TextEffect-jQuery-plugin for random letters created by Chris Ozols copyright MIT license 2013
+
+- LetterFX used for wave on letters is created by TuxSudo - https://github.com/TuxSudo/letterfx

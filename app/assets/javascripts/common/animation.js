@@ -108,6 +108,9 @@ function showAnimatedElements() {
     }
 
   }
+  if ($("#demo-form-title").isScrolledIntoView()) { // When demo form is visible make a wave on the text
+    $("#demo-form-title").letterfx({"fx":"wave","letter_end":"rewind","fx_duration":"300ms"});
+  }
 }
 
 function introSequenceCircle(id, fading_effect) {
