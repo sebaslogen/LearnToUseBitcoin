@@ -41,10 +41,20 @@ function checkCoinAnimationCancel() {
 function showAnimatedElements() {
   if ( $("#demo-content").hasClass('hidden') ) {
     if ( $('#show-demo').isBottomScrolledIntoView() ) { // Automatically show demo information after a small delay
-      setTimeout(function() {angular.element($('#start')).scope().showDemo();}, 3000);
+      setTimeout(function() {angular.element($('#start')).scope().showDemo();}, 2500);
     }
   } else {
     if ($('#demo-content').hasClass('available')) { // Animation to show full section is finished
+      if ( $('#sample-bitcoin-address').isScrolledIntoView() && // Visible
+          $('#sample-bitcoin-address').hasClass('not-animated-yet') ) { // Still has to be animated
+        $('#sample-bitcoin-address').removeClass('not-animated-yet');
+        setTimeout(function() { $('#sample-bitcoin-address').textEffect({
+          effect: 'jumble', // the type of the text aniamtion. fade, glow, jumble, slide, dropdown and random (default)
+          effectSpeed: 90, // the speed in ms at which new letters begin to animate.
+          completionSpeed: 3000, // the speed in ms of the text animation.
+          jumbleColor: '#7f7f7f' // the color of the jumbled letters.
+        });}, 1000); // Load one second later to let the fade in of the section finish
+      }
       // Show key image with rotation
       if ( $('#key-image').isScrolledIntoView() && // Visible
           $('#key-image').hasClass('will-animate') && // Still has to be animated

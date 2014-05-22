@@ -625,6 +625,14 @@ fieldset {
   }
 }
 
+@media #{$large-up} {
+  .aligned-bitcoin-address {
+    position: absolute;
+    bottom: 0;
+    height: 55%;
+  }
+}
+
 /* Parsley Form validation CSS */
 
 input.parsley-success,

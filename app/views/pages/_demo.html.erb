@@ -37,12 +37,15 @@
         </div>
       </div>
       <div class="row text-center">
-        <p>
-          <strong class="bitcoin-address title has-tooltip hide-tooltip-small" title="<%=t :bitcoin_address_tooltip_html%>">
-            19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</strong>&nbsp;&nbsp;&nbsp;
+        <div class="large-8 columns aligned-bitcoin-address">
+          <strong class="bitcoin-address title has-tooltip hide-tooltip-small" title="<%=t :bitcoin_address_tooltip_html%>"><span id='sample-bitcoin-address' class='not-animated-yet'>
+            19s6nzcRuWWuXSikLNGmYsTdKkF8cBkFdJ</span></strong>
+        </div>
+        <div class="large-4 columns">
+          <br>
           <%= image_tag "QR_code.png", class: "has-tooltip hide-tooltip-small", title: t(:bitcoin_address_qr_tooltip), width: 200, height: 200, alt: t(:address_qr) %><br><br>
           <span class="show-for-small-only"><%=t :bitcoin_address_qr_tooltip%></span>
-        </p>
+        </div>
       </div>
       <div class="row show-for-small-only">
         <%= image_tag "key.png", alt: t(:private_key_image) %>
