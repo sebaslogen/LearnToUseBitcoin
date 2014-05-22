@@ -504,14 +504,6 @@ p.side-padding { /* Fix for private key text correctly aligned */
   float: right;
 }
 
-// Fix small screen cut of long bitcoin address in form
-#demo-pay-to-address {
-  width:         70%;
-  text-overflow: ellipsis;
-  white-space:   nowrap;
-  overflow:      hidden;
-}
-
 /* Fix image aligned to bottom right */
 div.relative-position {
   position: relative;
@@ -626,6 +618,13 @@ fieldset {
     width: 90%;
   }
   
+  // Fix small screen cut of long bitcoin address in form
+  #demo-pay-to-address {
+    width:         70%;
+    text-overflow: ellipsis;
+    white-space:   nowrap;
+    overflow:      hidden;
+  }
   // Fix to reduce padding on phones
   fieldset {
     padding-left:  0px;
