@@ -1,14 +1,18 @@
 #!/bin/bash
 set -e
+echo "Exporting translations to javascript"
 rake i18n:js:export
 mv public/javascripts/translations.js app/assets/javascripts/common/
+echo "Compiling assets"
 RAILS_ENV=production rake assets:precompile
 version=`cat release-version.txt`
 new_version=$(( version + 1 ))
 echo ${new_version} > release-version.txt
+echo "Committing assets to GitHub"
 git add -A
 git commit -m "Assets compiled for Heroku version ${new_version}"
 git tag -a ${new_version} -m "Release version ${new_version}"
 git push --tags
 git push
+echo "Releasing to Heroku"
 git push heroku master
