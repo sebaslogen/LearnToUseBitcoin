@@ -2,6 +2,7 @@
 
 $strong-blue: #001A83;
 $soft-green:  #CDFFD3;
+$darkorange: rgb(255, 140, 0);
 
 html, body {
   margin:0;
@@ -298,6 +299,11 @@ div.sMyths {
   transition: all 0.3s ease-out;
 }
 
+.medium-extruded-info-title {
+  @extend .extruded-info-title;
+  text-shadow: #061019 1px 1px, #061019 2px 2px;
+}
+
 .extruded-demo-title {
   color: #C74848;
   font-family: proxima-nova-1, proxima-nova-2, 'Helvetica Neue', Arial, sans-serif;
@@ -318,11 +324,27 @@ div.sMyths {
 }
 
 .bitcoin-wallet-title {
-  color: rgb(255, 140, 0);
+  color: $darkorange;
 }
 
 .some-bitcoins-title {
   color: #9BA3CA;
+}
+
+.myth-1 {
+  color: rgb(60, 179, 113);
+}
+
+.myth-2 {
+  color: $darkorange;
+}
+
+.myth-3 {
+  color: rgb(30, 144, 255);
+}
+
+.myth-4 {
+  color: rgb(255, 20, 147);
 }
 
 #welcome-content {

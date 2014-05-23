@@ -125,6 +125,7 @@ function fillDemoInputAmount(scope) {
 
 function copyDemoPayToAddres() {
   $("#demo-pay-to-address-input").val($("#demo-pay-to-address").text());
+  $("#demo-pay-to-address-input").qtip('disable');
 }
 
 function registerDemoParsleyEvents() {
