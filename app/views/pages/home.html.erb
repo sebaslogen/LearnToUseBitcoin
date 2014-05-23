@@ -14,7 +14,8 @@
   <p><%=t :made%> <i class="fi-heart has-external-tooltip" tooltip-id="share-love-tooltip"></i> <%=t :by%> Sebas<br>
   <%= link_to('love@learntousebitcoin.com', 'mailto:love@learntousebitcoin.com', target: "_blank") %><p>
   <div id="share-love-tooltip" class="hidden tooltip-text">
-    <p><%= link_to(t(:share_love_tooltip), 'bitcoin:1H8Y377kjQU8vTZhDgp15hi5NPoHPP1Rxn', target: "_blank") %></p>
+    <p class='centered-text'><%= link_to(t(:share_love_tooltip), 'bitcoin:1H8Y377kjQU8vTZhDgp15hi5NPoHPP1Rxn', target: "_blank") %></p>
+    <div> <%= image_tag "donation-qr.png", class: 'qr-background' %> </div>
   </div>‎
 </div>
 
