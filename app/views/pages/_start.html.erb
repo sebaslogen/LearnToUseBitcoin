@@ -53,16 +53,18 @@
             </div>
             <div id="demo-transaction-details">
               <div class="row separated-row">
-                <div class="small-6 columns text-right">
-                  <%= image_tag "BC_accepted_here.png", width: '75%', alt: t(:logo_bitcoin) %>
+                <div class="small-12 columns text-center">
+                  <%= image_tag "BC_accepted_here.png", width: '30%', alt: t(:logo_bitcoin) %>
                 </div>
-                <div class="small-6 columns text-left">
-                  <br><%=t :pay_address%>
+              </div>
+              <div class="row">
+                <div class="small-12 columns">
+                  <%= image_tag "QR-shop.png", width: '50%', alt: t(:shop_qr), class: "has-tooltip", title: t(:shop_qr_tooltip) %>
                 </div>
               </div>
               <div class="row separated-row">
-                <div class="small-12 columns">
-                  <%= image_tag "QR-shop.png", width: '50%', alt: t(:shop_qr), class: "has-tooltip", title: t(:shop_qr_tooltip) %>
+                <div class="small-12 columns text-center">
+                  <br><%=t :pay_address%>
                 </div>
               </div>
               <div class="hide-for-small row separated-row collapse">

@@ -41,7 +41,7 @@ function checkCoinAnimationCancel() {
 function showAnimatedElements() {
   if ( $("#demo-content").hasClass('hidden') ) {
     if ( $('#show-demo').isBottomScrolledIntoView() ) { // Automatically show demo information after a small delay
-      setTimeout(function() {angular.element($('#start')).scope().showDemo();}, 2500);
+      setTimeout(function() {angular.element($('#start')).scope().showDemo();}, 2200);
     }
   } else {
     if ($('#demo-content').hasClass('available')) { // Animation to show full section is finished
