@@ -1,6 +1,7 @@
 @import "foundation";
 
 $strong-blue: #001A83;
+$soft-green:  #CDFFD3;
 
 html, body {
   margin:0;
@@ -61,7 +62,7 @@ button:focus {
   padding-top:   15px;
   margin-top:    10px;
   margin-bottom: 10px;
-  background:    #CDFFD3;
+  background:    $soft-green;
 }
 
 .address-info-block-shop {
@@ -78,8 +79,19 @@ button:focus {
   }
 }
 
+.soft-green {
+  background-color: $soft-green;
+}
+
 .rounded-corners {
   border-radius: 15px;
+}
+
+.shop-price {
+  @extend .soft-green;
+  @extend .rounded-corners;
+  padding-bottom: 18px;
+  font-size:      18px;
 }
 
 .circle-button {

@@ -45,7 +45,6 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       }
       // Analyze errors and assist the user on consecutive errors
       if (( ! $('#demo-input-amount').parsley().isValid()) && ($scope.failures == 2)) {
-        fillDemoInputAmount($scope);
         analytics.track('Failed attempt to submit demo transaction', {
           failed_count: $scope.failures,
           valid_amount: $('#demo-input-amount').parsley().isValid(),
@@ -54,6 +53,7 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
           address_value: $('#demo-pay-to-address-input').val(),
           auto_filled: true
         });
+        fillDemoInputAmount($scope);
         $('#help-demo-modal').foundation('reveal', 'open');
         $("#demo-transaction-form").parsley().validate();
       } else {
