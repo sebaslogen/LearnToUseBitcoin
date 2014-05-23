@@ -11,7 +11,7 @@ html, body {
 
 h1 {
   text-align:center;
-  text-shadow: 2px 2px 0px rgba(255, 255, 255, .8);
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.8);
 }
 
 h3 {
@@ -230,7 +230,7 @@ div.sMyths {
   font-family: proxima-nova-1, proxima-nova-2, 'Helvetica Neue', Arial, sans-serif;
   font-size: 48px;
   font-weight: bold;
-  text-shadow: #58E 1px 1px, #58E 2px 2px, #58E 3px 3px, #58E 4px 4px, #58E 5px 5px, #58E 6px 6px;
+  text-shadow: 1px 1px #58E, 2px 2px #58E, 3px 3px #58E, 4px 4px #58E, 5px 5px #58E, 6px 6px #58E;
   position: relative;
   left: -6px;
   top: -6px;
@@ -245,7 +245,7 @@ div.sMyths {
   font-family: proxima-nova-1, proxima-nova-2, 'Helvetica Neue', Arial, sans-serif;
   font-size: 48px;
   font-weight: bold;
-  text-shadow: #000 1px 1px, #000 2px 2px, #000 3px 3px;
+  text-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000;
   position: relative;
   left: 0px;
   top: 0px;
@@ -260,7 +260,7 @@ div.sMyths {
   font-family: proxima-nova-1, proxima-nova-2, 'Helvetica Neue', Arial, sans-serif;
   font-size: 28px;
   font-weight: bold;
-  text-shadow: -1px 1px 0 #000, #D8A704 -2px 2px, #D8A704 -3px 3px, #D8A704 -4px 4px;
+  text-shadow: -1px 1px #000, -2px 2px #D8A704, -3px 3px #D8A704, -4px 4px #D8A704;
   position: relative;
   left: 5px;
   top: -5px;
@@ -275,7 +275,7 @@ div.sMyths {
   font-family: proxima-nova-1, proxima-nova-2, 'Helvetica Neue', Arial, sans-serif;
   font-size: 28px;
   font-weight: bold;
-  text-shadow: #000 1px 1px, #000 2px 2px, #000 3px 3px;
+  text-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000;
   position: relative;
   left: 0px;
   top: 0px;
@@ -289,7 +289,7 @@ div.sMyths {
   font-family: proxima-nova-1, proxima-nova-2, 'Helvetica Neue', Arial, sans-serif;
   font-size: 32px;
   font-weight: bold;
-  text-shadow: #061019 1px 1px, #061019 2px 2px, #061019 3px 3px, #061019 4px 4px;
+  text-shadow: 1px 1px #061019, 2px 2px #061019, 3px 3px #061019, 4px 4px #061019;
   position: relative;
   left: -6px;
   top: -6px;
@@ -301,7 +301,7 @@ div.sMyths {
 
 .medium-extruded-info-title {
   @extend .extruded-info-title;
-  text-shadow: #061019 1px 1px, #061019 2px 2px;
+  text-shadow: 1px 1px #061019, 2px 2px #061019;
 }
 
 .extruded-demo-title {
@@ -309,7 +309,7 @@ div.sMyths {
   font-family: proxima-nova-1, proxima-nova-2, 'Helvetica Neue', Arial, sans-serif;
   font-size: 60px;
   font-weight: bold;
-  text-shadow: -1px 1px 0 #090A09, #D8A704 -2px 2px, #3FD804 -3px 3px, #D8A704 -4px 4px;
+  text-shadow: -1px 1px #090A09, -2px 2px #D8A704, -3px 3px #3FD804, -4px 4px #D8A704;
   position: relative;
   left: 5px;
   top: -5px;
@@ -373,15 +373,15 @@ div.sMyths {
 }
 
 .lang-typo1 {
-  text-shadow: #58E 1px 1px, #58E 2px 2px, #58E 3px 3px, #58E 4px 4px;
+  text-shadow: 1px 1px #58E, 2px 2px #58E, 3px 3px #58E, 4px 4px #58E;
 }
 
 .lang-typo2 {
-  text-shadow: #FF9393 -1px -1px, #FF9393 -2px -2px, #FF9393 -3px -3px, #FF9393 -4px -4px;
+  text-shadow: -1px -1px #FF9393, -2px -2px #FF9393, -3px -3px #FF9393, -4px -4px #FF9393;
 }
 
 .lang-typo3 {
-  text-shadow: #599940 1px 1px, #599940 2px 2px, #599940 3px 3px, #599940 4px 4px;
+  text-shadow: 1px 1px #599940, 2px 2px #599940, 3px 3px #599940, 4px 4px #599940;
 }
 
 .background-position {

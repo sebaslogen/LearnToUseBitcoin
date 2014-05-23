@@ -16,7 +16,7 @@ These are the rest of the licensed components used, thanks to all the original a
 
 - Key icon - https://www.iconfinder.com/icons/27855/key_password_icon#size=128
 
-- Wallet and shopping bag icons - Creative Commons Attribution-NoDerivs 3.0 Unported License: RocketTheme eCommerce Icon Pack 1 by RocketTheme - http://www.rockettheme.com
+- Wallet, basket and shopping bag icons - Creative Commons Attribution-NoDerivs 3.0 Unported License: RocketTheme eCommerce Icon Pack 1 by RocketTheme - http://www.rockettheme.com
 
 - Desktop icon - PC Unleashed - http://pcunleashed.com/
 
@@ -28,7 +28,7 @@ These are the rest of the licensed components used, thanks to all the original a
 
 - Bitcoin website icon - BlueshiftGfx.com
 
-- Form validation with Parsley - MIT license
+- Form validation with Parsley Guillaume Potier - <guillaume@wisembly.com> - MIT license
 - Parsley languages from: https://github.com/guillaumepotier/Parsley.js/tree/master/src/i18n
 
 - TextEffect-jQuery-plugin for random letters created by Chris Ozols copyright MIT license 2013
