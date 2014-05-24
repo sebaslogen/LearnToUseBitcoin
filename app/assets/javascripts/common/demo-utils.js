@@ -40,6 +40,14 @@ function loadDemoContent() {
 }
 
 function showDemoTransaction() {
+  // Enable a suggestion in "amount input" field
+  $('#demo-input-amount').immybox({
+    choices: [
+      {text: '0.1', value: '0.1'}
+    ],
+    showArrow: false
+  });
+  // Show forms with intro cascade animations
   if ( $("#transference-demo").hasClass('available') &&
        $('#transference-demo').isBottomScrolledIntoView() &&
        ! $("#transference-demo").hasClass('enabled')) { // Only when demo transaction section is displayed
@@ -113,12 +121,10 @@ function startDemoFieldsGlowing() { // Change glow if enabled and call itself in
 function fillDemoInputAmount(scope) {
   $('#demo-input-amount').val('0.1');
   if (typeof scope === 'undefined') {
-    console.log('without scope');
     $('#demo-input-amount').scope().$apply(function() { // Update AngularJS model
       $('#demo-input-amount').scope().input_amount = $('#demo-input-amount').val();
     });
   } else { // Calling from AngularJS scope
-    console.log('WITH scope');
     scope.input_amount = $('#demo-input-amount').val();
   }
 }

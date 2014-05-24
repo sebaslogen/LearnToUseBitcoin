@@ -34,3 +34,5 @@ These are the rest of the licensed components used, thanks to all the original a
 - TextEffect-jQuery-plugin for random letters created by Chris Ozols copyright MIT license 2013
 
 - LetterFX used for wave on letters is created by TuxSudo - https://github.com/TuxSudo/letterfx
+
+- Immybox used for form input field suggestions and it is released under the MIT License - https://github.com/immense/immybox

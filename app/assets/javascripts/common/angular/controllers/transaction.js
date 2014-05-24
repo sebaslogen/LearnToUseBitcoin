@@ -127,4 +127,29 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       $('#demo-input-amount').css("box-shadow", "0px 0px 0px #FFF");
     }
   }
+  
+  $scope.doneEditing = function() {
+    console.log('focus lost');
+    console.log('scope val:'+$scope.input_amount);
+    console.log('real val:'+$('#demo-input-amount').val());
+    var original_value = $scope.input_amount;
+    var value = $('#demo-input-amount').val();
+    $scope.input_amount = value;
+    $("#demo-transaction-form").parsley().validate();
+    $scope.disableAmountGlowing();
+    // Fix for immybox plugin overwritting manual input
+    if (original_value == value) {
+      setTimeout(function() {
+        if ($('#demo-input-amount').val() != '0.1') {
+          $scope.input_amount = value;
+          $('#demo-input-amount').val(value);
+        }
+      }, 100);
+    } else { // Lost focus and it will re-validate because immybox plugin edits after this function
+      setTimeout(function() {
+        $("#demo-transaction-form").parsley().validate();
+        $scope.disableAmountGlowing();
+      }, 100);
+    }
+  }
 }]);

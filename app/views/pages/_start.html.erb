@@ -124,7 +124,7 @@
                 </div>
                 <div class="small-5 medium-2 columns" id="amount">
                   <input type="text" class="highlighted-box text-center animated-one-sec" ng-click="disableAmountGlowing()" ng-model="input_amount" 
-                         data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
+                         ng-blur="doneEditing()" data-parsley-type="number" data-parsley-trigger="change" id="demo-input-amount" required
                          data-parsley-min="0.1" data-parsley-min-message="<%=t :demo_input_amount_fail_help_html%>" 
                          data-parsley-max="0.1" data-parsley-max-message="<%=t :demo_input_amount_fail_help_html%>" placeholder="eg 0.1" />
                 </div>
