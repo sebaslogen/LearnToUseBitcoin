@@ -16,7 +16,7 @@ es:
   what_tip2: 5 céntimos de dólar para enviar 10,000 USD a cualquier parte del mundo
   discover: Descubrir Bitcoin
   counting_stars: Contando las estrellas en el universo...
-  bitcoin_easy: Bitcoin tan fácil como
+  bitcoin_easy: Bitcoin es tan fácil como
   sending_receiving_html: 'Enviar y recibir bitcoins es tan simple como enviar un <strong>correo electrónico</strong>, lo primero que necesitamos es una <strong>dirección</strong>'
   bitcoin_address_html: 'Una <strong>dirección de Bitcoin</strong> es el lugar donde se guardan los bitcoins<br> Como en una <strong>caja fuerte</strong> transparente, las monedas sólo pueden ser movidas por el <strong>dueño</strong>, aunque todo el mundo puede ver lo que hay'
   inside: dentro
@@ -30,19 +30,19 @@ es:
   private_key_image: Imagen de la llave privada
   wallet_image: Imagen de la cartera
   bitcoin_wallet: cartera Bitcoin
-  bitcoin_wallet_html: 'Una <strong>cartera de Bitcoin</strong> es una aplicación informática que te permite administrar múltiples direcciones de Bitcoin y sus llaves privadas'
+  bitcoin_wallet_html: 'Una <strong>cartera Bitcoin</strong> es una aplicación informática que te permite administrar múltiples direcciones de Bitcoin y sus llaves privadas'
   bitcoin_wallet_2_html: 'Te facilita el <strong>envío y recepción de bitcoins</strong> o la creación de nuevas direcciones de Bitcoin de una manera muy sencilla'
-  wallet_types_html: 'Hay tres tipos de <strong>aplicaciones de cartera de Bitcoin</strong>'
+  wallet_types_html: 'Hay tres tipos de <strong>aplicaciones de cartera Bitcoin</strong>'
   phone_image: Imagen de un teléfono móvil
   mobile_app: Aplicación para teléfono móvil
-  mobile_wallet_html: 'Estas carteras son cómodas para el uso cotidiano fuera de casa<br>Un par de buenas carteras de Bitcoin para teléfonos Android'
+  mobile_wallet_html: 'Estas carteras son cómodas para el uso cotidiano fuera de casa<br>Un par de buenas carteras Bitcoin para teléfonos Android'
   and: 'y'
   pc_image: Imagen de un ordenador
   desktop_app: Aplicación de ordenador
-  desktop_wallet_html: 'Estas carteras normalmente ofrecen más seguridad y funcionalidades<br>Un par de buenas carteras de Bitcoin'
+  desktop_wallet_html: 'Estas carteras normalmente ofrecen más seguridad y funcionalidades<br>Un par de buenas carteras Bitcoin'
   browser_image: Imagen de un navegador web
   browser_app: Cartera on-line
-  browser_wallet_html: 'Estas carteras combinan facilidad de uso con variedad de funcionalidades<br>Un par de buenas carteras de Bitcoin donde <strong>tú eres el único administrador</strong> de los bitcoins'
+  browser_wallet_html: 'Estas carteras combinan facilidad de uso con variedad de funcionalidades<br>Un par de buenas carteras Bitcoin donde <strong>tú eres el único administrador</strong> de los bitcoins'
   browser_wallet_2: Otra cartera on-line donde es una compañía la que administra y protege tus bitcoins por ti
   fill_wallet_html: 'Ahora necesitas llenar tu cartera con algunos bitcoins<br>Puedes conseguir tus primeros bitcoins totalmente gratis más abajo (sin compromisos ni registros) pero primero practiquemos con una pequeña'
   demo: demostración
@@ -65,7 +65,7 @@ es:
   copy: Copiar
   logo_bitcoin: Logo de Bitcoin aceptado aquí
   copy_tooltip: copiar la dirección de pago a tu cartera Bitcoin de ejemplo
-  imagine_wallet_html: 'Esta sección es similar a una aplicación de <strong>cartera de Bitcoin</strong> que puedes usar para administrar tus bitcoins'
+  imagine_wallet_html: 'Esta sección es similar a una aplicación de <strong>cartera Bitcoin</strong> que puedes usar para administrar tus bitcoins'
   imagine_wallet_instructions_html: 'Para practicar, <strong>rellena</strong> el formulario y pulsa <strong>Enviar</strong>'
   demo_wallet_legend: tu cartera Bitcoin de ejemplo
   in: en
@@ -111,8 +111,8 @@ es:
   apologies: Lo siento, esta parte de la web todavía no está terminada
   come_back: Regresa en otro momento y deberías poder obtener algunos bitcoins gratis
   meanwhile: Mientras tanto, se recomienda crear fácilmente
-  first_wallet: tu primera cartera de Bitcoin on-line
-  or_install: o instalar una de las aplicaciones de cartera de Bitcoin para ordenador
+  first_wallet: tu primera cartera Bitcoin on-line
+  or_install: o instalar una de las aplicaciones de cartera Bitcoin para ordenador
   suggested_above: sugeridas anteriormente
   and_get_bitcoins: y también puedes comprar bitcoins en uno de estos servicios
   use: ¿Qué puedo hacer con Bitcoin?
@@ -127,7 +127,7 @@ es:
   food_link: http://www.takeaway.com
   sending_money: El envío internacional de dinero y los giros bancarios se convierten en transacciones muy económicas (céntimos) y rápidas (minutos)
   person_to_person: entre particulares
-  sending_money_tooltip: Sólo necesitas tener una cartera de Bitcoin para enviar y recibir bitcoins, eso es todo
+  sending_money_tooltip: Sólo necesitas tener una cartera Bitcoin para enviar y recibir bitcoins, eso es todo
   sending_money_2: usando Bitcoin
   donating_to: Las donaciones a
   non_profit: organizaciones sin ánimo de lucro
@@ -159,7 +159,7 @@ es:
     pero si revelas tu identidad a la persona o compañía que recibe los bitcoins, entonces es posible enlazar tu identidad con tu transacción
     y como todas las transacciones están enlazadas y son almacenadas públicamente en el Blockchain, es parcialmente posible seguir las transacciones anteriores que se hayan hecho con la misma
   bitcoin_address: dirección de Bitcoin
-  myths_4_tooltip: La aplicación de cartera de Bitcoin permite fácilmente crear y administrar nuevas direcciones de Bitcoin
+  myths_4_tooltip: La aplicación de cartera Bitcoin permite fácilmente crear y administrar nuevas direcciones de Bitcoin
   myths_5: Si los Bitcoins son digitales entonces puedo copiarlos como la música digital
   myths_6_html: |
     El número de bitcoins es limitado.<br>
