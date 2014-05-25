@@ -124,7 +124,7 @@ function showAnimatedSectionElements() {
 function fadeInInfoSection(section, previous_section) {
   if ($(section).hasClass('hidden') &&
       $(previous_section).hasClass('available') &&
-      $(previous_section).isBottomScrolledIntoView() ) {
+      $(previous_section).isBottomWithMarginScrolledIntoView() ) {
     $(section).removeClass('hidden');
     $(section).fadeIn("slow", function() {
       $(section).addClass('available');

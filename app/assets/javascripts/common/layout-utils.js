@@ -67,7 +67,8 @@ function getScrolledItems(elem) {
   var docViewBottom = docViewTop + $(window).height();
   var elemTop = $(elem).offset().top;
   var elemBottom = elemTop + $(elem).height();
-  return [docViewTop, docViewBottom, elemTop, elemBottom];
+  var elemBottomWithMargin = elemBottom + parseInt( $(elem).css('margin-top') ) + parseInt( $(elem).css('margin-bottom') );
+  return [docViewTop, docViewBottom, elemTop, elemBottom, elemBottomWithMargin];
 }
 
 $.fn.isBottomScrolledIntoView = function() {
@@ -76,6 +77,15 @@ $.fn.isBottomScrolledIntoView = function() {
   var docViewBottom = items[1];
   var elemTop = items[2];
   var elemBottom = items[3];
+  return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
+}
+
+$.fn.isBottomWithMarginScrolledIntoView = function() {
+  var items = getScrolledItems(this);
+  var docViewTop = items[0];
+  var docViewBottom = items[1];
+  var elemTop = items[2];
+  var elemBottom = items[4];
   return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
 }
   
