@@ -134,7 +134,8 @@ function scrollFading() {
     $('#coin-canvas').css('opacity', 0);
   } else {
     $('#welcome-content').removeClass('hidden');
-    $('#welcome-content').css('opacity', percentage);
+    $('#welcome-content').css('opacity', percentage); // Hide title gradually
+    $('#welcome-content').css('margin-top', (scrolled/(-15))+'px'); // Small parallax on title
     $('#coin-canvas').css('opacity', percentage);
     $('#welcome-content').find('div#scroll-message').css('opacity', percentage - (scrolled / sizeWelcome));
     if (getWindowsSize() == "large") {
@@ -156,6 +157,7 @@ function scrollFading() {
   var sizeWelcomeAndWhat = parseInt($('#welcome').css('height')) + (parseInt($('#what').css('height')) / 2);
   var footsteps_opacity = ((scrolled*scrolled/1500) / sizeWelcomeAndWhat);
   $('#footsteps-image').css('opacity', footsteps_opacity / 2);
+
   
   checkCoinAnimationCancel();
   showDemoTransaction();
