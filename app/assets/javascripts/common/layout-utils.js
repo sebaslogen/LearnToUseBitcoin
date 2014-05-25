@@ -115,7 +115,7 @@ var scrollFadingChecker = null;
 
 function scrollFading() {
   if (scrollFadingBlocked) { // Prevent too many updates
-    if (scrollFadingChecker != null) {
+    if (scrollFadingChecker !== null) {
       clearTimeout(scrollFadingChecker);
       scrollFadingChecker = null;
     }
@@ -156,8 +156,10 @@ function scrollFading() {
   // Increase footsteps opacity
   var sizeWelcomeAndWhat = parseInt($('#welcome').css('height')) + (parseInt($('#what').css('height')) / 2);
   var footsteps_opacity = ((scrolled*scrolled/1500) / sizeWelcomeAndWhat);
-  $('#footsteps-image').css('opacity', footsteps_opacity / 2);
-
+  if ((footsteps_opacity > 0.1) && (footsteps_opacity < 2.6)) {
+    $('#footsteps-image').css('opacity', footsteps_opacity / 2);
+    $('#footsteps-image').css('margin-top', (scrolled*0.13)+'px'); // Small parallax on title
+  }
   
   checkCoinAnimationCancel();
   showDemoTransaction();
@@ -187,19 +189,19 @@ function updateSizes() {
     $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
     $('#footsteps-image').width(parseInt(ratio * 174));
     $('#footsteps-image').height(parseInt(ratio * 444));
-    $('#footsteps-image').css('top','-' + ($('#youtube-video').height() / 2) + 'px');
+    $('#footsteps-image').css('top','-' + $('#youtube-video').height() + 'px');
     // Adjust div height according to window width using contents size
     $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 170);
     // Change vertical separation line to horizontal 
     // in demo transaction with smaller(medium) size window
     if (getWindowsSize() != "large") {
-      var element = $('div.right-border')
+      var element = $('div.right-border');
       element.removeClass('right-border');
       element.addClass('bottom-border');
     } else if (getWindowsSize() == "large") {
-      var element = $('div.bottom-border')
-      element.removeClass('bottom-border');
-      element.addClass('right-border');
+      var el = $('div.bottom-border');
+      el.removeClass('bottom-border');
+      el.addClass('right-border');
     }
     if (typeof coinAnimationStarted !== 'undefined') {
       if (getWindowsSize() == "small") {
