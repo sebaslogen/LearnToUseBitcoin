@@ -40,35 +40,37 @@ function loadDemoContent() {
 }
 
 function showDemoTransaction() {
-  // Enable a suggestion in "amount input" field
-  $('#demo-input-amount').immybox({
-    choices: [
-      {text: '0.1', value: '0.1'}
-    ],
-    showArrow: false
-  });
-  // Show forms with intro cascade animations
-  if ( $("#transference-demo").hasClass('available') &&
-       $('#transference-demo').isBottomScrolledIntoView() &&
-       ! $("#transference-demo").hasClass('enabled')) { // Only when demo transaction section is displayed
-    $("#transference-demo").addClass('enabled');
-    setTimeout(function() { // Show with a little delay
-      $('#demo-shopping-cart-info').fadeIn(2000, function() {
-        setTimeout(function() { // Show with a little delay
-          $('#demo-shopping-cart-content').fadeIn('slow', function() {
-            $('#demo-wallet-send-info').fadeIn(2000, function() {
-              setTimeout(function() { // Show with a little delay
-                $('#demo-wallet-send-content').fadeIn('slow');
-                demo_input_amount_glowing = true;
-                demo_input_address_glowing = true;
-                demo_copy_address_button_glowing = true;
-                startDemoFieldsGlowing();
-              }, 1500);
+  if ( ! $("#transference-demo").hasClass('enabled')) {
+    // Enable a suggestion in "amount input" field
+    $('#demo-input-amount').immybox({
+      choices: [
+        {text: '0.1', value: '0.1'}
+      ],
+      showArrow: false
+    });
+    // Show forms with intro cascade animations
+    if ( $("#transference-demo").hasClass('available') &&
+        $('#demo-section-3').hasClass('available') &&
+        $('#transference-demo').isBottomScrolledIntoView()) { // Only when demo transaction section is displayed
+      $("#transference-demo").addClass('enabled');
+      setTimeout(function() { // Show with a little delay
+        $('#demo-shopping-cart-info').fadeIn(2000, function() {
+          setTimeout(function() { // Show with a little delay
+            $('#demo-shopping-cart-content').fadeIn('slow', function() {
+              $('#demo-wallet-send-info').fadeIn(2000, function() {
+                setTimeout(function() { // Show with a little delay
+                  $('#demo-wallet-send-content').fadeIn('slow');
+                  demo_input_amount_glowing = true;
+                  demo_input_address_glowing = true;
+                  demo_copy_address_button_glowing = true;
+                  startDemoFieldsGlowing();
+                }, 1500);
+              });
             });
-          });
-        }, 1500);
-      });
-    }, 500);
+          }, 1500);
+        });
+      }, 500);
+    }
   }
 }
 

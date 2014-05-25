@@ -94,6 +94,34 @@ $right_fade_size: 300px;
     animation-name: flipInY; 
 }
 
+// Rotate in X
+@-webkit-keyframes flipInX { 
+    0% { 
+        -webkit-transform: perspective(400px) rotateX(-90deg); 
+        opacity: 0; 
+    }
+    100% { 
+        -webkit-transform: perspective(400px) rotateX(0deg); 
+        opacity: 1; 
+    } 
+} 
+@keyframes flipInX {
+    0% { 
+        transform: perspective(400px) rotateX(-90deg);
+        opacity: 0; 
+    }
+    100% { 
+        transform: perspective(340px) rotateX(0deg);
+        opacity: 1; 
+    } 
+} 
+.flipInX {
+    -webkit-backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    backface-visibility: visible !important;
+    animation-name: flipInX;
+}
+
 // Shake box
 @-webkit-keyframes shake { 
     0%, 100% {-webkit-transform: translateX(0);} 

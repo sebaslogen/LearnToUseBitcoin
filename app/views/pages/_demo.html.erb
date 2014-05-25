@@ -66,9 +66,9 @@
   </div>
 </div>
 
-<div id="demo-section-2" class="rounded-border info-block">
+<div id="demo-section-2" class="rounded-border info-block hidden">
   <div class="row">
-    <h5><strong class="extruded-info-title bitcoin-wallet-title"><%=single_capitalize(t(:bitcoin_wallet))%></strong></h5><br class="show-for-small-only">
+    <h5 id='bitcoin-wallet-info-title' class='will-animate'><strong class="extruded-info-title bitcoin-wallet-title"><%=single_capitalize(t(:bitcoin_wallet))%></strong></h5><br class="show-for-small-only">
   </div>
   <div class="row show-for-small-only">
     <%= image_tag "wallet.png", alt: t(:wallet_image) %>
@@ -132,7 +132,7 @@
   </div>
 </div>
 
-<div id="demo-section-3" class="rounded-border info-block">
+<div id="demo-section-3" class="rounded-border info-block hidden">
   <div class="row">
     <h5><strong class="extruded-info-title some-bitcoins-title"><%=t(:some_bitcoins).capitalize%></strong></h5><br class="show-for-small-only">
   </div>

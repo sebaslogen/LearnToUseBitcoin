@@ -41,10 +41,14 @@ function checkCoinAnimationCancel() {
 function showAnimatedElements() {
   if ( $("#demo-content").hasClass('hidden') ) {
     if ( $('#show-demo').isBottomScrolledIntoView() ) { // Automatically show demo information after a small delay
-      setTimeout(function() {angular.element($('#start')).scope().showDemo();}, 2200);
+      setTimeout(function() {angular.element($('#start')).scope().showDemo();}, 2000);
     }
   } else {
     if ($('#demo-content').hasClass('available')) { // Animation to show full section is finished
+      showAnimatedSectionElements();
+      showAnimatedTitleElements();
+      
+      // Show sample bitcoin address with jumble text effect
       if ( $('#sample-bitcoin-address').isScrolledIntoView() && // Visible
           $('#sample-bitcoin-address').hasClass('not-animated-yet') ) { // Still has to be animated
         $('#sample-bitcoin-address').removeClass('not-animated-yet');
@@ -63,20 +67,22 @@ function showAnimatedElements() {
         setTimeout(showAnimatedElements, 2000); // Trigger animations that were pending on this one
       }
       
-      // Show wallet image with rotation
-      if ( $('#wallet-image').isScrolledIntoView() && // Visible
-          $('#wallet-image').hasClass('will-animate') && // Still has to be animated
-          ($('#key-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
-        introSequenceCircle('#wallet-image', 'flipInY');
-      }
-      
-      // Show different wallet type images
-      if ( $('#phone-image').isBottomScrolledIntoView() &&
-          $('#phone-image').hasClass('will-animate') ) {
-        introSequenceCircle('#phone-image', 'fadeInRightBig');
-        setTimeout(function() {introSequenceCircle('#pc-image', 'fadeInRightBig');}, 500);
-        setTimeout(function() {introSequenceCircle('#browser-image', 'fadeInRightBig');}, 1000);
-        setTimeout(showAnimatedElements, 3000); // Trigger animations that were pending on this one
+      if ($("#demo-section-2").hasClass('available')) {
+        // Show wallet image with rotation
+        if ( $('#wallet-image').isScrolledIntoView() && // Visible
+            $('#wallet-image').hasClass('will-animate') && // Still has to be animated
+            ($('#key-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
+          introSequenceCircle('#wallet-image', 'flipInY');
+        }
+
+        // Show different wallet type images
+        if ( $('#phone-image').isBottomScrolledIntoView() &&
+            $('#phone-image').hasClass('will-animate') ) {
+          introSequenceCircle('#phone-image', 'fadeInRightBig');
+          setTimeout(function() {introSequenceCircle('#pc-image', 'fadeInRightBig');}, 500);
+          setTimeout(function() {introSequenceCircle('#browser-image', 'fadeInRightBig');}, 1000);
+          setTimeout(showAnimatedElements, 3000); // Trigger animations that were pending on this one
+        }
       }
       
       // Show coin image with rotation
@@ -108,6 +114,32 @@ function showAnimatedElements() {
     }
 
   }
+}
+
+function showAnimatedSectionElements() {
+  fadeInInfoSection('#demo-section-2', '#demo-section-1');
+  fadeInInfoSection('#demo-section-3', '#demo-section-2');
+}
+
+function fadeInInfoSection(section, previous_section) {
+  if ($(section).hasClass('hidden') &&
+      $(previous_section).hasClass('available') &&
+      $(previous_section).isBottomScrolledIntoView() ) {
+    $(section).removeClass('hidden');
+    $(section).fadeIn("slow", function() {
+      $(section).addClass('available');
+      showAnimatedElements();
+    });
+  }
+}
+
+function showAnimatedTitleElements() {
+  if ( $("#bitcoin-wallet-info-title").isScrolledIntoView() &&
+      $("#demo-section-2").hasClass('available') &&
+      $('#bitcoin-wallet-info-title').hasClass('will-animate') ) {
+    introSequenceCircle('#bitcoin-wallet-info-title', 'flipInX');
+  }
+  
   if ($("#demo-form-title").isScrolledIntoView()) { // When demo form is visible make a wave on the text
     $("#demo-form-title").letterfx({"fx":"wave","letter_end":"rewind","fx_duration":"300ms"});
   }
@@ -120,6 +152,11 @@ function introSequenceCircle(id, fading_effect) {
 
 function hideAnimatedElements() {
   $('.will-animate').css('opacity', 0);
+}
+
+function hideDemoContentElements() {
+  $('#demo-section-2').hide();
+  $('#demo-section-3').hide();
 }
 
 /* Youtube video control functions */
