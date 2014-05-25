@@ -134,14 +134,19 @@ function fadeInInfoSection(section, previous_section) {
 }
 
 function showAnimatedTitleElements() {
-  if ( $("#bitcoin-wallet-info-title").isScrolledIntoView() &&
-      $("#demo-section-2").hasClass('available') &&
-      $('#bitcoin-wallet-info-title').hasClass('will-animate') ) {
-    introSequenceCircle('#bitcoin-wallet-info-title', 'flipInX');
-  }
+  fadeInFlipTitle('#bitcoin-wallet-info-title', '#demo-section-2');
+  fadeInFlipTitle('#some-bitcoins-info-title', '#demo-section-3');
   
   if ($("#demo-form-title").isScrolledIntoView()) { // When demo form is visible make a wave on the text
     $("#demo-form-title").letterfx({"fx":"wave","letter_end":"rewind","fx_duration":"300ms"});
+  }
+}
+
+function fadeInFlipTitle(title, section) {
+  if ( $(title).isScrolledIntoView() &&
+      $(section).hasClass('available') &&
+      $(title).hasClass('will-animate') ) {
+    introSequenceCircle(title, 'flipInX');
   }
 }
 
