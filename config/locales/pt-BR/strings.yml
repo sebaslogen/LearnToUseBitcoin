@@ -4,7 +4,7 @@ pt:
   by: pelo
   welcome: Bem-vindo
   welcome2: à espetacular revolução do dinheiro
-  scroll: SCROLL
+  scroll: ROLAGEM
   what: O que é Bitcoin?
   what_1: Bitcoin é o
   digital_money: dinheiro para a internet
@@ -52,16 +52,16 @@ pt:
   extra: extra
   demo1: Demonstração de transação de Bitcoin
   imagine_shop_html: 'Imagine que esta seção abaixo é o site de uma <strong>loja on-line</strong> onde você está prestes a pagar por sua compra'
-  shop_legend: Shopping cart in your favorite web shop
+  shop_legend: Carrinho de compras da sua loja favorita na web
   item: Item
-  units: Units
-  price: Price
-  bear_description: Soft and warm teddy bear
-  or: or
-  item_image: Teddy bear image
-  pay_address: Pay to this address
+  units: Unidades
+  price: Preço
+  bear_description: Urso de pelúcia fofinho e quentinho
+  or: ou
+  item_image: Imagem de ursinho de pelúcia
+  pay_address: Pagar neste endereço
   shop_qr: Shop QR of address
-  shop_qr_tooltip: This QR code is easily read with a Bitcoin wallet app on a mobile phone
+  shop_qr_tooltip: Este código QR é facilmente lido com uma app de carteira Bitcoin de um telefone celular
   copy: Copy
   logo_bitcoin: Bitcoin accepted here logo
   copy_tooltip: copy the shop payment address to your demo Bitcoin wallet

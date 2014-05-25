@@ -281,10 +281,7 @@
 
       ImmyBox.prototype.display = function() {
         if (this.selectedChoice != null) {
-          this.selectedChoice.text;
           this.element.val(this.selectedChoice.text);
-        } else {
-          this.element.val('');
         }
         this._val = this.element.val();
       };
