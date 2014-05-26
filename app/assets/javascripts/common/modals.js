@@ -17,6 +17,14 @@ $(document).on('opened', '#mining-POW-modal', function () {
   analytics.track('Click Mining POW');
 });
 
+$(document).on('opened', '#help-demo-modal', function () {
+  fixModalPosition(this);
+});
+
+$(document).on('opened', '#congratulations-demo-modal', function () {
+  fixModalPosition(this);
+});
+
 function fixModalPosition(element) {
   $(element).css({
     top: '50px',
