@@ -198,11 +198,20 @@ function updateSizes() {
     var youtube_aspect_ratio = 360 / 640;
     $('#youtube-video').width(parseInt(video_width)).height(parseInt(youtube_aspect_ratio * video_width));
     $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
-    $('#footsteps-image').width(parseInt(ratio * 174));
-    $('#footsteps-image').height(parseInt(ratio * 444));
-    $('#footsteps-image').css('top','-' + $('#youtube-video').height() + 'px');
+    if (getWindowsSize() != "small") {
+      $('#footsteps-image').width(parseInt(ratio * 174));
+      $('#footsteps-image').height(parseInt(ratio * 444));
+      var increase = 600;
+      if (getWindowsSize() == "medium") {
+        increase = 500; // Make sure image doesn't cover text
+      }
+      $('#footsteps-image').css('top','-' + (increase+(10000/$('#youtube-video').width())) + 'px');
+    }
     // Adjust div height according to window width using contents size
-    $('div#what').height(parseInt($('.video-container').find('iframe').height() + $('div#what').find('h1').height() + $('div#what').find('h3').height()) + 170);
+    $('div#what').height(
+      parseInt($('.video-container').find('iframe').height() + 
+               $('div#what').find('h1').height() + 
+               $('div#what').find('h3').height()) + 170);
     // Change vertical separation line to horizontal 
     // in demo transaction with smaller(medium) size window
     if (getWindowsSize() != "large") {
