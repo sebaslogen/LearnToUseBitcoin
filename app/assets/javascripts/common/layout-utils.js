@@ -177,6 +177,17 @@ function setupScrollFadingAndResize() {
   });
 }
 
+function showBottomElements() {
+  if ( show_bottom_elements && $("#transference-demo").isBottomScrolledIntoView() ) { // Only when section end is visible
+    setTimeout(function() { // Show with a little delay
+      $('#get-bitcoins-section').fadeIn('slow');
+      $('#use').fadeIn('slow');
+      $('#myths').fadeIn('slow');
+      $('#continue-learning').fadeIn('slow');
+    }, 500);
+  }
+}
+
 function updateSizes() {
   $(document).ready(function() {
     /* Adapt footsteps position and size */

@@ -63,7 +63,7 @@ function showAnimatedElements() {
       if ( $('#key-image').isScrolledIntoView() && // Visible
           $('#key-image').hasClass('will-animate') && // Still has to be animated
           ($('#circle-button-3').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
-        introSequenceCircle('#key-image', 'flipInY');
+        introSequenceAnimation('#key-image', 'flipInY');
         setTimeout(showAnimatedElements, 2000); // Trigger animations that were pending on this one
       }
       
@@ -72,15 +72,15 @@ function showAnimatedElements() {
         if ( $('#wallet-image').isScrolledIntoView() && // Visible
             $('#wallet-image').hasClass('will-animate') && // Still has to be animated
             ($('#key-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
-          introSequenceCircle('#wallet-image', 'flipInY');
+          introSequenceAnimation('#wallet-image', 'flipInY');
         }
 
         // Show different wallet type images
         if ( $('#phone-image').isBottomScrolledIntoView() &&
             $('#phone-image').hasClass('will-animate') ) {
-          introSequenceCircle('#phone-image', 'fadeInRightBig');
-          setTimeout(function() {introSequenceCircle('#pc-image', 'fadeInRightBig');}, 500);
-          setTimeout(function() {introSequenceCircle('#browser-image', 'fadeInRightBig');}, 1000);
+          introSequenceAnimation('#phone-image', 'fadeInRightBig');
+          setTimeout(function() {introSequenceAnimation('#pc-image', 'fadeInRightBig');}, 500);
+          setTimeout(function() {introSequenceAnimation('#browser-image', 'fadeInRightBig');}, 1000);
           setTimeout(showAnimatedElements, 3000); // Trigger animations that were pending on this one
         }
       }
@@ -89,27 +89,27 @@ function showAnimatedElements() {
       if ( $('#coin-image').isBottomScrolledIntoView() && // Visible
           $('#coin-image').hasClass('will-animate') && // Still has to be animated
           ($('#browser-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
-        introSequenceCircle('#coin-image', 'flipInY');
+        introSequenceAnimation('#coin-image', 'flipInY');
       }
       
       // Show demo transaction basket
       if ( $('#minibasket-image').isBottomScrolledIntoView() &&
           $('#minibasket-image').hasClass('will-animate') ) {
-        introSequenceCircle('#minibasket-image', 'fadeInLeftBig');
+        introSequenceAnimation('#minibasket-image', 'fadeInLeftBig');
       }
       // Show demo transaction wallet
       if ( $('#miniwallet-image').isBottomScrolledIntoView() &&
           $('#miniwallet-image').hasClass('will-animate') ) {
-        introSequenceCircle('#miniwallet-image', 'fadeInRightBig');
+        introSequenceAnimation('#miniwallet-image', 'fadeInRightBig');
       }
     }
     
     // Show circle links to information sections in demo
     if ( $('#circle-button-1').isScrolledIntoView() &&
         $('#circle-button-1').hasClass('will-animate') ) {
-      introSequenceCircle('#circle-button-1', 'fadeInRightBig');
-      setTimeout(function() {introSequenceCircle('#circle-button-2', 'fadeInRightBig');}, 300);
-      setTimeout(function() {introSequenceCircle('#circle-button-3', 'fadeInRightBig');}, 600);
+      introSequenceAnimation('#circle-button-1', 'fadeInRightBig');
+      setTimeout(function() {introSequenceAnimation('#circle-button-2', 'fadeInRightBig');}, 300);
+      setTimeout(function() {introSequenceAnimation('#circle-button-3', 'fadeInRightBig');}, 600);
       setTimeout(showAnimatedElements, 2000); // Trigger animations that were pending on this one
     }
 
@@ -146,13 +146,21 @@ function fadeInFlipTitle(title, section) {
   if ( $(title).isScrolledIntoView() &&
       $(section).hasClass('available') &&
       $(title).hasClass('will-animate') ) {
-    introSequenceCircle(title, 'flipInX');
+    introSequenceAnimation(title, 'flipInX');
   }
 }
 
-function introSequenceCircle(id, fading_effect) {
+function introSequenceAnimation(id, fading_effect) {
   $(id).show();
   $(id).removeClass('will-animate').addClass('animated-two-sec').addClass(fading_effect);
+}
+
+function showAnimatedContinueLearningElements() {
+  introSequenceAnimation('#news-image', 'flipInX');
+  setTimeout( function() { introSequenceAnimation('#community-image', 'flipInX');} , 200);
+  setTimeout( function() { introSequenceAnimation('#development-image', 'flipInX');} , 400);
+  setTimeout( function() { introSequenceAnimation('#wiki-image', 'flipInX');} , 600);
+  setTimeout( function() { introSequenceAnimation('#minning-image', 'flipInX');} , 800);
 }
 
 function hideAnimatedElements() {

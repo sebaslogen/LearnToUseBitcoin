@@ -1,0 +1,39 @@
+<div class="sContinue hidden" id="continue-learning" ng-controller="LearningCtrl">
+  <button class="radius round large" id="show-continue-learning" ng-click="showContinueLearning()"><%=t :continue_learning%> <i class="fi-info bitcoin-button"></i></button>
+</div>
+
+<div class="hidden" id="continue-learning-content">
+  <h1><%=t :explore%></h1>
+  <div class="rounded-border info-block row">
+    <div class="medium-3 columns text-center">
+      <a href='http://www.coindesk.com' target="_blank" class='fix-link-background'>
+        <%= image_tag "coindesk-logo.png", alt: 'CoinDesk logo', id: 'news-image', class: 'will-animate', width: 100 %>
+        <p><br><strong class="title"><%=single_capitalize(t(:news))%><br>CoinDesk</strong></p>
+      </a>
+    </div>
+    <div class="medium-2 columns text-center">
+      <a href='http://www.reddit.com/r/bitcoin' target="_blank" class='fix-link-background'>
+        <%= image_tag "reddit-logo.png", alt: 'Reddit logo', id: 'community-image', class: 'will-animate', width: 100 %>
+        <p><br><strong class="title"><%=single_capitalize(t(:community))%></strong></p>
+      </a>
+    </div>
+    <div class="medium-2 columns text-center">
+      <a href='https://bitcoin.org/en/developer-guide' target="_blank" class='fix-link-background'>
+        <%= image_tag "BC_Logo.png", alt: 'Development logo', id: 'development-image', class: 'will-animate', width: 100 %>
+        <p><br><strong class="title"><%=single_capitalize(t(:development))%></strong></p>
+      </a>
+    </div>
+    <div class="medium-2 columns text-center">
+      <a href='https://en.bitcoin.it/wiki/Main_Page' target="_blank" class='fix-link-background'>
+        <%= image_tag "wiki-logo.png", alt: 'Wiki logo', id: 'wiki-image', class: 'will-animate', width: 100 %>
+        <p><br><strong class="title"><%=single_capitalize(t(:wiki_pages))%></strong></p>
+      </a>
+    </div>
+    <div class="medium-3 columns text-center">
+      <a href='http://www.bitcoinmining.com/' target="_blank" class='fix-link-background'>
+        <%= image_tag "mining.png", alt: 'Minning logo', id: 'minning-image', class: 'will-animate', width: 100 %>
+        <p><br><strong class="title"><%=single_capitalize(t(:minning_information))%></strong></p>
+      </a>
+    </div>
+  </div>
+</div>

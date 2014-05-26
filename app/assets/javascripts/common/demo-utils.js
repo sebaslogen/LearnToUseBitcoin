@@ -74,16 +74,6 @@ function showDemoTransaction() {
   }
 }
 
-function showBottomElements() {
-  if ( show_bottom_elements && $("#transference-demo").isBottomScrolledIntoView() ) { // Only when section end is visible
-    setTimeout(function() { // Show with a little delay
-      $('#get-bitcoins-section').fadeIn('slow');
-      $('#use').fadeIn('slow');
-      $('#myths').fadeIn('slow');
-    }, 500);
-  }
-}
-
 function startDemoFieldsGlowing() { // Change glow if enabled and call itself in loop
   if (demo_input_amount_glowing || demo_input_address_glowing || demo_copy_address_button_glowing) {
     if (demo_input_amount_glowing) {

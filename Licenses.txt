@@ -36,3 +36,9 @@ These are the rest of the licensed components used, thanks to all the original a
 - LetterFX used for wave on letters is created by TuxSudo - https://github.com/TuxSudo/letterfx
 
 - Immybox used for form input field suggestions and it is released under the MIT License - https://github.com/immense/immybox
+
+- CoinDesk logo is copyright of www.coindesk.com
+
+- Reddit logo is copyright of www.reddit.com
+
+- Wikipedia logo is copyright of www.wikimedia.com
