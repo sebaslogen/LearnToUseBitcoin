@@ -698,6 +698,21 @@ fieldset {
   background: #FFF;
 }
 
+// Change transparency of placeholder text
+input::-webkit-input-placeholder {
+	color: rgba(0, 60, 220, .3);
+}
+input::-moz-placeholder {
+	color: rgba(0, 60, 220, .3);
+}
+input:-moz-placeholder {   /* Older versions of Firefox */
+	color: rgba(0, 60, 220, .3);
+}
+input:-ms-input-placeholder { 
+	color: rgba(0, 60, 220, .3);
+}
+
+
 /* Parsley Form validation CSS */
 
 input.parsley-success,
