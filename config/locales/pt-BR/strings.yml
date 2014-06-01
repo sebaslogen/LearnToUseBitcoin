@@ -63,44 +63,44 @@ pt:
   shop_qr: Shop QR of address
   shop_qr_tooltip: Este código QR é facilmente lido com uma app de carteira Bitcoin de um telefone celular
   copy: Copy
-  logo_bitcoin: Bitcoin accepted here logo
-  copy_tooltip: copy the shop payment address to your demo Bitcoin wallet
-  imagine_wallet_html: 'This section below looks like the <strong>Bitcoin wallet</strong> software you can use to manage your bitcoins'
-  imagine_wallet_instructions_html: 'To practice, <strong>fill</strong> the form and press <strong>Send</strong>'
-  demo_wallet_legend: your Bitcoin demo wallet
-  in: in
-  demo_send_address: 'Send bitcoins from this Bitcoin address:'
-  multiple_addresses: Your Bitcoin wallet can contain as many Bitcoin addresses as you want
-  you_have: You have
-  out_of: out of
-  available: available
-  amount: amount
-  ready_to: ready to send
-  demo_input_amount_fail_help_html: "Value should be <strong class='title'>0.1</strong> (same as the price)"
-  demo_input_amount_tooltip_html: '1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)'
-  to_address: to
-  demo_input_address_tooltip_html: "enter here the Bitcoin address the shop provides for the payment (<strong>Hint</strong>: use the <i class='fi-page-copy'></i> Copy button)"
-  send_button_tooltip: send bitcoins to pay the demo bill
-  send: Send
-  payment_received: Payment received correctly
-  purchase_ok_image: Purchase OK image
-  demo_fail_help: The amount introduced in the demo Bitcoin wallet is not correct
-  demo_fail_help_1: "Don't worry, I have already introduced the right value for you, try again"
-  congratulations: Congratulations!
-  congrats_1: You have learned how to send bitcoins
-  congrats_2: And there are many more things you can do with Bitcoin
-  see_below: See below
-  how_transaction: How does this transaction work?
-  all_transactions: All transactions
-  all_transactions_tooltip: This means all Bitcoin addresses and all bitcoins sent between them
-  blockchain_1: ever made in the Bitcoin economy are stored in a
-  public_record: public record
-  public_record_tooltip: An updated copy of the transactions is stored in each of the computers of most Bitcoin users
-  blockchain_2: This public record works as a ledger and it is called the
-  blockchain: Blockchain
-  blockchain_3: When you send a bitcoin payment the transaction is send to all Bitcoin users through the Bitcoin
-  p2p: peer to peer network
-  p2p_tooltip: The transaction is send to a few users that forward it to more users and this is repeated until most of the network has received the transaction (in seconds)
+  logo_bitcoin: Logo de aceita-se Bitcoin aqui
+  copy_tooltip: Copie o endereço de pagamento da loja para a sua carteira Bitcoin de demonstração
+  imagine_wallet_html: 'Esta seção a seguir se parece com o software de <strong>carteira Bitcoin</strong> que você pode usar para gerenciar seu bitcoins'
+  imagine_wallet_instructions_html: 'Para praticar, <strong>preencha</strong> o formulário e clique em <strong>Enviar</strong>'
+  demo_wallet_legend: sua carteira Bitcoin de demonstração
+  in: em
+  demo_send_address: 'Mande bitcoins a partir deste endereço Bitcoin:'
+  multiple_addresses: Sua carteira Bitcoin pode conter tantos endereços Bitcoin quanto você queira
+  you_have: Você tem
+  out_of: de um total de
+  available: disponível
+  amount: quantia
+  ready_to: Pronto para enviar
+  demo_input_amount_fail_help_html: "O valor deve ser <strong class='title'>0,1</strong> (o mesmo que o preço)"
+  demo_input_amount_tooltip_html: '1 bitcoin pode ser dividido em até 8 casas decimais <br>(0.00000001 bitcoins são atualmente avaliados em cerca de US$ 0,00001)'
+  to_address: para
+  demo_input_address_tooltip_html: "introduza aqui o endereço Bitcoin que a loja fornece para o pagamento (<strong>Dica</strong>: use o <i class='fi-page-copy'></i> botão Copiar)"
+  send_button_tooltip: mande bitcoins para pagar a conta de demonstração
+  send: Enviar
+  payment_received: Pagamento recebido corretamente
+  purchase_ok_image: Imagem de Compra OK
+  demo_fail_help: A quantia introduzida na carteira Bitcoin de demonstração não é correta
+  demo_fail_help_1: Não se preocupe, já introduzi o valor certo para você, tente novamente
+  congratulations: Parabéns!
+  congrats_1: Você aprendeu como mandar bitcoins
+  congrats_2: E há muito mais coisas que você pode fazer com Bitcoin
+  see_below: Veja abaixo
+  how_transaction: Como funciona esta transação?
+  all_transactions: Todas as transações
+  all_transactions_tooltip: Isto significa todos os endereços Bitcoin e todos bitcoins enviados entre eles
+  blockchain_1: já feitas na economia Bitcoin são armazenados em um
+  public_record: registro público
+  public_record_tooltip: Uma cópia atualizada das transacções é armazenada em cada um dos computadores da maioria dos usuários de Bitcoin
+  blockchain_2: Este registro público funciona como um livro contábil, e é chamado de
+  blockchain: Blockchain (ou Cadeia de Blocos)
+  blockchain_3: Quando você faz um pagamento bitcoin a transação é enviada para todos os usuários de Bitcoin através da (rede peer to peer) Bitcoin
+  p2p: rede peer to peer
+  p2p_tooltip: A transação é enviada a alguns usuários que a reenvia a mais usuários e isto se repete até que a maioria da rede receba a transação (em segundos)
   blockchain_4: a ser armazenada na Cadeia de blocos para sempre
   blockchain_confuse: Não confunda com
   blockchain_confuse_2: um site útil para ver as transações Bitcoin acontecendo em tempo real
@@ -110,80 +110,68 @@ pt:
   in_construction: Em construção
   apologies: Desculpe, esta parte do site ainda não está terminado
   come_back: Volte mais tarde e você deve ser capaz de obter alguns bitcoins gratuitamente
-  meanwhile: In the meanwhile, it´s recommended that you easily create
-  first_wallet: your first Bitcoin wallet on-line
-  or_install: or install one of the desktop Bitcoin wallets
-  suggested_above: suggested above
-  and_get_bitcoins: and you can also get bitcoins from one of these services
-  use: What can I do with Bitcoin?
-  use_1: "Today it's possible to pay with bitcoins in hundreds of"
-  use_2: shops around the world
-  From: From
-  to_until: to
-  flights: flights
-  hotels: hotels
-  furniture: furniture
-  food: food
+  meanwhile: Enquanto isso, é recomendável que você crie facilmente
+  first_wallet: sua primeira carteira Bitcoin online
+  or_install: ou instale alguma das carteiras Bitcoin para o desktop
+  suggested_above: sugerido acima
+  and_get_bitcoins: e você também pode obter bitcoins de algum destes serviços
+  use: O que posso fazer com Bitcoin?
+  use_1: Hoje é possível pagar com bitcoins em centenas de
+  use_2: lojas ao redor do mundo
+  From: Desde
+  to_until: até
+  flights: voos
+  hotels: hotéis
+  furniture: móveis
+  food: comida
   food_link: http://www.takeaway.com
-  sending_money: Sending money internationally and remittances become very cheap (cents) and fast (minutes)
-  person_to_person: person to person
-  sending_money_tooltip: "You only need to have a Bitcoin wallet software to send and receive bitcoins, that's it"
-  sending_money_2: transactions with Bitcoin
-  donating_to: Donating to
-  non_profit: non-profit organizations
-  donating_to_1: becomes faster, direct and much cheaper, removing
-  donating_to_2: all intermediary fees
-  donating_to_tooltip_html: 'You are sure the money arrives <strong>directly</strong> to the hands of those who need it the most with no delays'
-  sean_outpost: has been feeding the needed for months only with Bitcoin and the
-  bitgive_foundation: promotes health and environment improvement projects
-  democratization: 'Democratization of banking: with Bitcoin'
-  democratization_1: everybody in the world can have access to financial services
-  democratization_2: regardless of their country or economic situation, the only requirement is access to Internet
-  democratization_tooltip_html: "2.5 <strong>billion</strong> people in the world don't have access to banks or microfinance institutions"
-  small_payments: Small payments (smaller than $1) finally become possible. This opens the door to small donations or
-  content_payments: payments for content
-  on_internet: on Internet
-  content_payments_tooltip: Help children charities and Red Cross in
-  content_payments_tooltip_1: by contributing any amount of bitcoins and you receive games in exchange
-  myths: Myths about Bitcoin
-  myths_1: Money only works because there is a government backing it
-  myths_2_html: |
-    There is no government, corporation or legal entity backing Bitcoin which may make difficult to understand how can the currency be trustworthy.<br>
-    Bitcoin solves this by moving trust away from organizations and persons whose interests can be influenced to a unique <strong>trust in math</strong>.<br>
-    Similar to the way gold provides trust through a series of unique physical attributes that are difficult to imitate correctly,
-    Bitcoin uses algorithms to prove that money belongs only to the owner of a private key and can only be spent once.
-  myths_3: Everything in Bitcoin is anonymous
-  myths_4_html: |
-    Bitcoin is not anonymous, it protects your privacy like cash.<br>
-    Similar to cash where your name is not present in the bills that you use, in Bitcoin it is not possible to see your name in the bitcoins that you send or receive,
-    but if you reveal your identity to the person or company that receives the bitcoins, it is possible to link your identity with your transaction
-    and since all transactions are linked and publicly stored in the Blockchain, it is possible to partially track some of the previous transactions you made with the same
-  bitcoin_address: Bitcoin address
-  myths_4_tooltip: The Wallet software will easily create and manage new addresses for you
-  myths_5: Bitcoins are digital and I could copy them like digital music
-  myths_6_html: |
-    Bitcoins are limited in quantity.<br>
-    It is often compared to gold in the way that the money is released into the world in a continuous and decreased rate, like gold mining.<br>
-    There will <strong>never be more than 21 million bitcoins</strong> in existence and every four years the amount of bitcoins released is halved, until the last bitcoin is released around year 2140.<br>
-    This is done by a mathematical algorithm, not a person.
-  myths_7: Bitcoins are created at will out of thin air
-  myths_8_1: Bitcoins are created as a reward for those who help verify
-  valid_transactions: valid transactions
-  valid_transactions_tooltip: For example, verify that you have enough bitcoins to send before transferring them
-  myths_8_2: in the Bitcoin network
-  myths_9_1: This process is called
-  bitcoin_mining: Bitcoin Mining
-  myths_9_2: and takes care of the accounting of the economy
-  mining_lottery_1: To understand how a miner gets a reward you can learn how the
+  sending_money: As remessas e transferências internacionais de dinheiro se tornam, de forma muito barata (centavos) e rápida (minutos),
+  person_to_person: de pessoa a pessoa
+  sending_money_tooltip: Você só precisa ter um software de carteira Bitcoin para mandar e receber bitcoins, e pronto
+  sending_money_2: transações com Bitcoin
+  donating_to: Doar para
+  non_profit: organizações sem fins lucrativos
+  donating_to_1: se torna mais rápido, direto e muito mais barato, eliminando
+  donating_to_2: todas as taxas intermediárias
+  donating_to_tooltip_html: 'Você tem certeza de que o dinheiro chega <strong>diretamente</strong> às mãos de quem mais precisa, sem atrasos'
+  sean_outpost: está alimentando os necessitados durante meses apenas com Bitcoin e a
+  bitgive_foundation: promove projetos de melhoria da saúde e do meio ambiente
+  democratization: 'Democratização do sistema bancário: com Bitcoin'
+  democratization_1: todo mundo pode ter acesso a serviços financeiros
+  democratization_2: independentemente do país ou situação económica, a única exigência é o acesso à Internet
+  democratization_tooltip_html: '2,5 <strong>bilhões</strong> de pessoas no mundo não têm acesso a bancos ou instituições de microfinanças'
+  small_payments: Pequenos pagamentos de (menores que US $1) finalmente se tornam possíveis. Isso abre a porta para pequenas doações ou
+  content_payments: pagamentos para conteúdo
+  on_internet: na Internet
+  content_payments_tooltip: Ajude instituições de caridade às crianças e a Cruz Vermelha em
+  content_payments_tooltip_1: contribuindo com qualquer quantidade de bitcoins e receba jogos em troca
+  myths: Mitos sobre Bitcoin
+  myths_1: O dinheiro só funciona porque há um governo apoiá-lo
+  myths_2_html: 'Não há nenhum governo, corporação ou entidade jurídica embasando Bitcoin, o que pode tornar difícil de entender como a moeda pode ser confiável.<br>Bitcoin resolve esse problema transferindo a confiança de organizações e pessoas, cujos interesses podem ser influenciados para uma exclusiva <strong>confiança na matemática</strong>.<br>Semelhante à forma como o ouro fornece confiança através de uma série de atributos físicos exclusivos que são difíceis de imitar corretamente, Bitcoin usa algoritmos para provar que o dinheiro pertence apenas ao proprietário de uma chave privada e só pode ser gasto uma vez.'
+  myths_3: Tudo em Bitcoin é anônimo
+  myths_4_html: 'Bitcoin não é anônimo, ele protege sua privacidade como o dinheiro em papel.<br>Assim como o dinheiro, onde seu nome não está presente nas notas que você usa, em Bitcoin não é possível ver seu nome nos bitcoins que você manda ou recebe, mas se você revelar sua identidade para a pessoa ou empresa que recebe o bitcoins, é possível vincular sua identidade com sua transação e como todas as transações estão associadas e publicamente armazenadas na Blockchain, é possível rastrear parcialmente algumas das transações anteriores que você fez com o mesmo'
+  bitcoin_address: Endereço Bitcoin
+  myths_4_tooltip: O software de carteira facilmente cria e gerencia novos endereços para você
+  myths_5: Os bitcoins são digitais e eu poderia copiá-los como música digital
+  myths_6_html: 'Os bitcoins são limitados em quantidade.<br>É comparado com frequência ao ouro pela forma em que o dinheiro é liberado para o mundo em uma taxa contínua e decrescente, como a mineração de ouro.<br>Não haverá <strong>nunca mais de 21 milhões de bitcoins</strong> em existência e, a cada quatro anos, a quantidade de bitcoins lançada é reduzida pela metade, até que o último bitcoin seja lançado próximo ao ano 2140.<br>Isto é feito por um algoritmo matemático, não por uma pessoa.'
+  myths_7: Os bitcoins são criados à vontade a partir do nada
+  myths_8_1: Bitcoins são criados como uma recompensa para quem ajudar a verificar
+  valid_transactions: transações válidas
+  valid_transactions_tooltip: Por exemplo, verificar se que você tem bitcoins suficientes antes de transferi-los
+  myths_8_2: na rede Bitcoin
+  myths_9_1: Este processo é chamado
+  bitcoin_mining: garimpo Bitcoin
+  myths_9_2: e se ocupa da contabilidade da economia
+  mining_lottery_1: Para entender como um mineiro recebe uma recompensa que você pode aprender como a
   lottery_rewards: lottery rewards
   mining_lottery_2: work with
-  proof_of_work: Proof of Work
-  proof_of_work_extra: (or POW)
-  share_love_tooltip: Send love back with Bitcoin
-  continue_learning: Continue learning
-  explore: Explore the world of Bitcoin
-  news: news
-  community: community
-  development: development
-  wiki_pages: wiki pages
-  minning_information: bitcoin minning information
+  proof_of_work: Prova de Trabalho
+  proof_of_work_extra: (ou POW)
+  share_love_tooltip: Devolva um pouco de amor com Bitcoin
+  continue_learning: Continue aprendendo
+  explore: Explore o mundo Bitcoin
+  news: notícias
+  community: comunidade
+  development: desenvolvimento
+  wiki_pages: páginas wiki
+  minning_information: informações sobre garimpo de bitcoin
