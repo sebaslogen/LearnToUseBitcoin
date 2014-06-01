@@ -4,8 +4,8 @@
 
 <h2><span class="super-small-inline-title"><%=t :bitcoin_easy%></span> 
   <%= link_to(1, '#demo-section-1', class: "circle-button will-animate", id: "circle-button-1") %>
-  <%= link_to(2, '#demo-section-2', class: "circle-button will-animate", id: "circle-button-2") %>
-  <%= link_to(3, '#demo-section-3', class: "circle-button will-animate", id: "circle-button-3") %>
+  <%= link_to(2, '#demo-section-2-wrapper', class: "circle-button will-animate", id: "circle-button-2") %>
+  <%= link_to(3, '#demo-section-3-wrapper', class: "circle-button will-animate", id: "circle-button-3") %>
 </h2>
 
 <p><%=t :sending_receiving_html%></p><br>
@@ -66,65 +66,67 @@
   </div>
 </div>
 
-<div id="demo-section-2" class="rounded-border info-block hidden">
-  <div class="row">
-    <h5 id='bitcoin-wallet-info-title' class='will-animate'><strong class="extruded-info-title bitcoin-wallet-title"><%=single_capitalize(t(:bitcoin_wallet))%></strong></h5><br class="show-for-small-only">
-  </div>
-  <div class="row show-for-small-only">
-    <%= image_tag "wallet.png", alt: t(:wallet_image) %>
-  </div>
-  <div class="row sub-info-block">
-    <div class="hide-for-small medium-1 columns text-center">
-      <label class="fake-circle-button"> 2 </label>
+<div id="demo-section-2-wrapper">
+  <div id="demo-section-2" class="rounded-border info-block hidden">
+    <div class="row">
+      <h5 id='bitcoin-wallet-info-title' class='will-animate'><strong class="extruded-info-title bitcoin-wallet-title"><%=single_capitalize(t(:bitcoin_wallet))%></strong></h5><br class="show-for-small-only">
     </div>
-    <div class="hide-for-small medium-3 columns text-center">
-      <%= image_tag "wallet.png", alt: t(:wallet_image), id: 'wallet-image', class: 'will-animate' %>
+    <div class="row show-for-small-only">
+      <%= image_tag "wallet.png", alt: t(:wallet_image) %>
     </div>
-    
-    <div class="small-12 medium-8 columns text-center">
-      <p>
-        <%=t :bitcoin_wallet_html%><br>
-        <%=t :bitcoin_wallet_2_html%>
-      </p>
-      <p>
-        <%=t :wallet_types_html%>
-      </p>
-      <div class="row">
-        <div class="medium-4 columns text-center">
-          <div class="wallet-info wallet-mobile has-external-tooltip" tooltip-id="phone-tooltip">
-            <%= image_tag "phone.png", alt: t(:phone_image), id: 'phone-image', class: 'will-animate' %>
-            <p><br><strong class="title"><%=t :mobile_app%></strong></p>
-          </div>        
-          <div id="phone-tooltip" class="hidden text-center tooltip-text">
-            <p>
-              <%=t :mobile_wallet_html%>:<br><%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %> <%=t :and%> 
-              <%= link_to('Blockchain.info', 'https://blockchain.info/wallet/android-app', target: "_blank") %>
-            </p>
+    <div class="row sub-info-block">
+      <div class="hide-for-small medium-1 columns text-center">
+        <label class="fake-circle-button"> 2 </label>
+      </div>
+      <div class="hide-for-small medium-3 columns text-center">
+        <%= image_tag "wallet.png", alt: t(:wallet_image), id: 'wallet-image', class: 'will-animate' %>
+      </div>
+
+      <div class="small-12 medium-8 columns text-center">
+        <p>
+          <%=t :bitcoin_wallet_html%><br>
+          <%=t :bitcoin_wallet_2_html%>
+        </p>
+        <p>
+          <%=t :wallet_types_html%>
+        </p>
+        <div class="row">
+          <div class="medium-4 columns text-center">
+            <div class="wallet-info wallet-mobile has-external-tooltip" tooltip-id="phone-tooltip">
+              <%= image_tag "phone.png", alt: t(:phone_image), id: 'phone-image', class: 'will-animate' %>
+              <p><br><strong class="title"><%=t :mobile_app%></strong></p>
+            </div>        
+            <div id="phone-tooltip" class="hidden text-center tooltip-text">
+              <p>
+                <%=t :mobile_wallet_html%>:<br><%= link_to('Mycelium', 'https://play.google.com/store/apps/details?id=com.mycelium.wallet', target: "_blank") %> <%=t :and%> 
+                <%= link_to('Blockchain.info', 'https://blockchain.info/wallet/android-app', target: "_blank") %>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="medium-4 columns text-center">
-          <div class="wallet-info wallet-desktop has-external-tooltip" tooltip-id="desktop-tooltip">
-            <%= image_tag "desktop.png", alt: t(:pc_image), id: 'pc-image', class: 'will-animate' %>
-            <p><strong class="title"><%=t :desktop_app%></strong></p>
+          <div class="medium-4 columns text-center">
+            <div class="wallet-info wallet-desktop has-external-tooltip" tooltip-id="desktop-tooltip">
+              <%= image_tag "desktop.png", alt: t(:pc_image), id: 'pc-image', class: 'will-animate' %>
+              <p><strong class="title"><%=t :desktop_app%></strong></p>
+            </div>
+            <div id="desktop-tooltip" class="hidden text-center tooltip-text">
+              <p>
+                <%=t :desktop_wallet_html%>:<br><%= link_to('Electrum', 'https://electrum.org/', target: "_blank") %> <%=t :and%> 
+                <%= link_to('MultiBit', 'https://multibit.org/', target: "_blank") %>
+              </p>
+            </div>
           </div>
-          <div id="desktop-tooltip" class="hidden text-center tooltip-text">
-            <p>
-              <%=t :desktop_wallet_html%>:<br><%= link_to('Electrum', 'https://electrum.org/', target: "_blank") %> <%=t :and%> 
-              <%= link_to('MultiBit', 'https://multibit.org/', target: "_blank") %>
-            </p>
-          </div>
-        </div>
-        <div class="medium-4 columns text-center">
-          <div class="wallet-info wallet-web has-external-tooltip" tooltip-id="browser-tooltip">
-            <%= image_tag "browser.png", alt: t(:browser_image), id: 'browser-image', class: 'will-animate' %>
-            <p><strong class="title"><%=t :browser_app%></strong></p>
-          </div>
-          <div id="browser-tooltip" class="hidden text-center tooltip-text">
-            <p>
-              <%=t :browser_wallet_html%>: <%= link_to('Blockchain.info', 'https://blockchain.info/wallet', target: "_blank") %><br>
-              <%=t :and%> <%= link_to('GreenAddress.it', 'https://greenaddress.it', target: "_blank") %> <br>
-              <%=t :browser_wallet_2%>: <%= link_to('Coinbase', 'https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link', target: "_blank") %>
-            </p>
+          <div class="medium-4 columns text-center">
+            <div class="wallet-info wallet-web has-external-tooltip" tooltip-id="browser-tooltip">
+              <%= image_tag "browser.png", alt: t(:browser_image), id: 'browser-image', class: 'will-animate' %>
+              <p><strong class="title"><%=t :browser_app%></strong></p>
+            </div>
+            <div id="browser-tooltip" class="hidden text-center tooltip-text">
+              <p>
+                <%=t :browser_wallet_html%>: <%= link_to('Blockchain.info', 'https://blockchain.info/wallet', target: "_blank") %><br>
+                <%=t :and%> <%= link_to('GreenAddress.it', 'https://greenaddress.it', target: "_blank") %> <br>
+                <%=t :browser_wallet_2%>: <%= link_to('Coinbase', 'https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link', target: "_blank") %>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -132,25 +134,27 @@
   </div>
 </div>
 
-<div id="demo-section-3" class="rounded-border info-block hidden">
-  <div class="row">
-    <h5 id='some-bitcoins-info-title' class='will-animate'><strong class="extruded-info-title some-bitcoins-title"><%=t(:some_bitcoins).capitalize%></strong></h5><br class="show-for-small-only">
-  </div>
-  <div class="row show-for-small-only">
-    <%= image_tag "Bitcoin_euro.png", class: 'rounded-corners', alt: t(:coin_image) %>
-  </div>
-  <div class="row sub-info-block">
-    <div class="hide-for-small medium-1 columns text-center">
-      <label class="fake-circle-button"> 3 </label>
+<div id="demo-section-3-wrapper">
+  <div id="demo-section-3" class="rounded-border info-block hidden">
+    <div class="row">
+      <h5 id='some-bitcoins-info-title' class='will-animate'><strong class="extruded-info-title some-bitcoins-title"><%=t(:some_bitcoins).capitalize%></strong></h5><br class="show-for-small-only">
     </div>
-    <div class="small-12 medium-8 columns text-center">
-      <p><br>
-        <%=t :fill_wallet_html%> 
-        <strong class="title-medium-up has-tooltip hide-tooltip-small" title="<%=t :demo_tooltip%>"><%=t :demo%></strong>
-      </p>
+    <div class="row show-for-small-only">
+      <%= image_tag "Bitcoin_euro.png", class: 'rounded-corners', alt: t(:coin_image) %>
     </div>
-    <div class="hide-for-small medium-3 columns text-center">
-      <%= image_tag "Bitcoin_euro.png", class: 'rounded-corners', alt: t(:coin_image), id: 'coin-image', class: 'will-animate' %>
+    <div class="row sub-info-block">
+      <div class="hide-for-small medium-1 columns text-center">
+        <label class="fake-circle-button"> 3 </label>
+      </div>
+      <div class="small-12 medium-8 columns text-center">
+        <p><br>
+          <%=t :fill_wallet_html%> 
+          <strong class="title-medium-up has-tooltip hide-tooltip-small" title="<%=t :demo_tooltip%>"><%=t :demo%></strong>
+        </p>
+      </div>
+      <div class="hide-for-small medium-3 columns text-center">
+        <%= image_tag "Bitcoin_euro.png", class: 'rounded-corners', alt: t(:coin_image), id: 'coin-image', class: 'will-animate' %>
+      </div>
     </div>
   </div>
 </div>
