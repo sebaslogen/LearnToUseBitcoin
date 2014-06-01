@@ -282,6 +282,7 @@
       ImmyBox.prototype.display = function() {
         if (this.selectedChoice != null) {
           this.element.val(this.selectedChoice.text);
+          notifyFormUpdate();
         }
         this._val = this.element.val();
       };

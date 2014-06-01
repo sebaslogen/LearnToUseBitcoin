@@ -129,6 +129,9 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   }
   
   $scope.doneEditing = function() {
+    if ($('#demo-input-amount').val() != $scope.input_amount) {
+      $scope.input_amount = $('#demo-input-amount').val();
+    }
     $("#demo-transaction-form").parsley().validate();
     $scope.disableAmountGlowing();
   }

@@ -146,3 +146,7 @@ function enable_bottom_sections_after_demo() {
   $("#mining-content").load("/mining");
   $("#mining-POW-content").load("/mining-POW");
 }
+
+function notifyFormUpdate() {
+  angular.element($('#transference-demo')).scope().doneEditing();
+}
