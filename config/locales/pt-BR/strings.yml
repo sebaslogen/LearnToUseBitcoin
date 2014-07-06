@@ -60,9 +60,9 @@ pt:
   or: ou
   item_image: Imagem de ursinho de pelúcia
   pay_address: Pagar neste endereço
-  shop_qr: Shop QR of address
+  shop_qr: Código QR do endereço de pagamento da loja
   shop_qr_tooltip: Este código QR é facilmente lido com uma app de carteira Bitcoin de um telefone celular
-  copy: Copy
+  copy: Copiar
   logo_bitcoin: Logo de aceita-se Bitcoin aqui
   copy_tooltip: Copie o endereço de pagamento da loja para a sua carteira Bitcoin de demonstração
   imagine_wallet_html: 'Esta seção a seguir se parece com o software de <strong>carteira Bitcoin</strong> que você pode usar para gerenciar seu bitcoins'
@@ -163,8 +163,8 @@ pt:
   bitcoin_mining: garimpo Bitcoin
   myths_9_2: e se ocupa da contabilidade da economia
   mining_lottery_1: Para entender como um mineiro recebe uma recompensa que você pode aprender como a
-  lottery_rewards: lottery rewards
-  mining_lottery_2: work with
+  lottery_rewards: a loteria premia
+  mining_lottery_2: trabalham com
   proof_of_work: Prova de Trabalho
   proof_of_work_extra: (ou POW)
   share_love_tooltip: Devolva um pouco de amor com Bitcoin
