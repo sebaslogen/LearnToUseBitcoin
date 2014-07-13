@@ -1,54 +1,54 @@
-en:
-  ltub: Learn To Use Bitcoin
-  made: Made with
-  by: by
-  welcome: Welcome
-  welcome2: to the amazing revolution of money
+nl:
+  ltub: Leer Bitcoin gebruiken
+  made: Gemaakt met
+  by: door
+  welcome: Welkom
+  welcome2: in de fascinerende revolutie van het geld
   scroll: SCROLL
-  what: What is Bitcoin?
-  what_1: Bitcoin is the
-  digital_money: cash for the internet
-  what_2: that allows you to send and receive payments from person to person
-  very_fast: very fast
-  what_3: without any intermediate agent (bank or corporation)
-  what_4: at almost zero cost
-  what_tip1_html: Send money to anywhere in the world and the receiver can start using it after only 10 minutes
-  what_tip2: 5 cents of dollar to send 10,000 USD anywhere
-  discover: Discover Bitcoin
-  counting_stars: Counting stars in the universe...
-  bitcoin_easy: Bitcoin is as easy as
-  sending_receiving_html: 'Sending and receiving bitcoins is as simple as sending an <strong>email</strong>, the first thing we need is an <strong>address</strong>'
-  bitcoin_address_html: 'A <strong>Bitcoin address</strong> is the place where the bitcoins are stored<br> Like a transparent <strong>vault</strong>, the coins can only be moved by the <strong>key owner</strong>, but the world can see what is'
-  inside: inside
-  bitcoin_address_looks: The address is a long sequence of letters and numbers that looks like this
-  anonymous_email_html: 'Like an anonymous email, the Bitcoin address is not linked to any identity<br>It is just a sequence of numbers and letters'
-  bitcoin_address_tooltip_html: 'You can generate and use as many addresses as desired at no cost<br>The Bitcoin address is what you share when you want to get paid'
-  bitcoin_address_qr_tooltip: This QR code represents the same Bitcoin address and can be easily read with a phone
-  address_qr: QR code image
-  bitcoin_private_key_html: 'The <strong>private key</strong> is the <u>only</u> key in the world that can transfer the bitcoins from the Bitcoin address (like the email password)'
-  bitcoin_private_key_2: The private key is another long sequence of letters and numbers that you should always keep secret
-  private_key_image: Private Key image
-  wallet_image: Wallet image
-  bitcoin_wallet: Bitcoin wallet
-  bitcoin_wallet_html: 'A <strong>Bitcoin wallet</strong> is a software that allows you to manage multiple Bitcoin addresses and their private keys'
-  bitcoin_wallet_2_html: 'It lets you easily <strong>send and receive bitcoins</strong> or create new Bitcoin addresses'
-  wallet_types_html: 'There are three types of <strong>wallet applications</strong>'
-  phone_image: Phone image
-  mobile_app: Mobile App
-  mobile_wallet_html: 'This is convenient for day to day usage on the move<br>A couple of good Android wallets'
-  and: and
-  pc_image: Desktop PC image
-  desktop_app: Desktop App
-  desktop_wallet_html: 'These wallets usually provide more security and more options<br>A couple of good wallets'
-  browser_image: Web browser image
-  browser_app: Web wallet
-  browser_wallet_html: 'These wallets combine easy of use with plenty of features<br>Two good examples where <strong>you</strong> completely manage your bitcoins'
-  browser_wallet_2: Another where the company secures and stores the bitcoins for you is
-  fill_wallet_html: "Now you need to fill the wallet with some bitcoins<br>You can get your first bitcoins totally for free below (no register or commitments) but first let's practice with a small"
+  what: Wat is Bitcoin?
+  what_1: Bitcoin is het
+  digital_money: contante geld voor het internet
+  what_2: dat maakt het zenden en ontvangen van betalingen van persoon tot persoon mogelijk
+  very_fast: zeer snel
+  what_3: zonder tussenkomst van derden (bank of bedrijf)
+  what_4: en bijna zonder onkosten
+  what_tip1_html: Geld verzenden naar iedereen in de wereld waarbij de ontvanger het al na 10 minuten kan gebruiken
+  what_tip2: 5 dollarcent om 10.000 US dollars naar waar dan ook te verzenden
+  discover: Ontdek Bitcoin
+  counting_stars: Sterren aan het tellen in het universum...
+  bitcoin_easy: Bitcoin is zo makkelijk als
+  sending_receiving_html: 'Het verzenden en ontvangen van bitcoins is net zo makkelijk als het versturen van een <strong>e-mail</strong>, het eerste wat we nodig hebben is een <strong>adres</strong>'
+  bitcoin_address_html: 'Een <strong>Bitcoin adres</strong> is de plaats waar de bitcoins opgeslagen worden<br> Als in een doorzichtige <strong>kluis</strong>, de munten kunnen alleen worden verplaatst door de eigenaar van de <strong>sleutel</strong>, maar de wereld kan zien wat'
+  inside: er in zit
+  bitcoin_address_looks: Het adres is een lange reeks van letters en cijfers, dat er zo uit ziet
+  anonymous_email_html: 'Net als een anonieme e-mail, is het Bitcoin adres niet gelinkt aan een identiteit<br>Het is alleen een reeks van nummers en letters'
+  bitcoin_address_tooltip_html: 'Je kunt kosteloos zo veel adressen genereren en gebruiken als je wilt<br>Het Bitcoin adres is wat je deelt als je betaalt wilt worden'
+  bitcoin_address_qr_tooltip: Deze QR code stelt hetzelfde Bitcoin adres voor en kan gemakkelijk worden gelezen met een telefoon
+  address_qr: Afbeelding van een QR code
+  bitcoin_private_key_html: 'Jouw <strong>privésleutel</strong> of ook wel geheime sleutel genoemd, is de <u>enige</u> sleutel in de wereld waarmee je bitcoins kunt verzenden vanaf het Bitcoinadres (net als bij een e-mailwachtoord)'
+  bitcoin_private_key_2: De privésleutel is een andere lange reeks van letters en cijfers dat altijd geheim zou moeten blijven
+  private_key_image: Afbeelding van een privésleutel
+  wallet_image: Afbeelding van een portefeuille
+  bitcoin_wallet: Bitcoin portefeuille
+  bitcoin_wallet_html: 'Een <strong>Bitcoin portefeuille</strong> is een software dat het mogelijk maakt om meerdere Bitcoin adressen en de bijbehorende privésleutels te beheren'
+  bitcoin_wallet_2_html: 'Daardoor kan je gemakkelijk <strong>bitcoins verzenden en ontvangen</strong> of nieuwe Bitcoin adressen creëren'
+  wallet_types_html: 'Er zijn drie soorten <strong>applicaties voor de Bitcoin portefeuille</strong>'
+  phone_image: Afbeelding van een telefoon
+  mobile_app: Mobiel App
+  mobile_wallet_html: 'Dit is handig voor dagelijks gebruik overal<br>Een aantal goede Android portefeuilles'
+  and: en
+  pc_image: Afbeelding van een bureaublad
+  desktop_app: Bureaublad App
+  desktop_wallet_html: 'Deze portefeuilles bieden meestal meer veiligheid en meer opties<br>Een aanlaat goede portefeuilles'
+  browser_image: Een afbeelding van een Web browser
+  browser_app: Web portefeuille
+  browser_wallet_html: 'Deze portefeuilles combineren het gebruiksgemak met een tal van functies<br>Twee goede voorbeelden waarbij <strong>jij</strong> het volledige beheer hebt over jouw bitcoins'
+  browser_wallet_2: Nog een voorbeeld waarbij het bedrijf je bitcoins voor jou bewaart en beveiligt
+  fill_wallet_html: 'De volgende stap om bitcoins te kunnen gebruiken is je portefeuille te vullen met wat bitcoins<br>Je kan je eerste bitcoins hieronder geheel gratis verkrijgen (zonder verdere verplichtingen of registraties), maar laten we het betalen met bitcoins eerst uitproberen met een kleine'
   demo: demo
-  demo_tooltip: No actual bitcoins will be send to any shop during the demo
-  coin_image: Coin image
-  some_bitcoins: some bitcoins
+  demo_tooltip: Gedurende de demo zullen er geen daadwerkelijke transacties plaatsvinden
+  coin_image: Afbeelding van een munt
+  some_bitcoins: Een aantal bitcoins
   extra: extra
   demo1: Bitcoin demo transaction
   imagine_shop_html: 'Imagine this section below is the website of an <strong>on-line shop</strong> where you are about to pay your purchase'
@@ -124,7 +124,7 @@ en:
   hotels: hotels
   furniture: furniture
   food: food
-  food_link: http://www.takeaway.com
+  food_link: http://www.thuisbezorgd.nl
   sending_money: Sending money internationally and remittances become very cheap (cents) and fast (minutes)
   person_to_person: person to person
   sending_money_tooltip: "You only need to have a Bitcoin wallet software to send and receive bitcoins, that's it"

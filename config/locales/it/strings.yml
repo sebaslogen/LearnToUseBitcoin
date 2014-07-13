@@ -15,7 +15,7 @@ it:
   what_tip1_html: Invia denaro ovunque nel mondo ed il destinatario può spenderlo dopo solo 10 minuti
   what_tip2: 5 centesimi di dollaro per inviare 10.000 dollari ovunque
   discover: Scopri i Bitcoin
-  counting_stars: "Il conteggio inizia nell'universo..."
+  counting_stars: "Contando le stelle dell'universo..."
   bitcoin_easy: Bitcoin è semplice come
   sending_receiving_html: "Inviare e ricevere Bitcoin è semplice come mandare un'<strong>email</strong>, la prima cosa di cui abbiamo bisogno è un <strong>indirizzo</strong>"
   bitcoin_address_html: "Un <strong>indirizzo Bitcoin</strong> è dove i Bitcoin sono immagazzinati<br> Come per una <strong>cassaforte</strong> trasparente, le monete digitali possono essere spostate solo da chi <strong>possiede la chiave</strong>, ma chiunque può vedere cosa c'è"
@@ -44,7 +44,7 @@ it:
   browser_app: Portafoglio Web
   browser_wallet_html: "Questi portafogli combinano facilità d'uso con molte funzioni<br>Due buoni esempi dove <strong>tu</strong> gestisci completamente i tuoi Bitcoin"
   browser_wallet_2: "Un'altro portafoglio dove la compagnia immagazzina e protegge i Bitcoin per te è"
-  fill_wallet_html: "Adesso devi mettere alcune Bitcoin nel portafoglio<br>Puoi ottenere i tuoi primi Bitcoin totalmente gratis dal link sottostante (nessun'allegato o registrazione necessaria), ma prima esercitiamoci con un piccolo"
+  fill_wallet_html: 'Adesso devi mettere alcune Bitcoin nel portafoglio<br>Puoi ottenere i tuoi primi Bitcoin totalmente gratis dal link sottostante (nessuna registrazione o impegno necessario), ma prima esercitiamoci con un piccolo'
   demo: demo
   demo_tooltip: Nessun Bitcoin reale sarà mandato a nessun negozio durante questo demo
   coin_image: Immagine moneta
