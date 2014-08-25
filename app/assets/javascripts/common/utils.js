@@ -109,6 +109,23 @@ function setupLocalization() {
   }
 }
 
+function addLocale(url) {
+  if ($.urlParam('locale')) {
+    return url + "?locale=" + $.urlParam('locale');
+  } else {
+    return url;
+  }
+}
+
+$.urlParam = function(name) { // Parse URL parameters
+  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+  if ( results === null){
+    return null;
+  }
+  else{
+    return results[1] || 0;
+  }
+}
 
 /* Enable functions after document load */
 

@@ -23,7 +23,7 @@ function autoScrollToWelcome() {
 
 function loadCoinAnimation() { // Asynchronously load script for coin animation
   if ( getWindowsSize() != "small" ) { // Load coin animation only on big enough screens
-    $("#canvas-container").load("/animation", function() {
+    $("#canvas-container").load(addLocale("/animation"), function() {
       startCoinAnimation();
     });
   }
