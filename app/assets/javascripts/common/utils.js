@@ -146,6 +146,6 @@ $(document).ready(function() {
   });
   setTimeout(function() { // Preload demo hidden section
     loadDemoContent();
-  }, 6000); // Wait 6 seconds to automatically load
+  }, 15000); // Wait 15 seconds to automatically load
   loadCoinAnimation(); // Asynchronously load script for coin animation
 });

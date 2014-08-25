@@ -16,7 +16,7 @@ function autoScrollToWelcome() {
   if ( (autoscrolled === false) &&
     (  $(window).scrollTop() <= parseInt( $('#welcome').css('height') )  )) {
     autoscrolled = true;
-    moveTo('#what', 3000);  // Move automaticaly but slowly
+    moveTo('#what', 3000);  // Move automatically but slowly
     analytics.track('AutoScrolled to Welcome section');
   }
 }
