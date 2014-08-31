@@ -29,19 +29,19 @@ nl:
   bitcoin_private_key_2: De privésleutel is een andere lange reeks van letters en cijfers dat altijd geheim zou moeten blijven
   private_key_image: Afbeelding van een privésleutel
   wallet_image: Afbeelding van een portefeuille
-  bitcoin_wallet: Bitcoin portefeuille
-  bitcoin_wallet_html: 'Een <strong>Bitcoin portefeuille</strong> is een software dat het mogelijk maakt om meerdere Bitcoin adressen en de bijbehorende privésleutels te beheren'
+  bitcoin_wallet: Bitcoin-portefeuille
+  bitcoin_wallet_html: 'Een <strong>Bitcoin-portefeuille</strong> is een software dat het mogelijk maakt om meerdere Bitcoin adressen en de bijbehorende privésleutels te beheren'
   bitcoin_wallet_2_html: 'Daardoor kan je gemakkelijk <strong>bitcoins verzenden en ontvangen</strong> of nieuwe Bitcoin adressen creëren'
-  wallet_types_html: 'Er zijn drie soorten <strong>applicaties voor de Bitcoin portefeuille</strong>'
+  wallet_types_html: 'Er zijn drie soorten <strong>applicaties voor de Bitcoin-portefeuille</strong>'
   phone_image: Afbeelding van een telefoon
   mobile_app: Mobiel App
-  mobile_wallet_html: 'Dit is handig voor dagelijks gebruik overal<br>Een aantal goede Android portefeuilles'
+  mobile_wallet_html: 'Dit is handig voor dagelijks gebruik overal<br>Een aantal goede Android-portefeuilles'
   and: en
   pc_image: Afbeelding van een bureaublad
   desktop_app: Bureaublad App
   desktop_wallet_html: 'Deze portefeuilles bieden meestal meer veiligheid en meer opties<br>Een aanlaat goede portefeuilles'
   browser_image: Een afbeelding van een Web browser
-  browser_app: Web portefeuille
+  browser_app: Website-portefeuille
   browser_wallet_html: 'Deze portefeuilles combineren het gebruiksgemak met een tal van functies<br>Twee goede voorbeelden waarbij <strong>jij</strong> het volledige beheer hebt over jouw bitcoins'
   browser_wallet_2: Nog een voorbeeld waarbij het bedrijf je bitcoins voor jou bewaart en beveiligt
   fill_wallet_html: 'De volgende stap om bitcoins te kunnen gebruiken is je portefeuille te vullen met wat bitcoins<br>Je kan je eerste bitcoins hieronder geheel gratis verkrijgen (zonder verdere verplichtingen of registraties), maar laten we het betalen met bitcoins eerst uitproberen met een kleine'
@@ -50,89 +50,89 @@ nl:
   coin_image: Afbeelding van een munt
   some_bitcoins: Een aantal bitcoins
   extra: extra
-  demo1: Bitcoin demo transaction
-  imagine_shop_html: 'Imagine this section below is the website of an <strong>on-line shop</strong> where you are about to pay your purchase'
-  shop_legend: Shopping cart in your favorite web shop
-  item: Item
-  units: Units
-  price: Price
-  bear_description: Soft and warm teddy bear
-  or: or
-  item_image: Teddy bear image
-  pay_address: Pay to this address
-  shop_qr: Shop QR of address
-  shop_qr_tooltip: This QR code is easily read with a Bitcoin wallet app on a mobile phone
-  copy: Copy
-  logo_bitcoin: Bitcoin accepted here logo
-  copy_tooltip: copy the shop payment address to your demo Bitcoin wallet
-  imagine_wallet_html: 'This section below looks like the <strong>Bitcoin wallet</strong> software you can use to manage your bitcoins'
-  imagine_wallet_instructions_html: 'To practice, <strong>fill</strong> the form and press <strong>Send</strong>'
-  demo_wallet_legend: your Bitcoin demo wallet
+  demo1: Demo Bitcoin transactie
+  imagine_shop_html: 'Stel je het onderstaande gedeelte voor als een website van een <strong>on-line winkel</strong>waar je op het punt staat om je aankoop te betalen'
+  shop_legend: De winkelwagen in je favoriete webwinkel
+  item: Product
+  units: Aantal
+  price: Prijs
+  bear_description: Zachte en warme teddybeer
+  or: of
+  item_image: Afbeelding van een teddybeer
+  pay_address: Betaal aan dit adres
+  shop_qr: QR code van het betaaladres van de winkel
+  shop_qr_tooltip: Deze QR code kan gemakkelijk gelezen worden met een Bitcoin-portefeuille applicatie op een mobiele telefoon
+  copy: Kopieer
+  logo_bitcoin: Het logo dat Bitcoins worden geaccepteerd
+  copy_tooltip: Kopieer het betaaladres van de winkel naar je Bitcoin-portefeuille
+  imagine_wallet_html: 'De onderstaande sectie ziet eruit als de <strong>Bitcoin-portefeuille</strong> software dat je kan gebruiken voor het beheren van je bitcoins'
+  imagine_wallet_instructions_html: 'Om te oefenen, <strong>vul</strong> het formulier in en kies <strong>Verzenden</strong>'
+  demo_wallet_legend: Je Bitcoin demo-portefeuille
   in: in
-  demo_send_address: 'Send bitcoins from this Bitcoin address:'
-  multiple_addresses: Your Bitcoin wallet can contain as many Bitcoin addresses as you want
-  you_have: You have
-  out_of: out of
-  available: available
-  amount: amount
-  ready_to: ready to send
-  demo_input_amount_fail_help_html: "Value should be <strong class='title'>0.1</strong> (same as the price)"
-  demo_input_amount_tooltip_html: '1 bitcoin can be divided up to 8 decimal places<br>(0.00000001 bitcoins are currently valued at about 0.00001 USD)'
-  to_address: to
-  demo_input_address_tooltip_html: "enter here the Bitcoin address the shop provides for the payment (<strong>Hint</strong>: use the <i class='fi-page-copy'></i> Copy button)"
-  send_button_tooltip: send bitcoins to pay the demo bill
-  send: Send
-  payment_received: Payment received correctly
-  purchase_ok_image: Purchase OK image
-  demo_fail_help: The amount introduced in the demo Bitcoin wallet is not correct
-  demo_fail_help_1: "Don't worry, I have already introduced the right value for you, try again"
-  congratulations: Congratulations!
-  congrats_1: You have learned how to send bitcoins
-  congrats_2: And there are many more things you can do with Bitcoin
-  see_below: See below
-  how_transaction: How does this transaction work?
-  all_transactions: All transactions
-  all_transactions_tooltip: This means all Bitcoin addresses and all bitcoins sent between them
-  blockchain_1: ever made in the Bitcoin economy are stored in a
-  public_record: public record
-  public_record_tooltip: An updated copy of the transactions is stored in each of the computers of most Bitcoin users
-  blockchain_2: This public record works as a ledger and it is called the
+  demo_send_address: 'Verzend bitcoins vanaf dit Bitcoinadres:'
+  multiple_addresses: Je Bitcoin-portefeuille kan zoveel Bitcoinadressen bevatten als je wilt
+  you_have: Je hebt
+  out_of: van de
+  available: beschikbaar
+  amount: aantal
+  ready_to: Klaar om te verzenden
+  demo_input_amount_fail_help_html: "De waarde moet <strong class='title'>0.1</strong> zijn (hetzelfde als de prijs)"
+  demo_input_amount_tooltip_html: '1 bitcoin kan opgedeeld worden tot een getal met 8 decimalen<br>(0.00000001 bitcoins is momenteel ongeveer 0.00001 USD waard)'
+  to_address: naar
+  demo_input_address_tooltip_html: "plaats hier het Bitcoinadres voor de betaling aan de winkel (<strong>Hint</strong>: gebruik de <i class='fi-page-copy'></i> Kopieerknop)"
+  send_button_tooltip: verzend bitcoins om de demo-rekening te betalen
+  send: Verzenden
+  payment_received: Betaling correct ontvangen
+  purchase_ok_image: Afbeelding betaling OK
+  demo_fail_help: Het ingevulde bedrag in de Bitcoin demo-portefeuille is niet correct
+  demo_fail_help_1: Geen zorgen, ik heb het correcte bedrag reeds voor je ingevuld, probeer het nog eens
+  congratulations: Gefeliciteerd!
+  congrats_1: Je hebt geleerd hoe je bitcoins kunt verzenden
+  congrats_2: En er zijn nog veel meer dingen die je met Bitcoin kunt doen
+  see_below: Zie hieronder
+  how_transaction: Hoe werkt deze transactie?
+  all_transactions: Alle transacties
+  all_transactions_tooltip: Dit betekent alle Bitcoinadressen en alle bitcoins die daartussen worden verzonden
+  blockchain_1: die ooit in de Bitcoin economie uitgevoerd zijn, worden opgeslagen in een
+  public_record: openbaar register
+  public_record_tooltip: Een actuele kopie van alle transacties wordt opgeslagen in de computers van de meeste Bitcoin gebruikers
+  blockchain_2: Dit openbare register werkt als een soort kasboek en heet
   blockchain: Blockchain
-  blockchain_3: When you send a bitcoin payment the transaction is send to all Bitcoin users through the Bitcoin
-  p2p: peer to peer network
-  p2p_tooltip: The transaction is send to a few users that forward it to more users and this is repeated until most of the network has received the transaction (in seconds)
-  blockchain_4: to be stored in the Blockchain forever
-  blockchain_confuse: Do not confuse with
-  blockchain_confuse_2: a useful website to see Bitcoin transactions happening in real time
-  leger_image: Ledger image
-  almost_there: You are almost there
-  get_bitcoins: Get your first bitcoins
-  in_construction: In construction
-  apologies: Apologies, this part of the website is not yet finished
-  come_back: Come back later and you should be able to get some bitcoins for free
-  meanwhile: In the meanwhile, it´s recommended that you easily create
-  first_wallet: your first Bitcoin wallet on-line
-  or_install: or install one of the desktop Bitcoin wallets
-  suggested_above: suggested above
-  and_get_bitcoins: and you can also get bitcoins from one of these services
-  use: What can I do with Bitcoin?
-  use_1: "Today it's possible to pay with bitcoins in hundreds of"
-  use_2: shops around the world
-  From: From
-  to_until: to
-  flights: flights
+  blockchain_3: Als je een bitcoinbetaling verzendt, wordt de transactie naar alle Bitcoin gebruikers verzonden via het Bitcoin
+  p2p: peer-to-peer-netwerk
+  p2p_tooltip: De transactie wordt aan een aantal gebruikers verzonden, die het aan meer gebruikers doorsturen, dit wordt herhaald totdat het grootste gedeelte van het netwerk de transactie ontvangen heeft (in seconden)
+  blockchain_4: om voor altijd opgeslagen te worden in de Blockchain
+  blockchain_confuse: Niet te verwarren met
+  blockchain_confuse_2: een nuttige website om live Bitcoin transacties te zien
+  leger_image: Kasboek afbeelding
+  almost_there: Je bent er bijna
+  get_bitcoins: Ontvang je eerste bitcoins
+  in_construction: Under construction
+  apologies: Excuses, dit gedeelte van de website is nog niet klaar
+  come_back: Kom later terug voor je eerste gratis bitcoins
+  meanwhile: Het is aanbevolen om in de tussentijd simpelweg
+  first_wallet: je eerste online Bitcoin-portefeuille te creëren
+  or_install: of installeer een van de bureaublad Bitcoin-portefeuilles
+  suggested_above: zoals hierboven voorgesteld
+  and_get_bitcoins: en je kunt ook bitcoins verkrijgen met deze diensten
+  use: Wat kan ik doen met Bitcoin?
+  use_1: Op dit moment is het mogelijk om met bitcoins te betalen in honderden
+  use_2: winkels ter wereld
+  From: Van
+  to_until: tot
+  flights: vluchten
   hotels: hotels
-  furniture: furniture
-  food: food
+  furniture: meubels
+  food: voedsel
   food_link: http://www.thuisbezorgd.nl
-  sending_money: Sending money internationally and remittances become very cheap (cents) and fast (minutes)
-  person_to_person: person to person
-  sending_money_tooltip: "You only need to have a Bitcoin wallet software to send and receive bitcoins, that's it"
-  sending_money_2: transactions with Bitcoin
-  donating_to: Donating to
-  non_profit: non-profit organizations
+  sending_money: Internationaal geld verzenden
+  person_to_person: van persoon tot persoon
+  sending_money_tooltip: Je hebt alleen Bitcoin-portefeuille software nodig om bitcoins te kunnen verzenden en ontvangen, dat is alles
+  sending_money_2: ' is dan erg goedkoop (denk aan centen) en snel (minuten)'
+  donating_to: Doneren aan
+  non_profit: non-profit organisaties
   donating_to_1: becomes faster, direct and much cheaper, removing
-  donating_to_2: all intermediary fees
+  donating_to_2: alle intermediaire kosten
   donating_to_tooltip_html: 'You are sure the money arrives <strong>directly</strong> to the hands of those who need it the most with no delays'
   sean_outpost: has been feeding the needed for months only with Bitcoin and the
   bitgive_foundation: promotes health and environment improvement projects
