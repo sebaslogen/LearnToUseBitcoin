@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 1.2'
 # Are you a Human? play-captcha
 gem 'ayah_integration'
 
+# Manage a Coinbase account
+gem 'coinbase'
+
 #group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   #gem 'sdoc', require: false
