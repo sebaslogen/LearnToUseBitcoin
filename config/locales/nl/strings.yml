@@ -131,59 +131,47 @@ nl:
   sending_money_2: ' is dan erg goedkoop (denk aan centen) en snel (minuten)'
   donating_to: Doneren aan
   non_profit: non-profit organisaties
-  donating_to_1: becomes faster, direct and much cheaper, removing
+  donating_to_1: is dan sneller, directer en veel goedkoper, door ontbreken van
   donating_to_2: alle intermediaire kosten
-  donating_to_tooltip_html: 'You are sure the money arrives <strong>directly</strong> to the hands of those who need it the most with no delays'
-  sean_outpost: has been feeding the needed for months only with Bitcoin and the
-  bitgive_foundation: promotes health and environment improvement projects
-  democratization: 'Democratization of banking: with Bitcoin'
-  democratization_1: everybody in the world can have access to financial services
-  democratization_2: regardless of their country or economic situation, the only requirement is access to Internet
-  democratization_tooltip_html: "2.5 <strong>billion</strong> people in the world don't have access to banks or microfinance institutions"
-  small_payments: Small payments (smaller than $1) finally become possible. This opens the door to small donations or
-  content_payments: payments for content
-  on_internet: on Internet
-  content_payments_tooltip: Help children charities and Red Cross in
-  content_payments_tooltip_1: by contributing any amount of bitcoins and you receive games in exchange
-  myths: Myths about Bitcoin
-  myths_1: Money only works because there is a government backing it
-  myths_2_html: |
-    There is no government, corporation or legal entity backing Bitcoin which may make difficult to understand how can the currency be trustworthy.<br>
-    Bitcoin solves this by moving trust away from organizations and persons whose interests can be influenced to a unique <strong>trust in math</strong>.<br>
-    Similar to the way gold provides trust through a series of unique physical attributes that are difficult to imitate correctly,
-    Bitcoin uses algorithms to prove that money belongs only to the owner of a private key and can only be spent once.
-  myths_3: Everything in Bitcoin is anonymous
-  myths_4_html: |
-    Bitcoin is not anonymous, it protects your privacy like cash.<br>
-    Similar to cash where your name is not present in the bills that you use, in Bitcoin it is not possible to see your name in the bitcoins that you send or receive,
-    but if you reveal your identity to the person or company that receives the bitcoins, it is possible to link your identity with your transaction
-    and since all transactions are linked and publicly stored in the Blockchain, it is possible to partially track some of the previous transactions you made with the same
-  bitcoin_address: Bitcoin address
-  myths_4_tooltip: The Wallet software will easily create and manage new addresses for you
-  myths_5: Bitcoins are digital and I could copy them like digital music
-  myths_6_html: |
-    Bitcoins are limited in quantity.<br>
-    It is often compared to gold in the way that the money is released into the world in a continuous and decreased rate, like gold mining.<br>
-    There will <strong>never be more than 21 million bitcoins</strong> in existence and every four years the amount of bitcoins released is halved, until the last bitcoin is released around year 2140.<br>
-    This is done by a mathematical algorithm, not a person.
-  myths_7: Bitcoins are created at will out of thin air
-  myths_8_1: Bitcoins are created as a reward for those who help verify
-  valid_transactions: valid transactions
-  valid_transactions_tooltip: For example, verify that you have enough bitcoins to send before transferring them
-  myths_8_2: in the Bitcoin network
-  myths_9_1: This process is called
+  donating_to_tooltip_html: 'Je weet zeker dat het geld zonder vertragingen <strong>direct</strong> aankomt in handen van degenen die het het meest nodig hebben'
+  sean_outpost: heeft daklozen maanden lang van eten voorzien alleen met Bitcoin en de
+  bitgive_foundation: promoot projecten ter verbetering van de gezondheid en het milieu
+  democratization: 'Democratisering van het bankwezen: met Bitcoin'
+  democratization_1: iedereen in de wereld kan toegang krijgen tot financiële diensten
+  democratization_2: onafhankelijk van het land of de economische situatie, de enige voorwaarde is toegang tot het internet
+  democratization_tooltip_html: '2,5 <strong>miljard</strong> mensen in de wereld hebben geen toegang tot banken of instellingen voor microfinanciering'
+  small_payments: Kleine betalingen (kleiner dan $1) zijn dan eindelijk mogelijk. Dit opent deuren voor kleine donaties of
+  content_payments: "betalingen voor 'content' (bijvoorbeeld artikelen, muziek en foto's)"
+  on_internet: op het Internet
+  content_payments_tooltip: Help liefdadigheidsinstellingen voor kinderen en het Rode Kruis via
+  content_payments_tooltip_1: door welk bedrag in bitcoin dan ook bij te dragen en ontvang daarvoor games in ruil
+  myths: Mythen over Bitcoin
+  myths_1: Geld werkt alleen omdat er een overheid is die het financiert
+  myths_2_html: 'Er is geen enkele regering, corporatie of juridische entiteit die Bitcoin financiert, daarom kan het moeilijk te begrijpen zijn hoe de valuta betrouwbaar kan zijn.<br>Bitcoin lost dit op door het vertrouwen in organisaties en personen, wiens belangen kunnen worden beïnvloed, te verplaatsen naar een uniek <strong>vertrouwen in de wiskunde</strong>.<br>Vergelijkbaar met de manier waarop goud vertrouwen biedt door middel van een aantal unieke fysieke kenmerken die moeilijk goed te imiteren zijn, worden bij Bitcoin algoritmen gebruikt waardoor het zeer gemakkelijk te bewijzen is dat geld alleen aan de eigenaar van de privésleutel behoort, zogenaamd vals geld onmogelijk wordt en het bovendien slechts één keer kan worden uitgegeven.'
+  myths_3: Alles in Bitcoin is anoniem
+  myths_4_html: 'Bitcoin is niet anoniem, het beschermt je privacy net als bij contant geld.<br>Vergelijkbaar met contant geld, waar je naam niet op de bonnetjes staat die je krijgt, is het bij Bitcoin niet mogelijk om je naam te zien bij de bitcoins die je verzendt of ontvangt. Als je je identiteit echter aan de persoon of het bedrijf dat de bitcoins ontvangt bekent maakt, is het mogelijk om die te koppelen met je transactie. Omdat alle transacties met elkaar gelinkt zijn en openbaar zijn in de Blockchain, is het mogelijk om gedeeltelijk enkele van de vorige transacties bij te houden, die u hebt gemaakt met hetzelfde'
+  bitcoin_address: Bitcoinadres
+  myths_4_tooltip: De portefeuille software zal gemakkelijk nieuwe adressen voor je aanmaken en beheren
+  myths_5: Bitcoins zijn digitaal en ik kan ze kopiëren net zoals bij digitale muziek
+  myths_6_html: 'Bitcoins zijn beperkt in aantal.<br>Het wordt vaak vergeleken met goud en de continue wijze waarop geld beschikbaar komt en daarbij in waarde afneemt, zoals bij goudwinning.<br>Er zullen <strong>nooit meer dan 21 miljoen bitcoins</strong> bestaan en elke vier jaar wordt de hoeveelheid vrijgegeven bitcoins gehalveerd, totdat de laatste bitcoin is vrijgegeven rond jaar 2140.<br>Dit gebeurt door een wiskundig algoritme, niet door een persoon. Daarom is het voor niemand mogelijk om bitcoins te kopiëren of te falsificeren.'
+  myths_7: Bitcoins worden nergens van gemaakt
+  myths_8_1: Bitcoins worden gemaakt als een beloning voor diegenen die helpen met het verifiëren van
+  valid_transactions: geldige transacties
+  valid_transactions_tooltip: Bijvoorbeeld, controleren of degene voor de betreffende transactie over voldoende bitcoins beschikt, voordat die wordt verzonden
+  myths_8_2: in het Bitcoin netwerk
+  myths_9_1: Dit proces heet
   bitcoin_mining: Bitcoin Mining
-  myths_9_2: and takes care of the accounting of the economy
-  mining_lottery_1: To understand how a miner gets a reward you can learn how the
-  lottery_rewards: lottery rewards
-  mining_lottery_2: work with
+  myths_9_2: en zorgt voor de boekhouding van de economie
+  mining_lottery_1: "Om te begrijpen hoe een 'miner' een beloning krijgt kun je leren over hoe de"
+  lottery_rewards: loterijprijzen
+  mining_lottery_2: werken met het algoritme
   proof_of_work: Proof of Work
-  proof_of_work_extra: (or POW)
-  share_love_tooltip: Send love back with Bitcoin
-  continue_learning: Continue learning
-  explore: Explore the world of Bitcoin
-  news: news
-  community: community
-  development: development
-  wiki_pages: wiki pages
-  minning_information: bitcoin minning information
+  proof_of_work_extra: (of POW)
+  share_love_tooltip: Stuur liefde terug met Bitcoin
+  continue_learning: Blijven leren
+  explore: Ontdek de wereld van Bitcoin
+  news: nieuws
+  community: gemeenschap
+  development: ontwikkeling
+  wiki_pages: "wiki-pagina 's"
+  minning_information: bitcoin mining informatie
