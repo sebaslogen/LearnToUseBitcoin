@@ -18,7 +18,7 @@ nl:
   counting_stars: Sterren aan het tellen in het universum...
   bitcoin_easy: Bitcoin is zo makkelijk als
   sending_receiving_html: 'Het verzenden en ontvangen van bitcoins is net zo makkelijk als het versturen van een <strong>e-mail</strong>, het eerste wat we nodig hebben is een <strong>adres</strong>'
-  bitcoin_address_html: 'Een <strong>Bitcoin adres</strong> is de plaats waar de bitcoins opgeslagen worden<br> Als in een doorzichtige <strong>kluis</strong>, de munten kunnen alleen worden verplaatst door de eigenaar van de <strong>sleutel</strong>, maar de wereld kan zien wat'
+  bitcoin_address_html: 'Een <strong>Bitcoinadres</strong> is de plaats waar de bitcoins opgeslagen worden<br> Als in een doorzichtige <strong>kluis</strong>, de munten kunnen alleen worden verplaatst door de eigenaar van de <strong>sleutel</strong>, maar de wereld kan zien wat'
   inside: er in zit
   bitcoin_address_looks: Het adres is een lange reeks van letters en cijfers, dat er zo uit ziet
   anonymous_email_html: 'Net als een anonieme e-mail, is het Bitcoin adres niet gelinkt aan een identiteit<br>Het is alleen een reeks van nummers en letters'
@@ -51,7 +51,7 @@ nl:
   some_bitcoins: Een aantal bitcoins
   extra: extra
   demo1: Demo Bitcoin transactie
-  imagine_shop_html: 'Stel je het onderstaande gedeelte voor als een website van een <strong>on-line winkel</strong>waar je op het punt staat om je aankoop te betalen'
+  imagine_shop_html: 'Stel je het onderstaande gedeelte voor als een website van een <strong>on-line winkel</strong> waar je op het punt staat om je aankoop te betalen'
   shop_legend: De winkelwagen in je favoriete webwinkel
   item: Product
   units: Aantal
@@ -173,5 +173,5 @@ nl:
   news: nieuws
   community: gemeenschap
   development: ontwikkeling
-  wiki_pages: "wiki-pagina 's"
+  wiki_pages: "wiki-pagina's"
   minning_information: bitcoin mining informatie
