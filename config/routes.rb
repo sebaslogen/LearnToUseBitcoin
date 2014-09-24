@@ -1,7 +1,11 @@
 LearnToUseBitcoin::Application.routes.draw do
-#  get "visitors/show"
-#  resources :wallets
-#  get '/testadd' => 'wallets#testadd'######################################################## TODO: Test code
+  if Rails.env.development?
+    get "visitors/show"
+    get "visitors/test_delete_visitor"
+    resources :wallets
+    get '/testadd' => 'wallets#testadd'######################################################## TODO: Test code
+    get 'wallet_demo' => 'pages#show', id: 'wallet_demo'
+  end
   root :module=> :high_voltage, :controller => :pages, :action => :show, :id => 'home'
   get 'demo' => 'pages#show', id: '_demo'
   get 'mining' => 'pages#show', id: '_mining'

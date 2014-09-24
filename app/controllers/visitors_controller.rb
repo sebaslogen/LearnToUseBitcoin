@@ -43,7 +43,12 @@ contact her directly at invitations@leartousebitcoin.com" # TODO: Improve messag
       redirect_to root_path # halts request cycle
     end
   end 
-      
+         
+  def test_delete_visitor
+    Visitor.where(ip: request.remote_ip).destroy_all
+    redirect_to root_path # halts request cycle
+  end
+  
   private
   def cn
     self.class.name
@@ -61,4 +66,5 @@ contact her directly at invitations@leartousebitcoin.com" # TODO: Improve messag
     ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY'])
     return ayah.score_result(session_secret, ip)
   end
+
 end

@@ -264,4 +264,5 @@ var windowResize = {
     }
   }
 };
+
 windowResize.update();

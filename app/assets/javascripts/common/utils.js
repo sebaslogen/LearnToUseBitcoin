@@ -133,6 +133,9 @@ $(document).ready(function() {
   setupActiveJavaScript();
   setupLocalization();
   detectLocation();
+  if (typeof $('div.sWelcome')[0] === 'undefined') {// Only execute JS on the Home page (useful for test pages)
+    return;
+  }
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
   // setupNavigationMenu(); // DISABLED TODO: Remove or activate
   setupAutoScroll();
