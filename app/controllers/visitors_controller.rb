@@ -5,11 +5,14 @@ class VisitorsController < ApplicationController
   before_action :check_captcha, only: [:show]
  
   def show
+    Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Good, received email #{params[:email]}" ######################################################## TODO: Test code
     search = Visitor.where(ip: request.remote_ip)
+    
     if search.empty?
       # Associate visitor to wallet and show new wallet
       Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Good, search for IP #{request.remote_ip} didn't find any previous visitor in DB" ######################################################## TODO: Test code
       @visitor = Visitor.new(ip: request.remote_ip)
+      
       begin
         @wallet = Wallet.associate_with_visitor!(@visitor)
         if @wallet
@@ -45,7 +48,12 @@ contact her directly at invitations@leartousebitcoin.com" # TODO: Improve messag
   end 
          
   def test_delete_visitor
-    Visitor.where(ip: request.remote_ip).destroy_all
+    visitor = Visitor.where(ip: request.remote_ip).take
+    unless visitor
+      Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Visitor to delete found #{visitor.ip}" ######################################################## TODO: Test code
+      visitor.wallets.destroy_all
+      visitor.destroy
+    end
     redirect_to root_path # halts request cycle
   end
   

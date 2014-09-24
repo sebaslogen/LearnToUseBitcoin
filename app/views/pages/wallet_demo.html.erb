@@ -3,6 +3,7 @@
 <form name="input_test" action="visitors/show" method="get" id="get-bitcoins-section">
   <fieldset>
     <p class="label round radius success">You are almost there...</p><br><br>
+    Email for backups: <input type="text" name="email" value="test@learntousebitcoin.com"><br>
     <% ayah = AYAH::Integration.new(ENV['AREYOUAHUMAN_PUBLISHER_KEY'], ENV['AREYOUAHUMAN_SCORING_KEY']) %>
     <%= raw( ayah.get_publisher_html ) %>
     <button type="submit" class="radius round large"><%=t :get_bitcoins%> <i class="fi-bitcoin-circle bitcoin-button"></i></button>
