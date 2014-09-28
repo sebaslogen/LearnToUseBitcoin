@@ -75,12 +75,6 @@ class Blockchaindotinfo
     dest_address = '1Jtyqx79yWRjQmTQTbhHysm1tx953cJcMV'
     amount = 0.0001
     Blockchaindotinfo.send_money(guid, dest_address, amount)
-  end  
-  
-  def self.create_test
-    private_key_to_import = '5KLTJs1vWcBjCWgNAfTpstNdSvuKZvnDouoVx2BET2JmAaeWt47' # Real test
-    address_label = 'First free bitcoins from www learntousebitcoin com  Do not use this address to receive money'
-    Blockchaindotinfo.new(private_key_to_import, address_label)
   end
 
 
