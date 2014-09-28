@@ -55,7 +55,14 @@ class Blockchaindotinfo
       raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Response from Blockchain.info was empty calling URL #{request_url}"
     end
     begin
-      JSON.parse( resp.body )
+      resp_msg = JSON.parse( resp.body )
+      if ( resp_msg.include?( 'error' ) )
+        raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg['error']}"
+      elsif ( resp_msg.include?( 'message' ) && resp_msg['message'].downcase.include?('sent') )
+        return true
+      else
+        raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg}"  
+      end
     rescue JSON::ParserError
       raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error parsing JSON response from Blockchain.info, response was:#{resp.body if resp}"
     end

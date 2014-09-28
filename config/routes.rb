@@ -1,5 +1,5 @@
 LearnToUseBitcoin::Application.routes.draw do
-  if Rails.env.development?
+  if Rails.env.development? || Rails.env.test?
     get "visitors/show"
     get "visitors/test_delete_visitor"
     resources :wallets

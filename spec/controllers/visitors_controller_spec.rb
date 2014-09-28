@@ -5,12 +5,13 @@ require 'exceptions'
 RSpec.configure do |config|
   config.mock_framework = :mocha
   config.include CustomHelpers
+  config.infer_spec_type_from_file_location!
 end
 
 describe VisitorsController do
   
   before(:each) do
-    @request.stubs(:remote_ip).returns("1.2.3.4")
+    @request.stubs(:remote_ip).returns("1.2.3.4") if @request
   end
   
   context 'when the Captcha is invalid' do
