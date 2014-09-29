@@ -35,7 +35,7 @@ describe Blockchaindotinfo do
     end
   end
   
-  context 'when the Blockchain.info API URL is invalid' do
+  context 'when the Blockchain.info JSON response is invalid' do
     it 'fails to create an online wallet' do
       Blockchaindotinfo.any_instance.stubs(:parse_new_wallet_JSON).raises(Exceptions::BlockchainDotInfoWalletCreationError) # Exception
       private_key_to_import = '5KLTJs1vWcBjCWgNAfTpstNdSvuKZvnDouoVx2BET2JmAaeWt47'

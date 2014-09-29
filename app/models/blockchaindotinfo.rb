@@ -57,7 +57,11 @@ class Blockchaindotinfo
     begin
       resp_msg = JSON.parse( resp.body )
       if ( resp_msg.include?( 'error' ) )
-        raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg['error']}"
+        if resp_msg['message'].downcase.include?('insuficient')
+          raise Exceptions::BlockchainDotInfoInsufficientFundsError, "Error response from Blockchain.info. Insufficient funds, response was:#{resp_msg['error']}"
+        else
+          raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg['error']}"
+        end
       elsif ( resp_msg.include?( 'message' ) && resp_msg['message'].downcase.include?('sent') )
         return true
       else
