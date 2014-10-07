@@ -4,7 +4,9 @@
     <%= favicon_link_tag 'bitcoin.ico' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Learn To Use Bitcoin" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : 'Learn To Use Bitcoin' %>">
+    <% general_description = 'Learn To Use Bitcoin will teach you what is Bitcoin and how to use it in a fun and interactive experience. Get your first bitcoins for free while learning' %>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : general_description %>">
+    <meta name="keywords" content="bitcoin, learn, free, bitcoins" />
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag "vendor/modernizr" %>
