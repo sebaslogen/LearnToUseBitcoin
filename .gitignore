@@ -217,7 +217,3 @@ pip-log.txt
 
 # Ignore application configuration
 /config/application.yml
-
-# Extras
-.sqlite3
-.lock
