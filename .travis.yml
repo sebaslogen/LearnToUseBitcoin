@@ -1,3 +1,8 @@
 language: ruby
 rvm:
-  - 2.0.0-p247
+- 2.0.0-p247
+env:
+  matrix:
+  - BLOCKCHAINDOTINFO_API_URL="https://blockchain.info"
+  global:
+    secure: TEwmoTilJ4HmKLN07/8DL4tpqlHAdFODJHKbQqCoYJLFfno6qNFe21pBNfgKFritDzvD6QSe6IelYGL1L5yd6b350EeonQXJzPqGLGsyIooB7YxVsAtPV/cCHXZgahZvZiPyVaocJHFarEDagFcoQYYp6p4yh1Amoc5DcvKNOsg=

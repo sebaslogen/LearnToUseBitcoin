@@ -79,6 +79,7 @@ group :development do
   gem 'rails_layout' # generates files for an application layout
   gem 'sqlite3' # Use sqlite3 as the database for Active Record in Nitrous.io development environment
   gem 'travis-lint' # Travis-CI config validation script
+  gem 'travis' # Travis-CI to encrypt data
 end
 group :production do
   gem 'pg' # PostgreSQL (Heroku doesn´t support SQLlite)
