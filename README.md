@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/neoranga55/LearnToUseBitcoin.svg?branch=master)](https://travis-ci.org/neoranga55/LearnToUseBitcoin)
+
 LearnToUseBitcoin
 =================
 
