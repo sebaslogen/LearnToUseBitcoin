@@ -113,6 +113,19 @@ $.fn.isCompletelyScrolledIntoView = function() {
 var scrollFadingBlocked = false; // Detect multiple requests in less than 200ms
 var scrollFadingChecker = null;
 
+function setTitlesExtrusion( percentage ) {
+  if (percentage < 0.6) { // Change extrusion of Welcome text
+    $('#welcome-content').find('h1').addClass('de_extruded').removeClass('extruded');
+  } else {
+    $('#welcome-content').find('h1').addClass('extruded').removeClass('de_extruded');
+  }
+  if (percentage < 0.83) { // Change extrusion of Welcome subtitle text
+    $('#welcome-content').find('h2').addClass('de_extruded-subtitle').removeClass('extruded-subtitle');
+  } else {
+    $('#welcome-content').find('h2').addClass('extruded-subtitle').removeClass('de_extruded-subtitle');
+  }
+}
+
 function disableWelcomeSection( percentage, scrolled, sizeWelcome ) {
   // Disable welcome section when it's not visible
   if (percentage <= 0) {
@@ -126,33 +139,29 @@ function disableWelcomeSection( percentage, scrolled, sizeWelcome ) {
     $('#coin-canvas').css('opacity', percentage);
     $('#welcome-content').find('div#scroll-message').css('opacity', percentage - (scrolled / sizeWelcome));
     if (getWindowsSize() === "large") {
-      // Change extrusion of Welcome text
-      if (percentage < 0.6) {
-        $('#welcome-content').find('h1').addClass('de_extruded').removeClass('extruded');
-      } else {
-        $('#welcome-content').find('h1').addClass('extruded').removeClass('de_extruded');
-      }
-      // Change extrusion of Welcome subtitle text
-      if (percentage < 0.83) {
-        $('#welcome-content').find('h2').addClass('de_extruded-subtitle').removeClass('extruded-subtitle');
-      } else {
-        $('#welcome-content').find('h2').addClass('extruded-subtitle').removeClass('de_extruded-subtitle');
-      }
+      setTitlesExtrusion();
     }
   }
 }
 
-function scrollFading() {
+function delayScrollFading() {
   if (scrollFadingBlocked) { // Prevent too many updates
     if (scrollFadingChecker !== null) {
       clearTimeout(scrollFadingChecker);
       scrollFadingChecker = null;
     }
-    scrollFadingChecker = setTimeout(200, scrollFading);
-    return;
+    scrollFadingChecker = setTimeout(200, scrollFading); // Delay next check
+    return true;
   } else {
-    scrollFadingBlocked = true;
+    return false;
   }
+}
+
+function scrollFading() {
+  if (delayScrollFading()) {
+    return;
+  }
+  scrollFadingBlocked = true;
   var sizeWelcome = parseInt($('#welcome').css('height'),10);
   var scrolled = $(window).scrollTop() * 1.5;
   var percentage = 1 - (scrolled / sizeWelcome);
