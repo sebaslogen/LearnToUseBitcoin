@@ -1,7 +1,9 @@
+/*global $, hideAnimatedElements, checkCoinAnimationCancel, showDemoTransaction, showDemoTransaction, 
+finishCoinAnimation, coinAnimationFinished, finishCoinAnimation, positionCoinAnimationCanvas, Modernizr*/
 var show_bottom_elements = false;
 
 function setupActiveJavaScript() {
-  if (getWindowsSize() !== "small") { // Fading title works well only on tabs or faster HW
+  if (getWindowsSize() !== 'small') { // Fading title works well only on tabs or faster HW
     $('#welcome-content').css({
       'position': 'fixed',
       'margin': '0 0 0 -37.5%'
@@ -15,7 +17,7 @@ function getWindowsSize() {
 }
 
 function moveTo(id, speed) {
-  speed = (typeof speed === "undefined") ? 1000 : speed;
+  speed = (typeof speed === 'undefined') ? 1000 : speed;
   var offset = 20;
   var target = $(id).offset().top - offset;
   $('html, body').animate({scrollTop:target}, speed, 'easeInOutCubic');
@@ -49,7 +51,7 @@ function setupNavigationMenu() {
   });
   // Navigation menu links to sections
   $('a[href^="#"]').click(function(event) {
-    var id = $(this).attr("href");
+    var id = $(this).attr('href');
     moveTo(id);
     event.preventDefault();
   });
@@ -75,7 +77,6 @@ $.fn.isBottomScrolledIntoView = function() {
   var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
-  var elemTop = items[2];
   var elemBottom = items[3];
   return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
 };
@@ -84,7 +85,6 @@ $.fn.isBottomWithMarginScrolledIntoView = function() {
   var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
-  var elemTop = items[2];
   var elemBottom = items[4];
   return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
 };
@@ -138,7 +138,7 @@ function disableWelcomeSection( percentage, scrolled, sizeWelcome ) {
     $('#welcome-content').css('margin-top', (scrolled/(-15))+'px'); // Small parallax on title
     $('#coin-canvas').css('opacity', percentage);
     $('#welcome-content').find('div#scroll-message').css('opacity', percentage - (scrolled / sizeWelcome));
-    if (getWindowsSize() === "large") {
+    if (getWindowsSize() === 'large') {
       setTitlesExtrusion();
     }
   }
@@ -183,15 +183,15 @@ function scrollFading() {
 }
 
 function setupScrollFadingAndResize() {
-  $("body,html").bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
-    if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
-      $("html,body").stop();
+  $('body,html').bind('scroll mousedown DOMMouseScroll mousewheel keyup', function(e){
+    if ( e.which > 0 || e.type === 'mousedown' || e.type === 'mousewheel'){
+      $('html,body').stop();
     }
   });
 }
 
 function showBottomElements() {
-  if ( show_bottom_elements && $("#transference-demo").isBottomScrolledIntoView() ) { // Only when section end is visible
+  if ( show_bottom_elements && $('#transference-demo').isBottomScrolledIntoView() ) { // Only when section end is visible
     setTimeout(function() { // Show with a little delay
       $('#get-bitcoins-section').fadeIn('slow');
       $('#use').fadeIn('slow');
@@ -210,11 +210,11 @@ function updateSizes() {
     var youtube_aspect_ratio = 360 / 640;
     $('#youtube-video').width(parseInt(video_width,10)).height(parseInt(youtube_aspect_ratio * video_width,10));
     $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
-    if (getWindowsSize() !== "small") {
+    if (getWindowsSize() !== 'small') {
       $('#footsteps-image').width(parseInt(ratio * 174,10));
       $('#footsteps-image').height(parseInt(ratio * 444,10));
       var increase = 600;
-      if (getWindowsSize() === "medium") {
+      if (getWindowsSize() === 'medium') {
         increase = 500; // Make sure image doesn't cover text
       }
       $('#footsteps-image').css('top','-' + (increase+(10000/$('#youtube-video').width())) + 'px');
@@ -226,17 +226,17 @@ function updateSizes() {
                $('div#what').find('h3').height(),10) + 170);
     // Change vertical separation line to horizontal 
     // in demo transaction with smaller(medium) size window
-    if (getWindowsSize() !== "large") {
+    if (getWindowsSize() !== 'large') {
       var element = $('div.right-border');
       element.removeClass('right-border');
       element.addClass('bottom-border');
-    } else if (getWindowsSize() === "large") {
+    } else if (getWindowsSize() === 'large') {
       var el = $('div.bottom-border');
       el.removeClass('bottom-border');
       el.addClass('right-border');
     }
     if (typeof coinAnimationStarted !== 'undefined') {
-      if (getWindowsSize() === "small") {
+      if (getWindowsSize() === 'small') {
         finishCoinAnimation(); // Small screens should not have the coin animation
       } else {
         if (coinAnimationFinished) {
