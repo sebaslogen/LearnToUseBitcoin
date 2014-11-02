@@ -78,7 +78,7 @@ $.fn.isBottomScrolledIntoView = function() {
   var elemTop = items[2];
   var elemBottom = items[3];
   return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
-}
+};
 
 $.fn.isBottomWithMarginScrolledIntoView = function() {
   var items = getScrolledItems(this);
@@ -87,7 +87,7 @@ $.fn.isBottomWithMarginScrolledIntoView = function() {
   var elemTop = items[2];
   var elemBottom = items[4];
   return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
-}
+};
   
 $.fn.isScrolledIntoView = function() {
   var items = getScrolledItems(this);
@@ -99,7 +99,7 @@ $.fn.isScrolledIntoView = function() {
           ((elemTop >= docViewTop) && (elemTop <= docViewBottom)) ||
           ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)) ||
           ((elemTop <= docViewTop) && (elemBottom >= docViewBottom)) );
-}
+};
 
 $.fn.isCompletelyScrolledIntoView = function() {
   var items = getScrolledItems(this);
@@ -108,7 +108,7 @@ $.fn.isCompletelyScrolledIntoView = function() {
   var elemTop = items[2];
   var elemBottom = items[3];
   return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
+};
 
 var scrollFadingBlocked = false; // Detect multiple requests in less than 200ms
 var scrollFadingChecker = null;
