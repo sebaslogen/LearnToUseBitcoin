@@ -25,7 +25,7 @@ requestAnimationFrame = window.requestAnimationFrame ||
 
 function startCoinAnimation() {
   if ( autoscrolled || // Cancel animation if page already scrolled
-    ( $(window).scrollTop() >= parseInt($('#welcome').css('height')) ) ) {
+    ( $(window).scrollTop() >= parseInt($('#welcome').css('height'),10) ) ) {
     finishCoinAnimation();
     return;
   }

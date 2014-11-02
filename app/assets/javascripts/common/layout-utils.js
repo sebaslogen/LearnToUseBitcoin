@@ -1,7 +1,7 @@
 var show_bottom_elements = false;
 
 function setupActiveJavaScript() {
-  if (getWindowsSize() != "small") { // Fading title works well only on tabs or faster HW
+  if (getWindowsSize() !== "small") { // Fading title works well only on tabs or faster HW
     $('#welcome-content').css({
       'position': 'fixed',
       'margin': '0 0 0 -37.5%'
@@ -57,7 +57,7 @@ function setupNavigationMenu() {
 
 function setupScrollHintAnimation() {
   // Show arrow animation
-  if (  $(window).scrollTop() <= parseInt( $('#welcome').css('height') )  ) {
+  if (  $(window).scrollTop() <= parseInt( $('#welcome').css('height'),10 )  ) {
     $('#scroll-arrow').animate({top:'+=40'}, 4000, 'easeInOutQuart');
   }
 }
@@ -67,7 +67,7 @@ function getScrolledItems(elem) {
   var docViewBottom = docViewTop + $(window).height();
   var elemTop = $(elem).offset().top;
   var elemBottom = elemTop + $(elem).height();
-  var elemBottomWithMargin = elemBottom + parseInt( $(elem).css('margin-top') ) + parseInt( $(elem).css('margin-bottom') );
+  var elemBottomWithMargin = elemBottom + parseInt( $(elem).css('margin-top'),10 ) + parseInt( $(elem).css('margin-bottom'),10 );
   return [docViewTop, docViewBottom, elemTop, elemBottom, elemBottomWithMargin];
 }
 
@@ -113,21 +113,8 @@ $.fn.isCompletelyScrolledIntoView = function() {
 var scrollFadingBlocked = false; // Detect multiple requests in less than 200ms
 var scrollFadingChecker = null;
 
-function scrollFading() {
-  if (scrollFadingBlocked) { // Prevent too many updates
-    if (scrollFadingChecker !== null) {
-      clearTimeout(scrollFadingChecker);
-      scrollFadingChecker = null;
-    }
-    scrollFadingChecker = setTimeout(200, scrollFading);
-    return;
-  } else {
-    scrollFadingBlocked = true;
-  }
-  var sizeWelcome = parseInt($('#welcome').css('height'));
-  var scrolled = $(window).scrollTop() * 1.5;
-  var percentage = 1 - (scrolled / sizeWelcome);
-  // Disable welcome sectoin when it's not visible
+function disableWelcomeSection( percentage, scrolled, sizeWelcome ) {
+  // Disable welcome section when it's not visible
   if (percentage <= 0) {
     percentage = 0;
     $('#welcome-content').addClass('hidden');
@@ -138,7 +125,7 @@ function scrollFading() {
     $('#welcome-content').css('margin-top', (scrolled/(-15))+'px'); // Small parallax on title
     $('#coin-canvas').css('opacity', percentage);
     $('#welcome-content').find('div#scroll-message').css('opacity', percentage - (scrolled / sizeWelcome));
-    if (getWindowsSize() == "large") {
+    if (getWindowsSize() === "large") {
       // Change extrusion of Welcome text
       if (percentage < 0.6) {
         $('#welcome-content').find('h1').addClass('de_extruded').removeClass('extruded');
@@ -153,8 +140,25 @@ function scrollFading() {
       }
     }
   }
+}
+
+function scrollFading() {
+  if (scrollFadingBlocked) { // Prevent too many updates
+    if (scrollFadingChecker !== null) {
+      clearTimeout(scrollFadingChecker);
+      scrollFadingChecker = null;
+    }
+    scrollFadingChecker = setTimeout(200, scrollFading);
+    return;
+  } else {
+    scrollFadingBlocked = true;
+  }
+  var sizeWelcome = parseInt($('#welcome').css('height'),10);
+  var scrolled = $(window).scrollTop() * 1.5;
+  var percentage = 1 - (scrolled / sizeWelcome);
+  disableWelcomeSection(percentage, scrolled, sizeWelcome);
   // Increase footsteps opacity
-  var sizeWelcomeAndWhat = parseInt($('#welcome').css('height')) + (parseInt($('#what').css('height')) / 2);
+  var sizeWelcomeAndWhat = parseInt($('#welcome').css('height'),10) + (parseInt($('#what').css('height'),10) / 2);
   var footsteps_opacity = ((scrolled*scrolled/1500) / sizeWelcomeAndWhat);
   if ((footsteps_opacity > 0.1) && (footsteps_opacity < 2.6)) {
     $('#footsteps-image').css('opacity', footsteps_opacity / 2);
@@ -191,18 +195,17 @@ function showBottomElements() {
 function updateSizes() {
   $(document).ready(function() {
     /* Adapt footsteps position and size */
-    var video_height = $('#youtube-video-container').height();
     var video_width = $('#youtube-video-container').width();
     var space_side_video = ( $(window).width() - video_width ) / 2;
     var ratio = space_side_video / 178;
     var youtube_aspect_ratio = 360 / 640;
-    $('#youtube-video').width(parseInt(video_width)).height(parseInt(youtube_aspect_ratio * video_width));
+    $('#youtube-video').width(parseInt(video_width,10)).height(parseInt(youtube_aspect_ratio * video_width,10));
     $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
-    if (getWindowsSize() != "small") {
-      $('#footsteps-image').width(parseInt(ratio * 174));
-      $('#footsteps-image').height(parseInt(ratio * 444));
+    if (getWindowsSize() !== "small") {
+      $('#footsteps-image').width(parseInt(ratio * 174,10));
+      $('#footsteps-image').height(parseInt(ratio * 444,10));
       var increase = 600;
-      if (getWindowsSize() == "medium") {
+      if (getWindowsSize() === "medium") {
         increase = 500; // Make sure image doesn't cover text
       }
       $('#footsteps-image').css('top','-' + (increase+(10000/$('#youtube-video').width())) + 'px');
@@ -211,20 +214,20 @@ function updateSizes() {
     $('div#what').height(
       parseInt($('.video-container').find('iframe').height() + 
                $('div#what').find('h1').height() + 
-               $('div#what').find('h3').height()) + 170);
+               $('div#what').find('h3').height(),10) + 170);
     // Change vertical separation line to horizontal 
     // in demo transaction with smaller(medium) size window
-    if (getWindowsSize() != "large") {
+    if (getWindowsSize() !== "large") {
       var element = $('div.right-border');
       element.removeClass('right-border');
       element.addClass('bottom-border');
-    } else if (getWindowsSize() == "large") {
+    } else if (getWindowsSize() === "large") {
       var el = $('div.bottom-border');
       el.removeClass('bottom-border');
       el.addClass('right-border');
     }
     if (typeof coinAnimationStarted !== 'undefined') {
-      if (getWindowsSize() == "small") {
+      if (getWindowsSize() === "small") {
         finishCoinAnimation(); // Small screens should not have the coin animation
       } else {
         if (coinAnimationFinished) {
@@ -258,7 +261,7 @@ var windowResize = {
     this.height = $(window).height();
   },
   checkResize: function(callback) {
-    if (( this.width != $(window).width() ) || ( this.height != $(window).height() )) {
+    if (( this.width !== $(window).width() ) || ( this.height !== $(window).height() )) {
       this.update();
       callback.apply();
     }

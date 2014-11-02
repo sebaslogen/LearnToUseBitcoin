@@ -4,7 +4,7 @@ function setupAutoScroll() {
   if (($('div.alert-box').size() === 0) && (getWindowsSize() != "small") ) { // Only when there is no flash message shown at page top or is not a mobile
     // Automatically move to start section after a few seconds if user hasn't seen it yet
     setTimeout(function() {
-      if ( ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height')) + 100) && // Welcome section not visible
+      if ( ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height'),10) + 100) && // Welcome section not visible
           ((typeof coinAnimationStarted === 'undefined') || (coinAnimationStarted === false)) ) { // Coin animation not started
         autoScrollToWelcome();
       }
@@ -14,7 +14,7 @@ function setupAutoScroll() {
 
 function autoScrollToWelcome() {
   if ( (autoscrolled === false) &&
-    (  $(window).scrollTop() <= parseInt( $('#welcome').css('height') )  )) {
+    (  $(window).scrollTop() <= parseInt( $('#welcome').css('height'),10 )  )) {
     autoscrolled = true;
     moveTo('#what', 3000);  // Move automatically but slowly
     analytics.track('AutoScrolled to Welcome section');
@@ -31,7 +31,7 @@ function loadCoinAnimation() { // Asynchronously load script for coin animation
 
 function checkCoinAnimationCancel() {
   if ( autoscrolled || // Cancel animation if page already scrolled
-    ( $(window).scrollTop() >= parseInt($('#welcome').css('height')) ) ) {
+    ( $(window).scrollTop() >= parseInt($('#welcome').css('height'),10) ) ) {
     if ((typeof coinAnimationStarted !== 'undefined') && coinAnimationStarted ) {
       finishCoinAnimation();
     }

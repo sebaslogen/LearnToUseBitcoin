@@ -117,7 +117,7 @@
     }
 
     LetterFx.prototype.startKillWatch = function(){
-        var fx_duration = this.options.fx_duration.match(/\d+s/) ? parseInt(this.options.fx_duration) : 1;
+        var fx_duration = this.options.fx_duration.match(/\d+s/) ? parseInt(this.options.fx_duration,10) : 1;
         var time = Math.ceil(1.5 * this.num_letters * this.options.timing * fx_duration );
         var lfx = this;
         this.killswitch = window.setTimeout(function(){
