@@ -10,9 +10,14 @@ Techonologies used to build this project without harming any animal:
 - JQuery
 - AngularJS
 - SASS & CSS3
-- HTML 5 canvas drawing and Bos2D physics engine
+- HTML 5 canvas drawing and Box2D physics engine
 - Zurb Foundation
-- ParsleyJS
+- Are You a Human (captcha system)
+- ParsleyJS (forms)
+- Segment.io analytics
+- Coinbase & blockchain.info APIs
+- RSpec
+- Code climate (static analysis)
 
 Thanks to all translators contributing here:
 https://crowdin.net/project/learn-to-use-bitcoin/invite
