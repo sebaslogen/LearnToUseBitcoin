@@ -38,7 +38,9 @@ GEM
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
     builder (3.1.4)
-    chunky_png (1.3.2)
+    chunky_png (1.3.3)
+    codeclimate-test-reporter (0.4.1)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -70,6 +72,7 @@ GEM
       compass (~> 1.0.0)
     daemons (1.1.9)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     erubis (2.7.0)
     ethon (0.7.1)
       ffi (>= 1.3.0)
@@ -173,9 +176,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.1)
       sprockets-rails (~> 2.0.0)
-    rails-assets-angular (1.3.0)
-    rails-assets-angular-mocks (1.3.0)
-      rails-assets-angular (= 1.3.0)
+    rails-assets-angular (1.3.1)
+    rails-assets-angular-mocks (1.3.1)
+      rails-assets-angular (= 1.3.1)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -213,7 +216,7 @@ GEM
       mocha (>= 0.9.8)
       rspec-rails (>= 2.0.0)
     rspec-support (3.0.4)
-    sass (3.4.6)
+    sass (3.4.7)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
@@ -221,8 +224,13 @@ GEM
     simple_form (3.0.2)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    simplecov (0.9.1)
+      docile (~> 1.1.0)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.8.0)
+    simplecov-html (0.8.0)
     slop (3.6.0)
-    sprockets (2.12.2)
+    sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -231,7 +239,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.9)
+    sqlite3 (1.3.10)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -255,11 +263,11 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.4.0)
+    turbolinks (2.5.1)
       coffee-rails
     typhoeus (0.6.9)
       ethon (>= 0.7.1)
-    tzinfo (0.3.41)
+    tzinfo (0.3.42)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -272,6 +280,7 @@ DEPENDENCIES
   analytics-ruby (~> 1.0)
   ayah_integration
   better_errors
+  codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
   coinbase
   compass-rails

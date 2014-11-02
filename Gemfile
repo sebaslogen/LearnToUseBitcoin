@@ -72,6 +72,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'rails-assets-angular-mocks'
+  gem 'codeclimate-test-reporter', require: nil
 end
 group :development do
   gem 'better_errors' # helps when things go wrong
