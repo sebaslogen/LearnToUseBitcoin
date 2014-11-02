@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/neoranga55/LearnToUseBitcoin.svg?branch=master)](https://travis-ci.org/neoranga55/LearnToUseBitcoin)
+[![Build Status](https://travis-ci.org/neoranga55/LearnToUseBitcoin.svg?branch=master)](https://travis-ci.org/neoranga55/LearnToUseBitcoin) [![Code Climate](https://codeclimate.com/github/neoranga55/LearnToUseBitcoin/badges/gpa.svg)](https://codeclimate.com/github/neoranga55/LearnToUseBitcoin) [![Test Coverage](https://codeclimate.com/github/neoranga55/LearnToUseBitcoin/badges/coverage.svg)](https://codeclimate.com/github/neoranga55/LearnToUseBitcoin)
 
 LearnToUseBitcoin
 =================
