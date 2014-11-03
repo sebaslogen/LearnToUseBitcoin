@@ -1,7 +1,13 @@
+//JSHint declaration of external methods
+/*global $, angular, analytics, YT, getWindowsSize, getWindowsSize, addLocale,
+startCoinAnimation, coinAnimationStarted, finishCoinAnimation*/
+/*exported setupAutoScroll, loadCoinAnimation, checkCoinAnimationCancel,
+showAnimatedContinueLearningElements, hideAnimatedElements, hideDemoContentElements,
+onYouTubeIframeAPIReady, onPlayerStateChange, onPlayerError*/
 var autoscrolled = false;
 
 function setupAutoScroll() {
-  if (($('div.alert-box').size() === 0) && (getWindowsSize() != "small") ) { // Only when there is no flash message shown at page top or is not a mobile
+  if (($('div.alert-box').size() === 0) && (getWindowsSize() !== 'small') ) { // Only when there is no flash message shown at page top or is not a mobile
     // Automatically move to start section after a few seconds if user hasn't seen it yet
     setTimeout(function() {
       if ( ($(window).scrollTop() + $( window ).height() <= parseInt($('#welcome').css('height'),10) + 100) && // Welcome section not visible
@@ -22,8 +28,8 @@ function autoScrollToWelcome() {
 }
 
 function loadCoinAnimation() { // Asynchronously load script for coin animation
-  if ( getWindowsSize() != "small" ) { // Load coin animation only on big enough screens
-    $("#canvas-container").load(addLocale("/animation"), function() {
+  if ( getWindowsSize() !== 'small' ) { // Load coin animation only on big enough screens
+    $('#canvas-container').load(addLocale('/animation'), function() {
       startCoinAnimation();
     });
   }
@@ -38,8 +44,48 @@ function checkCoinAnimationCancel() {
   }
 }
 
+function showBitcoinAddressWithTextEffect() { // Show sample bitcoin address with jumble text effect
+  if ( $('#sample-bitcoin-address').isScrolledIntoView() && // Visible
+      $('#sample-bitcoin-address').hasClass('not-animated-yet') ) { // Still has to be animated
+    $('#sample-bitcoin-address').removeClass('not-animated-yet');
+    setTimeout(function() { $('#sample-bitcoin-address').textEffect({
+      effect: 'jumble', // the type of the text aniamtion. fade, glow, jumble, slide, dropdown and random (default)
+      effectSpeed: 90, // the speed in ms at which new letters begin to animate.
+      completionSpeed: 3000, // the speed in ms of the text animation.
+      jumbleColor: '#7f7f7f' // the color of the jumbled letters.
+    });}, 1000); // Load one second later to let the fade in of the section finish
+  }
+}
+
+function showKeyImageAnimation() { // Show key image with rotation
+  if ( $('#key-image').isScrolledIntoView() && // Visible
+      $('#key-image').hasClass('will-animate') && // Still has to be animated
+      ($('#circle-button-3').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
+    introSequenceAnimation('#key-image', 'flipInY');
+    setTimeout(showAnimatedElements, 2000); // Trigger animations that were pending on this one
+  }  
+}
+
+function fadeInTrioFromRight(first, second, third, t1, t2, t3) {
+  introSequenceAnimation(first, 'fadeInRightBig');
+  setTimeout(function() {introSequenceAnimation(second, 'fadeInRightBig');}, t1);
+  setTimeout(function() {introSequenceAnimation(third, 'fadeInRightBig');}, t2);
+  setTimeout(showAnimatedElements, t3); // Trigger animations that were pending on this one
+}
+
+function showWalletTypes() { // Show different wallet type images
+  if ( $('#phone-image').isBottomScrolledIntoView() &&
+      $('#phone-image').hasClass('will-animate') ) {
+    fadeInTrioFromRight('#phone-image', '#pc-image', '#browser-image', 500, 1000, 3000);
+  }
+}
+
+function showCircleLinksToInfoSections() {
+  fadeInTrioFromRight('#circle-button-1', '#circle-button-2', '#circle-button-3', 300, 600, 2000);
+}
+
 function showAnimatedElements() {
-  if ( $("#demo-content").hasClass('hidden') ) {
+  if ( $('#demo-content').hasClass('hidden') ) {
     if ( $('#show-demo').isBottomScrolledIntoView() ) { // Automatically show demo information after a small delay
       setTimeout(function() {angular.element($('#start')).scope().showDemo();}, 2000);
     }
@@ -47,42 +93,18 @@ function showAnimatedElements() {
     if ($('#demo-content').hasClass('available')) { // Animation to show full section is finished
       showAnimatedSectionElements();
       showAnimatedTitleElements();
+      showBitcoinAddressWithTextEffect();
+      showKeyImageAnimation();
       
-      // Show sample bitcoin address with jumble text effect
-      if ( $('#sample-bitcoin-address').isScrolledIntoView() && // Visible
-          $('#sample-bitcoin-address').hasClass('not-animated-yet') ) { // Still has to be animated
-        $('#sample-bitcoin-address').removeClass('not-animated-yet');
-        setTimeout(function() { $('#sample-bitcoin-address').textEffect({
-          effect: 'jumble', // the type of the text aniamtion. fade, glow, jumble, slide, dropdown and random (default)
-          effectSpeed: 90, // the speed in ms at which new letters begin to animate.
-          completionSpeed: 3000, // the speed in ms of the text animation.
-          jumbleColor: '#7f7f7f' // the color of the jumbled letters.
-        });}, 1000); // Load one second later to let the fade in of the section finish
-      }
-      // Show key image with rotation
-      if ( $('#key-image').isScrolledIntoView() && // Visible
-          $('#key-image').hasClass('will-animate') && // Still has to be animated
-          ($('#circle-button-3').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
-        introSequenceAnimation('#key-image', 'flipInY');
-        setTimeout(showAnimatedElements, 2000); // Trigger animations that were pending on this one
-      }
       
-      if ($("#demo-section-2").hasClass('available')) {
+      if ($('#demo-section-2').hasClass('available')) {
         // Show wallet image with rotation
         if ( $('#wallet-image').isScrolledIntoView() && // Visible
             $('#wallet-image').hasClass('will-animate') && // Still has to be animated
             ($('#key-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
           introSequenceAnimation('#wallet-image', 'flipInY');
         }
-
-        // Show different wallet type images
-        if ( $('#phone-image').isBottomScrolledIntoView() &&
-            $('#phone-image').hasClass('will-animate') ) {
-          introSequenceAnimation('#phone-image', 'fadeInRightBig');
-          setTimeout(function() {introSequenceAnimation('#pc-image', 'fadeInRightBig');}, 500);
-          setTimeout(function() {introSequenceAnimation('#browser-image', 'fadeInRightBig');}, 1000);
-          setTimeout(showAnimatedElements, 3000); // Trigger animations that were pending on this one
-        }
+        showWalletTypes();
       }
       
       // Show coin image with rotation
@@ -107,10 +129,7 @@ function showAnimatedElements() {
     // Show circle links to information sections in demo
     if ( $('#circle-button-1').isScrolledIntoView() &&
         $('#circle-button-1').hasClass('will-animate') ) {
-      introSequenceAnimation('#circle-button-1', 'fadeInRightBig');
-      setTimeout(function() {introSequenceAnimation('#circle-button-2', 'fadeInRightBig');}, 300);
-      setTimeout(function() {introSequenceAnimation('#circle-button-3', 'fadeInRightBig');}, 600);
-      setTimeout(showAnimatedElements, 2000); // Trigger animations that were pending on this one
+      showCircleLinksToInfoSections();
     }
 
   }
@@ -126,7 +145,7 @@ function fadeInInfoSection(section, previous_section) {
       $(previous_section).hasClass('available') &&
       $(previous_section).isBottomWithMarginScrolledIntoView() ) {
     $(section).removeClass('hidden');
-    $(section).fadeIn("slow", function() {
+    $(section).fadeIn('slow', function() {
       $(section).addClass('available');
       showAnimatedElements();
     });
@@ -137,8 +156,8 @@ function showAnimatedTitleElements() {
   fadeInFlipTitle('#bitcoin-wallet-info-title', '#demo-section-2');
   fadeInFlipTitle('#some-bitcoins-info-title', '#demo-section-3');
   
-  if ($("#demo-form-title").isScrolledIntoView()) { // When demo form is visible make a wave on the text
-    $("#demo-form-title").letterfx({"fx":"wave","letter_end":"rewind","fx_duration":"300ms"});
+  if ($('#demo-form-title').isScrolledIntoView()) { // When demo form is visible make a wave on the text
+    $('#demo-form-title').letterfx({'fx':'wave','letter_end':'rewind','fx_duration':'300ms'});
   }
 }
 
@@ -179,8 +198,8 @@ var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('youtube-video');
   try {
-    player.addEventListener("onStateChange", 'onPlayerStateChange');
-    player.addEventListener("onError", 'onPlayerError');
+    player.addEventListener('onStateChange', 'onPlayerStateChange');
+    player.addEventListener('onError', 'onPlayerError');
   } catch(err) { // Retry in one second if Youtube player was not ready
     setTimeout(onYouTubeIframeAPIReady, 1000);
   }
@@ -188,7 +207,7 @@ function onYouTubeIframeAPIReady() {
 
 // The API calls this function when the player's state changes to playing
 function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING) {
+  if (event.data === YT.PlayerState.PLAYING) {
     setTimeout(autoScrollOnVideoFinish, 1000);
   }
 }
@@ -197,7 +216,7 @@ function onPlayerStateChange(event) {
 function autoScrollOnVideoFinish() {
   if (player !== null) {
     if ( (player.getDuration() - player.getCurrentTime() <= 3.5 ) ||
-       (player.getPlayerState() == YT.PlayerState.ENDED) ) {
+       (player.getPlayerState() === YT.PlayerState.ENDED) ) {
       player = null;
       moveTo('#start', 3000);
       analytics.track('Watched video WhatIsBitcoin');
@@ -213,6 +232,6 @@ function onPlayerError() {
 
 // This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
+tag.src = 'https://www.youtube.com/iframe_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
