@@ -1,5 +1,9 @@
+//JSHint declaration of external methods
 /*global $, hideAnimatedElements, checkCoinAnimationCancel, showDemoTransaction, showDemoTransaction, 
-finishCoinAnimation, coinAnimationFinished, finishCoinAnimation, positionCoinAnimationCanvas, Modernizr*/
+finishCoinAnimation, coinAnimationFinished, finishCoinAnimation, positionCoinAnimationCanvas, Modernizr,
+showAnimatedElements*/
+/*exported setupActiveJavaScript, setupScrollHintAnimation, setupScrollFadingAndResize, moveTo,
+resizeWindow, setupTouchLayouts*/
 var show_bottom_elements = false;
 
 function setupActiveJavaScript() {
@@ -21,40 +25,6 @@ function moveTo(id, speed) {
   var offset = 20;
   var target = $(id).offset().top - offset;
   $('html, body').animate({scrollTop:target}, speed, 'easeInOutCubic');
-}
-
-function setupNavigationMenu() {
-  // Navigation menu expand/collapse animations
-  $('div.navigation-menu').on({
-    mouseenter: function() {
-      window['mouse-over-navigation-menu'] = true;
-      $('#navigation-menu-icon').slideUp(200);
-      setTimeout(function() {
-        if (window['mouse-over-navigation-menu']) {
-          $('div.navigation-menu').find('div.navigation-content').slideDown(200).removeClass('hidden');
-        }
-      }, 200);
-    },
-    mouseleave: function() {
-      window['mouse-over-navigation-menu'] = false;
-      setTimeout(function() {
-        if (! window['mouse-over-navigation-menu']) {
-          $('div.navigation-menu').find('div.navigation-content').slideUp(200).addClass('hidden', 400);
-          setTimeout(function() {
-            if (! window['mouse-over-navigation-menu']) {
-              $('#navigation-menu-icon').slideDown(200);
-            }
-          }, 200);
-        }
-      }, 200);
-    }
-  });
-  // Navigation menu links to sections
-  $('a[href^="#"]').click(function(event) {
-    var id = $(this).attr('href');
-    moveTo(id);
-    event.preventDefault();
-  });
 }
 
 function setupScrollHintAnimation() {
@@ -85,8 +55,8 @@ $.fn.isBottomWithMarginScrolledIntoView = function() {
   var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
-  var elemBottom = items[4];
-  return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
+  var elemBottomWithMargin = items[4];
+  return ((elemBottomWithMargin >= docViewTop) && (elemBottomWithMargin <= docViewBottom));
 };
   
 $.fn.isScrolledIntoView = function() {
@@ -113,16 +83,20 @@ $.fn.isCompletelyScrolledIntoView = function() {
 var scrollFadingBlocked = false; // Detect multiple requests in less than 200ms
 var scrollFadingChecker = null;
 
+function switchExtrussion(selector, add, remove){
+  $('#welcome-content').find(selector).addClass(add).removeClass(remove);
+}
+
 function setTitlesExtrusion( percentage ) {
   if (percentage < 0.6) { // Change extrusion of Welcome text
-    $('#welcome-content').find('h1').addClass('de_extruded').removeClass('extruded');
+    switchExtrussion('h1', 'de_extruded', 'extruded');
   } else {
-    $('#welcome-content').find('h1').addClass('extruded').removeClass('de_extruded');
+    switchExtrussion('h1', 'extruded', 'de_extruded');
   }
   if (percentage < 0.83) { // Change extrusion of Welcome subtitle text
-    $('#welcome-content').find('h2').addClass('de_extruded-subtitle').removeClass('extruded-subtitle');
+    switchExtrussion('h2', 'de_extruded-subtitle', 'extruded-subtitle');
   } else {
-    $('#welcome-content').find('h2').addClass('extruded-subtitle').removeClass('de_extruded-subtitle');
+    switchExtrussion('h2', 'extruded-subtitle', 'de_extruded-subtitle');
   }
 }
 

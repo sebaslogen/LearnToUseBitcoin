@@ -137,7 +137,6 @@ $(document).ready(function() {
     return;
   }
   scrollFading(); // Arrange things correclty if the page is automatically scrolled on load (e.g. from previous visit)
-  // setupNavigationMenu(); // DISABLED TODO: Remove or activate
   setupAutoScroll();
   setupScrollHintAnimation();
   setupScrollFadingAndResize();
