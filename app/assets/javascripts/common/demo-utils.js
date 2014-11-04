@@ -6,21 +6,21 @@ var demo_copy_address_button_glowing = false;
 var demo_copy_address_button_glowing_on = false;
 
 function updateDemoContent() {
-  setupTouchLayouts()
+  setupTouchLayouts();
   updateToolTips();
 }
 
 function moveOutDemoTransactionSection() { // Save demo transaction content if neccesary
-  $(document).ready(function() {
-    if ($('#transaction-demo').children().size() == 1) {
+  $(function() {
+    if ($('#transaction-demo').children().size() === 1) {
       $('#transaction-demo-placeholder').append($('#transference-demo'));
     }
   });
 }
 
 function moveInDemoTransactionSection() { // Restore demo transaction content if neccesary
-  $(document).ready(function() {
-    if ($('#transaction-demo-placeholder').children().size() == 1) {
+  $(function() {
+    if ($('#transaction-demo-placeholder').children().size() === 1) {
       $('#transaction-demo').append($('#transference-demo'));
     }
   });
@@ -74,23 +74,23 @@ function showDemoTransaction() {
   }
 }
 
+function glowInputField(enabled, field) {
+  if (enabled && ( ! $(field).parsley().isValid() ) ) {
+    $(field).css("box-shadow", "0px 0px 40px #FF5E5E");
+  } else {
+    $(field).css("box-shadow", "0px 0px 10px #FFF");
+  }
+}
+
 function startDemoFieldsGlowing() { // Change glow if enabled and call itself in loop
   if (demo_input_amount_glowing || demo_input_address_glowing || demo_copy_address_button_glowing) {
     if (demo_input_amount_glowing) {
       demo_input_amount_glowing_on = ! demo_input_amount_glowing_on;
-      if (demo_input_amount_glowing_on && ( ! $('#demo-input-amount').parsley().isValid() ) ) {
-        $('#demo-input-amount').css("box-shadow", "0px 0px 40px #FF5E5E");
-      } else {
-        $('#demo-input-amount').css("box-shadow", "0px 0px 10px #FFF");
-      }
+      glowInputField(demo_input_amount_glowing_on, '#demo-input-amount');
     }
     if (demo_input_address_glowing) {
       demo_input_address_glowing_on = ! demo_input_address_glowing_on;
-      if (demo_input_address_glowing_on && ( ! $('#demo-pay-to-address-input').parsley().isValid() ) ) {
-        $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 40px #FF5E5E");
-      } else {
-        $('#demo-pay-to-address-input').css("box-shadow", "0px 0px 10px #FFF");
-      }
+      glowInputField(demo_input_address_glowing_on, '#demo-pay-to-address-input');
     }
     if (demo_copy_address_button_glowing) {
       demo_copy_address_button_glowing_on = ! demo_copy_address_button_glowing_on;
@@ -132,7 +132,7 @@ function registerDemoParsleyEvents() {
     // Fix when it's not valid and contains commas
     var current_value = $('#demo-input-amount').val();
     if ((! $('#demo-input-amount').parsley().isValid()) &&
-       ( current_value.indexOf(",") != -1 ) ) {
+       ( current_value.indexOf(",") !== -1 ) ) {
       var res = current_value.replace(",",".");
       $('#demo-input-amount').val(res);
       $('#demo-input-amount').parsley().validate();
