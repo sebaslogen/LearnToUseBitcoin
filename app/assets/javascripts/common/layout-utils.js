@@ -118,42 +118,47 @@ function disableWelcomeSection( percentage, scrolled, sizeWelcome ) {
   }
 }
 
-function delayScrollFading() {
+function shouldScrollFadeNow() {
   if (scrollFadingBlocked) { // Prevent too many updates
     if (scrollFadingChecker !== null) {
       clearTimeout(scrollFadingChecker);
       scrollFadingChecker = null;
     }
     scrollFadingChecker = setTimeout(200, scrollFading); // Delay next check
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
-function scrollFading() {
-  if (delayScrollFading()) {
-    return;
-  }
-  scrollFadingBlocked = true;
-  var sizeWelcome = parseInt($('#welcome').css('height'),10);
-  var scrolled = $(window).scrollTop() * 1.5;
-  var percentage = 1 - (scrolled / sizeWelcome);
-  disableWelcomeSection(percentage, scrolled, sizeWelcome);
-  // Increase footsteps opacity
+function adjustFootstepsOpacity(scrolled) {// Increase footsteps opacity
   var sizeWelcomeAndWhat = parseInt($('#welcome').css('height'),10) + (parseInt($('#what').css('height'),10) / 2);
   var footsteps_opacity = ((scrolled*scrolled/1500) / sizeWelcomeAndWhat);
   if ((footsteps_opacity > 0.1) && (footsteps_opacity < 2.6)) {
     $('#footsteps-image').css('opacity', footsteps_opacity / 2);
     $('#footsteps-image').css('margin-top', (scrolled*0.13)+'px'); // Small parallax on title
   }
-  
-  checkCoinAnimationCancel();
-  showDemoTransaction();
-  showBottomElements();
-  showAnimatedElements();
-  
-  scrollFadingBlocked = false;
+}
+
+function scrollFading() {
+  if ( shouldScrollFadeNow() ) {
+    scrollFadingBlocked = true;
+
+    var sizeWelcome = parseInt($('#welcome').css('height'),10);
+    var scrolled = $(window).scrollTop() * 1.5;
+    var percentage = 1 - (scrolled / sizeWelcome);
+    
+    disableWelcomeSection(percentage, scrolled, sizeWelcome);
+    
+    adjustFootstepsOpacity(scrolled);
+    
+    checkCoinAnimationCancel();
+    showDemoTransaction();
+    showBottomElements();
+    showAnimatedElements();
+    
+    scrollFadingBlocked = false;
+  }
 }
 
 function setupScrollFadingAndResize() {
