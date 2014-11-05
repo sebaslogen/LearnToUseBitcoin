@@ -15,20 +15,20 @@ function updateDemoContent() {
   updateToolTips();
 }
 
-function moveOutDemoTransactionSection() { // Save demo transaction content if neccesary
+function moveInOutDemoTransactionSection(inElement, outElement) {
   $(function() {
-    if ($('#transaction-demo').children().size() === 1) {
-      $('#transaction-demo-placeholder').append($('#transference-demo'));
+    if ($(inElement).children().size() === 1) {
+      $(outElement).append($('#transference-demo'));
     }
   });
 }
 
+function moveOutDemoTransactionSection() { // Save demo transaction content if neccesary
+  moveInOutDemoTransactionSection('#transaction-demo', '#transaction-demo-placeholder');
+}
+
 function moveInDemoTransactionSection() { // Restore demo transaction content if neccesary
-  $(function() {
-    if ($('#transaction-demo-placeholder').children().size() === 1) {
-      $('#transaction-demo').append($('#transference-demo'));
-    }
-  });
+  moveInOutDemoTransactionSection('#transaction-demo-placeholder', '#transaction-demo');
 }
 
 function loadDemoContent() {
