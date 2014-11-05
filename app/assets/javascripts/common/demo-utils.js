@@ -143,28 +143,26 @@ function fillDemoInputAmount(scope) {
   }
 }
 
+function sendErrorAnalytic(errorMessage, failures, autoFilled) {
+  analytics.track(errorMessage, {
+    failed_count: failures,
+    valid_amount: $('#demo-input-amount').parsley().isValid(),
+    amount_value: $('#demo-input-amount').val(),
+    valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
+    address_value: $('#demo-pay-to-address-input').val(),
+    auto_filled: autoFilled
+  });
+}
+
 function analyzeFormErrors(scope) { // Analyze errors and assist the user on consecutive errors
+  var errorMessage = 'Failed attempt to submit demo transaction';
   if (( ! $('#demo-input-amount').parsley().isValid()) && (scope.failures === 2)) {
-    analytics.track('Failed attempt to submit demo transaction', {
-      failed_count: scope.failures,
-      valid_amount: $('#demo-input-amount').parsley().isValid(),
-      amount_value: $('#demo-input-amount').val(),
-      valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
-      address_value: $('#demo-pay-to-address-input').val(),
-      auto_filled: true
-    });
+    sendErrorAnalytic(errorMessage, scope.failures, true);
     fillDemoInputAmount(scope);
     $('#help-demo-modal').foundation('reveal', 'open');
     $("#demo-transaction-form").parsley().validate();
   } else {
-    analytics.track('Failed attempt to submit demo transaction', {
-      failed_count: scope.failures,
-      valid_amount: $('#demo-input-amount').parsley().isValid(),
-      amount_value: $('#demo-input-amount').val(),
-      valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
-      address_value: $('#demo-pay-to-address-input').val(),
-      auto_filled: false
-    });
+    sendErrorAnalytic(errorMessage, scope.failures, false);
   }
 }
 
