@@ -1,7 +1,6 @@
 //JSHint declaration of external methods
 /*global $, hideAnimatedElements, checkCoinAnimationCancel, showDemoTransaction, showDemoTransaction, 
-finishCoinAnimation, coinAnimationFinished, finishCoinAnimation, positionCoinAnimationCanvas, Modernizr,
-showAnimatedElements*/
+finishCoinAnimation, coinAnimationFinished, positionCoinAnimationCanvas, Modernizr, showAnimatedElements*/
 /*exported setupActiveJavaScript, setupScrollHintAnimation, setupScrollFadingAndResize, moveTo,
 resizeWindow, setupTouchLayouts*/
 var show_bottom_elements = false;
