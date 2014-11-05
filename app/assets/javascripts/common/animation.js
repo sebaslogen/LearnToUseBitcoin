@@ -92,6 +92,13 @@ function showImageWithRotation(imageElement) {
   }
 }
 
+function showDemoTransactionAnimatedElement(element, fadeEffect) {
+  if ( $(element).isBottomScrolledIntoView() &&
+      $(element).hasClass('will-animate') ) {
+    introSequenceAnimation(element, fadeEffect);
+  }
+}
+
 function showAnimatedElementsOnDemoContent() {
   showAnimatedSectionElements();
   showAnimatedTitleElements();
@@ -108,15 +115,10 @@ function showAnimatedElementsOnDemoContent() {
   showImageWithRotation('#coin-image');
   
   // Show demo transaction basket
-  if ( $('#minibasket-image').isBottomScrolledIntoView() &&
-      $('#minibasket-image').hasClass('will-animate') ) {
-    introSequenceAnimation('#minibasket-image', 'fadeInLeftBig');
-  }
+  showDemoTransactionAnimatedElement('#minibasket-image', 'fadeInLeftBig');
+  
   // Show demo transaction wallet
-  if ( $('#miniwallet-image').isBottomScrolledIntoView() &&
-      $('#miniwallet-image').hasClass('will-animate') ) {
-    introSequenceAnimation('#miniwallet-image', 'fadeInRightBig');
-  }
+  showDemoTransactionAnimatedElement('#miniwallet-image', 'fadeInRightBig');
 }
 
 function showAnimatedElements() {
