@@ -698,6 +698,10 @@ fieldset {
   background: #FFF;
 }
 
+.reveal-modal {
+  z-index: 2000 !important;  
+}
+
 // Change transparency of placeholder text
 input::-webkit-input-placeholder {
 	color: rgba(0, 60, 220, .3);
