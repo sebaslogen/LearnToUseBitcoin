@@ -66,64 +66,69 @@ function showKeyImageAnimation() { // Show key image with rotation
   }  
 }
 
-function fadeInTrioFromRight(first, second, third, t1, t2, t3) {
+function fadeInTrioFromRight(first, second, third, t) {
   introSequenceAnimation(first, 'fadeInRightBig');
-  setTimeout(function() {introSequenceAnimation(second, 'fadeInRightBig');}, t1);
-  setTimeout(function() {introSequenceAnimation(third, 'fadeInRightBig');}, t2);
-  setTimeout(showAnimatedElements, t3); // Trigger animations that were pending on this one
+  setTimeout(function() {introSequenceAnimation(second, 'fadeInRightBig');}, t);
+  setTimeout(function() {introSequenceAnimation(third, 'fadeInRightBig');}, t*2);
+  setTimeout(showAnimatedElements, t*6); // Trigger animations that were pending on this one
 }
 
 function showWalletTypes() { // Show different wallet type images
   if ( $('#phone-image').isBottomScrolledIntoView() &&
       $('#phone-image').hasClass('will-animate') ) {
-    fadeInTrioFromRight('#phone-image', '#pc-image', '#browser-image', 500, 1000, 3000);
+    fadeInTrioFromRight('#phone-image', '#pc-image', '#browser-image', 500);
   }
 }
 
 function showCircleLinksToInfoSections() {
-  fadeInTrioFromRight('#circle-button-1', '#circle-button-2', '#circle-button-3', 300, 600, 2000);
+  fadeInTrioFromRight('#circle-button-1', '#circle-button-2', '#circle-button-3', 300);
+}
+
+function showImageWithRotation(imageElement) {
+  if ( $(imageElement).isScrolledIntoView() && // Visible
+      $(imageElement).hasClass('will-animate') && // Still has to be animated
+      ($('#key-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
+    introSequenceAnimation(imageElement, 'flipInY');
+  }
+}
+
+function showAnimatedElementsOnDemoContent() {
+  showAnimatedSectionElements();
+  showAnimatedTitleElements();
+  showBitcoinAddressWithTextEffect();
+  showKeyImageAnimation();
+  
+  if ($('#demo-section-2').hasClass('available')) {
+    // Show wallet image with rotation
+    showImageWithRotation('#wallet-image');
+    showWalletTypes();
+  }
+  
+  // Show coin image with rotation
+  showImageWithRotation('#coin-image');
+  
+  // Show demo transaction basket
+  if ( $('#minibasket-image').isBottomScrolledIntoView() &&
+      $('#minibasket-image').hasClass('will-animate') ) {
+    introSequenceAnimation('#minibasket-image', 'fadeInLeftBig');
+  }
+  // Show demo transaction wallet
+  if ( $('#miniwallet-image').isBottomScrolledIntoView() &&
+      $('#miniwallet-image').hasClass('will-animate') ) {
+    introSequenceAnimation('#miniwallet-image', 'fadeInRightBig');
+  }
 }
 
 function showAnimatedElements() {
   if ( $('#demo-content').hasClass('hidden') ) {
-    if ( $('#show-demo').isBottomScrolledIntoView() ) { // Automatically show demo information after a small delay
+    // Automatically show demo information after a small delay
+    if ( $('#show-demo').isBottomScrolledIntoView() ) {
       setTimeout(function() {angular.element($('#start')).scope().showDemo();}, 2000);
     }
   } else {
-    if ($('#demo-content').hasClass('available')) { // Animation to show full section is finished
-      showAnimatedSectionElements();
-      showAnimatedTitleElements();
-      showBitcoinAddressWithTextEffect();
-      showKeyImageAnimation();
-      
-      
-      if ($('#demo-section-2').hasClass('available')) {
-        // Show wallet image with rotation
-        if ( $('#wallet-image').isScrolledIntoView() && // Visible
-            $('#wallet-image').hasClass('will-animate') && // Still has to be animated
-            ($('#key-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
-          introSequenceAnimation('#wallet-image', 'flipInY');
-        }
-        showWalletTypes();
-      }
-      
-      // Show coin image with rotation
-      if ( $('#coin-image').isBottomScrolledIntoView() && // Visible
-          $('#coin-image').hasClass('will-animate') && // Still has to be animated
-          ($('#browser-image').css('opacity') > 0.9 ) ) { // Show animation after circles finish animation
-        introSequenceAnimation('#coin-image', 'flipInY');
-      }
-      
-      // Show demo transaction basket
-      if ( $('#minibasket-image').isBottomScrolledIntoView() &&
-          $('#minibasket-image').hasClass('will-animate') ) {
-        introSequenceAnimation('#minibasket-image', 'fadeInLeftBig');
-      }
-      // Show demo transaction wallet
-      if ( $('#miniwallet-image').isBottomScrolledIntoView() &&
-          $('#miniwallet-image').hasClass('will-animate') ) {
-        introSequenceAnimation('#miniwallet-image', 'fadeInRightBig');
-      }
+    // Animation to show full section is finished
+    if ($('#demo-content').hasClass('available')) {
+      showAnimatedElementsOnDemoContent();
     }
     
     // Show circle links to information sections in demo
@@ -212,7 +217,7 @@ function onPlayerStateChange(event) {
   }
 }
 
-// Auto-scroll to next section in the last seconds of the video or when it´s finished
+// Auto-scroll to next section in the last seconds of the video or when it is finished
 function autoScrollOnVideoFinish() {
   if (player !== null) {
     if ( (player.getDuration() - player.getCurrentTime() <= 3.5 ) ||
