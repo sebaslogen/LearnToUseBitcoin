@@ -1,8 +1,9 @@
 //JSHint declaration of external methods
-/*global $, updateToolTips, setupTouchLayouts, addLocale, hideAnimatedElements,
-angular, show_bottom_elements:true*/
+/*global $, analytics, updateToolTips, setupTouchLayouts, addLocale, hideAnimatedElements,
+angular, show_bottom_elements:true, getWindowsSize*/
 /*exported showDemoTransaction, loadDemoContent, fillDemoInputAmount, copyDemoPayToAddres,
-enable_bottom_sections_after_demo, notifyFormUpdate*/
+enable_bottom_sections_after_demo, notifyFormUpdate, showTransactionCompleted,
+analyzeFormErrors, disableTransactionForm*/
 var demo_input_amount_glowing = false;
 var demo_input_amount_glowing_on = false;
 var demo_input_address_glowing = false;
@@ -79,6 +80,22 @@ function showDemoTransaction() {
   }
 }
 
+function showTransactionCompleted() {
+  $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
+  if ($('#confirmation-sound').length > 0) {
+    $('#confirmation-sound')[0].play();
+  }
+  if (getWindowsSize() !== "small") {
+    setTimeout(function() { // Show congratulations message and blockchain extra information
+      $('#congratulations-demo-modal').foundation('reveal', 'open');
+      enable_bottom_sections_after_demo();
+    }, 1800);
+  } else {
+    $('#congratulations-demo-modal').foundation('reveal', 'open');
+    enable_bottom_sections_after_demo();
+  }
+}
+
 function glowInputField(enabled, field) {
   if (enabled && ( ! $(field).parsley().isValid() ) ) {
     $(field).css("box-shadow", "0px 0px 40px #FF5E5E");
@@ -124,6 +141,38 @@ function fillDemoInputAmount(scope) {
   } else { // Calling from AngularJS scope
     scope.input_amount = $('#demo-input-amount').val();
   }
+}
+
+function analyzeFormErrors(scope) { // Analyze errors and assist the user on consecutive errors
+  if (( ! $('#demo-input-amount').parsley().isValid()) && (scope.failures === 2)) {
+    analytics.track('Failed attempt to submit demo transaction', {
+      failed_count: scope.failures,
+      valid_amount: $('#demo-input-amount').parsley().isValid(),
+      amount_value: $('#demo-input-amount').val(),
+      valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
+      address_value: $('#demo-pay-to-address-input').val(),
+      auto_filled: true
+    });
+    fillDemoInputAmount(scope);
+    $('#help-demo-modal').foundation('reveal', 'open');
+    $("#demo-transaction-form").parsley().validate();
+  } else {
+    analytics.track('Failed attempt to submit demo transaction', {
+      failed_count: scope.failures,
+      valid_amount: $('#demo-input-amount').parsley().isValid(),
+      amount_value: $('#demo-input-amount').val(),
+      valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
+      address_value: $('#demo-pay-to-address-input').val(),
+      auto_filled: false
+    });
+  }
+}
+
+function disableTransactionForm() {
+  $("#demo-transaction-send-button").addClass('disabled').qtip('destroy', true);
+  $("#demo-transaction-send-button").removeAttr('title');
+  $('#demo-pay-to-address-input').attr('disabled', '');
+  $('#demo-input-amount').attr('disabled', '');
 }
 
 function copyDemoPayToAddres() {

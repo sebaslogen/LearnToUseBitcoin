@@ -1,6 +1,9 @@
 //JSHint declaration of external methods
-/*global $, analytics, I18n, ltubApp, enable_bottom_sections_after_demo, copyDemoPayToAddres,
-fillDemoInputAmount, demo_input_address_glowing, demo_copy_address_button_glowing, getWindowsSize*/
+/*global $, analytics, I18n, ltubApp, copyDemoPayToAddres, disableTransactionForm,
+demo_input_address_glowing:true, demo_copy_address_button_glowing:true,
+demo_input_amount_glowing:true, getWindowsSize, showTransactionCompleted,
+animateFormFailure, analyzeFormErrors*/
+/*exported demo_input_amount_glowing*/
 ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
   $scope.total_bitcoins = 2;
   $scope.disabled = false;
@@ -11,64 +14,18 @@ ltubApp.controller('TransactionCtrl', ['$scope', function($scope) {
       return;
     }
     if ($("#demo-transaction-form").parsley().validate()) {
-      $("#demo-transaction-send-button").addClass('disabled').qtip('destroy', true);
-      $("#demo-transaction-send-button").removeAttr('title');
-      $('#demo-pay-to-address-input').attr('disabled', '');
-      $('#demo-input-amount').attr('disabled', '');
+      disableTransactionForm();
       $scope.disabled = true;
       if ((getWindowsSize() === "medium") && ( ! $("#demo-transaction-details").isCompletelyScrolledIntoView())) {
         moveTo("#demo-transaction-details"); // Refocus on medium windows to help find the update
       }
-      setTimeout(function() { // Show with a little delay to simulate transaction time
-        $("#demo-transaction-details").replaceWith($("#ok-purchase").fadeIn("slow"));
-        if ($('#confirmation-sound').length > 0) {
-          $('#confirmation-sound')[0].play();
-        }
-        if (getWindowsSize() !== "small") {
-          setTimeout(function() { // Show congratulations message and blockchain extra information
-            $('#congratulations-demo-modal').foundation('reveal', 'open');
-            enable_bottom_sections_after_demo();
-          }, 1800);
-        } else {
-          $('#congratulations-demo-modal').foundation('reveal', 'open');
-          enable_bottom_sections_after_demo();
-        }
-      }, 1000);
+      setTimeout(showTransactionCompleted, 1000); // Show with a little delay to simulate transaction time
       analytics.track('Click Send demo transaction successful');
     } else { // Log failed attempt data to gather feedback on user difficulties
       $scope.failures++;
-      // Animations on failure
-      if ( ! $('#demo-input-amount').parsley().isValid()) {
-        $('#demo-input-amount').addClass('shake');
-        setTimeout(function() {$('#demo-input-amount').removeClass('shake');}, 2000);
-      }
-      if ( ! $('#demo-pay-to-address-input').parsley().isValid()) {
-        $('#demo-pay-to-address-input').addClass('shake');
-        setTimeout(function() {$('#demo-pay-to-address-input').removeClass('shake');}, 2000);
-      }
-      // Analyze errors and assist the user on consecutive errors
-      if (( ! $('#demo-input-amount').parsley().isValid()) && ($scope.failures === 2)) {
-        analytics.track('Failed attempt to submit demo transaction', {
-          failed_count: $scope.failures,
-          valid_amount: $('#demo-input-amount').parsley().isValid(),
-          amount_value: $('#demo-input-amount').val(),
-          valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
-          address_value: $('#demo-pay-to-address-input').val(),
-          auto_filled: true
-        });
-        fillDemoInputAmount($scope);
-        $('#help-demo-modal').foundation('reveal', 'open');
-        $("#demo-transaction-form").parsley().validate();
-      } else {
-        analytics.track('Failed attempt to submit demo transaction', {
-          failed_count: $scope.failures,
-          valid_amount: $('#demo-input-amount').parsley().isValid(),
-          amount_value: $('#demo-input-amount').val(),
-          valid_address: $('#demo-pay-to-address-input').parsley().isValid(),
-          address_value: $('#demo-pay-to-address-input').val(),
-          auto_filled: false
-        });
-      }
+      animateFormFailure('#demo-input-amount');
+      animateFormFailure('#demo-pay-to-address-input');
+      analyzeFormErrors($scope);
     }
   };
   

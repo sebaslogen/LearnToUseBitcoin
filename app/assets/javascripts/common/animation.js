@@ -3,7 +3,7 @@
 startCoinAnimation, coinAnimationStarted, finishCoinAnimation*/
 /*exported setupAutoScroll, loadCoinAnimation, checkCoinAnimationCancel,
 showAnimatedContinueLearningElements, hideAnimatedElements, hideDemoContentElements,
-onYouTubeIframeAPIReady, onPlayerStateChange, onPlayerError*/
+onYouTubeIframeAPIReady, onPlayerStateChange, onPlayerError, animateFormFailure*/
 var autoscrolled = false;
 
 function setupAutoScroll() {
@@ -235,6 +235,13 @@ function autoScrollOnVideoFinish() {
 
 function onPlayerError() {
   moveTo('#start', 2000);
+}
+
+function animateFormFailure(element) {
+  if ( ! $(element).parsley().isValid()) {
+    $(element).addClass('shake');
+    setTimeout(function() {$(element).removeClass('shake');}, 2000);
+  }
 }
 
 // This code loads the IFrame Player API code asynchronously.
