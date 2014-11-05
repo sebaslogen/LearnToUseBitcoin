@@ -99,6 +99,18 @@ function setTitlesExtrusion( percentage ) {
   }
 }
 
+function showWelcomeSection( percentage, scrolled, sizeWelcome ) {
+  $('#welcome-content').removeClass('hidden');
+  $('#welcome-content').css('opacity', percentage); // Hide title gradually
+  $('#welcome-content').css('margin-top', (scrolled/(-15))+'px'); // Small parallax on title
+  $('#coin-canvas').css('opacity', percentage);
+  var welcomeOpacity = percentage - (scrolled / sizeWelcome);
+  $('#welcome-content').find('div#scroll-message').css('opacity', welcomeOpacity);
+  if (getWindowsSize() === 'large') {
+    setTitlesExtrusion();
+  }
+}
+
 function disableWelcomeSection( percentage, scrolled, sizeWelcome ) {
   // Disable welcome section when it's not visible
   if (percentage <= 0) {
@@ -106,14 +118,7 @@ function disableWelcomeSection( percentage, scrolled, sizeWelcome ) {
     $('#welcome-content').addClass('hidden');
     $('#coin-canvas').css('opacity', 0);
   } else {
-    $('#welcome-content').removeClass('hidden');
-    $('#welcome-content').css('opacity', percentage); // Hide title gradually
-    $('#welcome-content').css('margin-top', (scrolled/(-15))+'px'); // Small parallax on title
-    $('#coin-canvas').css('opacity', percentage);
-    $('#welcome-content').find('div#scroll-message').css('opacity', percentage - (scrolled / sizeWelcome));
-    if (getWindowsSize() === 'large') {
-      setTitlesExtrusion();
-    }
+    showWelcomeSection(percentage, scrolled, sizeWelcome);
   }
 }
 
