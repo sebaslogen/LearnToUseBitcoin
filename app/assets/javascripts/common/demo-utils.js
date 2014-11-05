@@ -1,3 +1,8 @@
+//JSHint declaration of external methods
+/*global $, updateToolTips, setupTouchLayouts, addLocale, hideAnimatedElements,
+angular, show_bottom_elements:true*/
+/*exported showDemoTransaction, loadDemoContent, fillDemoInputAmount, copyDemoPayToAddres,
+enable_bottom_sections_after_demo, notifyFormUpdate*/
 var demo_input_amount_glowing = false;
 var demo_input_amount_glowing_on = false;
 var demo_input_address_glowing = false;
