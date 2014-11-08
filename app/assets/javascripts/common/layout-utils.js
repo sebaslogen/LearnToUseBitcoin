@@ -187,6 +187,7 @@ function showBottomElements() {
 }
 
 function getIntroVideoRatio(space_side_video) {
+  var space_side_video = ( $(window).width() - getIntroVideoWidth() ) / 2;
   return space_side_video / 178;
 }
 
@@ -198,20 +199,19 @@ function getIntroVideoWidth() {
   return $('#youtube-video-container').width();
 }
 
-function adjustIntroVideoSize() {
-  var space_side_video = ( $(window).width() - getIntroVideoWidth() ) / 2;
-  $('#youtube-video').width(parseInt(getIntroVideoWidth(),10)).height(parseInt(getYoutubeAspectRatio() * getIntroVideoWidth(),10));
-  $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
-  /* Adapt footsteps position and size */
+function adjustFootstepsPositionAndSize() {
   if (getWindowsSize() !== 'small') {
-    $('#footsteps-image').width(parseInt(getIntroVideoRatio(space_side_video) * 174, 10));
-    $('#footsteps-image').height(parseInt(getIntroVideoRatio(space_side_video) * 444, 10));
-    var increase = 600;
-    if (getWindowsSize() === 'medium') {
-      increase = 500; // Make sure image doesn't cover text
-    }
+    $('#footsteps-image').width(parseInt(getIntroVideoRatio() * 174, 10));
+    $('#footsteps-image').height(parseInt(getIntroVideoRatio() * 444, 10));
+    var increase = getWindowsSize() === 'medium' ? 500 : 600; // Make sure image doesn't cover text
     $('#footsteps-image').css('top','-' + (increase+(10000/$('#youtube-video').width())) + 'px');
   }
+}
+
+function adjustIntroVideoSize() {
+  $('#youtube-video').width(parseInt(getIntroVideoWidth(),10)).height(parseInt(getYoutubeAspectRatio() * getIntroVideoWidth(),10));
+  $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
+  adjustFootstepsPositionAndSize();
 }
 
 function disableCoinAnimationForSize() {
