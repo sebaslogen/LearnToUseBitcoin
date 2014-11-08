@@ -22,6 +22,7 @@ function showBitonic(cc) {
     sellers_list.push('https://www.happycoins.com/Account/Index/eb754703-5a33-46fd-b0d2-9a2bb7e465e3"> HappyCoins </a>');
     sellers_list.push('http://www.bitcoin-bon.nl"> Bitcoin Bon </a>');
   }
+  return sellers_list;
 }
 
 function showSafello(cc) {
@@ -29,6 +30,7 @@ function showSafello(cc) {
       cc === 'PL' || (cc === 'HU') ) {
     sellers_list.push('http://safello.com/buy"> Safello </a>');
   }
+  return sellers_list;
 }
 
 function showBittylicious(cc) {
@@ -36,19 +38,22 @@ function showBittylicious(cc) {
       cc === 'PL' || (cc === 'HU') || (cc === 'PT') || (cc === 'LI') || (cc === 'AT') ) {
     sellers_list.push('https://bittylicious.com/r/19542"> Bittylicious </a>');
   }
+  return sellers_list;
 }
 
 function showBTCe(cc) {
   if (cc === 'RU') {
     sellers_list.push('https://btc-e.com" target="_blank"> BTC-e </a>');
   }
+  return sellers_list;
 }
 
-function showExpresscoin(cc) {
+function showExpresscoin(sellers_list, cc) {
   if (cc === 'US') {
     sellers_list.push('https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link"> coinbase </a>');
     sellers_list.push('http://www.expresscoin.com/"> expresscoin </a>');
   }
+  return sellers_list;
 }
 
 function loadLocalBitcoinSellers() {
@@ -56,11 +61,11 @@ function loadLocalBitcoinSellers() {
   var cc = user_location.country_code;
   var sellers_list = [];
   var link_start = '<a target="_blank" href="';
-  showBitonic(cc);
-  showSafello(cc);
-  showBittylicious(cc);
-  showBTCe(cc);
-  showExpresscoin(cc);
+  sellers_list = showBitonic(sellers_list, cc);
+  sellers_list = showSafello(sellers_list, cc);
+  sellers_list = showBittylicious(sellers_list, cc);
+  sellers_list = showBTCe(sellers_list, cc);
+  sellers_list = showExpresscoin(sellers_list, cc);
 
   for (var i = 0; i < sellers_list.length; i++) {
     if ( i % 4 === 0 ) {
