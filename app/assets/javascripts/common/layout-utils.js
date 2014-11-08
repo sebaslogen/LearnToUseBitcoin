@@ -186,7 +186,7 @@ function showBottomElements() {
   }
 }
 
-function getIntroVideoRatio(space_side_video) {
+function getIntroVideoRatio() {
   var space_side_video = ( $(window).width() - getIntroVideoWidth() ) / 2;
   return space_side_video / 178;
 }
