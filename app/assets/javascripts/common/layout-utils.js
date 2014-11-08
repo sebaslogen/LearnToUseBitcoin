@@ -194,10 +194,13 @@ function getYoutubeAspectRatio() {
   return 360 / 640;
 }
 
+function getIntroVideoWidth() {
+  return $('#youtube-video-container').width();
+}
+
 function adjustIntroVideoSize() {
-  var video_width = $('#youtube-video-container').width();
-  var space_side_video = ( $(window).width() - video_width ) / 2;
-  $('#youtube-video').width(parseInt(video_width,10)).height(parseInt(getYoutubeAspectRatio() * video_width,10));
+  var space_side_video = ( $(window).width() - getIntroVideoWidth() ) / 2;
+  $('#youtube-video').width(parseInt(getIntroVideoWidth(),10)).height(parseInt(getYoutubeAspectRatio() * getIntroVideoWidth(),10));
   $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
   /* Adapt footsteps position and size */
   if (getWindowsSize() !== 'small') {
