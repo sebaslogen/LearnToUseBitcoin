@@ -143,7 +143,7 @@ $.urlParam = function(name) { // Parse URL parameters
   if ( results === null){
     return null;
   }
-  else{
+  else {
     return results[1] || 0;
   }
 };
@@ -165,7 +165,7 @@ $(document).ready(function() {
   updateToolTips();
   $(window).on({
     scroll: scrollFading,
-    resize: function() { windowResize.checkResize( resizeWindow ) };
+    resize: function() { windowResize.checkResize( resizeWindow ); }
   });
   setTimeout(function() { // Preload demo hidden section
     loadDemoContent();

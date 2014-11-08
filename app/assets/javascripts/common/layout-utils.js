@@ -36,29 +36,58 @@ function setupScrollHintAnimation() {
 function getScrolledItems(elem) {
   var docViewTop = $(window).scrollTop();
   var docViewBottom = docViewTop + $(window).height();
-  var elemTop = $(elem).offset().top;
+  var elemTop = $(elem).offset() == null ? 0 : $(elem).offset().top;
   var elemBottom = elemTop + $(elem).height();
-  var elemBottomWithMargin = elemBottom + parseInt( $(elem).css('margin-top'),10 ) + parseInt( $(elem).css('margin-bottom'),10 );
+  var elemBottomWithMargin = elem === window ? 0 : elemBottom + parseInt( $(elem).css('margin-top'),10 ) + parseInt( $(elem).css('margin-bottom'),10 );
   return [docViewTop, docViewBottom, elemTop, elemBottom, elemBottomWithMargin];
 }
 
-$.fn.isBottomScrolledIntoView = function() {
+function isScrolledBy(bottomScrolledIntoView, bottomWithMarginScrolledIntoView, scrolledIntoView, completelyScrolledIntoView) {
   var items = getScrolledItems(this);
+  var docViewTop = items[0];
+  var docViewBottom = items[1];
+  var elemTop = items[2];
+  var elemBottom = items[3];
+  var elemBottomWithMargin = items[4];
+  if (bottomScrolledIntoView) {
+    return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));  
+  }
+  if (bottomWithMarginScrolledIntoView) {
+    return ((elemBottomWithMargin >= docViewTop) && (elemBottomWithMargin <= docViewBottom));
+  }
+  if (scrolledIntoView) {
+    return (((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) ||
+          ((elemTop >= docViewTop) && (elemTop <= docViewBottom)) ||
+          ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)) ||
+          ((elemTop <= docViewTop) && (elemBottom >= docViewBottom)) );
+  }
+  if (completelyScrolledIntoView) {
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  }
+}
+
+$.fn.isBottomScrolledIntoView = function() {
+  /*var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
   var elemBottom = items[3];
   return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
+  */
+  return isScrolledBy(true, false, false, false);
 };
 
 $.fn.isBottomWithMarginScrolledIntoView = function() {
+  /*
   var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
   var elemBottomWithMargin = items[4];
-  return ((elemBottomWithMargin >= docViewTop) && (elemBottomWithMargin <= docViewBottom));
+  return ((elemBottomWithMargin >= docViewTop) && (elemBottomWithMargin <= docViewBottom));*/
+  return isScrolledBy(false, true, false, false);
 };
   
 $.fn.isScrolledIntoView = function() {
+  /*
   var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
@@ -67,16 +96,19 @@ $.fn.isScrolledIntoView = function() {
   return (((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) ||
           ((elemTop >= docViewTop) && (elemTop <= docViewBottom)) ||
           ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)) ||
-          ((elemTop <= docViewTop) && (elemBottom >= docViewBottom)) );
+          ((elemTop <= docViewTop) && (elemBottom >= docViewBottom)) );*/
+  return isScrolledBy(false, false, true, false);
 };
 
 $.fn.isCompletelyScrolledIntoView = function() {
+  /*
   var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
   var elemTop = items[2];
   var elemBottom = items[3];
-  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));*/
+  return isScrolledBy(false, false, false, true);
 };
 
 var scrollFadingBlocked = false; // Detect multiple requests in less than 200ms
