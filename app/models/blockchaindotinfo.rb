@@ -8,7 +8,6 @@ class Blockchaindotinfo
   attr_reader :guid, :link
   
   def initialize( private_key_to_import, address_label = nil, password = nil, email = nil)
-    
     @password = password ? password : ENV['DEFAULT_BLOCKCHAINDOTINFO_PASSWORD']
     api_key = ENV['BLOCKCHAINDOTINFO_API_KEY']
     request_url = Blockchaindotinfo.build_URL('/api/v2/create_wallet')
@@ -17,17 +16,7 @@ class Blockchaindotinfo
     post_args[:email] = email if email
     post_args[:label] = address_label if address_label
     resp, data = Blockchaindotinfo.send_http_request(request_url, post_args, Exceptions::BlockchainDotInfoWalletCreationError)
-    case resp.code.to_i 
-    when 200
-      begin
-        parse_new_wallet_JSON( resp.body )
-        generate_address( 'Deposit address' )
-      rescue JSON::ParserError
-        raise Exceptions::BlockchainDotInfoWalletCreationError, "Error parsing JSON response from Blockchain.info, response was:#{resp.body if resp}"
-      end
-    else
-      raise Exceptions::BlockchainDotInfoWalletCreationError, "Response from Blockchain.info was an error #{resp.code} calling URL #{request_url}. Response body:#{resp.body if resp}"
-    end
+    process_creation_response(resp, request_url)
   end
   
   def self.send_money(guid, dest_address, amount, fee = nil, password = nil)
@@ -44,32 +33,18 @@ class Blockchaindotinfo
       raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Response from Blockchain.info was #{resp.code} when calling URL #{request_url}"
     end
     begin
-      resp_msg = JSON.parse( resp.body )
-      if ( resp_msg.include?( 'error' ) )
-        if resp_msg['message'].downcase.include?('insuficient')
-          raise Exceptions::BlockchainDotInfoInsufficientFundsError, "Error response from Blockchain.info. Insufficient funds, response was:#{resp_msg['error']}"
-        else
-          raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg['error']}"
-        end
-      elsif ( resp_msg.include?( 'message' ) && resp_msg['message'].downcase.include?('sent') )
-        return true
-      else
-        raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg}"  
-      end
+      Blockchaindotinfo.process_send_money_response(resp)
     rescue JSON::ParserError
       raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error parsing JSON response from Blockchain.info, response was:#{resp.body if resp}"
     end
   end
-  
-  
-  
+
   def self.send_test
     guid = 'eccb6fe8-9ac6-41e9-867e-f523dca7c4d9'
     dest_address = '1Jtyqx79yWRjQmTQTbhHysm1tx953cJcMV'
     amount = 0.0001
     Blockchaindotinfo.send_money(guid, dest_address, amount)
   end
-
 
   def self.get_BTC_price( currency = 'USD' )
     exchange_rate = nil
@@ -83,6 +58,7 @@ class Blockchaindotinfo
     return exchange_rate
   end
   
+
   private
   def parse_new_wallet_JSON( response )
     data = JSON.parse( response )
@@ -121,5 +97,34 @@ class Blockchaindotinfo
       raise exception, "Response from Blockchain.info was empty calling URL #{request_url} - Response:#{resp} - Header:#{resp.header} - Body:#{resp.body}"
     end
     return resp, data
+  end
+
+  def process_creation_response(resp, request_url)
+    case resp.code.to_i 
+    when 200
+      begin
+        parse_new_wallet_JSON( resp.body )
+        generate_address( 'Deposit address' )
+      rescue JSON::ParserError
+        raise Exceptions::BlockchainDotInfoWalletCreationError, "Error parsing JSON response from Blockchain.info, response was:#{resp.body if resp}"
+      end
+    else
+      raise Exceptions::BlockchainDotInfoWalletCreationError, "Response from Blockchain.info was an error #{resp.code} calling URL #{request_url}. Response body:#{resp.body if resp}"
+    end
+  end
+
+  def self.process_send_money_response(resp)
+    resp_msg = JSON.parse( resp.body )
+    if ( resp_msg.include?( 'message' ) && resp_msg['message'].downcase.include?('sent') )
+      return true
+    elsif ( resp_msg.include?( 'error' ) )
+      if resp_msg['message'].downcase.include?('insuficient')
+        raise Exceptions::BlockchainDotInfoInsufficientFundsError, "Error response from Blockchain.info. Insufficient funds, response was:#{resp_msg['error']}"
+      else
+        raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg['error']}"
+      end
+    else
+      raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg}"  
+    end
   end
 end
