@@ -16,31 +16,52 @@ function detectLocation() {
   });
 }
 
+function showBitonic() {
+  if (cc === 'NL' || (cc === 'BE') || (cc === 'LU')) {
+    sellers_list.push('https://bitonic.nl/?refcode=8w0UlJ123111"> Bitonic </a>');
+    sellers_list.push('https://www.happycoins.com/Account/Index/eb754703-5a33-46fd-b0d2-9a2bb7e465e3"> HappyCoins </a>');
+    sellers_list.push('http://www.bitcoin-bon.nl"> Bitcoin Bon </a>');
+  }
+}
+
+function showSafello() {
+  if (cc === 'GB' || cc === 'SE' || cc === 'NL' || cc === 'DE' || cc === 'FR' || cc === 'IT' || cc === 'ES' || 
+      cc === 'PL' || (cc === 'HU') ) {
+    sellers_list.push('http://safello.com/buy"> Safello </a>');
+  }
+}
+
+function showBittylicious() {
+  if (cc === 'GB' || cc === 'SE' || cc === 'NL' || (cc === 'LU') || (cc === 'BE') || cc === 'DE' || cc === 'FR' || cc === 'IT' || cc === 'ES' || 
+      cc === 'PL' || (cc === 'HU') || (cc === 'PT') || (cc === 'LI') || (cc === 'AT') ) {
+    sellers_list.push('https://bittylicious.com/r/19542"> Bittylicious </a>');
+  }
+}
+
+function showBTCe() {
+  if (cc === 'RU') {
+    sellers_list.push('https://btc-e.com" target="_blank"> BTC-e </a>');
+  }
+}
+
+function showExpresscoin() {
+  if (cc === 'US') {
+    sellers_list.push('https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link"> coinbase </a>');
+    sellers_list.push('http://www.expresscoin.com/"> expresscoin </a>');
+  }
+}
+
 function loadLocalBitcoinSellers() {
   $('#bitcoin-sellers').empty(); // Remove any previous links (e.g. on IP/country change)
   var cc = user_location.country_code;
   var sellers_list = [];
   var link_start = '<a target="_blank" href="';
-  if (cc == 'NL' || (cc == 'BE') || (cc == 'LU')) {
-    sellers_list.push('https://bitonic.nl/?refcode=8w0UlJ123111"> Bitonic </a>');
-    sellers_list.push('https://www.happycoins.com/Account/Index/eb754703-5a33-46fd-b0d2-9a2bb7e465e3"> HappyCoins </a>');
-    sellers_list.push('http://www.bitcoin-bon.nl"> Bitcoin Bon </a>');
-  }
-  if (cc == 'GB' || cc == 'SE' || cc == 'NL' || cc == 'DE' || cc == 'FR' || cc == 'IT' || cc == 'ES' || 
-      cc == 'PL' || (cc == 'HU') ) {
-    sellers_list.push('http://safello.com/buy"> Safello </a>');
-  }
-  if (cc == 'GB' || cc == 'SE' || cc == 'NL' || cc == 'DE' || cc == 'FR' || cc == 'IT' || cc == 'ES' || 
-      cc == 'PL' || (cc == 'HU') || (cc == 'PT') || (cc == 'LI') || (cc == 'LU') || (cc == 'BE') || (cc == 'AT') ) {
-    sellers_list.push('https://bittylicious.com/r/19542"> Bittylicious </a>');
-  }
-  if (cc == 'RU') {
-    sellers_list.push('https://btc-e.com" target="_blank"> BTC-e </a>');
-  }
-  if (cc == 'US') {
-    sellers_list.push('https://coinbase.com/?r=52ac992c01478f0e730000b9&utm_campaign=user-referral&src=referral-link"> coinbase </a>');
-    sellers_list.push('http://www.expresscoin.com/"> expresscoin </a>');
-  }
+  showBitonic();
+  showSafello();
+  showBittylicious();
+  showBTCe();
+  showExpresscoin();
+
   for (var i = 0; i < sellers_list.length; i++) {
     if ( i % 4 === 0 ) {
       $('#bitcoin-sellers').append( '<br>' );
@@ -60,7 +81,7 @@ function removeToolTipElement(element) {
 function updateToolTips() {
   $(document).ready(function() {
     $('.has-tooltip[title]').each(function(index, element) {
-      if (getWindowsSize() != "small") {
+      if (getWindowsSize() !== "small") {
         return false; // Remove not needed tooltips only for small screens
       }
       if ($(element).hasClass('hide-tooltip-small')) {
@@ -125,7 +146,7 @@ $.urlParam = function(name) { // Parse URL parameters
   else{
     return results[1] || 0;
   }
-}
+};
 
 /* Enable functions after document load */
 
@@ -144,7 +165,7 @@ $(document).ready(function() {
   updateToolTips();
   $(window).on({
     scroll: scrollFading,
-    resize: function() { windowResize.checkResize( resizeWindow ) }
+    resize: function() { windowResize.checkResize( resizeWindow ) };
   });
   setTimeout(function() { // Preload demo hidden section
     loadDemoContent();
