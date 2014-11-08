@@ -32,7 +32,11 @@ class Blockchaindotinfo
       Rails.logger.error "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error sending money to #{dest_address} in Blockchain.info wallet guid #{guid}. Response:#{resp.body if resp}"
       raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Response from Blockchain.info was #{resp.code} when calling URL #{request_url}"
     end
-    Blockchaindotinfo.process_send_money_response(resp)
+    begin
+      Blockchaindotinfo.process_send_money_response(resp)
+    rescue JSON::ParserError
+      raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error parsing JSON response from Blockchain.info, response was:#{resp.body if resp}"
+    end
   end
 
   def self.send_test
@@ -69,6 +73,7 @@ class Blockchaindotinfo
   def generate_address( label = nil )
     # TODO: Exception if no wallet yet (missing guid)
     request_url = Blockchaindotinfo.build_URL( "/merchant/#{@guid}/new_address" )
+
     # build the params string
     post_args = { password: @password }
     post_args[:label] = label if label
@@ -109,21 +114,17 @@ class Blockchaindotinfo
   end
 
   def self.process_send_money_response(resp)
-    begin
-      resp_msg = JSON.parse( resp.body )
-      if ( resp_msg.include?( 'message' ) && resp_msg['message'].downcase.include?('sent') )
-        return true
-      elsif ( resp_msg.include?( 'error' ) )
-        if resp_msg['message'].downcase.include?('insuficient')
-          raise Exceptions::BlockchainDotInfoInsufficientFundsError, "Error response from Blockchain.info. Insufficient funds, response was:#{resp_msg['error']}"
-        else
-          raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg['error']}"
-        end
+    resp_msg = JSON.parse( resp.body )
+    if ( resp_msg.include?( 'message' ) && resp_msg['message'].downcase.include?('sent') )
+      return true
+    elsif ( resp_msg.include?( 'error' ) )
+      if resp_msg['message'].downcase.include?('insuficient')
+        raise Exceptions::BlockchainDotInfoInsufficientFundsError, "Error response from Blockchain.info. Insufficient funds, response was:#{resp_msg['error']}"
       else
-        raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg}"  
+        raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg['error']}"
       end
-    rescue JSON::ParserError
-      raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error parsing JSON response from Blockchain.info, response was:#{resp.body if resp}"
+    else
+      raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg}"  
     end
   end
 end
