@@ -21,22 +21,18 @@ class Blockchaindotinfo
   
   def self.send_money(guid, dest_address, amount, fee = nil, password = nil)
     request_url = Blockchaindotinfo.build_URL( "/merchant/#{guid}/payment" )
-    password = password ? password : ENV['DEFAULT_BLOCKCHAINDOTINFO_PASSWORD']
     # build the params string
-    amount = (amount / Float(ENV['SATOSHI'])).to_i # Set amount to Satoshis for Blockchain.info API
-    
-    post_args = { password: password, to: dest_address, amount: amount }
-    post_args[:fee] = fee if (fee) && (fee.to_f > 0)
+    post_args = {
+      password: password ? password : ENV['DEFAULT_BLOCKCHAINDOTINFO_PASSWORD'],
+      to: dest_address,
+      amount: (amount / Float(ENV['SATOSHI'])).to_i } # Set amount to Satoshis for Blockchain.info API
+    post_args[:fee] = fee if ( (fee) && (fee.to_f > 0) )
     resp, data = Blockchaindotinfo.send_http_request(request_url, post_args, Exceptions::BlockchainDotInfoWalletSendMoneyError)
     if resp.code.to_i != 200
       Rails.logger.error "#{GlobalConstants::DEBUG_MSG}-#{cn}: Error sending money to #{dest_address} in Blockchain.info wallet guid #{guid}. Response:#{resp.body if resp}"
       raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Response from Blockchain.info was #{resp.code} when calling URL #{request_url}"
     end
-    begin
-      Blockchaindotinfo.process_send_money_response(resp)
-    rescue JSON::ParserError
-      raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error parsing JSON response from Blockchain.info, response was:#{resp.body if resp}"
-    end
+    Blockchaindotinfo.process_send_money_response(resp)
   end
 
   def self.send_test
@@ -73,7 +69,6 @@ class Blockchaindotinfo
   def generate_address( label = nil )
     # TODO: Exception if no wallet yet (missing guid)
     request_url = Blockchaindotinfo.build_URL( "/merchant/#{@guid}/new_address" )
-
     # build the params string
     post_args = { password: @password }
     post_args[:label] = label if label
@@ -114,17 +109,21 @@ class Blockchaindotinfo
   end
 
   def self.process_send_money_response(resp)
-    resp_msg = JSON.parse( resp.body )
-    if ( resp_msg.include?( 'message' ) && resp_msg['message'].downcase.include?('sent') )
-      return true
-    elsif ( resp_msg.include?( 'error' ) )
-      if resp_msg['message'].downcase.include?('insuficient')
-        raise Exceptions::BlockchainDotInfoInsufficientFundsError, "Error response from Blockchain.info. Insufficient funds, response was:#{resp_msg['error']}"
+    begin
+      resp_msg = JSON.parse( resp.body )
+      if ( resp_msg.include?( 'message' ) && resp_msg['message'].downcase.include?('sent') )
+        return true
+      elsif ( resp_msg.include?( 'error' ) )
+        if resp_msg['message'].downcase.include?('insuficient')
+          raise Exceptions::BlockchainDotInfoInsufficientFundsError, "Error response from Blockchain.info. Insufficient funds, response was:#{resp_msg['error']}"
+        else
+          raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg['error']}"
+        end
       else
-        raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg['error']}"
+        raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg}"  
       end
-    else
-      raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error response from Blockchain.info, response was:#{resp_msg}"  
+    rescue JSON::ParserError
+      raise Exceptions::BlockchainDotInfoWalletSendMoneyError, "Error parsing JSON response from Blockchain.info, response was:#{resp.body if resp}"
     end
   end
 end
