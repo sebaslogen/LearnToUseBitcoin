@@ -42,43 +42,43 @@ function getScrolledItems(elem) {
   return [docViewTop, docViewBottom, elemTop, elemBottom, elemBottomWithMargin];
 }
 
-function isScrolledBy(items, bottomScrolledIntoView, bottomWithMarginScrolledIntoView, scrolledIntoView, completelyScrolledIntoView) {
+function isScrolledBy(items, checkName) {
   var docViewTop = items[0];
   var docViewBottom = items[1];
   var elemTop = items[2];
   var elemBottom = items[3];
   var elemBottomWithMargin = items[4];
-  if (bottomScrolledIntoView) {
+  if (checkName === 'isBottomScrolledIntoView') {
     return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));  
   }
-  if (bottomWithMarginScrolledIntoView) {
+  if (checkName === 'isBottomWithMarginScrolledIntoView') {
     return ((elemBottomWithMargin >= docViewTop) && (elemBottomWithMargin <= docViewBottom));
   }
-  if (scrolledIntoView) {
+  if (checkName === 'isScrolledIntoView') {
     return (((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) ||
           ((elemTop >= docViewTop) && (elemTop <= docViewBottom)) ||
           ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)) ||
           ((elemTop <= docViewTop) && (elemBottom >= docViewBottom)) );
   }
-  if (completelyScrolledIntoView) {
+  if (checkName === 'isCompletelyScrolledIntoView') {
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
   }
 }
 
 $.fn.isBottomScrolledIntoView = function() {
-  return isScrolledBy(getScrolledItems(this), true, false, false, false);
+  return isScrolledBy(getScrolledItems(this), 'isBottomScrolledIntoView');
 };
 
 $.fn.isBottomWithMarginScrolledIntoView = function() {
-  return isScrolledBy(getScrolledItems(this), false, true, false, false);
+  return isScrolledBy(getScrolledItems(this), 'isBottomWithMarginScrolledIntoView');
 };
   
 $.fn.isScrolledIntoView = function() {
-  return isScrolledBy(getScrolledItems(this), false, false, true, false);
+  return isScrolledBy(getScrolledItems(this), 'isScrolledIntoView');
 };
 
 $.fn.isCompletelyScrolledIntoView = function() {
-  return isScrolledBy(getScrolledItems(this), false, false, false, true);
+  return isScrolledBy(getScrolledItems(this), 'isCompletelyScrolledIntoView');
 };
 
 var scrollFadingBlocked = false; // Detect multiple requests in less than 200ms
