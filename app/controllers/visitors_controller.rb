@@ -6,7 +6,6 @@ class VisitorsController < ApplicationController
  
   def show
     Rails.logger.debug "#{GlobalConstants::DEBUG_MSG}-#{cn}: Good, received email #{params[:email]}" ######################################################## TODO: Test code
-    
     if is_associated? # Do not show wallet
       # TODO: proper render of message or page
       # TODO improve messaging and UX flow
