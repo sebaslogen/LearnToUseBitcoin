@@ -1,3 +1,7 @@
+//JSHint declaration of external methods
+/*global $, I18n, getWindowsSize, windowResize, resizeWindow, setupActiveJavaScript, scrollFading, setupAutoScroll,
+setupScrollHintAnimation, setupScrollFadingAndResize, updateSizes, loadDemoContent, loadCoinAnimation*/
+/*exported loadLocalBitcoinSellers, addLocale*/
 var user_location = null;
 
 function detectLocation() {
