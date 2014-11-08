@@ -67,27 +67,27 @@ function isScrolledBy(bottomScrolledIntoView, bottomWithMarginScrolledIntoView, 
 }
 
 $.fn.isBottomScrolledIntoView = function() {
-  /*var items = getScrolledItems(this);
+  var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
   var elemBottom = items[3];
   return ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom));
-  */
-  return isScrolledBy(true, false, false, false);
+  
+  //return isScrolledBy(true, false, false, false);
 };
 
 $.fn.isBottomWithMarginScrolledIntoView = function() {
-  /*
+  
   var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
   var elemBottomWithMargin = items[4];
-  return ((elemBottomWithMargin >= docViewTop) && (elemBottomWithMargin <= docViewBottom));*/
-  return isScrolledBy(false, true, false, false);
+  return ((elemBottomWithMargin >= docViewTop) && (elemBottomWithMargin <= docViewBottom));
+  //return isScrolledBy(false, true, false, false);
 };
   
 $.fn.isScrolledIntoView = function() {
-  /*
+  
   var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
@@ -96,19 +96,19 @@ $.fn.isScrolledIntoView = function() {
   return (((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) ||
           ((elemTop >= docViewTop) && (elemTop <= docViewBottom)) ||
           ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)) ||
-          ((elemTop <= docViewTop) && (elemBottom >= docViewBottom)) );*/
-  return isScrolledBy(false, false, true, false);
+          ((elemTop <= docViewTop) && (elemBottom >= docViewBottom)) );
+  //return isScrolledBy(false, false, true, false);
 };
 
 $.fn.isCompletelyScrolledIntoView = function() {
-  /*
+  
   var items = getScrolledItems(this);
   var docViewTop = items[0];
   var docViewBottom = items[1];
   var elemTop = items[2];
   var elemBottom = items[3];
-  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));*/
-  return isScrolledBy(false, false, false, true);
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  //return isScrolledBy(false, false, false, true);
 };
 
 var scrollFadingBlocked = false; // Detect multiple requests in less than 200ms
