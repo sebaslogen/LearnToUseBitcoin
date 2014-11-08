@@ -36,7 +36,7 @@ function setupScrollHintAnimation() {
 function getScrolledItems(elem) {
   var docViewTop = $(window).scrollTop();
   var docViewBottom = docViewTop + $(window).height();
-  var elemTop = $(elem).offset() == null ? 0 : $(elem).offset().top;
+  var elemTop = elem === window ? 0 : $(elem).offset().top;
   var elemBottom = elemTop + $(elem).height();
   var elemBottomWithMargin = elem === window ? 0 : elemBottom + parseInt( $(elem).css('margin-top'),10 ) + parseInt( $(elem).css('margin-bottom'),10 );
   return [docViewTop, docViewBottom, elemTop, elemBottom, elemBottomWithMargin];
