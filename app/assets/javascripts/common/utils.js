@@ -17,7 +17,7 @@ function detectLocation() {
 }
 
 function showBitonic(sellers_list, cc) {
-  if (cc === 'NL' || (cc === 'BE') || (cc === 'LU')) {
+  if (['NL', 'BE', 'LU'].indexOf(cc) >= 0) {
     sellers_list.push('https://bitonic.nl/?refcode=8w0UlJ123111"> Bitonic </a>');
     sellers_list.push('https://www.happycoins.com/Account/Index/eb754703-5a33-46fd-b0d2-9a2bb7e465e3"> HappyCoins </a>');
     sellers_list.push('http://www.bitcoin-bon.nl"> Bitcoin Bon </a>');
@@ -26,16 +26,14 @@ function showBitonic(sellers_list, cc) {
 }
 
 function showSafello(sellers_list, cc) {
-  if (cc === 'GB' || cc === 'SE' || cc === 'NL' || cc === 'DE' || cc === 'FR' || cc === 'IT' || cc === 'ES' || 
-      cc === 'PL' || (cc === 'HU') ) {
+  if (['NL', 'BE', 'LU', 'GB', 'SE', 'DE', 'FR', 'IT', 'ES', 'PL', 'HU'].indexOf(cc) >= 0) {
     sellers_list.push('http://safello.com/buy"> Safello </a>');
   }
   return sellers_list;
 }
 
 function showBittylicious(sellers_list, cc) {
-  if (cc === 'GB' || cc === 'SE' || cc === 'NL' || (cc === 'LU') || (cc === 'BE') || cc === 'DE' || cc === 'FR' || cc === 'IT' || cc === 'ES' || 
-      cc === 'PL' || (cc === 'HU') || (cc === 'PT') || (cc === 'LI') || (cc === 'AT') ) {
+  if (['NL', 'BE', 'LU', 'GB', 'SE', 'DE', 'FR', 'IT', 'ES', 'PL', 'HU', 'PT', 'LI', 'AT'].indexOf(cc) >= 0) {
     sellers_list.push('https://bittylicious.com/r/19542"> Bittylicious </a>');
   }
   return sellers_list;
