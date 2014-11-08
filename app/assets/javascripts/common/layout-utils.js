@@ -186,17 +186,23 @@ function showBottomElements() {
   }
 }
 
+function getIntroVideoRatio(space_side_video) {
+  return space_side_video / 178;
+}
+
+function getYoutubeAspectRatio() {
+  return 360 / 640;
+}
+
 function adjustIntroVideoSize() {
   var video_width = $('#youtube-video-container').width();
   var space_side_video = ( $(window).width() - video_width ) / 2;
-  var ratio = space_side_video / 178;
-  var youtube_aspect_ratio = 360 / 640;
-  $('#youtube-video').width(parseInt(video_width,10)).height(parseInt(youtube_aspect_ratio * video_width,10));
+  $('#youtube-video').width(parseInt(video_width,10)).height(parseInt(getYoutubeAspectRatio() * video_width,10));
   $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
   /* Adapt footsteps position and size */
   if (getWindowsSize() !== 'small') {
-    $('#footsteps-image').width(parseInt(ratio * 174,10));
-    $('#footsteps-image').height(parseInt(ratio * 444,10));
+    $('#footsteps-image').width(parseInt(getIntroVideoRatio(space_side_video) * 174, 10));
+    $('#footsteps-image').height(parseInt(getIntroVideoRatio(space_side_video) * 444, 10));
     var increase = 600;
     if (getWindowsSize() === 'medium') {
       increase = 500; // Make sure image doesn't cover text
