@@ -186,50 +186,58 @@ function showBottomElements() {
   }
 }
 
-function updateSizes() {
-  $(document).ready(function() {
-    /* Adapt footsteps position and size */
-    var video_width = $('#youtube-video-container').width();
-    var space_side_video = ( $(window).width() - video_width ) / 2;
-    var ratio = space_side_video / 178;
-    var youtube_aspect_ratio = 360 / 640;
-    $('#youtube-video').width(parseInt(video_width,10)).height(parseInt(youtube_aspect_ratio * video_width,10));
-    $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
-    if (getWindowsSize() !== 'small') {
-      $('#footsteps-image').width(parseInt(ratio * 174,10));
-      $('#footsteps-image').height(parseInt(ratio * 444,10));
-      var increase = 600;
-      if (getWindowsSize() === 'medium') {
-        increase = 500; // Make sure image doesn't cover text
-      }
-      $('#footsteps-image').css('top','-' + (increase+(10000/$('#youtube-video').width())) + 'px');
+function adjustIntroVideoSize() {
+  var video_width = $('#youtube-video-container').width();
+  var space_side_video = ( $(window).width() - video_width ) / 2;
+  var ratio = space_side_video / 178;
+  var youtube_aspect_ratio = 360 / 640;
+  $('#youtube-video').width(parseInt(video_width,10)).height(parseInt(youtube_aspect_ratio * video_width,10));
+  $('#youtube-video-container').css('padding-bottom', ( $('#youtube-video').height() + 10 ) + 'px');
+  /* Adapt footsteps position and size */
+  if (getWindowsSize() !== 'small') {
+    $('#footsteps-image').width(parseInt(ratio * 174,10));
+    $('#footsteps-image').height(parseInt(ratio * 444,10));
+    var increase = 600;
+    if (getWindowsSize() === 'medium') {
+      increase = 500; // Make sure image doesn't cover text
     }
+    $('#footsteps-image').css('top','-' + (increase+(10000/$('#youtube-video').width())) + 'px');
+  }
+}
+
+function disableCoinAnimationForSize() {
+  if (getWindowsSize() === 'small') {
+    finishCoinAnimation(); // Small screens should not have the coin animation
+  } else {
+    if (coinAnimationFinished) {
+      finishCoinAnimation();
+    } else { // Adjust position
+      positionCoinAnimationCanvas();
+    }
+  }
+}
+
+function updateSizes() {
+  $(document).ready(function() {    
+    adjustIntroVideoSize();
     // Adjust div height according to window width using contents size
     $('div#what').height(
       parseInt($('.video-container').find('iframe').height() + 
                $('div#what').find('h1').height() + 
                $('div#what').find('h3').height(),10) + 170);
     // Change vertical separation line to horizontal 
-    // in demo transaction with smaller(medium) size window
-    if (getWindowsSize() !== 'large') {
-      var element = $('div.right-border');
-      element.removeClass('right-border');
-      element.addClass('bottom-border');
-    } else if (getWindowsSize() === 'large') {
+    // in demo transaction only in smaller(medium) size window
+    if (getWindowsSize() === 'large') {
       var el = $('div.bottom-border');
       el.removeClass('bottom-border');
       el.addClass('right-border');
-    }
+    } else {
+      var element = $('div.right-border');
+      element.removeClass('right-border');
+      element.addClass('bottom-border');
+    } 
     if (typeof coinAnimationStarted !== 'undefined') {
-      if (getWindowsSize() === 'small') {
-        finishCoinAnimation(); // Small screens should not have the coin animation
-      } else {
-        if (coinAnimationFinished) {
-          finishCoinAnimation();
-        } else { // Adjust position
-          positionCoinAnimationCanvas();
-        }
-      }
+      disableCoinAnimationForSize();
     }
   });
 }
