@@ -60,7 +60,8 @@ function showExpresscoin(sellers_list, cc) {
 
 function loadLocalBitcoinSellers() {
   $('#bitcoin-sellers').empty(); // Remove any previous links (e.g. on IP/country change)
-  var cc = user_location.country_code;
+  // Set default country code if location provider failed
+  var cc = user_location === null ? 'GB' : user_location.country_code;
   var sellers_list = [];
   var link_start = '<a target="_blank" href="';
   sellers_list = showBitonic(sellers_list, cc);
