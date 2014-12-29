@@ -46,6 +46,7 @@ LearnToUseBitcoin::Application.configure do
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
+  RAILS_DEFAULT_LOGGER = Logger.new('log/production.log')
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
