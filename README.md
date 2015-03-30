@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/neoranga55/LearnToUseBitcoin.svg?branch=master)](https://travis-ci.org/neoranga55/LearnToUseBitcoin) [![Code Climate](https://codeclimate.com/github/neoranga55/LearnToUseBitcoin/badges/gpa.svg)](https://codeclimate.com/github/neoranga55/LearnToUseBitcoin) [![Test Coverage](https://codeclimate.com/github/neoranga55/LearnToUseBitcoin/badges/coverage.svg)](https://codeclimate.com/github/neoranga55/LearnToUseBitcoin)
 
-LearnToUseBitcoin
+[LearnToUseBitcoin](http://www.LearnToUseBitcoin.com)
 =================
 
-LearnToUseBitcoin web application to teach what is Bitcoin and how to use it by example
+[LearnToUseBitcoin.com](http://www.LearnToUseBitcoin.com) is a web application to teach what is Bitcoin and how to use it by example
 
 Techonologies used to build this project without harming any animal:
 - Ruby on Rails
